@@ -1,0 +1,45 @@
+{
+  "name": "painprayer/painprayer",
+  "description": "pain_prayer_study",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "adam swenson",
+      "email": "adam.swenson@csun.edu"
+    }
+  ],
+
+  "require": {
+    "propel/propel": "*",
+    "monolog/monolog": "1.13.1",
+
+  },
+  "require-dev":{
+    "phpunit/phpunit": "4.2.*",
+    "phpunit/php-invoker": "1.1.*",
+    "phpunit/dbunit" : "1.3.*",
+    "phpunit/phpunit-story":"1.*",
+    "pdepend/pdepend": "*",
+    "phpmd/phpmd":"2.1.*",
+    "squizlabs/php_codesniffer":"1.*",
+    "phploc/phploc": "*",
+    "sebastian/phpcpd": "*",
+    "theseer/phpdox":"*",
+    "theseer/fxsl": "*",
+    "nikic/php-parser": "0.9.*",
+    "sebastian/phpdcd": "*"
+  },
+  "autoload": {
+    "classmap": ["generated-classes/", "src/lib/", "vendor/propel/propel/tests/Propel"],
+    "psr-4": {
+      "lib\\": "src/lib",
+      "Mailer\\": "src/lib/Mailer"
+    }
+  },
+  "autoload-dev": {
+    "classmap": ["../tests/lib/"],
+    "psr-4": { "Tests\\": "tests/" }
+  }
+
+}
