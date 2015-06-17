@@ -21,6 +21,32 @@ CREATE TABLE `users`
 ) ENGINE=InnoDB;
 
 -- ---------------------------------------------------------------------
+-- assigned_prayer
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `assigned_prayer`;
+
+CREATE TABLE `assigned_prayer`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `prayer_date` DATE NOT NULL,
+    `agent_id` INTEGER NOT NULL,
+    `patient_id` INTEGER NOT NULL,
+    `complete` TINYINT(1) DEFAULT 0,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    PRIMARY KEY (`id`),
+    INDEX `assigned_prayer_fi_12cda2` (`agent_id`),
+    INDEX `assigned_prayer_fi_7cd2f4` (`patient_id`),
+    CONSTRAINT `assigned_prayer_fk_12cda2`
+        FOREIGN KEY (`agent_id`)
+        REFERENCES `users` (`id`),
+    CONSTRAINT `assigned_prayer_fk_7cd2f4`
+        FOREIGN KEY (`patient_id`)
+        REFERENCES `users` (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
 -- partners
 -- ---------------------------------------------------------------------
 
@@ -28,14 +54,14 @@ DROP TABLE IF EXISTS `partners`;
 
 CREATE TABLE `partners`
 (
-    `actor_id` INTEGER NOT NULL,
+    `agent_id` INTEGER NOT NULL,
     `patient_id` INTEGER NOT NULL,
     `created_at` DATETIME,
     `updated_at` DATETIME,
-    PRIMARY KEY (`actor_id`,`patient_id`),
+    PRIMARY KEY (`agent_id`,`patient_id`),
     INDEX `partners_fi_7cd2f4` (`patient_id`),
-    CONSTRAINT `partners_fk_67efd8`
-        FOREIGN KEY (`actor_id`)
+    CONSTRAINT `partners_fk_12cda2`
+        FOREIGN KEY (`agent_id`)
         REFERENCES `users` (`id`),
     CONSTRAINT `partners_fk_7cd2f4`
         FOREIGN KEY (`patient_id`)
