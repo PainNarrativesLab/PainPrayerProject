@@ -1,0 +1,80 @@
+@startuml
+title Study states
+
+state PreExperiment {
+    state "All in cohort" as pea
+    state "Tasks" as pe1t{
+        state "Pain questions" as pe1dpq
+    }
+    pea --> pe1t : Daily
+}
+note right of PreExperiment #aqua
+2 weeks
+end note
+
+state Experiment {
+
+    state FirstPeriod{
+        state "Group1" as g1a{
+            g1a: Waitlist
+        }
+        state "Group2" as g2a{
+            g2a: Active
+        }
+        state "Tasks" as p1t{
+            state "Pain questions" as p1dpq
+            state "Experiment tasks" as p1et
+        }
+        g1a --> p1t : Daily
+        g2a --> p1t : Daily
+
+    }
+    note right of FirstPeriod #aqua
+    4 weeks
+    end note
+    FirstPeriod --> SecondPeriod
+    state SecondPeriod{
+        state "Group1" as g1b{
+            g1b: Active
+        }
+        state "Group2" as g2b{
+            g2b: Waitlist
+         }
+        state "Tasks" as p2t{
+            state "Pain questions" as p2dpq
+            state "Experiment tasks" as p2et
+        }
+        g1b --> p2t : Daily
+        g2b --> p2t : Daily
+    }
+    note right of SecondPeriod #aqua
+    4 weeks
+    end note
+  }
+
+state PostExperiment{
+    PostExperiment : Asked to stop praying
+    state "All in cohort" as fua
+    state "Tasks" as fu1t{
+        state "Pain questions" as fu1dpq
+    }
+    fua --> fu1t : Daily
+}
+note right of PostExperiment #aqua
+2 weeks
+end note
+
+
+state EndExperiment{
+state "All in cohort" as eea
+eea --> Debrief
+eea --> ReleaseInfo
+}
+
+[*] -right-> Registration
+Registration --> PreExperiment : Sufficiently large cohort
+PreExperiment --> Experiment
+Experiment --> PostExperiment
+PostExperiment --> EndExperiment
+EndExperiment -right-> [*]
+@enduml

@@ -10,9 +10,6 @@
  * @author adam
  */
 
-//building
-$originalinclude = ini_get('include_path');
-//var_dump(ini_get('include_path'));
 
 putenv("PRAY_SRC_PATH=/Users/adam/Dropbox/painprayer/src");
 putenv("PRAY_VENDOR_PATH=/Users/adam/Dropbox/painprayer/vendor");
@@ -25,22 +22,21 @@ $src = getenv("PRAY_SRC_PATH");
 $vendor = getenv("PRAY_VENDOR_PATH");
 require_once("$vendor/autoload.php");
 
-//require_once 'vendor/autoload.php';
-
 # initialize propel
 require_once("$src/lib/generated-conf/config.php");
 require_once("$vendor/propel/propel/tests/bootstrap.php");
 
 echo "\n connections made \n";
-//building
-$originalinclude = ini_get('include_path');
-//
-ini_set('include_path', '../vendor/');
-//
-//ini_set('include_path', '/Users/adam/.composer/vendor');
-//
-ini_set('include_path', $originalinclude);
 
+////building
+//$originalinclude = ini_get('include_path');
+////
+//ini_set('include_path', '../vendor/');
+////
+////ini_set('include_path', '/Users/adam/.composer/vendor');
+////
+//ini_set('include_path', $originalinclude);
+//
 
 
 //testing

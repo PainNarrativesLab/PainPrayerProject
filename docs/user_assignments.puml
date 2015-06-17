@@ -26,7 +26,7 @@ abstract class Action{
 class Pray{
     The experimental task
     ----
-    +isTwoWay() Boolean
+    +notifyPartner Boolean
 }
 
 class Breathe{

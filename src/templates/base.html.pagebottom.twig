@@ -1,0 +1,29 @@
+<div class="footer">
+    {% block footer %}
+        {% include "footer.base.twig" %}
+    {% endblock %}
+</div>
+</div>
+<div id="scriptBox">
+    {% include "js.jquery.twig" %}
+    <script type="text/javascript">
+        {% autoescape false %}
+            {{ scriptlist }}
+        {% endautoescape %}
+    </script>
+    {% include "js.scriptloader.twig" %}
+    <script type="text/javascript">
+        $(document).ready({
+        {% autoescape false %}
+            {{ onload }}
+        {% endautoescape %}
+            if(scripts){
+                scriptLoader(scripts, scripts.length, onLoad, 0);
+            }
+        });
+    </script>
+    {% block scriptBox %}
+    {% endblock %}
+</div>
+</body>
+</html>

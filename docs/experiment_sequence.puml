@@ -1,0 +1,46 @@
+@startuml
+actor User1
+database System
+actor User2
+
+group Waitlist
+    group pain assessment
+        System -> User1: Pain questions request
+        System -> User2: Pain questions request
+        ...
+        User1 -> System: Completes pain questions
+        User2 -> System: Completes pain questions
+    end
+    group experiment
+        User1 <- System: Prayer Request
+        ...
+        User1 --> User2: Prays
+    end
+end
+
+newpage
+
+group Active
+    group pain assessment
+        System -> User1: Pain questions request
+        System -> User2: Pain questions request
+        ...
+        User1 -> System: Completes pain questions
+        User2 -> System: Completes pain questions
+    end
+    group experiment
+        User1 <- System: Prayer Request
+        User2 <- System: Prayer Request
+        User1 --> User2: Prays
+        System -> User2: Notifies prayed for
+        User2 --> User1: Prays
+        System -> User1: Notifies prayed for
+        note over of System #aqua
+        Notifications do not depend on the order in which User1 and User2 pray.
+        The notification happens as soon as the prayer is recorded.
+        end note
+    end
+end
+
+
+@enduml

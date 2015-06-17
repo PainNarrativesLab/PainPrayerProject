@@ -50,7 +50,7 @@ class DbAids
                 echo $u->save();
             }
         } catch (\Exception $e) {
-            echo 'population error: ' . $e->getMessage();
+            echo 'users population error: ' . $e->getMessage();
         }
     }
 

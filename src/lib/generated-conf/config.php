@@ -11,7 +11,7 @@ $password = 'testpass4';
 $runtype = getenv("RUNTYPE");
 $dbconn = !empty($runtype) ? ($runtype == 'testing' ? 'testing' : 'main') : 'main';
 
-echo "\n dbconn :" . $dbconn . "\n";
+//echo "\n dbconn :" . $dbconn . "\n";
 
 $serviceContainer = \Propel\Runtime\Propel::getServiceContainer();
 $serviceContainer->checkVersion('2.0.0-dev');

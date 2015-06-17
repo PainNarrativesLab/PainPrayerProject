@@ -6,7 +6,7 @@
  * Time: 4:29 PM
  */
 
-namespace lib\Scheduling;
+namespace Scheduling;
 
 
 use Scheduling\Scheduler;

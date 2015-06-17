@@ -28,10 +28,10 @@ class Controller
     static public function setLocations()
     {
         if (empty(self::$cache_dir)) {
-            self::$cache_dir = getenv("TEMPLATE_CACHE");
+            self::$cache_dir = getenv("PRAY_TEMPLATE_CACHE");
         }
         if (empty(self::$template_dir)) {
-            self::$template_dir = getenv("TEMPLATE_PATH");
+            self::$template_dir = getenv("PRAY_TEMPLATE_PATH");
         }
     }
 

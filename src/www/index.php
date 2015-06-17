@@ -5,30 +5,26 @@
  * Date: 5/24/15
  * Time: 1:36 PM
  */
+require_once('filemaster.php');
 //require_once __DIR__.'/vendor/autoload.php';
 
-putenv("PRAY_SRC_PATH=/Users/adam/Dropbox/painprayer/src");
-putenv("PRAY_VENDOR_PATH=/Users/adam/Dropbox/painprayer/vendor");
+$page_title = "Pain and spirituality study";
 
+$page_maker = new \TemplateClasses\PageMaker();
+$page_maker->setPageName($page_title);
 
+$page_maker->makePageTop();
+?>
 
+<div>Main body text</div>
 
-putenv("PRAY_DB_NAME=painprayer");
-putenv("PRAY_USERNAME=testuser4");
-putenv("PRAY_PASSWORD=testpass4");
-putenv("PRAY_RUNTYPE=testing");
+<?php
+$scripts = <<< J
+var scripts=["inc/js/index.js"];
+J;
 
-$src = getenv("PRAY_SRC_PATH");
-$vendor = getenv("PRAY_VENDOR_PATH");
+$onload = <<< H
+var onLoad=function(){console.log("onload fired");};
+H;
 
-//require_once __DIR__.'/src/lib/filemaster.php';
-
-require_once("$vendor/autoload.php");
-// setup Propel
-require_once "$src/lib/generated-conf/config.php";
-
-$faker = \Faker\Factory::create();
-$u = \UserQuery::create()->filterByNickname($faker->name())->findOneOrCreate();
-$u->setEmail($faker->email());
-$u->save();
-//\lib\DbAids::populate_users();
+$page_maker->makePageBottom($scripts, $onload);
