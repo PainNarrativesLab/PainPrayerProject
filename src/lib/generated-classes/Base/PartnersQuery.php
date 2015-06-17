@@ -20,12 +20,12 @@ use Propel\Runtime\Exception\PropelException;
  *
  *
  *
- * @method     ChildPartnersQuery orderByActorId($order = Criteria::ASC) Order by the actor_id column
+ * @method     ChildPartnersQuery orderByAgentId($order = Criteria::ASC) Order by the agent_id column
  * @method     ChildPartnersQuery orderByPatientId($order = Criteria::ASC) Order by the patient_id column
  * @method     ChildPartnersQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method     ChildPartnersQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
- * @method     ChildPartnersQuery groupByActorId() Group by the actor_id column
+ * @method     ChildPartnersQuery groupByAgentId() Group by the agent_id column
  * @method     ChildPartnersQuery groupByPatientId() Group by the patient_id column
  * @method     ChildPartnersQuery groupByCreatedAt() Group by the created_at column
  * @method     ChildPartnersQuery groupByUpdatedAt() Group by the updated_at column
@@ -34,9 +34,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPartnersQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method     ChildPartnersQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method     ChildPartnersQuery leftJoinactor($relationAlias = null) Adds a LEFT JOIN clause to the query using the actor relation
- * @method     ChildPartnersQuery rightJoinactor($relationAlias = null) Adds a RIGHT JOIN clause to the query using the actor relation
- * @method     ChildPartnersQuery innerJoinactor($relationAlias = null) Adds a INNER JOIN clause to the query using the actor relation
+ * @method     ChildPartnersQuery leftJoinagent($relationAlias = null) Adds a LEFT JOIN clause to the query using the agent relation
+ * @method     ChildPartnersQuery rightJoinagent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the agent relation
+ * @method     ChildPartnersQuery innerJoinagent($relationAlias = null) Adds a INNER JOIN clause to the query using the agent relation
  *
  * @method     ChildPartnersQuery leftJoinpatient($relationAlias = null) Adds a LEFT JOIN clause to the query using the patient relation
  * @method     ChildPartnersQuery rightJoinpatient($relationAlias = null) Adds a RIGHT JOIN clause to the query using the patient relation
@@ -47,7 +47,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPartners findOne(ConnectionInterface $con = null) Return the first ChildPartners matching the query
  * @method     ChildPartners findOneOrCreate(ConnectionInterface $con = null) Return the first ChildPartners matching the query, or a new ChildPartners object populated from the query conditions when no match is found
  *
- * @method     ChildPartners findOneByActorId(int $actor_id) Return the first ChildPartners filtered by the actor_id column
+ * @method     ChildPartners findOneByAgentId(int $agent_id) Return the first ChildPartners filtered by the agent_id column
  * @method     ChildPartners findOneByPatientId(int $patient_id) Return the first ChildPartners filtered by the patient_id column
  * @method     ChildPartners findOneByCreatedAt(string $created_at) Return the first ChildPartners filtered by the created_at column
  * @method     ChildPartners findOneByUpdatedAt(string $updated_at) Return the first ChildPartners filtered by the updated_at column *
@@ -55,13 +55,13 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPartners requirePk($key, ConnectionInterface $con = null) Return the ChildPartners by primary key and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPartners requireOne(ConnectionInterface $con = null) Return the first ChildPartners matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
- * @method     ChildPartners requireOneByActorId(int $actor_id) Return the first ChildPartners filtered by the actor_id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPartners requireOneByAgentId(int $agent_id) Return the first ChildPartners filtered by the agent_id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPartners requireOneByPatientId(int $patient_id) Return the first ChildPartners filtered by the patient_id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPartners requireOneByCreatedAt(string $created_at) Return the first ChildPartners filtered by the created_at column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPartners requireOneByUpdatedAt(string $updated_at) Return the first ChildPartners filtered by the updated_at column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildPartners[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildPartners objects based on current ModelCriteria
- * @method     ChildPartners[]|ObjectCollection findByActorId(int $actor_id) Return ChildPartners objects filtered by the actor_id column
+ * @method     ChildPartners[]|ObjectCollection findByAgentId(int $agent_id) Return ChildPartners objects filtered by the agent_id column
  * @method     ChildPartners[]|ObjectCollection findByPatientId(int $patient_id) Return ChildPartners objects filtered by the patient_id column
  * @method     ChildPartners[]|ObjectCollection findByCreatedAt(string $created_at) Return ChildPartners objects filtered by the created_at column
  * @method     ChildPartners[]|ObjectCollection findByUpdatedAt(string $updated_at) Return ChildPartners objects filtered by the updated_at column
@@ -117,7 +117,7 @@ abstract class PartnersQuery extends ModelCriteria
      * $obj = $c->findPk(array(12, 34), $con);
      * </code>
      *
-     * @param array[$actor_id, $patient_id] $key Primary key to use for the query
+     * @param array[$agent_id, $patient_id] $key Primary key to use for the query
      * @param ConnectionInterface $con an optional connection object
      *
      * @return ChildPartners|array|mixed the result, formatted by the current formatter
@@ -157,7 +157,7 @@ abstract class PartnersQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT actor_id, patient_id, created_at, updated_at FROM partners WHERE actor_id = :p0 AND patient_id = :p1';
+        $sql = 'SELECT agent_id, patient_id, created_at, updated_at FROM partners WHERE agent_id = :p0 AND patient_id = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -231,7 +231,7 @@ abstract class PartnersQuery extends ModelCriteria
      */
     public function filterByPrimaryKey($key)
     {
-        $this->addUsingAlias(PartnersTableMap::COL_ACTOR_ID, $key[0], Criteria::EQUAL);
+        $this->addUsingAlias(PartnersTableMap::COL_AGENT_ID, $key[0], Criteria::EQUAL);
         $this->addUsingAlias(PartnersTableMap::COL_PATIENT_ID, $key[1], Criteria::EQUAL);
 
         return $this;
@@ -250,7 +250,7 @@ abstract class PartnersQuery extends ModelCriteria
             return $this->add(null, '1<>1', Criteria::CUSTOM);
         }
         foreach ($keys as $key) {
-            $cton0 = $this->getNewCriterion(PartnersTableMap::COL_ACTOR_ID, $key[0], Criteria::EQUAL);
+            $cton0 = $this->getNewCriterion(PartnersTableMap::COL_AGENT_ID, $key[0], Criteria::EQUAL);
             $cton1 = $this->getNewCriterion(PartnersTableMap::COL_PATIENT_ID, $key[1], Criteria::EQUAL);
             $cton0->addAnd($cton1);
             $this->addOr($cton0);
@@ -260,18 +260,18 @@ abstract class PartnersQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the actor_id column
+     * Filter the query on the agent_id column
      *
      * Example usage:
      * <code>
-     * $query->filterByActorId(1234); // WHERE actor_id = 1234
-     * $query->filterByActorId(array(12, 34)); // WHERE actor_id IN (12, 34)
-     * $query->filterByActorId(array('min' => 12)); // WHERE actor_id > 12
+     * $query->filterByAgentId(1234); // WHERE agent_id = 1234
+     * $query->filterByAgentId(array(12, 34)); // WHERE agent_id IN (12, 34)
+     * $query->filterByAgentId(array('min' => 12)); // WHERE agent_id > 12
      * </code>
      *
-     * @see       filterByactor()
+     * @see       filterByagent()
      *
-     * @param     mixed $actorId The value to use as filter.
+     * @param     mixed $agentId The value to use as filter.
      *              Use scalar values for equality.
      *              Use array values for in_array() equivalent.
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
@@ -279,16 +279,16 @@ abstract class PartnersQuery extends ModelCriteria
      *
      * @return $this|ChildPartnersQuery The current query, for fluid interface
      */
-    public function filterByActorId($actorId = null, $comparison = null)
+    public function filterByAgentId($agentId = null, $comparison = null)
     {
-        if (is_array($actorId)) {
+        if (is_array($agentId)) {
             $useMinMax = false;
-            if (isset($actorId['min'])) {
-                $this->addUsingAlias(PartnersTableMap::COL_ACTOR_ID, $actorId['min'], Criteria::GREATER_EQUAL);
+            if (isset($agentId['min'])) {
+                $this->addUsingAlias(PartnersTableMap::COL_AGENT_ID, $agentId['min'], Criteria::GREATER_EQUAL);
                 $useMinMax = true;
             }
-            if (isset($actorId['max'])) {
-                $this->addUsingAlias(PartnersTableMap::COL_ACTOR_ID, $actorId['max'], Criteria::LESS_EQUAL);
+            if (isset($agentId['max'])) {
+                $this->addUsingAlias(PartnersTableMap::COL_AGENT_ID, $agentId['max'], Criteria::LESS_EQUAL);
                 $useMinMax = true;
             }
             if ($useMinMax) {
@@ -299,7 +299,7 @@ abstract class PartnersQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(PartnersTableMap::COL_ACTOR_ID, $actorId, $comparison);
+        return $this->addUsingAlias(PartnersTableMap::COL_AGENT_ID, $agentId, $comparison);
     }
 
     /**
@@ -441,35 +441,35 @@ abstract class PartnersQuery extends ModelCriteria
      *
      * @return ChildPartnersQuery The current query, for fluid interface
      */
-    public function filterByactor($user, $comparison = null)
+    public function filterByagent($user, $comparison = null)
     {
         if ($user instanceof \User) {
             return $this
-                ->addUsingAlias(PartnersTableMap::COL_ACTOR_ID, $user->getId(), $comparison);
+                ->addUsingAlias(PartnersTableMap::COL_AGENT_ID, $user->getId(), $comparison);
         } elseif ($user instanceof ObjectCollection) {
             if (null === $comparison) {
                 $comparison = Criteria::IN;
             }
 
             return $this
-                ->addUsingAlias(PartnersTableMap::COL_ACTOR_ID, $user->toKeyValue('Id', 'Id'), $comparison);
+                ->addUsingAlias(PartnersTableMap::COL_AGENT_ID, $user->toKeyValue('Id', 'Id'), $comparison);
         } else {
-            throw new PropelException('filterByactor() only accepts arguments of type \User or Collection');
+            throw new PropelException('filterByagent() only accepts arguments of type \User or Collection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the actor relation
+     * Adds a JOIN clause to the query using the agent relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return $this|ChildPartnersQuery The current query, for fluid interface
      */
-    public function joinactor($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinagent($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('actor');
+        $relationMap = $tableMap->getRelation('agent');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -484,14 +484,14 @@ abstract class PartnersQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'actor');
+            $this->addJoinObject($join, 'agent');
         }
 
         return $this;
     }
 
     /**
-     * Use the actor relation User object
+     * Use the agent relation User object
      *
      * @see useQuery()
      *
@@ -501,11 +501,11 @@ abstract class PartnersQuery extends ModelCriteria
      *
      * @return \UserQuery A secondary query class using the current class as primary query
      */
-    public function useactorQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useagentQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinactor($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'actor', '\UserQuery');
+            ->joinagent($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'agent', '\UserQuery');
     }
 
     /**
@@ -595,7 +595,7 @@ abstract class PartnersQuery extends ModelCriteria
     public function prune($partners = null)
     {
         if ($partners) {
-            $this->addCond('pruneCond0', $this->getAliasedColName(PartnersTableMap::COL_ACTOR_ID), $partners->getActorId(), Criteria::NOT_EQUAL);
+            $this->addCond('pruneCond0', $this->getAliasedColName(PartnersTableMap::COL_AGENT_ID), $partners->getAgentId(), Criteria::NOT_EQUAL);
             $this->addCond('pruneCond1', $this->getAliasedColName(PartnersTableMap::COL_PATIENT_ID), $partners->getPatientId(), Criteria::NOT_EQUAL);
             $this->combine(array('pruneCond0', 'pruneCond1'), Criteria::LOGICAL_OR);
         }

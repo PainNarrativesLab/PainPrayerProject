@@ -65,10 +65,10 @@ abstract class Partners implements ActiveRecordInterface
     protected $virtualColumns = array();
 
     /**
-     * The value for the actor_id field.
+     * The value for the agent_id field.
      * @var        int
      */
-    protected $actor_id;
+    protected $agent_id;
 
     /**
      * The value for the patient_id field.
@@ -91,7 +91,7 @@ abstract class Partners implements ActiveRecordInterface
     /**
      * @var        ChildUser
      */
-    protected $aactor;
+    protected $aagent;
 
     /**
      * @var        ChildUser
@@ -324,13 +324,13 @@ abstract class Partners implements ActiveRecordInterface
     }
 
     /**
-     * Get the [actor_id] column value.
+     * Get the [agent_id] column value.
      *
      * @return int
      */
-    public function getActorId()
+    public function getAgentId()
     {
-        return $this->actor_id;
+        return $this->agent_id;
     }
 
     /**
@@ -384,28 +384,28 @@ abstract class Partners implements ActiveRecordInterface
     }
 
     /**
-     * Set the value of [actor_id] column.
+     * Set the value of [agent_id] column.
      *
      * @param int $v new value
      * @return $this|\Partners The current object (for fluent API support)
      */
-    public function setActorId($v)
+    public function setAgentId($v)
     {
         if ($v !== null) {
             $v = (int) $v;
         }
 
-        if ($this->actor_id !== $v) {
-            $this->actor_id = $v;
-            $this->modifiedColumns[PartnersTableMap::COL_ACTOR_ID] = true;
+        if ($this->agent_id !== $v) {
+            $this->agent_id = $v;
+            $this->modifiedColumns[PartnersTableMap::COL_AGENT_ID] = true;
         }
 
-        if ($this->aactor !== null && $this->aactor->getId() !== $v) {
-            $this->aactor = null;
+        if ($this->aagent !== null && $this->aagent->getId() !== $v) {
+            $this->aagent = null;
         }
 
         return $this;
-    } // setActorId()
+    } // setAgentId()
 
     /**
      * Set the value of [patient_id] column.
@@ -507,8 +507,8 @@ abstract class Partners implements ActiveRecordInterface
     {
         try {
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : PartnersTableMap::translateFieldName('ActorId', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->actor_id = (null !== $col) ? (int) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : PartnersTableMap::translateFieldName('AgentId', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->agent_id = (null !== $col) ? (int) $col : null;
 
             $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : PartnersTableMap::translateFieldName('PatientId', TableMap::TYPE_PHPNAME, $indexType)];
             $this->patient_id = (null !== $col) ? (int) $col : null;
@@ -554,8 +554,8 @@ abstract class Partners implements ActiveRecordInterface
      */
     public function ensureConsistency()
     {
-        if ($this->aactor !== null && $this->actor_id !== $this->aactor->getId()) {
-            $this->aactor = null;
+        if ($this->aagent !== null && $this->agent_id !== $this->aagent->getId()) {
+            $this->aagent = null;
         }
         if ($this->apatient !== null && $this->patient_id !== $this->apatient->getId()) {
             $this->apatient = null;
@@ -599,7 +599,7 @@ abstract class Partners implements ActiveRecordInterface
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->aactor = null;
+            $this->aagent = null;
             $this->apatient = null;
         } // if (deep)
     }
@@ -717,11 +717,11 @@ abstract class Partners implements ActiveRecordInterface
             // method.  This object relates to these object(s) by a
             // foreign key reference.
 
-            if ($this->aactor !== null) {
-                if ($this->aactor->isModified() || $this->aactor->isNew()) {
-                    $affectedRows += $this->aactor->save($con);
+            if ($this->aagent !== null) {
+                if ($this->aagent->isModified() || $this->aagent->isNew()) {
+                    $affectedRows += $this->aagent->save($con);
                 }
-                $this->setactor($this->aactor);
+                $this->setagent($this->aagent);
             }
 
             if ($this->apatient !== null) {
@@ -764,8 +764,8 @@ abstract class Partners implements ActiveRecordInterface
 
 
          // check the columns in natural order for more readable SQL queries
-        if ($this->isColumnModified(PartnersTableMap::COL_ACTOR_ID)) {
-            $modifiedColumns[':p' . $index++]  = 'actor_id';
+        if ($this->isColumnModified(PartnersTableMap::COL_AGENT_ID)) {
+            $modifiedColumns[':p' . $index++]  = 'agent_id';
         }
         if ($this->isColumnModified(PartnersTableMap::COL_PATIENT_ID)) {
             $modifiedColumns[':p' . $index++]  = 'patient_id';
@@ -787,8 +787,8 @@ abstract class Partners implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'actor_id':
-                        $stmt->bindValue($identifier, $this->actor_id, PDO::PARAM_INT);
+                    case 'agent_id':
+                        $stmt->bindValue($identifier, $this->agent_id, PDO::PARAM_INT);
                         break;
                     case 'patient_id':
                         $stmt->bindValue($identifier, $this->patient_id, PDO::PARAM_INT);
@@ -855,7 +855,7 @@ abstract class Partners implements ActiveRecordInterface
     {
         switch ($pos) {
             case 0:
-                return $this->getActorId();
+                return $this->getAgentId();
                 break;
             case 1:
                 return $this->getPatientId();
@@ -896,7 +896,7 @@ abstract class Partners implements ActiveRecordInterface
         $alreadyDumpedObjects['Partners'][$this->hashCode()] = true;
         $keys = PartnersTableMap::getFieldNames($keyType);
         $result = array(
-            $keys[0] => $this->getActorId(),
+            $keys[0] => $this->getAgentId(),
             $keys[1] => $this->getPatientId(),
             $keys[2] => $this->getCreatedAt(),
             $keys[3] => $this->getUpdatedAt(),
@@ -921,7 +921,7 @@ abstract class Partners implements ActiveRecordInterface
         }
 
         if ($includeForeignObjects) {
-            if (null !== $this->aactor) {
+            if (null !== $this->aagent) {
 
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
@@ -934,7 +934,7 @@ abstract class Partners implements ActiveRecordInterface
                         $key = 'User';
                 }
 
-                $result[$key] = $this->aactor->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+                $result[$key] = $this->aagent->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
             if (null !== $this->apatient) {
 
@@ -986,7 +986,7 @@ abstract class Partners implements ActiveRecordInterface
     {
         switch ($pos) {
             case 0:
-                $this->setActorId($value);
+                $this->setAgentId($value);
                 break;
             case 1:
                 $this->setPatientId($value);
@@ -1024,7 +1024,7 @@ abstract class Partners implements ActiveRecordInterface
         $keys = PartnersTableMap::getFieldNames($keyType);
 
         if (array_key_exists($keys[0], $arr)) {
-            $this->setActorId($arr[$keys[0]]);
+            $this->setAgentId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
             $this->setPatientId($arr[$keys[1]]);
@@ -1076,8 +1076,8 @@ abstract class Partners implements ActiveRecordInterface
     {
         $criteria = new Criteria(PartnersTableMap::DATABASE_NAME);
 
-        if ($this->isColumnModified(PartnersTableMap::COL_ACTOR_ID)) {
-            $criteria->add(PartnersTableMap::COL_ACTOR_ID, $this->actor_id);
+        if ($this->isColumnModified(PartnersTableMap::COL_AGENT_ID)) {
+            $criteria->add(PartnersTableMap::COL_AGENT_ID, $this->agent_id);
         }
         if ($this->isColumnModified(PartnersTableMap::COL_PATIENT_ID)) {
             $criteria->add(PartnersTableMap::COL_PATIENT_ID, $this->patient_id);
@@ -1105,7 +1105,7 @@ abstract class Partners implements ActiveRecordInterface
     public function buildPkeyCriteria()
     {
         $criteria = ChildPartnersQuery::create();
-        $criteria->add(PartnersTableMap::COL_ACTOR_ID, $this->actor_id);
+        $criteria->add(PartnersTableMap::COL_AGENT_ID, $this->agent_id);
         $criteria->add(PartnersTableMap::COL_PATIENT_ID, $this->patient_id);
 
         return $criteria;
@@ -1119,14 +1119,14 @@ abstract class Partners implements ActiveRecordInterface
      */
     public function hashCode()
     {
-        $validPk = null !== $this->getActorId() &&
+        $validPk = null !== $this->getAgentId() &&
             null !== $this->getPatientId();
 
         $validPrimaryKeyFKs = 2;
         $primaryKeyFKs = [];
 
-        //relation partners_fk_67efd8 to table users
-        if ($this->aactor && $hash = spl_object_hash($this->aactor)) {
+        //relation partners_fk_12cda2 to table users
+        if ($this->aagent && $hash = spl_object_hash($this->aagent)) {
             $primaryKeyFKs[] = $hash;
         } else {
             $validPrimaryKeyFKs = false;
@@ -1156,7 +1156,7 @@ abstract class Partners implements ActiveRecordInterface
     public function getPrimaryKey()
     {
         $pks = array();
-        $pks[0] = $this->getActorId();
+        $pks[0] = $this->getAgentId();
         $pks[1] = $this->getPatientId();
 
         return $pks;
@@ -1170,7 +1170,7 @@ abstract class Partners implements ActiveRecordInterface
      */
     public function setPrimaryKey($keys)
     {
-        $this->setActorId($keys[0]);
+        $this->setAgentId($keys[0]);
         $this->setPatientId($keys[1]);
     }
 
@@ -1180,7 +1180,7 @@ abstract class Partners implements ActiveRecordInterface
      */
     public function isPrimaryKeyNull()
     {
-        return (null === $this->getActorId()) && (null === $this->getPatientId());
+        return (null === $this->getAgentId()) && (null === $this->getPatientId());
     }
 
     /**
@@ -1196,7 +1196,7 @@ abstract class Partners implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setActorId($this->getActorId());
+        $copyObj->setAgentId($this->getAgentId());
         $copyObj->setPatientId($this->getPatientId());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -1234,20 +1234,20 @@ abstract class Partners implements ActiveRecordInterface
      * @return $this|\Partners The current object (for fluent API support)
      * @throws PropelException
      */
-    public function setactor(ChildUser $v = null)
+    public function setagent(ChildUser $v = null)
     {
         if ($v === null) {
-            $this->setActorId(NULL);
+            $this->setAgentId(NULL);
         } else {
-            $this->setActorId($v->getId());
+            $this->setAgentId($v->getId());
         }
 
-        $this->aactor = $v;
+        $this->aagent = $v;
 
         // Add binding for other direction of this n:n relationship.
         // If this object has already been added to the ChildUser object, it will not be re-added.
         if ($v !== null) {
-            $v->addPartnersRelatedByActorId($this);
+            $v->addPartnersRelatedByAgentId($this);
         }
 
 
@@ -1262,22 +1262,22 @@ abstract class Partners implements ActiveRecordInterface
      * @return ChildUser The associated ChildUser object.
      * @throws PropelException
      */
-    public function getactor(ConnectionInterface $con = null)
+    public function getagent(ConnectionInterface $con = null)
     {
-        if ($this->aactor === null && ($this->actor_id !== null)) {
-            $this->aactor = ChildUserQuery::create()
-                ->filterByPartnersRelatedByActorId($this) // here
+        if ($this->aagent === null && ($this->agent_id !== null)) {
+            $this->aagent = ChildUserQuery::create()
+                ->filterByPartnersRelatedByAgentId($this) // here
                 ->findOne($con);
             /* The following can be used additionally to
                 guarantee the related object contains a reference
                 to this object.  This level of coupling may, however, be
                 undesirable since it could result in an only partially populated collection
                 in the referenced object.
-                $this->aactor->addPartnerssRelatedByActorId($this);
+                $this->aagent->addPartnerssRelatedByAgentId($this);
              */
         }
 
-        return $this->aactor;
+        return $this->aagent;
     }
 
     /**
@@ -1340,13 +1340,13 @@ abstract class Partners implements ActiveRecordInterface
      */
     public function clear()
     {
-        if (null !== $this->aactor) {
-            $this->aactor->removePartnersRelatedByActorId($this);
+        if (null !== $this->aagent) {
+            $this->aagent->removePartnersRelatedByAgentId($this);
         }
         if (null !== $this->apatient) {
             $this->apatient->removePartnersRelatedByPatientId($this);
         }
-        $this->actor_id = null;
+        $this->agent_id = null;
         $this->patient_id = null;
         $this->created_at = null;
         $this->updated_at = null;
@@ -1370,7 +1370,7 @@ abstract class Partners implements ActiveRecordInterface
         if ($deep) {
         } // if ($deep)
 
-        $this->aactor = null;
+        $this->aagent = null;
         $this->apatient = null;
     }
 

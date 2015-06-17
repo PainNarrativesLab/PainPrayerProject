@@ -12,16 +12,33 @@
         <behavior name="timestampable" />
     </table>
 
-    <table name="partners" phpName="Partners">
-        <column name="actor_id" type="integer" required="true" primaryKey="true"/>
-        <column name="patient_id" type="integer" required="true" primaryKey="true" />
-        <foreign-key foreignTable="users" phpName="actor">
-            <reference local="actor_id" foreign="id" />
+    <table name="assigned_prayer" phpName="AssignedPrayer">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true"/>
+        <column name="prayer_date" type="date" required="true"  />
+        <column name="agent_id" type="integer" required="true" />
+        <column name="patient_id" type="integer" required="true"/>
+        <column name="complete" type="boolean" defaultValue="false"/>
+        <foreign-key foreignTable="users" phpName="agent">
+            <reference local="agent_id" foreign="id" />
         </foreign-key>
         <foreign-key foreignTable="users" phpName="patient">
             <reference local="patient_id" foreign="id" />
         </foreign-key>
         <behavior name="timestampable" />
     </table>
+
+    <table name="partners" phpName="Partners" isCrossRef="true">
+        <column name="agent_id" type="integer" required="true" primaryKey="true"/>
+        <column name="patient_id" type="integer" required="true" primaryKey="true" />
+        <foreign-key foreignTable="users" phpName="agent">
+            <reference local="agent_id" foreign="id" />
+        </foreign-key>
+        <foreign-key foreignTable="users" phpName="patient">
+            <reference local="patient_id" foreign="id" />
+        </foreign-key>
+        <behavior name="timestampable" />
+    </table>
+
+
 
 </database>

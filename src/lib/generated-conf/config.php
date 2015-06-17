@@ -1,13 +1,18 @@
 <?php
+
+$dbname = getenv("PRAY_DB_NAME");
+$username = getenv("PRAY_USERNAME");
+$password = getenv("PRAY_PASSWORD");
+
 $serviceContainer = \Propel\Runtime\Propel::getServiceContainer();
 $serviceContainer->checkVersion('2.0.0-dev');
 $serviceContainer->setAdapterClass('main', 'mysql');
 $manager = new \Propel\Runtime\Connection\ConnectionManagerSingle();
 $manager->setConfiguration(array (
   'classname' => 'Propel\\Runtime\\Connection\\DebugPDO',
-  'dsn' => 'mysql:host=localhost;dbname=painprayer',
-  'user' => 'root',
-  'password' => '',
+  'dsn' => "mysql:host=localhost;dbname=$dbname",
+  'user' => $username,
+  'password' => $password,
   'settings' =>
   array (
     'charset' => 'utf8',

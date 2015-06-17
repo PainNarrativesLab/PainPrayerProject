@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+Gradeomatic
+Copyright Adam Swenson Merp Co Intl
+ 
+-->
+
+<!-- see http://www.phpunit.de/wiki/Documentation -->
+<!--phpunit bootstrap="/path/to/bootstrap.php"
+         colors="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false">
+</phpunit-->
+<!--<phpunit colors="false" />-->
+
+<phpunit>
+    <php>
+        <var name="MYSQL_TESTS_DIR" value="./mysql_test_files/" />
+        <var name="DB_NAME" value='' />
+        <var name="DB_USER" value='' />
+        <var name="DB_PASS" value='' />
+    
+    </php>
+</phpunit>
+

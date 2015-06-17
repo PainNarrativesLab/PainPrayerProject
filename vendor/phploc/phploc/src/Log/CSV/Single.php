@@ -26,7 +26,7 @@ class Single
      *
      * @var array
      */
-    private $colmap = [
+    private $colmap = array(
         'directories' => 'Directories',
         'files' => 'Files',
         'loc' => 'Lines of Code (LOC)',
@@ -68,7 +68,7 @@ class Single
         'globalConstantAccesses' => 'Global Constant Accesses',
         'testClasses' => 'Test Classes',
         'testMethods' => 'Test Methods'
-    ];
+    );
 
     /**
      * Prints a result set.
@@ -100,8 +100,7 @@ class Single
      */
     protected function getValuesLine(array $count)
     {
-        $values = [];
-
+        $values = array();
         foreach ($this->colmap as $key => $name) {
             if (isset($count[$key])) {
                 $values[] = $count[$key];

@@ -1,3 +1,5 @@
+Note: Nothing here is intended to be useful to anyone else, yet.....
+
 # Components
 - src
 
@@ -28,6 +30,18 @@
             - Process: 
                 Backend handling of user responses
         
+        - Prayer:
+            Handles the prayer assignments
+            
+            - Assign:
+                Creates a prayer assignment
+                 
+            - Display: 
+                Generates the form for user
+                    
+            - Process: 
+                Backend handling of user responses
+                    
         - Scheduling: 
             Manages scheduled events and tasks
         

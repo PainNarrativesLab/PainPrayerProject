@@ -15,8 +15,8 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
      */
     private $history;
 
-    private $sample_data = [
-        '2014-06-09T00:00:00' => [
+    private $sample_data = array(
+        '2014-06-09T00:00:00'=>array(
             'commit' => 'foo',
             'directories' => 1,
             'files' => 2,
@@ -59,8 +59,8 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
             'globalConstantAccesses' => 39,
             'testClasses' => 40,
             'testMethods' => 41
-        ],
-        '2014-07-09T00:00:00' => [
+        ),
+        '2014-07-09T00:00:00'=>array(
             'commit' => 'bar',
             'directories' => 42,
             'files' => 43,
@@ -103,8 +103,8 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
             'globalConstantAccesses' => 80,
             'testClasses' => 81,
             'testMethods' => 82
-        ]
-    ];
+        )
+    );
 
     public function setUp()
     {

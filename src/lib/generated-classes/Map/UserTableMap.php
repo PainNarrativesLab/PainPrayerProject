@@ -158,13 +158,27 @@ class UserTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('PartnersRelatedByActorId', '\\Partners', RelationMap::ONE_TO_MANY, array (
+        $this->addRelation('AssignedPrayerRelatedByAgentId', '\\AssignedPrayer', RelationMap::ONE_TO_MANY, array (
   0 =>
   array (
-    0 => ':actor_id',
+    0 => ':agent_id',
     1 => ':id',
   ),
-), null, null, 'PartnerssRelatedByActorId', false);
+), null, null, 'AssignedPrayersRelatedByAgentId', false);
+        $this->addRelation('AssignedPrayerRelatedByPatientId', '\\AssignedPrayer', RelationMap::ONE_TO_MANY, array (
+  0 =>
+  array (
+    0 => ':patient_id',
+    1 => ':id',
+  ),
+), null, null, 'AssignedPrayersRelatedByPatientId', false);
+        $this->addRelation('PartnersRelatedByAgentId', '\\Partners', RelationMap::ONE_TO_MANY, array (
+  0 =>
+  array (
+    0 => ':agent_id',
+    1 => ':id',
+  ),
+), null, null, 'PartnerssRelatedByAgentId', false);
         $this->addRelation('PartnersRelatedByPatientId', '\\Partners', RelationMap::ONE_TO_MANY, array (
   0 =>
   array (
@@ -172,6 +186,8 @@ class UserTableMap extends TableMap
     1 => ':id',
   ),
 ), null, null, 'PartnerssRelatedByPatientId', false);
+        $this->addRelation('patient', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'patients');
+        $this->addRelation('agent', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'agents');
     } // buildRelations()
 
     /**

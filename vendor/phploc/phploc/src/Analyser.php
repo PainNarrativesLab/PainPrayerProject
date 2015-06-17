@@ -10,6 +10,12 @@
 
 namespace SebastianBergmann\PHPLOC;
 
+// @codeCoverageIgnoreStart
+if (!defined('T_TRAIT')) {
+    define('T_TRAIT', 1000);
+}
+// @codeCoverageIgnoreEnd
+
 /**
  * PHPLOC code analyser.
  *
@@ -24,27 +30,27 @@ class Analyser
     /**
      * @var array
      */
-    private $namespaces = [];
+    private $namespaces = array();
 
     /**
      * @var array
      */
-    private $classes = [];
+    private $classes = array();
 
     /**
      * @var array
      */
-    private $constants = [];
+    private $constants = array();
 
     /**
      * @var array
      */
-    private $possibleConstantAccesses = [];
+    private $possibleConstantAccesses = array();
 
     /**
      * @var array
      */
-    private $count = [
+    private $count = array(
       'files'                       => 0,
       'loc'                         => 0,
       'lloc'                        => 0,
@@ -89,13 +95,13 @@ class Analyser
       'methodCcnMax'                => 0,
       'methodLlocMin'               => 0,
       'methodLlocAvg'               => 0,
-      'methodLlocMax'               => 0,            
-    ];
+      'methodLlocMax'               => 0
+    );
 
     /**
      * @var array
      */
-    private $superGlobals = [
+    private $superGlobals = array(
       '$_ENV' => true,
       '$_POST' => true,
       '$_GET' => true,
@@ -109,27 +115,27 @@ class Analyser
       '$HTTP_COOKIE_VARS' => true,
       '$HTTP_SERVER_VARS' => true,
       '$HTTP_POST_FILES' => true
-    ];
+    );
 
     /**
      * @var array
      */
-    private $classCcn = [];
+    private $classCcn = array();
 
     /**
      * @var array
      */
-    private $classLloc = [];
+    private $classLloc = array();
 
     /**
      * @var array
      */
-    private $methodCcn = [];
+    private $methodCcn = array();
 
     /**
      * @var array
      */
-    private $methodLloc = [];
+    private $methodLloc = array();
 
     /**
      * Processes a set of files.
@@ -147,7 +153,7 @@ class Analyser
             }
         }
 
-        $directories = [];
+        $directories = array();
 
         foreach ($files as $file) {
             $directory = dirname($file);
@@ -282,7 +288,7 @@ class Analyser
 
         $this->count['files']++;
 
-        $blocks            = [];
+        $blocks            = array();
         $currentBlock      = false;
         $namespace         = false;
         $className         = null;
@@ -371,7 +377,7 @@ class Analyser
                         continue;
                     }
 
-                    $currentClassData = ['ccn' => 1, 'lloc' => 0];
+                    $currentClassData = array('ccn' => 1, 'lloc' => 0);
                     $className        = $this->getClassName($namespace, $tokens, $i);
                     $currentBlock     = T_CLASS;
 
@@ -398,13 +404,15 @@ class Analyser
                 case T_FUNCTION:
                     $currentBlock = T_FUNCTION;
 
-                    if (is_array($tokens[$i+2]) &&
-                        $tokens[$i+2][0] == T_STRING) {
-                        $functionName = $tokens[$i+2][1];
-                    } elseif ($tokens[$i+2] == '&' &&
-                             is_array($tokens[$i+3]) &&
-                             $tokens[$i+3][0] == T_STRING) {
-                        $functionName = $tokens[$i+3][1];
+                    $next = $this->getNextNonWhitespaceTokenPos($tokens, $i);
+
+                    if (!is_array($tokens[$next]) && $tokens[$next] == '&') {
+                        $next = $this->getNextNonWhitespaceTokenPos($tokens, $next);
+                    }
+
+                    if (is_array($tokens[$next]) &&
+                        $tokens[$next][0] == T_STRING) {
+                        $functionName = $tokens[$next][1];
                     } else {
                         $currentBlock = 'anonymous function';
                         $functionName = 'anonymous function';
@@ -451,7 +459,7 @@ class Analyser
                                 $this->isTestMethod($functionName, $visibility, $static, $tokens, $i)) {
                                 $this->count['testMethods']++;
                             } elseif (!$testClass) {
-                                $currentMethodData = ['ccn' => 1, 'lloc' => 0];
+                                $currentMethodData = array('ccn' => 1, 'lloc' => 0);
 
                                 if (!$static) {
                                     $this->count['nonStaticMethods']++;
@@ -634,7 +642,7 @@ class Analyser
             $className = $namespace . '\\' . $className;
         }
 
-        return $className;
+        return strtolower($className);
     }
 
     /**
@@ -657,8 +665,8 @@ class Analyser
                 break;
             }
 
-            if ($parent == 'PHPUnit_Framework_TestCase' ||
-                $parent == '\\PHPUnit_Framework_TestCase') {
+            if ($parent == 'phpunit_framework_testcase' ||
+                $parent == '\\phpunit_framework_testcase') {
                 $result = true;
                 break;
             }
@@ -675,7 +683,7 @@ class Analyser
         // Fallback: Treat the class as a test case class if the name
         // of the parent class ends with "TestCase".
         if (!$result) {
-            if (substr($this->classes[$className], -8) == 'TestCase') {
+            if (substr($this->classes[$className], -8) == 'testcase') {
                 $result = true;
             }
         }

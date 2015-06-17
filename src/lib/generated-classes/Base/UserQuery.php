@@ -36,15 +36,23 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUserQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method     ChildUserQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method     ChildUserQuery leftJoinPartnersRelatedByActorId($relationAlias = null) Adds a LEFT JOIN clause to the query using the PartnersRelatedByActorId relation
- * @method     ChildUserQuery rightJoinPartnersRelatedByActorId($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PartnersRelatedByActorId relation
- * @method     ChildUserQuery innerJoinPartnersRelatedByActorId($relationAlias = null) Adds a INNER JOIN clause to the query using the PartnersRelatedByActorId relation
+ * @method     ChildUserQuery leftJoinAssignedPrayerRelatedByAgentId($relationAlias = null) Adds a LEFT JOIN clause to the query using the AssignedPrayerRelatedByAgentId relation
+ * @method     ChildUserQuery rightJoinAssignedPrayerRelatedByAgentId($relationAlias = null) Adds a RIGHT JOIN clause to the query using the AssignedPrayerRelatedByAgentId relation
+ * @method     ChildUserQuery innerJoinAssignedPrayerRelatedByAgentId($relationAlias = null) Adds a INNER JOIN clause to the query using the AssignedPrayerRelatedByAgentId relation
+ *
+ * @method     ChildUserQuery leftJoinAssignedPrayerRelatedByPatientId($relationAlias = null) Adds a LEFT JOIN clause to the query using the AssignedPrayerRelatedByPatientId relation
+ * @method     ChildUserQuery rightJoinAssignedPrayerRelatedByPatientId($relationAlias = null) Adds a RIGHT JOIN clause to the query using the AssignedPrayerRelatedByPatientId relation
+ * @method     ChildUserQuery innerJoinAssignedPrayerRelatedByPatientId($relationAlias = null) Adds a INNER JOIN clause to the query using the AssignedPrayerRelatedByPatientId relation
+ *
+ * @method     ChildUserQuery leftJoinPartnersRelatedByAgentId($relationAlias = null) Adds a LEFT JOIN clause to the query using the PartnersRelatedByAgentId relation
+ * @method     ChildUserQuery rightJoinPartnersRelatedByAgentId($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PartnersRelatedByAgentId relation
+ * @method     ChildUserQuery innerJoinPartnersRelatedByAgentId($relationAlias = null) Adds a INNER JOIN clause to the query using the PartnersRelatedByAgentId relation
  *
  * @method     ChildUserQuery leftJoinPartnersRelatedByPatientId($relationAlias = null) Adds a LEFT JOIN clause to the query using the PartnersRelatedByPatientId relation
  * @method     ChildUserQuery rightJoinPartnersRelatedByPatientId($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PartnersRelatedByPatientId relation
  * @method     ChildUserQuery innerJoinPartnersRelatedByPatientId($relationAlias = null) Adds a INNER JOIN clause to the query using the PartnersRelatedByPatientId relation
  *
- * @method     \PartnersQuery endUse() Finalizes a secondary criteria and merges it with its primary Criteria
+ * @method     \AssignedPrayerQuery|\PartnersQuery endUse() Finalizes a secondary criteria and merges it with its primary Criteria
  *
  * @method     ChildUser findOne(ConnectionInterface $con = null) Return the first ChildUser matching the query
  * @method     ChildUser findOneOrCreate(ConnectionInterface $con = null) Return the first ChildUser matching the query, or a new ChildUser object populated from the query conditions when no match is found
@@ -450,40 +458,40 @@ abstract class UserQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query by a related \Partners object
+     * Filter the query by a related \AssignedPrayer object
      *
-     * @param \Partners|ObjectCollection $partners the related object to use as filter
+     * @param \AssignedPrayer|ObjectCollection $assignedPrayer the related object to use as filter
      * @param string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return ChildUserQuery The current query, for fluid interface
      */
-    public function filterByPartnersRelatedByActorId($partners, $comparison = null)
+    public function filterByAssignedPrayerRelatedByAgentId($assignedPrayer, $comparison = null)
     {
-        if ($partners instanceof \Partners) {
+        if ($assignedPrayer instanceof \AssignedPrayer) {
             return $this
-                ->addUsingAlias(UserTableMap::COL_ID, $partners->getActorId(), $comparison);
-        } elseif ($partners instanceof ObjectCollection) {
+                ->addUsingAlias(UserTableMap::COL_ID, $assignedPrayer->getAgentId(), $comparison);
+        } elseif ($assignedPrayer instanceof ObjectCollection) {
             return $this
-                ->usePartnersRelatedByActorIdQuery()
-                ->filterByPrimaryKeys($partners->getPrimaryKeys())
+                ->useAssignedPrayerRelatedByAgentIdQuery()
+                ->filterByPrimaryKeys($assignedPrayer->getPrimaryKeys())
                 ->endUse();
         } else {
-            throw new PropelException('filterByPartnersRelatedByActorId() only accepts arguments of type \Partners or Collection');
+            throw new PropelException('filterByAssignedPrayerRelatedByAgentId() only accepts arguments of type \AssignedPrayer or Collection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the PartnersRelatedByActorId relation
+     * Adds a JOIN clause to the query using the AssignedPrayerRelatedByAgentId relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return $this|ChildUserQuery The current query, for fluid interface
      */
-    public function joinPartnersRelatedByActorId($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinAssignedPrayerRelatedByAgentId($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('PartnersRelatedByActorId');
+        $relationMap = $tableMap->getRelation('AssignedPrayerRelatedByAgentId');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -498,14 +506,160 @@ abstract class UserQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'PartnersRelatedByActorId');
+            $this->addJoinObject($join, 'AssignedPrayerRelatedByAgentId');
         }
 
         return $this;
     }
 
     /**
-     * Use the PartnersRelatedByActorId relation Partners object
+     * Use the AssignedPrayerRelatedByAgentId relation AssignedPrayer object
+     *
+     * @see useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return \AssignedPrayerQuery A secondary query class using the current class as primary query
+     */
+    public function useAssignedPrayerRelatedByAgentIdQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinAssignedPrayerRelatedByAgentId($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'AssignedPrayerRelatedByAgentId', '\AssignedPrayerQuery');
+    }
+
+    /**
+     * Filter the query by a related \AssignedPrayer object
+     *
+     * @param \AssignedPrayer|ObjectCollection $assignedPrayer the related object to use as filter
+     * @param string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ChildUserQuery The current query, for fluid interface
+     */
+    public function filterByAssignedPrayerRelatedByPatientId($assignedPrayer, $comparison = null)
+    {
+        if ($assignedPrayer instanceof \AssignedPrayer) {
+            return $this
+                ->addUsingAlias(UserTableMap::COL_ID, $assignedPrayer->getPatientId(), $comparison);
+        } elseif ($assignedPrayer instanceof ObjectCollection) {
+            return $this
+                ->useAssignedPrayerRelatedByPatientIdQuery()
+                ->filterByPrimaryKeys($assignedPrayer->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByAssignedPrayerRelatedByPatientId() only accepts arguments of type \AssignedPrayer or Collection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the AssignedPrayerRelatedByPatientId relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return $this|ChildUserQuery The current query, for fluid interface
+     */
+    public function joinAssignedPrayerRelatedByPatientId($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('AssignedPrayerRelatedByPatientId');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'AssignedPrayerRelatedByPatientId');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the AssignedPrayerRelatedByPatientId relation AssignedPrayer object
+     *
+     * @see useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return \AssignedPrayerQuery A secondary query class using the current class as primary query
+     */
+    public function useAssignedPrayerRelatedByPatientIdQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinAssignedPrayerRelatedByPatientId($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'AssignedPrayerRelatedByPatientId', '\AssignedPrayerQuery');
+    }
+
+    /**
+     * Filter the query by a related \Partners object
+     *
+     * @param \Partners|ObjectCollection $partners the related object to use as filter
+     * @param string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ChildUserQuery The current query, for fluid interface
+     */
+    public function filterByPartnersRelatedByAgentId($partners, $comparison = null)
+    {
+        if ($partners instanceof \Partners) {
+            return $this
+                ->addUsingAlias(UserTableMap::COL_ID, $partners->getAgentId(), $comparison);
+        } elseif ($partners instanceof ObjectCollection) {
+            return $this
+                ->usePartnersRelatedByAgentIdQuery()
+                ->filterByPrimaryKeys($partners->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByPartnersRelatedByAgentId() only accepts arguments of type \Partners or Collection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the PartnersRelatedByAgentId relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return $this|ChildUserQuery The current query, for fluid interface
+     */
+    public function joinPartnersRelatedByAgentId($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('PartnersRelatedByAgentId');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'PartnersRelatedByAgentId');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the PartnersRelatedByAgentId relation Partners object
      *
      * @see useQuery()
      *
@@ -515,11 +669,11 @@ abstract class UserQuery extends ModelCriteria
      *
      * @return \PartnersQuery A secondary query class using the current class as primary query
      */
-    public function usePartnersRelatedByActorIdQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function usePartnersRelatedByAgentIdQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinPartnersRelatedByActorId($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'PartnersRelatedByActorId', '\PartnersQuery');
+            ->joinPartnersRelatedByAgentId($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'PartnersRelatedByAgentId', '\PartnersQuery');
     }
 
     /**
@@ -593,6 +747,40 @@ abstract class UserQuery extends ModelCriteria
         return $this
             ->joinPartnersRelatedByPatientId($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'PartnersRelatedByPatientId', '\PartnersQuery');
+    }
+
+    /**
+     * Filter the query by a related User object
+     * using the partners table as cross reference
+     *
+     * @param User $user the related object to use as filter
+     * @param string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ChildUserQuery The current query, for fluid interface
+     */
+    public function filterBypatient($user, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->usePartnersRelatedByAgentIdQuery()
+            ->filterBypatient($user, $comparison)
+            ->endUse();
+    }
+
+    /**
+     * Filter the query by a related User object
+     * using the partners table as cross reference
+     *
+     * @param User $user the related object to use as filter
+     * @param string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ChildUserQuery The current query, for fluid interface
+     */
+    public function filterByagent($user, $comparison = Criteria::EQUAL)
+    {
+        return $this
+            ->usePartnersRelatedByPatientIdQuery()
+            ->filterByagent($user, $comparison)
+            ->endUse();
     }
 
     /**

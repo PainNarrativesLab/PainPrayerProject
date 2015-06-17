@@ -2,6 +2,8 @@
 
 namespace Base;
 
+use \AssignedPrayer as ChildAssignedPrayer;
+use \AssignedPrayerQuery as ChildAssignedPrayerQuery;
 use \Partners as ChildPartners;
 use \PartnersQuery as ChildPartnersQuery;
 use \User as ChildUser;
@@ -96,16 +98,48 @@ abstract class User implements ActiveRecordInterface
     protected $updated_at;
 
     /**
+     * @var        ObjectCollection|ChildAssignedPrayer[] Collection to store aggregation of ChildAssignedPrayer objects.
+     */
+    protected $collAssignedPrayersRelatedByAgentId;
+    protected $collAssignedPrayersRelatedByAgentIdPartial;
+
+    /**
+     * @var        ObjectCollection|ChildAssignedPrayer[] Collection to store aggregation of ChildAssignedPrayer objects.
+     */
+    protected $collAssignedPrayersRelatedByPatientId;
+    protected $collAssignedPrayersRelatedByPatientIdPartial;
+
+    /**
      * @var        ObjectCollection|ChildPartners[] Collection to store aggregation of ChildPartners objects.
      */
-    protected $collPartnerssRelatedByActorId;
-    protected $collPartnerssRelatedByActorIdPartial;
+    protected $collPartnerssRelatedByAgentId;
+    protected $collPartnerssRelatedByAgentIdPartial;
 
     /**
      * @var        ObjectCollection|ChildPartners[] Collection to store aggregation of ChildPartners objects.
      */
     protected $collPartnerssRelatedByPatientId;
     protected $collPartnerssRelatedByPatientIdPartial;
+
+    /**
+     * @var        ObjectCollection|ChildUser[] Cross Collection to store aggregation of ChildUser objects.
+     */
+    protected $collpatients;
+
+    /**
+     * @var bool
+     */
+    protected $collpatientsPartial;
+
+    /**
+     * @var        ObjectCollection|ChildUser[] Cross Collection to store aggregation of ChildUser objects.
+     */
+    protected $collagents;
+
+    /**
+     * @var bool
+     */
+    protected $collagentsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -117,9 +151,33 @@ abstract class User implements ActiveRecordInterface
 
     /**
      * An array of objects scheduled for deletion.
+     * @var ObjectCollection|ChildUser[]
+     */
+    protected $patientsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var ObjectCollection|ChildUser[]
+     */
+    protected $agentsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var ObjectCollection|ChildAssignedPrayer[]
+     */
+    protected $assignedPrayersRelatedByAgentIdScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var ObjectCollection|ChildAssignedPrayer[]
+     */
+    protected $assignedPrayersRelatedByPatientIdScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
      * @var ObjectCollection|ChildPartners[]
      */
-    protected $partnerssRelatedByActorIdScheduledForDeletion = null;
+    protected $partnerssRelatedByAgentIdScheduledForDeletion = null;
 
     /**
      * An array of objects scheduled for deletion.
@@ -639,10 +697,16 @@ abstract class User implements ActiveRecordInterface
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->collPartnerssRelatedByActorId = null;
+            $this->collAssignedPrayersRelatedByAgentId = null;
+
+            $this->collAssignedPrayersRelatedByPatientId = null;
+
+            $this->collPartnerssRelatedByAgentId = null;
 
             $this->collPartnerssRelatedByPatientId = null;
 
+            $this->collpatients = null;
+            $this->collagents = null;
         } // if (deep)
     }
 
@@ -765,17 +829,109 @@ abstract class User implements ActiveRecordInterface
                 $this->resetModified();
             }
 
-            if ($this->partnerssRelatedByActorIdScheduledForDeletion !== null) {
-                if (!$this->partnerssRelatedByActorIdScheduledForDeletion->isEmpty()) {
+            if ($this->patientsScheduledForDeletion !== null) {
+                if (!$this->patientsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    foreach ($this->patientsScheduledForDeletion as $entry) {
+                        $entryPk = [];
+
+                        $entryPk[0] = $this->getId();
+                        $entryPk[1] = $entry->getId();
+                        $pks[] = $entryPk;
+                    }
+
                     \PartnersQuery::create()
-                        ->filterByPrimaryKeys($this->partnerssRelatedByActorIdScheduledForDeletion->getPrimaryKeys(false))
+                        ->filterByPrimaryKeys($pks)
                         ->delete($con);
-                    $this->partnerssRelatedByActorIdScheduledForDeletion = null;
+
+                    $this->patientsScheduledForDeletion = null;
+                }
+
+            }
+
+            if ($this->collpatients) {
+                foreach ($this->collpatients as $patient) {
+                    if (!$patient->isDeleted() && ($patient->isNew() || $patient->isModified())) {
+                        $patient->save($con);
+                    }
                 }
             }
 
-            if ($this->collPartnerssRelatedByActorId !== null) {
-                foreach ($this->collPartnerssRelatedByActorId as $referrerFK) {
+
+            if ($this->agentsScheduledForDeletion !== null) {
+                if (!$this->agentsScheduledForDeletion->isEmpty()) {
+                    $pks = array();
+                    foreach ($this->agentsScheduledForDeletion as $entry) {
+                        $entryPk = [];
+
+                        $entryPk[1] = $this->getId();
+                        $entryPk[0] = $entry->getId();
+                        $pks[] = $entryPk;
+                    }
+
+                    \PartnersQuery::create()
+                        ->filterByPrimaryKeys($pks)
+                        ->delete($con);
+
+                    $this->agentsScheduledForDeletion = null;
+                }
+
+            }
+
+            if ($this->collagents) {
+                foreach ($this->collagents as $agent) {
+                    if (!$agent->isDeleted() && ($agent->isNew() || $agent->isModified())) {
+                        $agent->save($con);
+                    }
+                }
+            }
+
+
+            if ($this->assignedPrayersRelatedByAgentIdScheduledForDeletion !== null) {
+                if (!$this->assignedPrayersRelatedByAgentIdScheduledForDeletion->isEmpty()) {
+                    \AssignedPrayerQuery::create()
+                        ->filterByPrimaryKeys($this->assignedPrayersRelatedByAgentIdScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->assignedPrayersRelatedByAgentIdScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collAssignedPrayersRelatedByAgentId !== null) {
+                foreach ($this->collAssignedPrayersRelatedByAgentId as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->assignedPrayersRelatedByPatientIdScheduledForDeletion !== null) {
+                if (!$this->assignedPrayersRelatedByPatientIdScheduledForDeletion->isEmpty()) {
+                    \AssignedPrayerQuery::create()
+                        ->filterByPrimaryKeys($this->assignedPrayersRelatedByPatientIdScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->assignedPrayersRelatedByPatientIdScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collAssignedPrayersRelatedByPatientId !== null) {
+                foreach ($this->collAssignedPrayersRelatedByPatientId as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->partnerssRelatedByAgentIdScheduledForDeletion !== null) {
+                if (!$this->partnerssRelatedByAgentIdScheduledForDeletion->isEmpty()) {
+                    \PartnersQuery::create()
+                        ->filterByPrimaryKeys($this->partnerssRelatedByAgentIdScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->partnerssRelatedByAgentIdScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collPartnerssRelatedByAgentId !== null) {
+                foreach ($this->collPartnerssRelatedByAgentId as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -999,7 +1155,37 @@ abstract class User implements ActiveRecordInterface
         }
 
         if ($includeForeignObjects) {
-            if (null !== $this->collPartnerssRelatedByActorId) {
+            if (null !== $this->collAssignedPrayersRelatedByAgentId) {
+
+                switch ($keyType) {
+                    case TableMap::TYPE_CAMELNAME:
+                        $key = 'assignedPrayers';
+                        break;
+                    case TableMap::TYPE_FIELDNAME:
+                        $key = 'assigned_prayers';
+                        break;
+                    default:
+                        $key = 'AssignedPrayers';
+                }
+
+                $result[$key] = $this->collAssignedPrayersRelatedByAgentId->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collAssignedPrayersRelatedByPatientId) {
+
+                switch ($keyType) {
+                    case TableMap::TYPE_CAMELNAME:
+                        $key = 'assignedPrayers';
+                        break;
+                    case TableMap::TYPE_FIELDNAME:
+                        $key = 'assigned_prayers';
+                        break;
+                    default:
+                        $key = 'AssignedPrayers';
+                }
+
+                $result[$key] = $this->collAssignedPrayersRelatedByPatientId->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collPartnerssRelatedByAgentId) {
 
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
@@ -1012,7 +1198,7 @@ abstract class User implements ActiveRecordInterface
                         $key = 'Partnerss';
                 }
 
-                $result[$key] = $this->collPartnerssRelatedByActorId->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+                $result[$key] = $this->collPartnerssRelatedByAgentId->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
             if (null !== $this->collPartnerssRelatedByPatientId) {
 
@@ -1279,9 +1465,21 @@ abstract class User implements ActiveRecordInterface
             // the getter/setter methods for fkey referrer objects.
             $copyObj->setNew(false);
 
-            foreach ($this->getPartnerssRelatedByActorId() as $relObj) {
+            foreach ($this->getAssignedPrayersRelatedByAgentId() as $relObj) {
                 if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
-                    $copyObj->addPartnersRelatedByActorId($relObj->copy($deepCopy));
+                    $copyObj->addAssignedPrayerRelatedByAgentId($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getAssignedPrayersRelatedByPatientId() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addAssignedPrayerRelatedByPatientId($relObj->copy($deepCopy));
+                }
+            }
+
+            foreach ($this->getPartnerssRelatedByAgentId() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addPartnersRelatedByAgentId($relObj->copy($deepCopy));
                 }
             }
 
@@ -1332,8 +1530,14 @@ abstract class User implements ActiveRecordInterface
      */
     public function initRelation($relationName)
     {
-        if ('PartnersRelatedByActorId' == $relationName) {
-            return $this->initPartnerssRelatedByActorId();
+        if ('AssignedPrayerRelatedByAgentId' == $relationName) {
+            return $this->initAssignedPrayersRelatedByAgentId();
+        }
+        if ('AssignedPrayerRelatedByPatientId' == $relationName) {
+            return $this->initAssignedPrayersRelatedByPatientId();
+        }
+        if ('PartnersRelatedByAgentId' == $relationName) {
+            return $this->initPartnerssRelatedByAgentId();
         }
         if ('PartnersRelatedByPatientId' == $relationName) {
             return $this->initPartnerssRelatedByPatientId();
@@ -1341,31 +1545,31 @@ abstract class User implements ActiveRecordInterface
     }
 
     /**
-     * Clears out the collPartnerssRelatedByActorId collection
+     * Clears out the collAssignedPrayersRelatedByAgentId collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
      * @return void
-     * @see        addPartnerssRelatedByActorId()
+     * @see        addAssignedPrayersRelatedByAgentId()
      */
-    public function clearPartnerssRelatedByActorId()
+    public function clearAssignedPrayersRelatedByAgentId()
     {
-        $this->collPartnerssRelatedByActorId = null; // important to set this to NULL since that means it is uninitialized
+        $this->collAssignedPrayersRelatedByAgentId = null; // important to set this to NULL since that means it is uninitialized
     }
 
     /**
-     * Reset is the collPartnerssRelatedByActorId collection loaded partially.
+     * Reset is the collAssignedPrayersRelatedByAgentId collection loaded partially.
      */
-    public function resetPartialPartnerssRelatedByActorId($v = true)
+    public function resetPartialAssignedPrayersRelatedByAgentId($v = true)
     {
-        $this->collPartnerssRelatedByActorIdPartial = $v;
+        $this->collAssignedPrayersRelatedByAgentIdPartial = $v;
     }
 
     /**
-     * Initializes the collPartnerssRelatedByActorId collection.
+     * Initializes the collAssignedPrayersRelatedByAgentId collection.
      *
-     * By default this just sets the collPartnerssRelatedByActorId collection to an empty array (like clearcollPartnerssRelatedByActorId());
+     * By default this just sets the collAssignedPrayersRelatedByAgentId collection to an empty array (like clearcollAssignedPrayersRelatedByAgentId());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
@@ -1374,13 +1578,449 @@ abstract class User implements ActiveRecordInterface
      *
      * @return void
      */
-    public function initPartnerssRelatedByActorId($overrideExisting = true)
+    public function initAssignedPrayersRelatedByAgentId($overrideExisting = true)
     {
-        if (null !== $this->collPartnerssRelatedByActorId && !$overrideExisting) {
+        if (null !== $this->collAssignedPrayersRelatedByAgentId && !$overrideExisting) {
             return;
         }
-        $this->collPartnerssRelatedByActorId = new ObjectCollection();
-        $this->collPartnerssRelatedByActorId->setModel('\Partners');
+        $this->collAssignedPrayersRelatedByAgentId = new ObjectCollection();
+        $this->collAssignedPrayersRelatedByAgentId->setModel('\AssignedPrayer');
+    }
+
+    /**
+     * Gets an array of ChildAssignedPrayer objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ChildUser is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @return ObjectCollection|ChildAssignedPrayer[] List of ChildAssignedPrayer objects
+     * @throws PropelException
+     */
+    public function getAssignedPrayersRelatedByAgentId(Criteria $criteria = null, ConnectionInterface $con = null)
+    {
+        $partial = $this->collAssignedPrayersRelatedByAgentIdPartial && !$this->isNew();
+        if (null === $this->collAssignedPrayersRelatedByAgentId || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collAssignedPrayersRelatedByAgentId) {
+                // return empty collection
+                $this->initAssignedPrayersRelatedByAgentId();
+            } else {
+                $collAssignedPrayersRelatedByAgentId = ChildAssignedPrayerQuery::create(null, $criteria)
+                    ->filterByagent($this)
+                    ->find($con);
+
+                if (null !== $criteria) {
+                    if (false !== $this->collAssignedPrayersRelatedByAgentIdPartial && count($collAssignedPrayersRelatedByAgentId)) {
+                        $this->initAssignedPrayersRelatedByAgentId(false);
+
+                        foreach ($collAssignedPrayersRelatedByAgentId as $obj) {
+                            if (false == $this->collAssignedPrayersRelatedByAgentId->contains($obj)) {
+                                $this->collAssignedPrayersRelatedByAgentId->append($obj);
+                            }
+                        }
+
+                        $this->collAssignedPrayersRelatedByAgentIdPartial = true;
+                    }
+
+                    return $collAssignedPrayersRelatedByAgentId;
+                }
+
+                if ($partial && $this->collAssignedPrayersRelatedByAgentId) {
+                    foreach ($this->collAssignedPrayersRelatedByAgentId as $obj) {
+                        if ($obj->isNew()) {
+                            $collAssignedPrayersRelatedByAgentId[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collAssignedPrayersRelatedByAgentId = $collAssignedPrayersRelatedByAgentId;
+                $this->collAssignedPrayersRelatedByAgentIdPartial = false;
+            }
+        }
+
+        return $this->collAssignedPrayersRelatedByAgentId;
+    }
+
+    /**
+     * Sets a collection of ChildAssignedPrayer objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param      Collection $assignedPrayersRelatedByAgentId A Propel collection.
+     * @param      ConnectionInterface $con Optional connection object
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function setAssignedPrayersRelatedByAgentId(Collection $assignedPrayersRelatedByAgentId, ConnectionInterface $con = null)
+    {
+        /** @var ChildAssignedPrayer[] $assignedPrayersRelatedByAgentIdToDelete */
+        $assignedPrayersRelatedByAgentIdToDelete = $this->getAssignedPrayersRelatedByAgentId(new Criteria(), $con)->diff($assignedPrayersRelatedByAgentId);
+
+
+        $this->assignedPrayersRelatedByAgentIdScheduledForDeletion = $assignedPrayersRelatedByAgentIdToDelete;
+
+        foreach ($assignedPrayersRelatedByAgentIdToDelete as $assignedPrayerRelatedByAgentIdRemoved) {
+            $assignedPrayerRelatedByAgentIdRemoved->setagent(null);
+        }
+
+        $this->collAssignedPrayersRelatedByAgentId = null;
+        foreach ($assignedPrayersRelatedByAgentId as $assignedPrayerRelatedByAgentId) {
+            $this->addAssignedPrayerRelatedByAgentId($assignedPrayerRelatedByAgentId);
+        }
+
+        $this->collAssignedPrayersRelatedByAgentId = $assignedPrayersRelatedByAgentId;
+        $this->collAssignedPrayersRelatedByAgentIdPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related AssignedPrayer objects.
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct
+     * @param      ConnectionInterface $con
+     * @return int             Count of related AssignedPrayer objects.
+     * @throws PropelException
+     */
+    public function countAssignedPrayersRelatedByAgentId(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    {
+        $partial = $this->collAssignedPrayersRelatedByAgentIdPartial && !$this->isNew();
+        if (null === $this->collAssignedPrayersRelatedByAgentId || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collAssignedPrayersRelatedByAgentId) {
+                return 0;
+            }
+
+            if ($partial && !$criteria) {
+                return count($this->getAssignedPrayersRelatedByAgentId());
+            }
+
+            $query = ChildAssignedPrayerQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByagent($this)
+                ->count($con);
+        }
+
+        return count($this->collAssignedPrayersRelatedByAgentId);
+    }
+
+    /**
+     * Method called to associate a ChildAssignedPrayer object to this object
+     * through the ChildAssignedPrayer foreign key attribute.
+     *
+     * @param  ChildAssignedPrayer $l ChildAssignedPrayer
+     * @return $this|\User The current object (for fluent API support)
+     */
+    public function addAssignedPrayerRelatedByAgentId(ChildAssignedPrayer $l)
+    {
+        if ($this->collAssignedPrayersRelatedByAgentId === null) {
+            $this->initAssignedPrayersRelatedByAgentId();
+            $this->collAssignedPrayersRelatedByAgentIdPartial = true;
+        }
+
+        if (!$this->collAssignedPrayersRelatedByAgentId->contains($l)) {
+            $this->doAddAssignedPrayerRelatedByAgentId($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param ChildAssignedPrayer $assignedPrayerRelatedByAgentId The ChildAssignedPrayer object to add.
+     */
+    protected function doAddAssignedPrayerRelatedByAgentId(ChildAssignedPrayer $assignedPrayerRelatedByAgentId)
+    {
+        $this->collAssignedPrayersRelatedByAgentId[]= $assignedPrayerRelatedByAgentId;
+        $assignedPrayerRelatedByAgentId->setagent($this);
+    }
+
+    /**
+     * @param  ChildAssignedPrayer $assignedPrayerRelatedByAgentId The ChildAssignedPrayer object to remove.
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function removeAssignedPrayerRelatedByAgentId(ChildAssignedPrayer $assignedPrayerRelatedByAgentId)
+    {
+        if ($this->getAssignedPrayersRelatedByAgentId()->contains($assignedPrayerRelatedByAgentId)) {
+            $pos = $this->collAssignedPrayersRelatedByAgentId->search($assignedPrayerRelatedByAgentId);
+            $this->collAssignedPrayersRelatedByAgentId->remove($pos);
+            if (null === $this->assignedPrayersRelatedByAgentIdScheduledForDeletion) {
+                $this->assignedPrayersRelatedByAgentIdScheduledForDeletion = clone $this->collAssignedPrayersRelatedByAgentId;
+                $this->assignedPrayersRelatedByAgentIdScheduledForDeletion->clear();
+            }
+            $this->assignedPrayersRelatedByAgentIdScheduledForDeletion[]= clone $assignedPrayerRelatedByAgentId;
+            $assignedPrayerRelatedByAgentId->setagent(null);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Clears out the collAssignedPrayersRelatedByPatientId collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addAssignedPrayersRelatedByPatientId()
+     */
+    public function clearAssignedPrayersRelatedByPatientId()
+    {
+        $this->collAssignedPrayersRelatedByPatientId = null; // important to set this to NULL since that means it is uninitialized
+    }
+
+    /**
+     * Reset is the collAssignedPrayersRelatedByPatientId collection loaded partially.
+     */
+    public function resetPartialAssignedPrayersRelatedByPatientId($v = true)
+    {
+        $this->collAssignedPrayersRelatedByPatientIdPartial = $v;
+    }
+
+    /**
+     * Initializes the collAssignedPrayersRelatedByPatientId collection.
+     *
+     * By default this just sets the collAssignedPrayersRelatedByPatientId collection to an empty array (like clearcollAssignedPrayersRelatedByPatientId());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param      boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initAssignedPrayersRelatedByPatientId($overrideExisting = true)
+    {
+        if (null !== $this->collAssignedPrayersRelatedByPatientId && !$overrideExisting) {
+            return;
+        }
+        $this->collAssignedPrayersRelatedByPatientId = new ObjectCollection();
+        $this->collAssignedPrayersRelatedByPatientId->setModel('\AssignedPrayer');
+    }
+
+    /**
+     * Gets an array of ChildAssignedPrayer objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ChildUser is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @return ObjectCollection|ChildAssignedPrayer[] List of ChildAssignedPrayer objects
+     * @throws PropelException
+     */
+    public function getAssignedPrayersRelatedByPatientId(Criteria $criteria = null, ConnectionInterface $con = null)
+    {
+        $partial = $this->collAssignedPrayersRelatedByPatientIdPartial && !$this->isNew();
+        if (null === $this->collAssignedPrayersRelatedByPatientId || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collAssignedPrayersRelatedByPatientId) {
+                // return empty collection
+                $this->initAssignedPrayersRelatedByPatientId();
+            } else {
+                $collAssignedPrayersRelatedByPatientId = ChildAssignedPrayerQuery::create(null, $criteria)
+                    ->filterBypatient($this)
+                    ->find($con);
+
+                if (null !== $criteria) {
+                    if (false !== $this->collAssignedPrayersRelatedByPatientIdPartial && count($collAssignedPrayersRelatedByPatientId)) {
+                        $this->initAssignedPrayersRelatedByPatientId(false);
+
+                        foreach ($collAssignedPrayersRelatedByPatientId as $obj) {
+                            if (false == $this->collAssignedPrayersRelatedByPatientId->contains($obj)) {
+                                $this->collAssignedPrayersRelatedByPatientId->append($obj);
+                            }
+                        }
+
+                        $this->collAssignedPrayersRelatedByPatientIdPartial = true;
+                    }
+
+                    return $collAssignedPrayersRelatedByPatientId;
+                }
+
+                if ($partial && $this->collAssignedPrayersRelatedByPatientId) {
+                    foreach ($this->collAssignedPrayersRelatedByPatientId as $obj) {
+                        if ($obj->isNew()) {
+                            $collAssignedPrayersRelatedByPatientId[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collAssignedPrayersRelatedByPatientId = $collAssignedPrayersRelatedByPatientId;
+                $this->collAssignedPrayersRelatedByPatientIdPartial = false;
+            }
+        }
+
+        return $this->collAssignedPrayersRelatedByPatientId;
+    }
+
+    /**
+     * Sets a collection of ChildAssignedPrayer objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param      Collection $assignedPrayersRelatedByPatientId A Propel collection.
+     * @param      ConnectionInterface $con Optional connection object
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function setAssignedPrayersRelatedByPatientId(Collection $assignedPrayersRelatedByPatientId, ConnectionInterface $con = null)
+    {
+        /** @var ChildAssignedPrayer[] $assignedPrayersRelatedByPatientIdToDelete */
+        $assignedPrayersRelatedByPatientIdToDelete = $this->getAssignedPrayersRelatedByPatientId(new Criteria(), $con)->diff($assignedPrayersRelatedByPatientId);
+
+
+        $this->assignedPrayersRelatedByPatientIdScheduledForDeletion = $assignedPrayersRelatedByPatientIdToDelete;
+
+        foreach ($assignedPrayersRelatedByPatientIdToDelete as $assignedPrayerRelatedByPatientIdRemoved) {
+            $assignedPrayerRelatedByPatientIdRemoved->setpatient(null);
+        }
+
+        $this->collAssignedPrayersRelatedByPatientId = null;
+        foreach ($assignedPrayersRelatedByPatientId as $assignedPrayerRelatedByPatientId) {
+            $this->addAssignedPrayerRelatedByPatientId($assignedPrayerRelatedByPatientId);
+        }
+
+        $this->collAssignedPrayersRelatedByPatientId = $assignedPrayersRelatedByPatientId;
+        $this->collAssignedPrayersRelatedByPatientIdPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related AssignedPrayer objects.
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct
+     * @param      ConnectionInterface $con
+     * @return int             Count of related AssignedPrayer objects.
+     * @throws PropelException
+     */
+    public function countAssignedPrayersRelatedByPatientId(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    {
+        $partial = $this->collAssignedPrayersRelatedByPatientIdPartial && !$this->isNew();
+        if (null === $this->collAssignedPrayersRelatedByPatientId || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collAssignedPrayersRelatedByPatientId) {
+                return 0;
+            }
+
+            if ($partial && !$criteria) {
+                return count($this->getAssignedPrayersRelatedByPatientId());
+            }
+
+            $query = ChildAssignedPrayerQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterBypatient($this)
+                ->count($con);
+        }
+
+        return count($this->collAssignedPrayersRelatedByPatientId);
+    }
+
+    /**
+     * Method called to associate a ChildAssignedPrayer object to this object
+     * through the ChildAssignedPrayer foreign key attribute.
+     *
+     * @param  ChildAssignedPrayer $l ChildAssignedPrayer
+     * @return $this|\User The current object (for fluent API support)
+     */
+    public function addAssignedPrayerRelatedByPatientId(ChildAssignedPrayer $l)
+    {
+        if ($this->collAssignedPrayersRelatedByPatientId === null) {
+            $this->initAssignedPrayersRelatedByPatientId();
+            $this->collAssignedPrayersRelatedByPatientIdPartial = true;
+        }
+
+        if (!$this->collAssignedPrayersRelatedByPatientId->contains($l)) {
+            $this->doAddAssignedPrayerRelatedByPatientId($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param ChildAssignedPrayer $assignedPrayerRelatedByPatientId The ChildAssignedPrayer object to add.
+     */
+    protected function doAddAssignedPrayerRelatedByPatientId(ChildAssignedPrayer $assignedPrayerRelatedByPatientId)
+    {
+        $this->collAssignedPrayersRelatedByPatientId[]= $assignedPrayerRelatedByPatientId;
+        $assignedPrayerRelatedByPatientId->setpatient($this);
+    }
+
+    /**
+     * @param  ChildAssignedPrayer $assignedPrayerRelatedByPatientId The ChildAssignedPrayer object to remove.
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function removeAssignedPrayerRelatedByPatientId(ChildAssignedPrayer $assignedPrayerRelatedByPatientId)
+    {
+        if ($this->getAssignedPrayersRelatedByPatientId()->contains($assignedPrayerRelatedByPatientId)) {
+            $pos = $this->collAssignedPrayersRelatedByPatientId->search($assignedPrayerRelatedByPatientId);
+            $this->collAssignedPrayersRelatedByPatientId->remove($pos);
+            if (null === $this->assignedPrayersRelatedByPatientIdScheduledForDeletion) {
+                $this->assignedPrayersRelatedByPatientIdScheduledForDeletion = clone $this->collAssignedPrayersRelatedByPatientId;
+                $this->assignedPrayersRelatedByPatientIdScheduledForDeletion->clear();
+            }
+            $this->assignedPrayersRelatedByPatientIdScheduledForDeletion[]= clone $assignedPrayerRelatedByPatientId;
+            $assignedPrayerRelatedByPatientId->setpatient(null);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Clears out the collPartnerssRelatedByAgentId collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addPartnerssRelatedByAgentId()
+     */
+    public function clearPartnerssRelatedByAgentId()
+    {
+        $this->collPartnerssRelatedByAgentId = null; // important to set this to NULL since that means it is uninitialized
+    }
+
+    /**
+     * Reset is the collPartnerssRelatedByAgentId collection loaded partially.
+     */
+    public function resetPartialPartnerssRelatedByAgentId($v = true)
+    {
+        $this->collPartnerssRelatedByAgentIdPartial = $v;
+    }
+
+    /**
+     * Initializes the collPartnerssRelatedByAgentId collection.
+     *
+     * By default this just sets the collPartnerssRelatedByAgentId collection to an empty array (like clearcollPartnerssRelatedByAgentId());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param      boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initPartnerssRelatedByAgentId($overrideExisting = true)
+    {
+        if (null !== $this->collPartnerssRelatedByAgentId && !$overrideExisting) {
+            return;
+        }
+        $this->collPartnerssRelatedByAgentId = new ObjectCollection();
+        $this->collPartnerssRelatedByAgentId->setModel('\Partners');
     }
 
     /**
@@ -1397,48 +2037,48 @@ abstract class User implements ActiveRecordInterface
      * @return ObjectCollection|ChildPartners[] List of ChildPartners objects
      * @throws PropelException
      */
-    public function getPartnerssRelatedByActorId(Criteria $criteria = null, ConnectionInterface $con = null)
+    public function getPartnerssRelatedByAgentId(Criteria $criteria = null, ConnectionInterface $con = null)
     {
-        $partial = $this->collPartnerssRelatedByActorIdPartial && !$this->isNew();
-        if (null === $this->collPartnerssRelatedByActorId || null !== $criteria  || $partial) {
-            if ($this->isNew() && null === $this->collPartnerssRelatedByActorId) {
+        $partial = $this->collPartnerssRelatedByAgentIdPartial && !$this->isNew();
+        if (null === $this->collPartnerssRelatedByAgentId || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collPartnerssRelatedByAgentId) {
                 // return empty collection
-                $this->initPartnerssRelatedByActorId();
+                $this->initPartnerssRelatedByAgentId();
             } else {
-                $collPartnerssRelatedByActorId = ChildPartnersQuery::create(null, $criteria)
-                    ->filterByactor($this)
+                $collPartnerssRelatedByAgentId = ChildPartnersQuery::create(null, $criteria)
+                    ->filterByagent($this)
                     ->find($con);
 
                 if (null !== $criteria) {
-                    if (false !== $this->collPartnerssRelatedByActorIdPartial && count($collPartnerssRelatedByActorId)) {
-                        $this->initPartnerssRelatedByActorId(false);
+                    if (false !== $this->collPartnerssRelatedByAgentIdPartial && count($collPartnerssRelatedByAgentId)) {
+                        $this->initPartnerssRelatedByAgentId(false);
 
-                        foreach ($collPartnerssRelatedByActorId as $obj) {
-                            if (false == $this->collPartnerssRelatedByActorId->contains($obj)) {
-                                $this->collPartnerssRelatedByActorId->append($obj);
+                        foreach ($collPartnerssRelatedByAgentId as $obj) {
+                            if (false == $this->collPartnerssRelatedByAgentId->contains($obj)) {
+                                $this->collPartnerssRelatedByAgentId->append($obj);
                             }
                         }
 
-                        $this->collPartnerssRelatedByActorIdPartial = true;
+                        $this->collPartnerssRelatedByAgentIdPartial = true;
                     }
 
-                    return $collPartnerssRelatedByActorId;
+                    return $collPartnerssRelatedByAgentId;
                 }
 
-                if ($partial && $this->collPartnerssRelatedByActorId) {
-                    foreach ($this->collPartnerssRelatedByActorId as $obj) {
+                if ($partial && $this->collPartnerssRelatedByAgentId) {
+                    foreach ($this->collPartnerssRelatedByAgentId as $obj) {
                         if ($obj->isNew()) {
-                            $collPartnerssRelatedByActorId[] = $obj;
+                            $collPartnerssRelatedByAgentId[] = $obj;
                         }
                     }
                 }
 
-                $this->collPartnerssRelatedByActorId = $collPartnerssRelatedByActorId;
-                $this->collPartnerssRelatedByActorIdPartial = false;
+                $this->collPartnerssRelatedByAgentId = $collPartnerssRelatedByAgentId;
+                $this->collPartnerssRelatedByAgentIdPartial = false;
             }
         }
 
-        return $this->collPartnerssRelatedByActorId;
+        return $this->collPartnerssRelatedByAgentId;
     }
 
     /**
@@ -1447,32 +2087,32 @@ abstract class User implements ActiveRecordInterface
      * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
      * and new objects from the given Propel collection.
      *
-     * @param      Collection $partnerssRelatedByActorId A Propel collection.
+     * @param      Collection $partnerssRelatedByAgentId A Propel collection.
      * @param      ConnectionInterface $con Optional connection object
      * @return $this|ChildUser The current object (for fluent API support)
      */
-    public function setPartnerssRelatedByActorId(Collection $partnerssRelatedByActorId, ConnectionInterface $con = null)
+    public function setPartnerssRelatedByAgentId(Collection $partnerssRelatedByAgentId, ConnectionInterface $con = null)
     {
-        /** @var ChildPartners[] $partnerssRelatedByActorIdToDelete */
-        $partnerssRelatedByActorIdToDelete = $this->getPartnerssRelatedByActorId(new Criteria(), $con)->diff($partnerssRelatedByActorId);
+        /** @var ChildPartners[] $partnerssRelatedByAgentIdToDelete */
+        $partnerssRelatedByAgentIdToDelete = $this->getPartnerssRelatedByAgentId(new Criteria(), $con)->diff($partnerssRelatedByAgentId);
 
 
         //since at least one column in the foreign key is at the same time a PK
         //we can not just set a PK to NULL in the lines below. We have to store
         //a backup of all values, so we are able to manipulate these items based on the onDelete value later.
-        $this->partnerssRelatedByActorIdScheduledForDeletion = clone $partnerssRelatedByActorIdToDelete;
+        $this->partnerssRelatedByAgentIdScheduledForDeletion = clone $partnerssRelatedByAgentIdToDelete;
 
-        foreach ($partnerssRelatedByActorIdToDelete as $partnersRelatedByActorIdRemoved) {
-            $partnersRelatedByActorIdRemoved->setactor(null);
+        foreach ($partnerssRelatedByAgentIdToDelete as $partnersRelatedByAgentIdRemoved) {
+            $partnersRelatedByAgentIdRemoved->setagent(null);
         }
 
-        $this->collPartnerssRelatedByActorId = null;
-        foreach ($partnerssRelatedByActorId as $partnersRelatedByActorId) {
-            $this->addPartnersRelatedByActorId($partnersRelatedByActorId);
+        $this->collPartnerssRelatedByAgentId = null;
+        foreach ($partnerssRelatedByAgentId as $partnersRelatedByAgentId) {
+            $this->addPartnersRelatedByAgentId($partnersRelatedByAgentId);
         }
 
-        $this->collPartnerssRelatedByActorId = $partnerssRelatedByActorId;
-        $this->collPartnerssRelatedByActorIdPartial = false;
+        $this->collPartnerssRelatedByAgentId = $partnerssRelatedByAgentId;
+        $this->collPartnerssRelatedByAgentIdPartial = false;
 
         return $this;
     }
@@ -1486,16 +2126,16 @@ abstract class User implements ActiveRecordInterface
      * @return int             Count of related Partners objects.
      * @throws PropelException
      */
-    public function countPartnerssRelatedByActorId(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    public function countPartnerssRelatedByAgentId(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
     {
-        $partial = $this->collPartnerssRelatedByActorIdPartial && !$this->isNew();
-        if (null === $this->collPartnerssRelatedByActorId || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collPartnerssRelatedByActorId) {
+        $partial = $this->collPartnerssRelatedByAgentIdPartial && !$this->isNew();
+        if (null === $this->collPartnerssRelatedByAgentId || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collPartnerssRelatedByAgentId) {
                 return 0;
             }
 
             if ($partial && !$criteria) {
-                return count($this->getPartnerssRelatedByActorId());
+                return count($this->getPartnerssRelatedByAgentId());
             }
 
             $query = ChildPartnersQuery::create(null, $criteria);
@@ -1504,11 +2144,11 @@ abstract class User implements ActiveRecordInterface
             }
 
             return $query
-                ->filterByactor($this)
+                ->filterByagent($this)
                 ->count($con);
         }
 
-        return count($this->collPartnerssRelatedByActorId);
+        return count($this->collPartnerssRelatedByAgentId);
     }
 
     /**
@@ -1518,44 +2158,44 @@ abstract class User implements ActiveRecordInterface
      * @param  ChildPartners $l ChildPartners
      * @return $this|\User The current object (for fluent API support)
      */
-    public function addPartnersRelatedByActorId(ChildPartners $l)
+    public function addPartnersRelatedByAgentId(ChildPartners $l)
     {
-        if ($this->collPartnerssRelatedByActorId === null) {
-            $this->initPartnerssRelatedByActorId();
-            $this->collPartnerssRelatedByActorIdPartial = true;
+        if ($this->collPartnerssRelatedByAgentId === null) {
+            $this->initPartnerssRelatedByAgentId();
+            $this->collPartnerssRelatedByAgentIdPartial = true;
         }
 
-        if (!$this->collPartnerssRelatedByActorId->contains($l)) {
-            $this->doAddPartnersRelatedByActorId($l);
+        if (!$this->collPartnerssRelatedByAgentId->contains($l)) {
+            $this->doAddPartnersRelatedByAgentId($l);
         }
 
         return $this;
     }
 
     /**
-     * @param ChildPartners $partnersRelatedByActorId The ChildPartners object to add.
+     * @param ChildPartners $partnersRelatedByAgentId The ChildPartners object to add.
      */
-    protected function doAddPartnersRelatedByActorId(ChildPartners $partnersRelatedByActorId)
+    protected function doAddPartnersRelatedByAgentId(ChildPartners $partnersRelatedByAgentId)
     {
-        $this->collPartnerssRelatedByActorId[]= $partnersRelatedByActorId;
-        $partnersRelatedByActorId->setactor($this);
+        $this->collPartnerssRelatedByAgentId[]= $partnersRelatedByAgentId;
+        $partnersRelatedByAgentId->setagent($this);
     }
 
     /**
-     * @param  ChildPartners $partnersRelatedByActorId The ChildPartners object to remove.
+     * @param  ChildPartners $partnersRelatedByAgentId The ChildPartners object to remove.
      * @return $this|ChildUser The current object (for fluent API support)
      */
-    public function removePartnersRelatedByActorId(ChildPartners $partnersRelatedByActorId)
+    public function removePartnersRelatedByAgentId(ChildPartners $partnersRelatedByAgentId)
     {
-        if ($this->getPartnerssRelatedByActorId()->contains($partnersRelatedByActorId)) {
-            $pos = $this->collPartnerssRelatedByActorId->search($partnersRelatedByActorId);
-            $this->collPartnerssRelatedByActorId->remove($pos);
-            if (null === $this->partnerssRelatedByActorIdScheduledForDeletion) {
-                $this->partnerssRelatedByActorIdScheduledForDeletion = clone $this->collPartnerssRelatedByActorId;
-                $this->partnerssRelatedByActorIdScheduledForDeletion->clear();
+        if ($this->getPartnerssRelatedByAgentId()->contains($partnersRelatedByAgentId)) {
+            $pos = $this->collPartnerssRelatedByAgentId->search($partnersRelatedByAgentId);
+            $this->collPartnerssRelatedByAgentId->remove($pos);
+            if (null === $this->partnerssRelatedByAgentIdScheduledForDeletion) {
+                $this->partnerssRelatedByAgentIdScheduledForDeletion = clone $this->collPartnerssRelatedByAgentId;
+                $this->partnerssRelatedByAgentIdScheduledForDeletion->clear();
             }
-            $this->partnerssRelatedByActorIdScheduledForDeletion[]= clone $partnersRelatedByActorId;
-            $partnersRelatedByActorId->setactor(null);
+            $this->partnerssRelatedByAgentIdScheduledForDeletion[]= clone $partnersRelatedByAgentId;
+            $partnersRelatedByAgentId->setagent(null);
         }
 
         return $this;
@@ -1783,6 +2423,490 @@ abstract class User implements ActiveRecordInterface
     }
 
     /**
+     * Clears out the collpatients collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addpatients()
+     */
+    public function clearpatients()
+    {
+        $this->collpatients = null; // important to set this to NULL since that means it is uninitialized
+    }
+
+    /**
+     * Initializes the collpatients crossRef collection.
+     *
+     * By default this just sets the collpatients collection to an empty collection (like clearpatients());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initpatients()
+    {
+        $this->collpatients = new ObjectCollection();
+        $this->collpatientsPartial = true;
+
+        $this->collpatients->setModel('\User');
+    }
+
+    /**
+     * Checks if the collpatients collection is loaded.
+     *
+     * @return bool
+     */
+    public function ispatientsLoaded()
+    {
+        return null !== $this->collpatients;
+    }
+
+    /**
+     * Gets a collection of ChildUser objects related by a many-to-many relationship
+     * to the current object by way of the partners cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ChildUser is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param      Criteria $criteria Optional query object to filter the query
+     * @param      ConnectionInterface $con Optional connection object
+     *
+     * @return ObjectCollection|ChildUser[] List of ChildUser objects
+     */
+    public function getpatients(Criteria $criteria = null, ConnectionInterface $con = null)
+    {
+        $partial = $this->collpatientsPartial && !$this->isNew();
+        if (null === $this->collpatients || null !== $criteria || $partial) {
+            if ($this->isNew()) {
+                // return empty collection
+                if (null === $this->collpatients) {
+                    $this->initpatients();
+                }
+            } else {
+
+                $query = ChildUserQuery::create(null, $criteria)
+                    ->filterByagent($this);
+                $collpatients = $query->find($con);
+                if (null !== $criteria) {
+                    return $collpatients;
+                }
+
+                if ($partial && $this->collpatients) {
+                    //make sure that already added objects gets added to the list of the database.
+                    foreach ($this->collpatients as $obj) {
+                        if (!$collpatients->contains($obj)) {
+                            $collpatients[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collpatients = $collpatients;
+                $this->collpatientsPartial = false;
+            }
+        }
+
+        return $this->collpatients;
+    }
+
+    /**
+     * Sets a collection of User objects related by a many-to-many relationship
+     * to the current object by way of the partners cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param  Collection $patients A Propel collection.
+     * @param  ConnectionInterface $con Optional connection object
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function setpatients(Collection $patients, ConnectionInterface $con = null)
+    {
+        $this->clearpatients();
+        $currentpatients = $this->getpatients();
+
+        $patientsScheduledForDeletion = $currentpatients->diff($patients);
+
+        foreach ($patientsScheduledForDeletion as $toDelete) {
+            $this->removepatient($toDelete);
+        }
+
+        foreach ($patients as $patient) {
+            if (!$currentpatients->contains($patient)) {
+                $this->doAddpatient($patient);
+            }
+        }
+
+        $this->collpatientsPartial = false;
+        $this->collpatients = $patients;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of User objects related by a many-to-many relationship
+     * to the current object by way of the partners cross-reference table.
+     *
+     * @param      Criteria $criteria Optional query object to filter the query
+     * @param      boolean $distinct Set to true to force count distinct
+     * @param      ConnectionInterface $con Optional connection object
+     *
+     * @return int the number of related User objects
+     */
+    public function countpatients(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    {
+        $partial = $this->collpatientsPartial && !$this->isNew();
+        if (null === $this->collpatients || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collpatients) {
+                return 0;
+            } else {
+
+                if ($partial && !$criteria) {
+                    return count($this->getpatients());
+                }
+
+                $query = ChildUserQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterByagent($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collpatients);
+        }
+    }
+
+    /**
+     * Associate a ChildUser to this object
+     * through the partners cross reference table.
+     *
+     * @param ChildUser $patient
+     * @return ChildUser The current object (for fluent API support)
+     */
+    public function addpatient(ChildUser $patient)
+    {
+        if ($this->collpatients === null) {
+            $this->initPatients();
+        }
+
+        if (!$this->getPatients()->contains($patient)) {
+            // only add it if the **same** object is not already associated
+            $this->collpatients->push($patient);
+            $this->doAddPatient($patient);
+        }
+
+        return $this;
+    }
+
+    /**
+     *
+     * @param ChildUser $patient
+     */
+    protected function doAddpatient(ChildUser $patient)
+    {
+        $partners = new ChildPartners();
+
+        $partners->setpatient($patient);
+
+        $partners->setagent($this);
+
+        $this->addPartnersRelatedByAgentId($partners);
+
+        // set the back reference to this object directly as using provided method either results
+        // in endless loop or in multiple relations
+        if (!$patient->isagentsLoaded()) {
+            $patient->initagents();
+            $patient->getagents()->push($this);
+        } elseif (!$patient->getagents()->contains($this)) {
+            $patient->getagents()->push($this);
+        }
+
+    }
+
+    /**
+     * Remove patient of this object
+     * through the partners cross reference table.
+     *
+     * @param ChildUser $patient
+     * @return ChildUser The current object (for fluent API support)
+     */
+    public function removepatient(ChildUser $patient)
+    {
+        if ($this->getpatients()->contains($patient)) { $partners = new ChildPartners();
+
+            $partners->setpatient($patient);
+            if ($patient->isagentsLoaded()) {
+                //remove the back reference if available
+                $patient->getagents()->removeObject($this);
+            }
+
+            $partners->setagent($this);
+            $this->removePartnersRelatedByAgentId(clone $partners);
+            $partners->clear();
+
+            $this->collpatients->remove($this->collpatients->search($patient));
+
+            if (null === $this->patientsScheduledForDeletion) {
+                $this->patientsScheduledForDeletion = clone $this->collpatients;
+                $this->patientsScheduledForDeletion->clear();
+            }
+
+            $this->patientsScheduledForDeletion->push($patient);
+        }
+
+
+        return $this;
+    }
+
+    /**
+     * Clears out the collagents collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addagents()
+     */
+    public function clearagents()
+    {
+        $this->collagents = null; // important to set this to NULL since that means it is uninitialized
+    }
+
+    /**
+     * Initializes the collagents crossRef collection.
+     *
+     * By default this just sets the collagents collection to an empty collection (like clearagents());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @return void
+     */
+    public function initagents()
+    {
+        $this->collagents = new ObjectCollection();
+        $this->collagentsPartial = true;
+
+        $this->collagents->setModel('\User');
+    }
+
+    /**
+     * Checks if the collagents collection is loaded.
+     *
+     * @return bool
+     */
+    public function isagentsLoaded()
+    {
+        return null !== $this->collagents;
+    }
+
+    /**
+     * Gets a collection of ChildUser objects related by a many-to-many relationship
+     * to the current object by way of the partners cross-reference table.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ChildUser is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param      Criteria $criteria Optional query object to filter the query
+     * @param      ConnectionInterface $con Optional connection object
+     *
+     * @return ObjectCollection|ChildUser[] List of ChildUser objects
+     */
+    public function getagents(Criteria $criteria = null, ConnectionInterface $con = null)
+    {
+        $partial = $this->collagentsPartial && !$this->isNew();
+        if (null === $this->collagents || null !== $criteria || $partial) {
+            if ($this->isNew()) {
+                // return empty collection
+                if (null === $this->collagents) {
+                    $this->initagents();
+                }
+            } else {
+
+                $query = ChildUserQuery::create(null, $criteria)
+                    ->filterBypatient($this);
+                $collagents = $query->find($con);
+                if (null !== $criteria) {
+                    return $collagents;
+                }
+
+                if ($partial && $this->collagents) {
+                    //make sure that already added objects gets added to the list of the database.
+                    foreach ($this->collagents as $obj) {
+                        if (!$collagents->contains($obj)) {
+                            $collagents[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collagents = $collagents;
+                $this->collagentsPartial = false;
+            }
+        }
+
+        return $this->collagents;
+    }
+
+    /**
+     * Sets a collection of User objects related by a many-to-many relationship
+     * to the current object by way of the partners cross-reference table.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param  Collection $agents A Propel collection.
+     * @param  ConnectionInterface $con Optional connection object
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function setagents(Collection $agents, ConnectionInterface $con = null)
+    {
+        $this->clearagents();
+        $currentagents = $this->getagents();
+
+        $agentsScheduledForDeletion = $currentagents->diff($agents);
+
+        foreach ($agentsScheduledForDeletion as $toDelete) {
+            $this->removeagent($toDelete);
+        }
+
+        foreach ($agents as $agent) {
+            if (!$currentagents->contains($agent)) {
+                $this->doAddagent($agent);
+            }
+        }
+
+        $this->collagentsPartial = false;
+        $this->collagents = $agents;
+
+        return $this;
+    }
+
+    /**
+     * Gets the number of User objects related by a many-to-many relationship
+     * to the current object by way of the partners cross-reference table.
+     *
+     * @param      Criteria $criteria Optional query object to filter the query
+     * @param      boolean $distinct Set to true to force count distinct
+     * @param      ConnectionInterface $con Optional connection object
+     *
+     * @return int the number of related User objects
+     */
+    public function countagents(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    {
+        $partial = $this->collagentsPartial && !$this->isNew();
+        if (null === $this->collagents || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collagents) {
+                return 0;
+            } else {
+
+                if ($partial && !$criteria) {
+                    return count($this->getagents());
+                }
+
+                $query = ChildUserQuery::create(null, $criteria);
+                if ($distinct) {
+                    $query->distinct();
+                }
+
+                return $query
+                    ->filterBypatient($this)
+                    ->count($con);
+            }
+        } else {
+            return count($this->collagents);
+        }
+    }
+
+    /**
+     * Associate a ChildUser to this object
+     * through the partners cross reference table.
+     *
+     * @param ChildUser $agent
+     * @return ChildUser The current object (for fluent API support)
+     */
+    public function addagent(ChildUser $agent)
+    {
+        if ($this->collagents === null) {
+            $this->initAgents();
+        }
+
+        if (!$this->getAgents()->contains($agent)) {
+            // only add it if the **same** object is not already associated
+            $this->collagents->push($agent);
+            $this->doAddAgent($agent);
+        }
+
+        return $this;
+    }
+
+    /**
+     *
+     * @param ChildUser $agent
+     */
+    protected function doAddagent(ChildUser $agent)
+    {
+        $partners = new ChildPartners();
+
+        $partners->setagent($agent);
+
+        $partners->setpatient($this);
+
+        $this->addPartnersRelatedByPatientId($partners);
+
+        // set the back reference to this object directly as using provided method either results
+        // in endless loop or in multiple relations
+        if (!$agent->ispatientsLoaded()) {
+            $agent->initpatients();
+            $agent->getpatients()->push($this);
+        } elseif (!$agent->getpatients()->contains($this)) {
+            $agent->getpatients()->push($this);
+        }
+
+    }
+
+    /**
+     * Remove agent of this object
+     * through the partners cross reference table.
+     *
+     * @param ChildUser $agent
+     * @return ChildUser The current object (for fluent API support)
+     */
+    public function removeagent(ChildUser $agent)
+    {
+        if ($this->getagents()->contains($agent)) { $partners = new ChildPartners();
+
+            $partners->setagent($agent);
+            if ($agent->ispatientsLoaded()) {
+                //remove the back reference if available
+                $agent->getpatients()->removeObject($this);
+            }
+
+            $partners->setpatient($this);
+            $this->removePartnersRelatedByPatientId(clone $partners);
+            $partners->clear();
+
+            $this->collagents->remove($this->collagents->search($agent));
+
+            if (null === $this->agentsScheduledForDeletion) {
+                $this->agentsScheduledForDeletion = clone $this->collagents;
+                $this->agentsScheduledForDeletion->clear();
+            }
+
+            $this->agentsScheduledForDeletion->push($agent);
+        }
+
+
+        return $this;
+    }
+
+    /**
      * Clears the current object, sets all attributes to their default values and removes
      * outgoing references as well as back-references (from other objects to this one. Results probably in a database
      * change of those foreign objects when you call `save` there).
@@ -1812,8 +2936,18 @@ abstract class User implements ActiveRecordInterface
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
-            if ($this->collPartnerssRelatedByActorId) {
-                foreach ($this->collPartnerssRelatedByActorId as $o) {
+            if ($this->collAssignedPrayersRelatedByAgentId) {
+                foreach ($this->collAssignedPrayersRelatedByAgentId as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collAssignedPrayersRelatedByPatientId) {
+                foreach ($this->collAssignedPrayersRelatedByPatientId as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collPartnerssRelatedByAgentId) {
+                foreach ($this->collPartnerssRelatedByAgentId as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -1822,10 +2956,24 @@ abstract class User implements ActiveRecordInterface
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collpatients) {
+                foreach ($this->collpatients as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
+            if ($this->collagents) {
+                foreach ($this->collagents as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
         } // if ($deep)
 
-        $this->collPartnerssRelatedByActorId = null;
+        $this->collAssignedPrayersRelatedByAgentId = null;
+        $this->collAssignedPrayersRelatedByPatientId = null;
+        $this->collPartnerssRelatedByAgentId = null;
         $this->collPartnerssRelatedByPatientId = null;
+        $this->collpatients = null;
+        $this->collagents = null;
     }
 
     /**

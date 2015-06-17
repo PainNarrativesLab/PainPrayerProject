@@ -72,9 +72,9 @@ class PartnersTableMap extends TableMap
     const NUM_HYDRATE_COLUMNS = 4;
 
     /**
-     * the column name for the actor_id field
+     * the column name for the agent_id field
      */
-    const COL_ACTOR_ID = 'partners.actor_id';
+    const COL_AGENT_ID = 'partners.agent_id';
 
     /**
      * the column name for the patient_id field
@@ -103,10 +103,10 @@ class PartnersTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('ActorId', 'PatientId', 'CreatedAt', 'UpdatedAt', ),
-        self::TYPE_CAMELNAME     => array('actorId', 'patientId', 'createdAt', 'updatedAt', ),
-        self::TYPE_COLNAME       => array(PartnersTableMap::COL_ACTOR_ID, PartnersTableMap::COL_PATIENT_ID, PartnersTableMap::COL_CREATED_AT, PartnersTableMap::COL_UPDATED_AT, ),
-        self::TYPE_FIELDNAME     => array('actor_id', 'patient_id', 'created_at', 'updated_at', ),
+        self::TYPE_PHPNAME       => array('AgentId', 'PatientId', 'CreatedAt', 'UpdatedAt', ),
+        self::TYPE_CAMELNAME     => array('agentId', 'patientId', 'createdAt', 'updatedAt', ),
+        self::TYPE_COLNAME       => array(PartnersTableMap::COL_AGENT_ID, PartnersTableMap::COL_PATIENT_ID, PartnersTableMap::COL_CREATED_AT, PartnersTableMap::COL_UPDATED_AT, ),
+        self::TYPE_FIELDNAME     => array('agent_id', 'patient_id', 'created_at', 'updated_at', ),
         self::TYPE_NUM           => array(0, 1, 2, 3, )
     );
 
@@ -117,10 +117,10 @@ class PartnersTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('ActorId' => 0, 'PatientId' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
-        self::TYPE_CAMELNAME     => array('actorId' => 0, 'patientId' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
-        self::TYPE_COLNAME       => array(PartnersTableMap::COL_ACTOR_ID => 0, PartnersTableMap::COL_PATIENT_ID => 1, PartnersTableMap::COL_CREATED_AT => 2, PartnersTableMap::COL_UPDATED_AT => 3, ),
-        self::TYPE_FIELDNAME     => array('actor_id' => 0, 'patient_id' => 1, 'created_at' => 2, 'updated_at' => 3, ),
+        self::TYPE_PHPNAME       => array('AgentId' => 0, 'PatientId' => 1, 'CreatedAt' => 2, 'UpdatedAt' => 3, ),
+        self::TYPE_CAMELNAME     => array('agentId' => 0, 'patientId' => 1, 'createdAt' => 2, 'updatedAt' => 3, ),
+        self::TYPE_COLNAME       => array(PartnersTableMap::COL_AGENT_ID => 0, PartnersTableMap::COL_PATIENT_ID => 1, PartnersTableMap::COL_CREATED_AT => 2, PartnersTableMap::COL_UPDATED_AT => 3, ),
+        self::TYPE_FIELDNAME     => array('agent_id' => 0, 'patient_id' => 1, 'created_at' => 2, 'updated_at' => 3, ),
         self::TYPE_NUM           => array(0, 1, 2, 3, )
     );
 
@@ -140,8 +140,9 @@ class PartnersTableMap extends TableMap
         $this->setClassName('\\Partners');
         $this->setPackage('');
         $this->setUseIdGenerator(false);
+        $this->setIsCrossRef(true);
         // columns
-        $this->addForeignPrimaryKey('actor_id', 'ActorId', 'INTEGER' , 'users', 'id', true, null, null);
+        $this->addForeignPrimaryKey('agent_id', 'AgentId', 'INTEGER' , 'users', 'id', true, null, null);
         $this->addForeignPrimaryKey('patient_id', 'PatientId', 'INTEGER' , 'users', 'id', true, null, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
@@ -152,10 +153,10 @@ class PartnersTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('actor', '\\User', RelationMap::MANY_TO_ONE, array (
+        $this->addRelation('agent', '\\User', RelationMap::MANY_TO_ONE, array (
   0 =>
   array (
-    0 => ':actor_id',
+    0 => ':agent_id',
     1 => ':id',
   ),
 ), null, null, null, false);
@@ -196,7 +197,7 @@ class PartnersTableMap extends TableMap
     {
         if (Propel::isInstancePoolingEnabled()) {
             if (null === $key) {
-                $key = serialize(array((string) $obj->getActorId(), (string) $obj->getPatientId()));
+                $key = serialize(array((string) $obj->getAgentId(), (string) $obj->getPatientId()));
             } // if key === null
             self::$instances[$key] = $obj;
         }
@@ -216,7 +217,7 @@ class PartnersTableMap extends TableMap
     {
         if (Propel::isInstancePoolingEnabled() && null !== $value) {
             if (is_object($value) && $value instanceof \Partners) {
-                $key = serialize(array((string) $value->getActorId(), (string) $value->getPatientId()));
+                $key = serialize(array((string) $value->getAgentId(), (string) $value->getPatientId()));
 
             } elseif (is_array($value) && count($value) === 2) {
                 // assume we've been passed a primary key";
@@ -250,11 +251,11 @@ class PartnersTableMap extends TableMap
     public static function getPrimaryKeyHashFromRow($row, $offset = 0, $indexType = TableMap::TYPE_NUM)
     {
         // If the PK cannot be derived from the row, return NULL.
-        if ($row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('ActorId', TableMap::TYPE_PHPNAME, $indexType)] === null && $row[TableMap::TYPE_NUM == $indexType ? 1 + $offset : static::translateFieldName('PatientId', TableMap::TYPE_PHPNAME, $indexType)] === null) {
+        if ($row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('AgentId', TableMap::TYPE_PHPNAME, $indexType)] === null && $row[TableMap::TYPE_NUM == $indexType ? 1 + $offset : static::translateFieldName('PatientId', TableMap::TYPE_PHPNAME, $indexType)] === null) {
             return null;
         }
 
-        return serialize(array((string) $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('ActorId', TableMap::TYPE_PHPNAME, $indexType)], (string) $row[TableMap::TYPE_NUM == $indexType ? 1 + $offset : static::translateFieldName('PatientId', TableMap::TYPE_PHPNAME, $indexType)]));
+        return serialize(array((string) $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('AgentId', TableMap::TYPE_PHPNAME, $indexType)], (string) $row[TableMap::TYPE_NUM == $indexType ? 1 + $offset : static::translateFieldName('PatientId', TableMap::TYPE_PHPNAME, $indexType)]));
     }
 
     /**
@@ -276,7 +277,7 @@ class PartnersTableMap extends TableMap
         $pks[] = (int) $row[
             $indexType == TableMap::TYPE_NUM
                 ? 0 + $offset
-                : self::translateFieldName('ActorId', TableMap::TYPE_PHPNAME, $indexType)
+                : self::translateFieldName('AgentId', TableMap::TYPE_PHPNAME, $indexType)
         ];
         $pks[] = (int) $row[
             $indexType == TableMap::TYPE_NUM
@@ -384,12 +385,12 @@ class PartnersTableMap extends TableMap
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(PartnersTableMap::COL_ACTOR_ID);
+            $criteria->addSelectColumn(PartnersTableMap::COL_AGENT_ID);
             $criteria->addSelectColumn(PartnersTableMap::COL_PATIENT_ID);
             $criteria->addSelectColumn(PartnersTableMap::COL_CREATED_AT);
             $criteria->addSelectColumn(PartnersTableMap::COL_UPDATED_AT);
         } else {
-            $criteria->addSelectColumn($alias . '.actor_id');
+            $criteria->addSelectColumn($alias . '.agent_id');
             $criteria->addSelectColumn($alias . '.patient_id');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
@@ -451,7 +452,7 @@ class PartnersTableMap extends TableMap
                 $values = array($values);
             }
             foreach ($values as $value) {
-                $criterion = $criteria->getNewCriterion(PartnersTableMap::COL_ACTOR_ID, $value[0]);
+                $criterion = $criteria->getNewCriterion(PartnersTableMap::COL_AGENT_ID, $value[0]);
                 $criterion->addAnd($criteria->getNewCriterion(PartnersTableMap::COL_PATIENT_ID, $value[1]));
                 $criteria->addOr($criterion);
             }
