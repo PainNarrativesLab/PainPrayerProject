@@ -1,0 +1,30 @@
+@startuml
+
+start
+:User arrives with hash;
+if (hash is valid?) then (no)
+  :error handling;
+  stop
+else (yes)
+  :load record;
+  :load assignment;
+  if(pain assessment required?) then (yes)
+    fork
+        :handle pain questions;
+    fork again
+        :assignment handling;
+    end fork
+  else (no)
+    if(assignment present?) then (yes)
+        :assignment handling;
+    endif
+  endif
+    :completed;
+
+  note right
+    this is a note
+  end note
+  stop
+endif
+
+@enduml

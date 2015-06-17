@@ -1,0 +1,29 @@
+<project name="painprayer" description="painprayer tasks" default="main">
+
+    <target name="rebuild" description="Rebuild the database structure and refresh autoload">
+        <!--rebuild db with arbitrary data-->
+        <echo message="Updating database" />
+        <exec command="export PRAY_VENDOR_PATH=/Users/adam/Dropbox/painprayer/vendor;
+        export PRAY_DB_NAME=painprayer_test;
+        export PRAY_USERNAME=testuser3;
+        export PRAY_PASSWORD=testpass3;
+        vendor/bin/propel sql:insert"/>
+        <!--refresh the autoloader-->
+        <echo message="Updating autoloader" />
+        <exec command="composer dump-autoload"/>
+    </target>
+
+    <target name="completelyRebuildModel" description="Completely rebuilds the generated sql and classes from schema.xml">
+        <echo message="Rebuilding sql model"/>
+        <exec command="vendor/bin/propel sql:build --overwrite" />
+        <exec command="vendor/bin/propel model:build" />
+        <echo message="Inserting new schema into db"/>
+        <exec command="vendor/bin/propel sql:insert" />
+        <echo message="Refreshing autoload"/>
+        <exec command="composer dump-autoload" />
+    </target>
+
+    <target name="addFakeData" description="adds data, fake">
+        <exec command="index.php" dir="/Users/adam/Dropbox/painprayer/src/www"/>
+    </target>
+</project>

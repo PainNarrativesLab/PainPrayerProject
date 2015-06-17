@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="main" defaultIdMethod="native">
+    <behavior name="timestampable" />
 
     <table name="users" phpName="User">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
@@ -9,8 +10,7 @@
             <unique-column name="nickname" />
             <unique-column name="email" />
         </unique>
-        <behavior name="timestampable" />
-    </table>
+     </table>
 
     <table name="assigned_prayer" phpName="AssignedPrayer">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true"/>
@@ -24,7 +24,6 @@
         <foreign-key foreignTable="users" phpName="patient">
             <reference local="patient_id" foreign="id" />
         </foreign-key>
-        <behavior name="timestampable" />
     </table>
 
     <table name="partners" phpName="Partners" isCrossRef="true">
@@ -36,7 +35,11 @@
         <foreign-key foreignTable="users" phpName="patient">
             <reference local="patient_id" foreign="id" />
         </foreign-key>
-        <behavior name="timestampable" />
+    </table>
+
+    <table name="pain_ratings" phpName="PainRating">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="user" type="integer" required="true"/>
     </table>
 
 

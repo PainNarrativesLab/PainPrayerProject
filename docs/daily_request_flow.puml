@@ -1,0 +1,37 @@
+@startuml
+title Daily flow
+cloud {
+[Cron]
+}
+
+[Manager]
+note left of [Manager] : Observable
+
+[Logger]
+note right of [Logger] : Observer
+
+node "Preparation" {
+[Preparation Manager] ..> [Load Assignments]
+[Load Assignments] ..> [Create Records]
+[Create Records] --> [Preparation Manager] : new records
+note left of [Preparation Manager] : observer
+}
+
+node "Request" {
+[Request Manager] ..> [Request creator]
+[Request creator] ..> [Request sender]
+note left of [Request Manager] : observer
+}
+
+
+[Cron] -> [Manager] : create
+
+
+[Manager] ..> [Preparation Manager] : run
+[Preparation Manager] --> [Manager] : new records
+[Manager] --> [Request Manager] : new records
+
+[Manager] .> [Logger] : process start
+[Manager] .> [Logger] : records created
+[Manager] .> [Logger] : request sent
+@enduml

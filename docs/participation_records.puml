@@ -1,0 +1,32 @@
+@startuml
+
+class Record{
+#id : Integer
+#date: Date
+-- held objects --
+#assignment : Assignment
+
+-- methods --
++save()
++load()
+}
+
+abstract class Assignment{
+A pairing of two users to execute
+some task
+====
+#id              : Integer
+#startDate : Date
+#endDate   : Date
+
+-- held objects --
+#agent: IUser
+#patient: IUser
+#action Action
+-- methods --
+execute()
+record()
+}
+
+Record --* Assignment
+@enduml

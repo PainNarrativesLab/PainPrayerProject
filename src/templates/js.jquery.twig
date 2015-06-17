@@ -1,0 +1,22 @@
+{% if local == true %}
+    <link rel="stylesheet" href="inc/js/local_jquery/jquery.ui.custom.min.css">
+    <script type="text/javascript" src="inc/js/local_jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="inc/js/local_jquery/jquery.ui.custom.min.js"></script>
+    <script type="text/javascript" src="inc/js/local_jquery/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="inc/js/touchpunch.js"></script>
+{% else %}
+
+    {% if full == true %}
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript"
+                src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+        <script type="text/javascript" src="inc/js/touchpunch.js"></script>
+    {% else %}
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript"
+                src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="js/touchpunch.js"></script>
+    {% endif %}
+{% endif %}

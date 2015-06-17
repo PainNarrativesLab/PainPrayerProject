@@ -15,8 +15,8 @@
                     <adapter>mysql</adapter>
                     <classname>Propel\Runtime\Connection\DebugPDO</classname>
                     <dsn>mysql:host=localhost;dbname=painprayer</dsn>
-                    <user>root</user>
-                    <password></password>
+                    <user>testuser4</user>
+                    <password>testpass4</password>
                     <settings>
                         <charset>utf8</charset>
                         <queries>
@@ -28,8 +28,8 @@
                     <adapter>mysql</adapter>
                     <classname>Propel\Runtime\Connection\DebugPDO</classname>
                     <dsn>mysql:host=localhost;dbname=painprayer_testing</dsn>
-                    <user>root</user>
-                    <password></password>
+                    <user>testuser4</user>
+                    <password>testpass4</password>
                     <settings>
                         <charset>utf8</charset>
                         <queries>

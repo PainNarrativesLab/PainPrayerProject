@@ -1,0 +1,101 @@
+@startuml
+
+interface IUser{
+    +getId()
+    +getNickname()
+    +getEmail()
+}
+IUser <|-- User
+class User {
+#id
+#nickname
+#email
+}
+
+
+
+abstract class Action{
+    These are the things one does in an assignment
+    ---
+    #patientInstruction: Instruction
+    #agentInstruction: Instruction
+    ....
+    +getAgentMessageContent()
+    +getPatientMessageContent()
+}
+class Pray{
+    The experimental task
+    ----
+    +isTwoWay() Boolean
+}
+
+class Breathe{
+    The control task
+    ----
+}
+
+interface Instruction{
+    +getText()
+}
+
+class DisplayInstruction{
+The instruction displayed on
+website.
+----
+#text
+#templateController
+}
+
+class EmailInstruction{
+The instruction in the email
+----
+#text
+#templateController
+}
+Instruction <|-- EmailInstruction
+Instruction <|-- DisplayInstruction
+
+
+
+abstract class Assignment{
+A pairing of two users to execute
+some task
+====
+#id              : Integer
+#startDate : Date
+#endDate   : Date
+
+-- held objects --
+#agent: IUser
+#patient: IUser
+#action Action
+-- methods --
+execute()
+record()
+}
+
+class Record{
+The main unit control operations
+will deal with.
+====
+#id : Integer
+#date: Date
+-- held objects --
+#assignment : Assignment
+
+-- methods --
++save()
++load()
+}
+
+Record -up-* Assignment : contains 1
+
+Pray --|> Action
+Breathe --|> Action
+Action --* Instruction
+
+Assignment --* Action : contains 1
+Assignment --* IUser : contains 2
+
+
+@enduml

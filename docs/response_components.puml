@@ -1,0 +1,38 @@
+@startuml
+
+cloud "UserDoesTasks" {
+}
+
+node "MainController"{
+[Controller]  -right-> [RequestHandler]
+[RequestHandler] -right- [Filtration and Validation]
+}
+
+node "Lookup" {
+[Record retrieval]
+}
+
+node "AssignmentHandling" {
+[AssignmentManager]-- [AssignmentDisplayControllers]
+[AssignmentManager] -- [AssignmentDataRecorder]
+
+}
+
+node "Pain rating" {
+[PainRatingManager] -- [PainRatingDisplayControllers]
+[PainRatingManager] -- [PainRatingDataRecorder]
+}
+
+
+HTTP --> [Controller] : User arrives with hash
+[Filtration and Validation] -right-> [Record retrieval]
+
+[Record retrieval] ..> [Controller] : Record
+[Controller] --down-> [AssignmentManager]
+[Controller] --down-> [PainRatingManager]
+
+[AssignmentDisplayControllers]  --> UserDoesTasks
+[PainRatingDisplayControllers] --> UserDoesTasks
+UserDoesTasks ...> [PainRatingDataRecorder]
+UserDoesTasks ...> [AssignmentDataRecorder]
+@enduml

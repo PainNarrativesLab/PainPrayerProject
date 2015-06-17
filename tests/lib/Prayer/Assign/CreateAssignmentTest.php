@@ -9,7 +9,7 @@
 namespace Prayer\Assign;
 
 
-use Symfony\Component\Validator\Constraints\DateTime;
+//use Symfony\Component\Validator\Constraints\DateTime;
 
 class CreateAssignmentTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,14 +21,15 @@ class CreateAssignmentTest extends \PHPUnit_Framework_TestCase
         $this->object = new CreateAssignment();
         $this->agent = new \User();
         $this->agent->setId(2);
-        $this->patient = new \Patient();
+        $this->patient = new \User();
         $this->patient->setId(3);
-        $this->date = new DateTime();
+        $faker = \Faker\Factory::create();
+        $this->date = $faker->dateTime();
     }
 
 
     /**
-     * @covers \Prayer/Assign/CreateAssignmentTest::create
+     * @covers \Prayer\Assign\CreateAssignment::create
      */
     public function testCreate()
     {

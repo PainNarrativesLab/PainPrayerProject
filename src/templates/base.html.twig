@@ -1,0 +1,26 @@
+{% include "base.html.head.twig" %}
+<body>
+{% block navbar %}
+{% endblock %}
+{% include "navbar.teach_admin.twig" %}
+<div class="container">
+    <div id="mainBody">
+        {% block mainBody %}
+        {% endblock %}
+    </div>
+    <div class="footer">
+        {% block footer %}
+            {% include "footer.base.twig" %}
+        {% endblock %}
+    </div>
+</div>
+<div id="scriptBox">
+    {% include "js.jquery.twig" %}
+
+    {% include "js.scriptloader.twig" %}
+
+    {% block scriptBox %}
+    {% endblock %}
+</div>
+</body>
+</html>

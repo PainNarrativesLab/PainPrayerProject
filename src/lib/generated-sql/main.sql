@@ -68,5 +68,18 @@ CREATE TABLE `partners`
         REFERENCES `users` (`id`)
 ) ENGINE=InnoDB;
 
+-- ---------------------------------------------------------------------
+-- pain_ratings
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pain_ratings`;
+
+CREATE TABLE `pain_ratings`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `user` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
