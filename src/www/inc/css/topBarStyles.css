@@ -1,0 +1,33 @@
+#topBar{
+    display: block;
+    clear: both;
+    width: 100%;
+}
+
+.topBarItem{
+    display: block;
+}
+#timeline{
+    float: left;
+    display: block;
+    margin-right: 1%;
+    padding-right: 10%;
+    width: 15%;
+}
+#logInDisplay{
+    float: right;
+    display: block;
+    margin-left: 1%;
+    padding-left: 10%;
+    width: 30%;
+}
+
+.dividerLine{
+    display: block;
+    clear: both;
+    width: 100%;
+
+}
+.greeting{}
+
+.misIdentification{}

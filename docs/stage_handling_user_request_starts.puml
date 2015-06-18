@@ -1,0 +1,85 @@
+@startuml
+
+start
+-> User request arrives with hash;
+: load Assignment object;
+: check study stage of Assignment;
+if (stage is preExperiment) then (yes)
+    :Call error handling. Something has gone badly wrong;
+
+elseif (stage is Waitlist) then (yes)
+    if(RequestingUser is Assignment.agent) then (yes)
+        partition PainRating {
+            :create PainRateTask;
+            :set __Assignment.agent__ as PainRateTask.user;
+            :push PainRateTask onto Assignment.que;
+        }
+        partition Experiment {
+            :create PrayerTask;
+            :set __Assignment.agent__ as PrayerTask.user;
+            :push PrayerTask onto Assignment.que;
+        }
+    elseif(RequestingUser is Assignment.patient) then (yes)
+        partition PainRating{
+            :create PainRateTask;
+            :set __Assignment.patient__ as PainRateTask.user;
+            :push PainRateTask onto Assignment.que;
+        }
+    endif
+
+elseif (stage is Active) then (yes)
+    if(RequestingUser is Assignment.agent) then (yes)
+        partition PainRating {
+            :create PainRateTask;
+            :set __Assignment.agent__ as PainRateTask.user;
+            :push PainRateTask onto Assignment.que;
+        }
+        partition Experiment {
+            partition PrayerTask {
+                :create PrayerTask;
+                :set __Assignment.agent__ as PrayerTask.user;
+                :push PrayerTask onto Assignment.que;
+            }
+            partition Notification {
+                :create PrayedNotifyTask;
+                :set __Assignment.patient__ as PrayedNotifyTask.user;
+                :push PrayedNotifyTask onto Assignment.que;
+            }
+        }
+    elseif(RequestingUser is Assignment.patient) then (yes)
+        partition PainRating {
+            :create PainRateTask;
+            :set __Assignment.patient__ as PainRateTask.user;
+            :push PainRateTask onto Assignment.que;
+        }
+        partition Experiment {
+            partition PrayerTask {
+                :create PrayerTask;
+                :set __Assignment.patient__ as PrayerTask.user;
+                :push PrayerTask onto Assignment.que;
+            }
+            partition Notification {
+                :create PrayedNotifyTask;
+                :set __Assignment.agent__ as PrayedNotifyTask.user;
+                :push PrayedNotifyTask onto Assignment.que;
+            }
+        }
+    endif
+
+elseif (state is PostExperiment) then (yes)
+    partition PainRating {
+        partition Agent_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.agent__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+        partition Patient_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.patient__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+    }
+endif
+- Assignment.execute()
+stop
+@enduml

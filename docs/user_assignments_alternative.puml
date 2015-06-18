@@ -1,0 +1,89 @@
+@startuml
+
+class Assignment{
+    #startDate
+    #stopDate
+
+    #patient : User
+    #agent : User
+
+    #action_que : array
+    --methods--
+    #checkScheduled() : Determines whether today is between start and stop dates
+    +addAction(Task)  : Pushes Task onto que
+    +execute() : Executes Tasks from que
+
+
+}
+note left of Assignment
+Push an object with
+an execute() method
+onto the que with addAction()
+
+Then execute actions in the
+que with execute()
+end note
+
+
+interface Task{
+    +execute()
+    +setUser(User)
+}
+
+class EmailPainRateRequest{
+    Sends a request to log on
+    and complete pain questions.
+    ====
+    +setEmailHandler()
+}
+
+class EmailPrayerRequest{
+    Sends a request to pray and
+    report prayer.
+    ====
+    +setEmailHandler()
+}
+
+class EmailPrayerSubstituteRequest{
+    Sends a request to fill in
+    and pray for a random person.
+}
+
+class PainRateTask{
+    Launches the process for rating
+    and recording pain in response
+    to request sent by
+    EmailPainRateRequest
+    ====
+    +setFrontController()
+}
+
+class PrayerTask{
+    Launches the process for recording
+    a prayer in response to
+    EmailPrayerRequest
+    ====
+    +setFrontController()
+}
+
+class PrayedNotifyTask{
+    Emails someone that they have been
+    prayed for.
+    ====
+    +setEmailHandler()
+}
+
+class StageHandler{
+    #studyStage : Integer
+    +loadAssignment()
+    +checkStudyStage()
+}
+
+EmailPainRateRequest -left-|> Task
+EmailPrayerRequest -left-|> Task
+EmailPrayerSubstituteRequest -left-|> Task
+PainRateTask -up-|> Task
+PrayerTask -up-|> Task
+PrayedNotifyTask -right-|> Task
+Assignment --* Task
+@enduml

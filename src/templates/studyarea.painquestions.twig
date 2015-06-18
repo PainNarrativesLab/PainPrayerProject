@@ -1,0 +1,20 @@
+{% extends "studyarea.base.twig" %}
+
+ {% block areaTitle %}
+     Record pain
+ {% endblock %}
+
+{% block topInstruction %}
+    Please rate the pain you are experiencing today
+{% endblock %}
+
+{% block mainContent %}
+{{ mainContent }}
+{% endblock %}
+
+{% block submissionControls %}
+<input type="button" id="painSubmit" class="prettyButton" value="Record"/>
+{% endblock %}
+
+{% block bottomInstructions %}
+{% endblock %}

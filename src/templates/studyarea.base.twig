@@ -1,0 +1,28 @@
+<div id="{{ studyAreaId }}" class="studyArea">
+    <div class="areaTitle studyAreaItem">
+        {% block areaTitle %}
+        {% endblock %}
+    </div>
+
+    <div class="topInstructions studyAreaItem">
+        {% block topInstruction %}
+        {% endblock %}
+    </div>
+
+    <div class="mainContent studyAreaItem">
+        {% block mainContent %}
+        {% endblock %}
+    </div>
+    <div class="statusMessageArea emptyOnStart">
+        {# success/failure messages will be displayed here #}
+    </div>
+    <div class="submissionControls studyAreaItem">
+        {% block submissionControls %}
+        {% endblock %}
+    </div>
+
+    <div class="bottomInstructions studyAreaItem">
+        {% block bottomInstructions %}
+        {% endblock %}
+    </div>
+</div>

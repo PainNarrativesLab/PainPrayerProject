@@ -8,11 +8,18 @@
 
     {% include "js.jqueryCss.twig" %}
     {% block stylesheets %}
-        <link href="inc/css/navMenuStyles.css" rel="stylesheet"/>
+        {% if stylesheets|length > 0 %}
+            {% for sheet in stylesheets %}
+                <link href="{{ sheet }}" rel="stylesheet" />
+            {% endfor %}
+        {% endif %}
     {% endblock %}
 
     {% block head_block %}
     {% endblock %}
 </head>
+<body>
 <div class="container">
+    {% block navArea %}
+    {% endblock %}
     <div id="mainBody">

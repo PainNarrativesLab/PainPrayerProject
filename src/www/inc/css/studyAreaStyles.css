@@ -1,0 +1,30 @@
+.studyArea{
+    display: block;
+    clear: both;
+    margin-bottom: 3%;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.studyAreaItem{
+    display: block;
+    clear:both;
+}
+
+/*divs in study area*/
+.areaTitle{
+    font-weight: bolder;
+    font-size: large;
+}
+
+.topInstructions{}
+
+.mainContent{
+    margin: 1%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.submissionControls{}
+
+.bottomInstructions{}

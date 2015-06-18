@@ -10,7 +10,7 @@
             <unique-column name="nickname" />
             <unique-column name="email" />
         </unique>
-     </table>
+    </table>
 
     <table name="assigned_prayer" phpName="AssignedPrayer">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true"/>
@@ -39,7 +39,10 @@
 
     <table name="pain_ratings" phpName="PainRating">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
-        <column name="user" type="integer" required="true"/>
+        <column name="user_id" type="integer" required="true"/>
+        <foreign-key foreignTable="users" phpName="user">
+            <reference local="user_id" foreign="id" />
+        </foreign-key>
     </table>
 
 

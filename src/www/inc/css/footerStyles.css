@@ -1,0 +1,15 @@
+#footInfo{
+    display: block;
+    clear: both;
+}
+.footInfoArea{
+    display: block;
+    float: left;
+    width: 10%;
+}
+
+#copyrightArea{
+    display: block;
+    text-align: center;
+    clear: both;
+}

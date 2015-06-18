@@ -1,0 +1,83 @@
+@startuml
+start
+-> Cron calls;
+: load Assignment object;
+: check study stage of Assignment;
+if (stage is preExperiment) then (yes)
+    partition PainRating {
+        partition Agent_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.agent__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+        partition Patient_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.patient__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+    }
+elseif (stage is Waitlist) then (yes)
+    partition PainRating {
+        partition Agent_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.agent__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+        partition Patient_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.patient__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+    }
+    partition Experiment {
+        partition Agent_request {
+            :create PrayerSubstituteEmailRequest;
+            :set __Assignment.agent__ as PrayerRequestEmail.user;
+            :push PrayerSubstituteEmailRequest onto Assignment.que;
+        }
+    }
+
+elseif (stage is Active) then (yes)
+    partition PainRating {
+        partition Agent_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.agent__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+        partition Patient_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.patient__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+    }
+    partition Experiment {
+        partition Agent_request {
+            :create PrayerEmailRequest;
+            :set __Assignment.agent__ as PrayerEmailRequest.user;
+            :push PrayerEmailRequest onto Assignment.que;
+        }
+        partition Patient_request {
+            :create PrayerEmailRequest;
+            :set __Assignment.patient__ as PrayerEmailRequest.user;
+            :push PrayerEmailRequest onto Assignment.que;
+        }
+    }
+
+elseif (state is PostExperiment) then (yes)
+    partition PainRating {
+        partition Agent_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.agent__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+        partition Patient_request {
+            :create PainRateEmailRequest task;
+            :set __Assignment.patient__ as PainRateEmailRequest.user;
+            :push PainRateEmailRequest onto Assignment.que;
+        }
+    }
+endif
+- Assignment.execute();
+stop
+
+@enduml

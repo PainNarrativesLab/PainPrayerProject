@@ -16,16 +16,18 @@ class User {
 
 abstract class Action{
     These are the things one does in an assignment
-    ---
+    ====
+    --held objects--
     #patientInstruction: Instruction
     #agentInstruction: Instruction
-    ....
+    --methods--
     +getAgentMessageContent()
     +getPatientMessageContent()
+    +postRecordTask()
 }
 class Pray{
     The experimental task
-    ----
+    ====
     +notifyPartner Boolean
 }
 

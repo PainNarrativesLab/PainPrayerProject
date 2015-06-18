@@ -1,0 +1,17 @@
+{#The top navigation bar for the experiment page#}
+{% extends "base.html.head.twig" %}
+{% block navArea %}
+<div id="topBar">
+    <div class="topBarItem">
+    <div id="timeline" class="topBarItem">Either a count of days involved or a graphic</div>
+    <div id="logInDisplay" class="topBarItem">
+        <div class="greeting">Hello {{ nickname }}!</div>
+        <div class="misIdentification">Not {{ nickname }}? Click <input type="button" id="login" class="prettyButton" value="here" /> to log in </div>
+    </div>
+    </div>
+    <div class="dividerLine">
+        <hr />
+    </div>
+
+</div>
+{% endblock %}
