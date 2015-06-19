@@ -186,6 +186,13 @@ class UserTableMap extends TableMap
     1 => ':id',
   ),
 ), null, null, 'PartnerssRelatedByPatientId', false);
+        $this->addRelation('PainRating', '\\PainRating', RelationMap::ONE_TO_MANY, array (
+  0 =>
+  array (
+    0 => ':user_id',
+    1 => ':id',
+  ),
+), null, null, 'PainRatings', false);
         $this->addRelation('patient', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'patients');
         $this->addRelation('agent', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'agents');
     } // buildRelations()

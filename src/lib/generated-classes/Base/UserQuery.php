@@ -52,7 +52,11 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUserQuery rightJoinPartnersRelatedByPatientId($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PartnersRelatedByPatientId relation
  * @method     ChildUserQuery innerJoinPartnersRelatedByPatientId($relationAlias = null) Adds a INNER JOIN clause to the query using the PartnersRelatedByPatientId relation
  *
- * @method     \AssignedPrayerQuery|\PartnersQuery endUse() Finalizes a secondary criteria and merges it with its primary Criteria
+ * @method     ChildUserQuery leftJoinPainRating($relationAlias = null) Adds a LEFT JOIN clause to the query using the PainRating relation
+ * @method     ChildUserQuery rightJoinPainRating($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PainRating relation
+ * @method     ChildUserQuery innerJoinPainRating($relationAlias = null) Adds a INNER JOIN clause to the query using the PainRating relation
+ *
+ * @method     \AssignedPrayerQuery|\PartnersQuery|\PainRatingQuery endUse() Finalizes a secondary criteria and merges it with its primary Criteria
  *
  * @method     ChildUser findOne(ConnectionInterface $con = null) Return the first ChildUser matching the query
  * @method     ChildUser findOneOrCreate(ConnectionInterface $con = null) Return the first ChildUser matching the query, or a new ChildUser object populated from the query conditions when no match is found
@@ -747,6 +751,79 @@ abstract class UserQuery extends ModelCriteria
         return $this
             ->joinPartnersRelatedByPatientId($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'PartnersRelatedByPatientId', '\PartnersQuery');
+    }
+
+    /**
+     * Filter the query by a related \PainRating object
+     *
+     * @param \PainRating|ObjectCollection $painRating the related object to use as filter
+     * @param string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ChildUserQuery The current query, for fluid interface
+     */
+    public function filterByPainRating($painRating, $comparison = null)
+    {
+        if ($painRating instanceof \PainRating) {
+            return $this
+                ->addUsingAlias(UserTableMap::COL_ID, $painRating->getUserId(), $comparison);
+        } elseif ($painRating instanceof ObjectCollection) {
+            return $this
+                ->usePainRatingQuery()
+                ->filterByPrimaryKeys($painRating->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByPainRating() only accepts arguments of type \PainRating or Collection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the PainRating relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return $this|ChildUserQuery The current query, for fluid interface
+     */
+    public function joinPainRating($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('PainRating');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'PainRating');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the PainRating relation PainRating object
+     *
+     * @see useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return \PainRatingQuery A secondary query class using the current class as primary query
+     */
+    public function usePainRatingQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinPainRating($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'PainRating', '\PainRatingQuery');
     }
 
     /**

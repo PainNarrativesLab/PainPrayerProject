@@ -45,7 +45,7 @@
         </runtime>
         <generator>
             <defaultConnection>main</defaultConnection>
-            <connection>testing</connection>
+            <!--<connection>testing</connection>-->
         </generator>
     </propel>
 </config>

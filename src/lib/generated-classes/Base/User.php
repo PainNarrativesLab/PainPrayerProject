@@ -4,6 +4,8 @@ namespace Base;
 
 use \AssignedPrayer as ChildAssignedPrayer;
 use \AssignedPrayerQuery as ChildAssignedPrayerQuery;
+use \PainRating as ChildPainRating;
+use \PainRatingQuery as ChildPainRatingQuery;
 use \Partners as ChildPartners;
 use \PartnersQuery as ChildPartnersQuery;
 use \User as ChildUser;
@@ -122,6 +124,12 @@ abstract class User implements ActiveRecordInterface
     protected $collPartnerssRelatedByPatientIdPartial;
 
     /**
+     * @var        ObjectCollection|ChildPainRating[] Collection to store aggregation of ChildPainRating objects.
+     */
+    protected $collPainRatings;
+    protected $collPainRatingsPartial;
+
+    /**
      * @var        ObjectCollection|ChildUser[] Cross Collection to store aggregation of ChildUser objects.
      */
     protected $collpatients;
@@ -184,6 +192,12 @@ abstract class User implements ActiveRecordInterface
      * @var ObjectCollection|ChildPartners[]
      */
     protected $partnerssRelatedByPatientIdScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var ObjectCollection|ChildPainRating[]
+     */
+    protected $painRatingsScheduledForDeletion = null;
 
     /**
      * Initializes internal state of Base\User object.
@@ -705,6 +719,8 @@ abstract class User implements ActiveRecordInterface
 
             $this->collPartnerssRelatedByPatientId = null;
 
+            $this->collPainRatings = null;
+
             $this->collpatients = null;
             $this->collagents = null;
         } // if (deep)
@@ -949,6 +965,23 @@ abstract class User implements ActiveRecordInterface
 
             if ($this->collPartnerssRelatedByPatientId !== null) {
                 foreach ($this->collPartnerssRelatedByPatientId as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
+            if ($this->painRatingsScheduledForDeletion !== null) {
+                if (!$this->painRatingsScheduledForDeletion->isEmpty()) {
+                    \PainRatingQuery::create()
+                        ->filterByPrimaryKeys($this->painRatingsScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->painRatingsScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collPainRatings !== null) {
+                foreach ($this->collPainRatings as $referrerFK) {
                     if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
                         $affectedRows += $referrerFK->save($con);
                     }
@@ -1214,6 +1247,21 @@ abstract class User implements ActiveRecordInterface
                 }
 
                 $result[$key] = $this->collPartnerssRelatedByPatientId->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
+            if (null !== $this->collPainRatings) {
+
+                switch ($keyType) {
+                    case TableMap::TYPE_CAMELNAME:
+                        $key = 'painRatings';
+                        break;
+                    case TableMap::TYPE_FIELDNAME:
+                        $key = 'pain_ratingss';
+                        break;
+                    default:
+                        $key = 'PainRatings';
+                }
+
+                $result[$key] = $this->collPainRatings->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -1489,6 +1537,12 @@ abstract class User implements ActiveRecordInterface
                 }
             }
 
+            foreach ($this->getPainRatings() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addPainRating($relObj->copy($deepCopy));
+                }
+            }
+
         } // if ($deepCopy)
 
         if ($makeNew) {
@@ -1541,6 +1595,9 @@ abstract class User implements ActiveRecordInterface
         }
         if ('PartnersRelatedByPatientId' == $relationName) {
             return $this->initPartnerssRelatedByPatientId();
+        }
+        if ('PainRating' == $relationName) {
+            return $this->initPainRatings();
         }
     }
 
@@ -2423,6 +2480,224 @@ abstract class User implements ActiveRecordInterface
     }
 
     /**
+     * Clears out the collPainRatings collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addPainRatings()
+     */
+    public function clearPainRatings()
+    {
+        $this->collPainRatings = null; // important to set this to NULL since that means it is uninitialized
+    }
+
+    /**
+     * Reset is the collPainRatings collection loaded partially.
+     */
+    public function resetPartialPainRatings($v = true)
+    {
+        $this->collPainRatingsPartial = $v;
+    }
+
+    /**
+     * Initializes the collPainRatings collection.
+     *
+     * By default this just sets the collPainRatings collection to an empty array (like clearcollPainRatings());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param      boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initPainRatings($overrideExisting = true)
+    {
+        if (null !== $this->collPainRatings && !$overrideExisting) {
+            return;
+        }
+        $this->collPainRatings = new ObjectCollection();
+        $this->collPainRatings->setModel('\PainRating');
+    }
+
+    /**
+     * Gets an array of ChildPainRating objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ChildUser is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @return ObjectCollection|ChildPainRating[] List of ChildPainRating objects
+     * @throws PropelException
+     */
+    public function getPainRatings(Criteria $criteria = null, ConnectionInterface $con = null)
+    {
+        $partial = $this->collPainRatingsPartial && !$this->isNew();
+        if (null === $this->collPainRatings || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collPainRatings) {
+                // return empty collection
+                $this->initPainRatings();
+            } else {
+                $collPainRatings = ChildPainRatingQuery::create(null, $criteria)
+                    ->filterByuser($this)
+                    ->find($con);
+
+                if (null !== $criteria) {
+                    if (false !== $this->collPainRatingsPartial && count($collPainRatings)) {
+                        $this->initPainRatings(false);
+
+                        foreach ($collPainRatings as $obj) {
+                            if (false == $this->collPainRatings->contains($obj)) {
+                                $this->collPainRatings->append($obj);
+                            }
+                        }
+
+                        $this->collPainRatingsPartial = true;
+                    }
+
+                    return $collPainRatings;
+                }
+
+                if ($partial && $this->collPainRatings) {
+                    foreach ($this->collPainRatings as $obj) {
+                        if ($obj->isNew()) {
+                            $collPainRatings[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collPainRatings = $collPainRatings;
+                $this->collPainRatingsPartial = false;
+            }
+        }
+
+        return $this->collPainRatings;
+    }
+
+    /**
+     * Sets a collection of ChildPainRating objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param      Collection $painRatings A Propel collection.
+     * @param      ConnectionInterface $con Optional connection object
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function setPainRatings(Collection $painRatings, ConnectionInterface $con = null)
+    {
+        /** @var ChildPainRating[] $painRatingsToDelete */
+        $painRatingsToDelete = $this->getPainRatings(new Criteria(), $con)->diff($painRatings);
+
+
+        $this->painRatingsScheduledForDeletion = $painRatingsToDelete;
+
+        foreach ($painRatingsToDelete as $painRatingRemoved) {
+            $painRatingRemoved->setuser(null);
+        }
+
+        $this->collPainRatings = null;
+        foreach ($painRatings as $painRating) {
+            $this->addPainRating($painRating);
+        }
+
+        $this->collPainRatings = $painRatings;
+        $this->collPainRatingsPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related PainRating objects.
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct
+     * @param      ConnectionInterface $con
+     * @return int             Count of related PainRating objects.
+     * @throws PropelException
+     */
+    public function countPainRatings(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    {
+        $partial = $this->collPainRatingsPartial && !$this->isNew();
+        if (null === $this->collPainRatings || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collPainRatings) {
+                return 0;
+            }
+
+            if ($partial && !$criteria) {
+                return count($this->getPainRatings());
+            }
+
+            $query = ChildPainRatingQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByuser($this)
+                ->count($con);
+        }
+
+        return count($this->collPainRatings);
+    }
+
+    /**
+     * Method called to associate a ChildPainRating object to this object
+     * through the ChildPainRating foreign key attribute.
+     *
+     * @param  ChildPainRating $l ChildPainRating
+     * @return $this|\User The current object (for fluent API support)
+     */
+    public function addPainRating(ChildPainRating $l)
+    {
+        if ($this->collPainRatings === null) {
+            $this->initPainRatings();
+            $this->collPainRatingsPartial = true;
+        }
+
+        if (!$this->collPainRatings->contains($l)) {
+            $this->doAddPainRating($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param ChildPainRating $painRating The ChildPainRating object to add.
+     */
+    protected function doAddPainRating(ChildPainRating $painRating)
+    {
+        $this->collPainRatings[]= $painRating;
+        $painRating->setuser($this);
+    }
+
+    /**
+     * @param  ChildPainRating $painRating The ChildPainRating object to remove.
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function removePainRating(ChildPainRating $painRating)
+    {
+        if ($this->getPainRatings()->contains($painRating)) {
+            $pos = $this->collPainRatings->search($painRating);
+            $this->collPainRatings->remove($pos);
+            if (null === $this->painRatingsScheduledForDeletion) {
+                $this->painRatingsScheduledForDeletion = clone $this->collPainRatings;
+                $this->painRatingsScheduledForDeletion->clear();
+            }
+            $this->painRatingsScheduledForDeletion[]= clone $painRating;
+            $painRating->setuser(null);
+        }
+
+        return $this;
+    }
+
+    /**
      * Clears out the collpatients collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -2956,6 +3231,11 @@ abstract class User implements ActiveRecordInterface
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collPainRatings) {
+                foreach ($this->collPainRatings as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collpatients) {
                 foreach ($this->collpatients as $o) {
                     $o->clearAllReferences($deep);
@@ -2972,6 +3252,7 @@ abstract class User implements ActiveRecordInterface
         $this->collAssignedPrayersRelatedByPatientId = null;
         $this->collPartnerssRelatedByAgentId = null;
         $this->collPartnerssRelatedByPatientId = null;
+        $this->collPainRatings = null;
         $this->collpatients = null;
         $this->collagents = null;
     }

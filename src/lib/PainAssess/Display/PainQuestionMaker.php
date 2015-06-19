@@ -11,5 +11,12 @@ namespace PainAssess\Display;
 
 class PainQuestionMaker 
 {
+    /** var $dao \PainAssess\dao\PainDao */
+    protected $dao;
 
+
+    public function make()
+    {
+        $items = $this->dao->getAllAssessmentItems();
+    }
 }

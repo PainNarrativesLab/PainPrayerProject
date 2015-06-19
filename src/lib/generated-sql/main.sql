@@ -77,7 +77,28 @@ DROP TABLE IF EXISTS `pain_ratings`;
 CREATE TABLE `pain_ratings`
 (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `user` INTEGER NOT NULL,
+    `user_id` INTEGER NOT NULL,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    PRIMARY KEY (`id`),
+    INDEX `pain_ratings_fi_69bd79` (`user_id`),
+    CONSTRAINT `pain_ratings_fk_69bd79`
+        FOREIGN KEY (`user_id`)
+        REFERENCES `users` (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- pain_items
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pain_items`;
+
+CREATE TABLE `pain_items`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `text` VARCHAR(200) NOT NULL,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 

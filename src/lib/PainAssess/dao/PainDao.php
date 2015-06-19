@@ -15,6 +15,11 @@ class PainDao
 
     public function getAllAssessmentItems()
     {
-    \PainAssessmentQ
+        return \PainAssessmentItemQuery::create()->find();
+    }
+
+    public function getAssessmentItemById($id)
+    {
+        return \PainAssessmentItemQuery::create()->filterById($id)->findOneOrCreate();
     }
 }
