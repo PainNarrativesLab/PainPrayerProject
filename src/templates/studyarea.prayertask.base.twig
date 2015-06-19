@@ -5,16 +5,38 @@
  {% endblock %}
 
 {% block topInstruction %}
+    <div class="defaultMessage">
+        Please complete the pain questionnaire above to access your prayer task.
+    </div>
+    <div class="startHidden">
+        {% block topInstructionPrayer %}
+        {% endblock %}
+    </div>
 {% endblock %}
 
 {% block mainContent %}
-        {{ mainContent }}
+    <div class="startHidden">
+        {% block mainContentPrayer %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block statusArea %}
+    <div class="statusMessageArea emptyOnStart startHidden">
+        {# success/failure messages will be displayed here #}
+    </div>
 {% endblock %}
 
 {% block submissionControls %}
-        <input type="button" id="prayerSubmit" class="prettyButton" value="Prayer completed"/>
+    <div class="startHidden">
+        {% block submissionControlsPrayer %}
+        {% endblock %}
+    </div>
 {% endblock %}
 
 {% block bottomInstructions %}
-        {{ bottomInstructions }}
+    <div class="startHidden">
+        {% block bottomInstructionsPrayer %}
+        {% endblock %}
+    </div>
 {% endblock %}

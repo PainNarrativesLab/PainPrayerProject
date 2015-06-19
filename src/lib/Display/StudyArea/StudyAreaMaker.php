@@ -18,7 +18,7 @@ abstract class StudyAreaMaker extends Controller
 
     const AREA_DIV_ID_VAR = 'studyAreaId';
 
-    const TEMPLATE_PAIN_RATINGS = 'studyarea.painquestions.twig';
+    const TEMPLATE_PAIN_RATINGS = 'studyarea.painquestions.checkboxes.twig';
 
     const TEMPLATE_PRE_EXPERIMENT = "studyarea.prayertask.preexperiment.twig";
 

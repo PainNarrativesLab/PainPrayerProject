@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="main" defaultIdMethod="native"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd" >
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd">
 
-    <behavior name="timestampable" />
+    <behavior name="timestampable"/>
 
     <table name="users" phpName="User">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
         <column name="nickname" type="varchar" size="100" primaryKey="true" required="true"/>
         <column name="email" type="varchar" size="200" required="true"/>
         <unique>
-            <unique-column name="nickname" />
-            <unique-column name="email" />
+            <unique-column name="nickname"/>
+            <unique-column name="email"/>
         </unique>
     </table>
 
     <table name="assigned_prayer" phpName="AssignedPrayer">
         <column name="id" type="integer" primaryKey="true" autoIncrement="true"/>
-        <column name="prayer_date" type="date" required="true"  />
-        <column name="agent_id" type="integer" required="true" />
+        <column name="prayer_date" type="date" required="true"/>
+        <column name="agent_id" type="integer" required="true"/>
         <column name="patient_id" type="integer" required="true"/>
         <column name="complete" type="boolean" defaultValue="false"/>
         <foreign-key foreignTable="users" phpName="agent">
-            <reference local="agent_id" foreign="id" />
+            <reference local="agent_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="users" phpName="patient">
-            <reference local="patient_id" foreign="id" />
+            <reference local="patient_id" foreign="id"/>
         </foreign-key>
     </table>
 
     <table name="partners" phpName="Partners" isCrossRef="true">
         <column name="agent_id" type="integer" required="true" primaryKey="true"/>
-        <column name="patient_id" type="integer" required="true" primaryKey="true" />
+        <column name="patient_id" type="integer" required="true" primaryKey="true"/>
         <foreign-key foreignTable="users" phpName="agent">
-            <reference local="agent_id" foreign="id" />
+            <reference local="agent_id" foreign="id"/>
         </foreign-key>
         <foreign-key foreignTable="users" phpName="patient">
-            <reference local="patient_id" foreign="id" />
+            <reference local="patient_id" foreign="id"/>
         </foreign-key>
     </table>
 
@@ -44,13 +44,33 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
         <column name="user_id" type="integer" required="true"/>
         <foreign-key foreignTable="users" phpName="user">
-            <reference local="user_id" foreign="id" />
+            <reference local="user_id" foreign="id"/>
         </foreign-key>
     </table>
 
     <table name="pain_items" phpName="PainAssessmentItem">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
         <column name="text" type="varchar" size="200" required="true"/>
+    </table>
+
+    <table name="prayers" phpName="Prayer">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="text" type="longvarchar" required="true"/>
+    </table>
+
+    <table name="trials" phpName="Trial">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+    </table>
+
+    <table name="trialsXprayers" phpName="TrialPrayerAssociation" isCrossRef="true">
+        <column name="trial_id" type="integer" required="true" primaryKey="true"/>
+        <column name="prayer_id" type="integer" required="true" primaryKey="true"/>
+        <foreign-key foreignTable="trials" phpName="trial">
+            <reference local="trial_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="prayers" phpName="prayer">
+            <reference local="prayer_id" foreign="id"/>
+        </foreign-key>
     </table>
 
 

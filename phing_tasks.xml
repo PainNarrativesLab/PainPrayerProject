@@ -10,20 +10,20 @@
         vendor/bin/propel sql:insert"/>
         <!--refresh the autoloader-->
         <echo message="Updating autoloader" />
-        <exec command="composer dump-autoload"/>
+        <exec command="composer dump-autoload" passthru="true"/>
     </target>
 
     <target name="completelyRebuildModel" description="Completely rebuilds the generated sql and classes from schema.xml">
         <echo message="Rebuilding sql model"/>
-        <exec command="vendor/bin/propel sql:build --overwrite" />
-        <exec command="vendor/bin/propel model:build" />
+        <exec command="vendor/bin/propel sql:build --overwrite" passthru="true" />
+        <exec command="vendor/bin/propel model:build" passthru="true" />
         <echo message="Inserting new schema into db"/>
-        <exec command="vendor/bin/propel sql:insert" />
+        <exec command="vendor/bin/propel sql:insert" passthru="true" />
         <echo message="Refreshing autoload"/>
-        <exec command="composer dump-autoload" />
+        <exec command="composer dump-autoload" passthru="true" />
     </target>
 
-    <target name="addFakeData" description="adds data, fake">
-        <exec command="index.php" dir="/Users/adam/Dropbox/painprayer/src/www"/>
+    <target name="addFakeData" description="adds fake data to dbs">
+        <exec command="php DbPopulate.php" dir="/Users/adam/Dropbox/painprayer/tests/lib" passthru="true" level="debug"/>
     </target>
 </project>

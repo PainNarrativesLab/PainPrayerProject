@@ -25,6 +25,10 @@
     padding-left: 5%;
 }
 
+.startHidden{
+    display: none;
+}
+
 .submissionControls{}
 
 .bottomInstructions{}

@@ -37,7 +37,7 @@ class DbAids
      * Creates fake users
      * @throws \Propel\Runtime\Exception\PropelException
      */
-    public static function populate_users($num = 10)
+    public static function populate_users($conn=null, $num = 10)
     {
         echo "\n Populating users \n";
         try {
@@ -47,12 +47,56 @@ class DbAids
                 $u->setNickname($faker->name());
 //                $u = \UserQuery::create()->filterByNickname($faker->name())->findOneOrCreate();
                 $u->setEmail($faker->email());
-                echo $u->save();
+                $u->save($conn);
             }
         } catch (\Exception $e) {
             echo 'users population error: ' . $e->getMessage();
         }
     }
 
+    public static function populate_assessment_items($conn=null, $num=5)
+    {
+        echo "\n Populating assessment items \n";
+        try{
+        $faker = \Faker\Factory::create();
+        for ($i = 0; $i < $num; $i++) {
+            $ai = new \PainAssessmentItem();
+            $ai->setText($faker->text());
+            $ai->save($conn);
+        }
+        } catch (\Exception $e) {
+        echo 'assessment items population error: ' . $e->getMessage();
+}
+    }
+
+    public static function populate_prayers($conn=null, $num=2)
+    {
+        echo "\n Populating prayers \n";
+        try{
+            $faker = \Faker\Factory::create();
+            for ($i = 0; $i < $num; $i++) {
+                $p = new \Prayer();
+                $p->setText($faker->paragraph(5));
+                $p->save($conn);
+            }
+        } catch (\Exception $e) {
+            echo 'prayer population error: ' . $e->getMessage();
+        }
+    }
+
+    public static function populate_trials($conn=null, $num=2)
+    {
+        echo "\n Populating trials \n";
+        try{
+            $faker = \Faker\Factory::create();
+            for ($i = 0; $i < $num; $i++) {
+                $p = new \Trial();
+                $p->setText($faker->paragraph(5));
+                $p->save($conn);
+            }
+        } catch (\Exception $e) {
+            echo 'prayer population error: ' . $e->getMessage();
+        }
+    }
 }
 

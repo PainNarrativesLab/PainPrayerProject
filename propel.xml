@@ -24,10 +24,10 @@
                         </queries>
                     </settings>
                 </connection>
-                <connection id="testing">
+                <connection id="test">
                     <adapter>mysql</adapter>
                     <classname>Propel\Runtime\Connection\DebugPDO</classname>
-                    <dsn>mysql:host=localhost;dbname=painprayer_testing</dsn>
+                    <dsn>mysql:host=localhost;dbname=painprayer_test</dsn>
                     <user>testuser4</user>
                     <password>testpass4</password>
                     <settings>
@@ -45,7 +45,7 @@
         </runtime>
         <generator>
             <defaultConnection>main</defaultConnection>
-            <!--<connection>testing</connection>-->
+            <!--<connection>test</connection>-->
         </generator>
     </propel>
 </config>

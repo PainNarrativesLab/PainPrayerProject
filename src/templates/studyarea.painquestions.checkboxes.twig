@@ -1,0 +1,24 @@
+{% extends "studyarea.painquestions.twig" %}
+{% block mainContent %}
+    {% set itemCount = 0 %}
+    {% for item in assessmentItems %}
+        {% set itemCount = itemCount + 1 %}
+        <div class="painItemHolder" id="painItem_{{ item.itemId }}">
+            <div class="statusArea" id="painCheckStatus_{{ item.itemId }}"></div>
+            <div class="painCheckArea">
+                <label class="painPrompt" for="painCheckHolder_{{ item.itemId }}">
+                    {{ item.itemText }}
+                </label>
+                <radioset class="buttonify" id="painCheckHolder_{{ item.itemId }}">
+                    {% for i in range(low=0, high=5, step=1) %}
+                        <label for="painCheck_{{ item.itemId }}_{{ i }}">{{ i }}</label>
+                        <input type="radio" class="painChecks" id="painCheck_{{ item.itemId }}_{{ i }}"
+                               data-itemid="{{ item.itemId }}" name="painCheck_{{ item.itemId }}" value="{{ i }}"/>
+                    {% endfor %}
+                </radioset>
+            </div>
+            <input type="hidden" class="itemComplete" id="itemComplete_{{ item.itemId }}" value="false" />
+        </div>
+    {% endfor %}
+    <input type="hidden" id="itemCount" value="{{ itemCount }}"/>
+{% endblock %}

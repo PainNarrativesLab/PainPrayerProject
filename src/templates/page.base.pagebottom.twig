@@ -13,7 +13,7 @@
     </script>
     {% include "js.scriptloader.twig" %}
     <script type="text/javascript">
-        $(document).ready({
+        $(document).ready(function() {
         {% autoescape false %}
             {{ onload }}
         {% endautoescape %}

@@ -12,4 +12,6 @@ namespace Display\StudyArea;
 interface IContentMaker 
 {
     public function make();
+
+    public function getContent();
 }

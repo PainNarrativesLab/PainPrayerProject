@@ -12,6 +12,7 @@ use Scheduling\States\StateManager;
 
 $username = 'test name';
 $page_title = "Pain and spirituality study";
+$trial = 1;
 
 //check incoming hash and get records
 $link_valid = true;
@@ -33,16 +34,29 @@ if($link_valid === false)
         'inc/css/experimentStyles.css',
         'inc/css/footerStyles.css',
         'inc/css/topBarStyles.css',
-        'inc/css/studyAreaStyles.css'
+        'inc/css/studyAreaStyles.css',
+        'inc/css/painrate.questions.css'
     ));
     $page_maker->makePageTopWithNavBar();
+
+    $faker = \Faker\Factory::create();
+    $userHash = $faker->sha256;
+
+    # page body
+    echo "<input type='hidden' id='userHash' value='$userHash' />";
 
 //dummy for development
     $content_maker = new \Display\StudyArea\IContentMakerMock();
 
+    # Pain assessment area
+    $pain_content_maker = new \PainAssess\Display\PainQuestionMaker();
+    $pain_content_maker->setDao(new \PainAssess\dao\PainDao());
+
     $pain_question_area_maker = new \Display\StudyArea\PainRatingMaker();
-    $pain_question_area_maker->setContentMaker($content_maker);
+    $pain_question_area_maker->setContentMaker($pain_content_maker);
     $pain_question_area_maker->make();
+
+    # Prayer task area
     $stages = [
         array('PRE_EXPERIMENT', StateManager::PRE_EXPERIMENT, StudyAreaMaker::TEMPLATE_PRE_EXPERIMENT),
         array('WAITLIST-agent', StateManager::WAITLIST_AGENT, StudyAreaMaker::TEMPLATE_WAITLIST_AGENT),
@@ -52,22 +66,27 @@ if($link_valid === false)
         array('END', StateManager::END, StudyAreaMaker::TEMPLATE_END)
     ];
 
-    foreach ($stages as $s) {
-        $prayer_area_maker = new \Display\StudyArea\PrayerTaskMaker();
-        $prayer_area_maker->setContentMaker($content_maker);
-        echo "<br/>" . $s[0] . "<br/>";
-        $prayer_area_maker->chooseTemplate($s[1]);
-        $prayer_area_maker->make();
-        echo "<br/> -----------<br/>";
-    }
+    shuffle($stages);
+    //dummy
+    $stage = $stages[0][1];
+
+    $prayer_area_maker = new \Display\StudyArea\PrayerTaskMaker();
+    $prayer_content_maker = new \Prayer\Display\PrayerGetter();
+    $prayer_area_maker->setContentMaker($prayer_content_maker);
+    $prayer_area_maker->chooseTemplate($stage);
+    $prayer_area_maker->make();
 
 
     $scripts = <<< J
-var scripts=["inc/js/index.js"];
+var scripts=["inc/js/index.js", "inc/js/painratings.js"];
 J;
 
     $onload = <<< H
-var onLoad=function(){console.log("onload fired");};
+var onLoad = function(){
+    painRatingsOnLoad();
+    prayertaskOnLoad();
+    console.log("onload fired");
+    };
 H;
 
     $page_maker->makePageBottom($scripts, $onload);

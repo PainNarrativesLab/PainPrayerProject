@@ -13,10 +13,16 @@ class PainRatingMaker extends StudyAreaMaker
 {
     const DIV_ID = 'painRating';
 
+    const INPUT_ITEM_ID = 'itemId';
+
+    const INPUT_ITEM_PROMPT = 'itemText';
+
+    const DATA_ARRAY_KEY = 'assessmentItems';
 
     public function make()
     {
-        $vars = array('mainContent' => $this->content_maker->make());
+        $vars = $this->content_maker->getContent();
+//        $vars = array('mainContent' => $this->content_maker->make());
         $this->add_variables($vars);
         $this->setAreaDivId(self::DIV_ID);
         $this->render(self::TEMPLATE_PAIN_RATINGS);

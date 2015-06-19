@@ -1,0 +1,32 @@
+.painItemHolder{
+    display: block;
+    clear:both;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    /*border: solid;*/
+    /*border-color: red;*/
+}
+
+.painPrompt{
+    display: block;
+}
+
+.statusArea{
+    display: block;
+    float:left;
+    /*border: solid;*/
+    /*border-color: green;*/
+}
+.painCheckArea{
+    display: block;
+    float:right;
+    width: 90%;
+    /*border: solid;*/
+    /*border-color: blue;*/
+}
+
+
+
+
+
+.painChecks{}

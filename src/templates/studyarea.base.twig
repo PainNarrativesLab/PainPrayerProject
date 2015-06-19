@@ -4,24 +4,25 @@
         {% endblock %}
     </div>
 
-    <div class="topInstructions studyAreaItem startHidden">
+    <div class="topInstructions studyAreaItem ">
         {% block topInstruction %}
         {% endblock %}
     </div>
 
-    <div class="mainContent studyAreaItem startHidden">
+    <div class="mainContent studyAreaItem">
         {% block mainContent %}
         {% endblock %}
     </div>
-    <div class="statusMessageArea emptyOnStart startHidden">
-        {# success/failure messages will be displayed here #}
-    </div>
-    <div class="submissionControls studyAreaItem startHidden">
+
+    {% block statusArea %}
+    {% endblock %}
+
+    <div class="submissionControls studyAreaItem ">
         {% block submissionControls %}
         {% endblock %}
     </div>
 
-    <div class="bottomInstructions studyAreaItem startHidden">
+    <div class="bottomInstructions studyAreaItem ">
         {% block bottomInstructions %}
         {% endblock %}
     </div>

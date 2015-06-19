@@ -102,5 +102,56 @@ CREATE TABLE `pain_items`
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
+-- ---------------------------------------------------------------------
+-- prayers
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `prayers`;
+
+CREATE TABLE `prayers`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `text` TEXT NOT NULL,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- trials
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `trials`;
+
+CREATE TABLE `trials`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- trialsXprayers
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `trialsXprayers`;
+
+CREATE TABLE `trialsXprayers`
+(
+    `trial_id` INTEGER NOT NULL,
+    `prayer_id` INTEGER NOT NULL,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    PRIMARY KEY (`trial_id`,`prayer_id`),
+    INDEX `trialsXprayers_fi_cae78b` (`prayer_id`),
+    CONSTRAINT `trialsXprayers_fk_1fe6bc`
+        FOREIGN KEY (`trial_id`)
+        REFERENCES `trials` (`id`),
+    CONSTRAINT `trialsXprayers_fk_cae78b`
+        FOREIGN KEY (`prayer_id`)
+        REFERENCES `prayers` (`id`)
+) ENGINE=InnoDB;
+
 # This restores the fkey checks, after having unset them earlier
 SET FOREIGN_KEY_CHECKS = 1;
