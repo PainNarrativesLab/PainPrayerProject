@@ -1,0 +1,25 @@
+{% extends "studyarea.prayertask.base.twig" %}
+
+{% block topInstruction %}
+    <p class="instructionText">
+        You are currently on the waitlist for a partner to be assigned to pray for you.
+        In the meantime, if you would be willing to pray for someone else:
+    </p>
+    <br/>[which do we want]<br/>
+    <ul>
+        <li>who is not able or no available to pray for you</li>
+        <li>whose partner is unable or unavailable to pray for them</li>
+    </ul>
+{% endblock %}
+
+{% block mainContent %}
+        {{ mainContent }}
+{% endblock %}
+
+{% block submissionControls %}
+        <input type="button" id="prayerSubmit" class="prettyButton" value="Prayer completed"/>
+{% endblock %}
+
+{% block bottomInstructions %}
+    {{ bottomInstructions }}
+{% endblock %}

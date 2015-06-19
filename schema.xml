@@ -45,6 +45,10 @@
         </foreign-key>
     </table>
 
+    <table name="pain_items" phpName="PainAssessmentItem">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="text" type="text" required="true"/>
+    </table>
 
 
 </database>

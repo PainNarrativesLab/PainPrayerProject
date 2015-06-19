@@ -18,6 +18,17 @@ abstract class StudyAreaMaker extends Controller
 
     const AREA_DIV_ID_VAR = 'studyAreaId';
 
+    const TEMPLATE_PAIN_RATINGS = 'studyarea.painquestions.twig';
+
+    const TEMPLATE_PRE_EXPERIMENT = "studyarea.prayertask.preexperiment.twig";
+
+    const TEMPLATE_WAITLIST_AGENT = "studyarea.prayertask.waitlist.agent.twig";
+    const TEMPLATE_WAITLIST_PATIENT = "studyarea.prayertask.waitlist.patient.twig";
+    const TEMPLATE_ACTIVE = "studyarea.prayertask.active.twig";
+    const TEMPLATE_POST_EXPERIMENT = "studyarea.prayertask.postexperiment.twig";
+    const TEMPLATE_END = "studyarea.prayertask.endexperiment.twig";
+
+
     /**
      * @var $content_maker \Display\StudyArea\IContentMaker Returns the content for mainContent on calling make()
      */

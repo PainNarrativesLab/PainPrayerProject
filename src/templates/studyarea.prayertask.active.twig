@@ -1,0 +1,19 @@
+{% extends "studyarea.prayertask.base.twig" %}
+
+{% block topInstruction %}
+    <p class="instructionText">Please complete the following prayer on behalf of your partner.</p>
+    <p class="instructionText">Please do not forget to click the "Prayer completed" button below. Once you do
+    that, your partner will be notified that you have prayed for them.</p>
+{% endblock %}
+
+{% block mainContent %}
+        {{ mainContent }}
+{% endblock %}
+
+{% block submissionControls %}
+        <input type="button" id="prayerSubmit" class="prettyButton" value="Prayer completed"/>
+{% endblock %}
+
+{% block bottomInstructions %}
+    {{ bottomInstructions }}
+{% endblock %}

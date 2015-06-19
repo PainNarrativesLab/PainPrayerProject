@@ -11,9 +11,9 @@ namespace TemplateClasses;
 
 class PageMaker extends Controller
 {
-    const HEAD_TEMPLATE = 'base.html.head.twig';
-    const HEAD_W_NAVBAR_TEMPLATE = 'head_with_topbar.twig';
-    const FOOT_TEMPLATE = 'base.html.pagebottom.twig';
+    const HEAD_TEMPLATE = 'page.base.head.twig';
+    const HEAD_W_NAVBAR_TEMPLATE = 'page.head_with_topbar.twig';
+    const FOOT_TEMPLATE = 'page.base.pagebottom.twig';
 
     protected $pageName;
 

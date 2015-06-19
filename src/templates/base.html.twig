@@ -1,27 +1,4 @@
-{% include "base.html.head.twig" %}
-<body>
-{% block navbar %}
-{% endblock %}
-{% include "navbar.teach_admin.twig" %}
-<div class="container">
-    <div id="mainBody">
-        {% block mainBody %}
-        {% endblock %}
-    </div>
-    {% include "base.html.pagebottom.twig" %}
-    {#<div class="footer">#}
-        {#{% block footer %}#}
-            {#{% include "footer.base.twig" %}#}
-        {#{% endblock %}#}
-    {#</div>#}
-{#</div>#}
-{#<div id="scriptBox">#}
-    {#{% include "js.jquery.twig" %}#}
-
-    {#{% include "js.scriptloader.twig" %}#}
-
-    {#{% block scriptBox %}#}
-    {#{% endblock %}#}
-{#</div>#}
-{#</body>#}
-{#</html>#}
+{% include "page.base.head.twig" %}
+    {% block mainBody %}
+    {% endblock %}
+{% include "page.base.pagebottom.twig" %}
