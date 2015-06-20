@@ -29,9 +29,10 @@ DROP TABLE IF EXISTS `assigned_prayer`;
 CREATE TABLE `assigned_prayer`
 (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `prayer_date` DATE NOT NULL,
     `agent_id` INTEGER NOT NULL,
     `patient_id` INTEGER NOT NULL,
+    `prayer_date` DATE NOT NULL,
+    `assignmentHash` TEXT NOT NULL,
     `complete` TINYINT(1) DEFAULT 0,
     `created_at` DATETIME,
     `updated_at` DATETIME,

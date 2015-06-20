@@ -44,7 +44,7 @@ class PrayerTaskMaker extends StudyAreaMaker
                 break;
 
             case StateManager::END:
-                $this->template = self::TEMPLATE_PRE_EXPERIMENT;
+                $this->template = self::TEMPLATE_END;
                 break;
 
             default:

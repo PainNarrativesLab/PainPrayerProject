@@ -71,12 +71,6 @@ abstract class AssignedPrayer implements ActiveRecordInterface
     protected $id;
 
     /**
-     * The value for the prayer_date field.
-     * @var        \DateTime
-     */
-    protected $prayer_date;
-
-    /**
      * The value for the agent_id field.
      * @var        int
      */
@@ -87,6 +81,18 @@ abstract class AssignedPrayer implements ActiveRecordInterface
      * @var        int
      */
     protected $patient_id;
+
+    /**
+     * The value for the prayer_date field.
+     * @var        \DateTime
+     */
+    protected $prayer_date;
+
+    /**
+     * The value for the assignmenthash field.
+     * @var        string
+     */
+    protected $assignmenthash;
 
     /**
      * The value for the complete field.
@@ -366,6 +372,26 @@ abstract class AssignedPrayer implements ActiveRecordInterface
     }
 
     /**
+     * Get the [agent_id] column value.
+     *
+     * @return int
+     */
+    public function getAgentId()
+    {
+        return $this->agent_id;
+    }
+
+    /**
+     * Get the [patient_id] column value.
+     *
+     * @return int
+     */
+    public function getPatientId()
+    {
+        return $this->patient_id;
+    }
+
+    /**
      * Get the [optionally formatted] temporal [prayer_date] column value.
      *
      *
@@ -386,23 +412,13 @@ abstract class AssignedPrayer implements ActiveRecordInterface
     }
 
     /**
-     * Get the [agent_id] column value.
+     * Get the [assignmenthash] column value.
      *
-     * @return int
+     * @return string
      */
-    public function getAgentId()
+    public function getAssignmenthash()
     {
-        return $this->agent_id;
-    }
-
-    /**
-     * Get the [patient_id] column value.
-     *
-     * @return int
-     */
-    public function getPatientId()
-    {
-        return $this->patient_id;
+        return $this->assignmenthash;
     }
 
     /**
@@ -486,26 +502,6 @@ abstract class AssignedPrayer implements ActiveRecordInterface
     } // setId()
 
     /**
-     * Sets the value of [prayer_date] column to a normalized version of the date/time value specified.
-     *
-     * @param  mixed $v string, integer (timestamp), or \DateTime value.
-     *               Empty strings are treated as NULL.
-     * @return $this|\AssignedPrayer The current object (for fluent API support)
-     */
-    public function setPrayerDate($v)
-    {
-        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
-        if ($this->prayer_date !== null || $dt !== null) {
-            if ($this->prayer_date === null || $dt === null || $dt->format("Y-m-d") !== $this->prayer_date->format("Y-m-d")) {
-                $this->prayer_date = $dt === null ? null : clone $dt;
-                $this->modifiedColumns[AssignedPrayerTableMap::COL_PRAYER_DATE] = true;
-            }
-        } // if either are not null
-
-        return $this;
-    } // setPrayerDate()
-
-    /**
      * Set the value of [agent_id] column.
      *
      * @param int $v new value
@@ -552,6 +548,46 @@ abstract class AssignedPrayer implements ActiveRecordInterface
 
         return $this;
     } // setPatientId()
+
+    /**
+     * Sets the value of [prayer_date] column to a normalized version of the date/time value specified.
+     *
+     * @param  mixed $v string, integer (timestamp), or \DateTime value.
+     *               Empty strings are treated as NULL.
+     * @return $this|\AssignedPrayer The current object (for fluent API support)
+     */
+    public function setPrayerDate($v)
+    {
+        $dt = PropelDateTime::newInstance($v, null, 'DateTime');
+        if ($this->prayer_date !== null || $dt !== null) {
+            if ($this->prayer_date === null || $dt === null || $dt->format("Y-m-d") !== $this->prayer_date->format("Y-m-d")) {
+                $this->prayer_date = $dt === null ? null : clone $dt;
+                $this->modifiedColumns[AssignedPrayerTableMap::COL_PRAYER_DATE] = true;
+            }
+        } // if either are not null
+
+        return $this;
+    } // setPrayerDate()
+
+    /**
+     * Set the value of [assignmenthash] column.
+     *
+     * @param string $v new value
+     * @return $this|\AssignedPrayer The current object (for fluent API support)
+     */
+    public function setAssignmenthash($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->assignmenthash !== $v) {
+            $this->assignmenthash = $v;
+            $this->modifiedColumns[AssignedPrayerTableMap::COL_ASSIGNMENTHASH] = true;
+        }
+
+        return $this;
+    } // setAssignmenthash()
 
     /**
      * Sets the value of the [complete] column.
@@ -664,28 +700,31 @@ abstract class AssignedPrayer implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : AssignedPrayerTableMap::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
             $this->id = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : AssignedPrayerTableMap::translateFieldName('PrayerDate', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : AssignedPrayerTableMap::translateFieldName('AgentId', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->agent_id = (null !== $col) ? (int) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : AssignedPrayerTableMap::translateFieldName('PatientId', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->patient_id = (null !== $col) ? (int) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : AssignedPrayerTableMap::translateFieldName('PrayerDate', TableMap::TYPE_PHPNAME, $indexType)];
             if ($col === '0000-00-00') {
                 $col = null;
             }
             $this->prayer_date = (null !== $col) ? PropelDateTime::newInstance($col, null, 'DateTime') : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : AssignedPrayerTableMap::translateFieldName('AgentId', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->agent_id = (null !== $col) ? (int) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : AssignedPrayerTableMap::translateFieldName('Assignmenthash', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->assignmenthash = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : AssignedPrayerTableMap::translateFieldName('PatientId', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->patient_id = (null !== $col) ? (int) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : AssignedPrayerTableMap::translateFieldName('Complete', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : AssignedPrayerTableMap::translateFieldName('Complete', TableMap::TYPE_PHPNAME, $indexType)];
             $this->complete = (null !== $col) ? (boolean) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : AssignedPrayerTableMap::translateFieldName('CreatedAt', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : AssignedPrayerTableMap::translateFieldName('CreatedAt', TableMap::TYPE_PHPNAME, $indexType)];
             if ($col === '0000-00-00 00:00:00') {
                 $col = null;
             }
             $this->created_at = (null !== $col) ? PropelDateTime::newInstance($col, null, 'DateTime') : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : AssignedPrayerTableMap::translateFieldName('UpdatedAt', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : AssignedPrayerTableMap::translateFieldName('UpdatedAt', TableMap::TYPE_PHPNAME, $indexType)];
             if ($col === '0000-00-00 00:00:00') {
                 $col = null;
             }
@@ -698,7 +737,7 @@ abstract class AssignedPrayer implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 7; // 7 = AssignedPrayerTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = AssignedPrayerTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\AssignedPrayer'), 0, $e);
@@ -937,14 +976,17 @@ abstract class AssignedPrayer implements ActiveRecordInterface
         if ($this->isColumnModified(AssignedPrayerTableMap::COL_ID)) {
             $modifiedColumns[':p' . $index++]  = 'id';
         }
-        if ($this->isColumnModified(AssignedPrayerTableMap::COL_PRAYER_DATE)) {
-            $modifiedColumns[':p' . $index++]  = 'prayer_date';
-        }
         if ($this->isColumnModified(AssignedPrayerTableMap::COL_AGENT_ID)) {
             $modifiedColumns[':p' . $index++]  = 'agent_id';
         }
         if ($this->isColumnModified(AssignedPrayerTableMap::COL_PATIENT_ID)) {
             $modifiedColumns[':p' . $index++]  = 'patient_id';
+        }
+        if ($this->isColumnModified(AssignedPrayerTableMap::COL_PRAYER_DATE)) {
+            $modifiedColumns[':p' . $index++]  = 'prayer_date';
+        }
+        if ($this->isColumnModified(AssignedPrayerTableMap::COL_ASSIGNMENTHASH)) {
+            $modifiedColumns[':p' . $index++]  = 'assignmentHash';
         }
         if ($this->isColumnModified(AssignedPrayerTableMap::COL_COMPLETE)) {
             $modifiedColumns[':p' . $index++]  = 'complete';
@@ -969,14 +1011,17 @@ abstract class AssignedPrayer implements ActiveRecordInterface
                     case 'id':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case 'prayer_date':
-                        $stmt->bindValue($identifier, $this->prayer_date ? $this->prayer_date->format("Y-m-d H:i:s") : null, PDO::PARAM_STR);
-                        break;
                     case 'agent_id':
                         $stmt->bindValue($identifier, $this->agent_id, PDO::PARAM_INT);
                         break;
                     case 'patient_id':
                         $stmt->bindValue($identifier, $this->patient_id, PDO::PARAM_INT);
+                        break;
+                    case 'prayer_date':
+                        $stmt->bindValue($identifier, $this->prayer_date ? $this->prayer_date->format("Y-m-d H:i:s") : null, PDO::PARAM_STR);
+                        break;
+                    case 'assignmentHash':
+                        $stmt->bindValue($identifier, $this->assignmenthash, PDO::PARAM_STR);
                         break;
                     case 'complete':
                         $stmt->bindValue($identifier, (int) $this->complete, PDO::PARAM_INT);
@@ -1053,21 +1098,24 @@ abstract class AssignedPrayer implements ActiveRecordInterface
                 return $this->getId();
                 break;
             case 1:
-                return $this->getPrayerDate();
-                break;
-            case 2:
                 return $this->getAgentId();
                 break;
-            case 3:
+            case 2:
                 return $this->getPatientId();
                 break;
+            case 3:
+                return $this->getPrayerDate();
+                break;
             case 4:
-                return $this->getComplete();
+                return $this->getAssignmenthash();
                 break;
             case 5:
-                return $this->getCreatedAt();
+                return $this->getComplete();
                 break;
             case 6:
+                return $this->getCreatedAt();
+                break;
+            case 7:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -1101,31 +1149,32 @@ abstract class AssignedPrayer implements ActiveRecordInterface
         $keys = AssignedPrayerTableMap::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getPrayerDate(),
-            $keys[2] => $this->getAgentId(),
-            $keys[3] => $this->getPatientId(),
-            $keys[4] => $this->getComplete(),
-            $keys[5] => $this->getCreatedAt(),
-            $keys[6] => $this->getUpdatedAt(),
+            $keys[1] => $this->getAgentId(),
+            $keys[2] => $this->getPatientId(),
+            $keys[3] => $this->getPrayerDate(),
+            $keys[4] => $this->getAssignmenthash(),
+            $keys[5] => $this->getComplete(),
+            $keys[6] => $this->getCreatedAt(),
+            $keys[7] => $this->getUpdatedAt(),
         );
 
         $utc = new \DateTimeZone('utc');
-        if ($result[$keys[1]] instanceof \DateTime) {
+        if ($result[$keys[3]] instanceof \DateTime) {
             // When changing timezone we don't want to change existing instances
-            $dateTime = clone $result[$keys[1]];
-            $result[$keys[1]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
-        }
-
-        if ($result[$keys[5]] instanceof \DateTime) {
-            // When changing timezone we don't want to change existing instances
-            $dateTime = clone $result[$keys[5]];
-            $result[$keys[5]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
+            $dateTime = clone $result[$keys[3]];
+            $result[$keys[3]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
         }
 
         if ($result[$keys[6]] instanceof \DateTime) {
             // When changing timezone we don't want to change existing instances
             $dateTime = clone $result[$keys[6]];
             $result[$keys[6]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
+        }
+
+        if ($result[$keys[7]] instanceof \DateTime) {
+            // When changing timezone we don't want to change existing instances
+            $dateTime = clone $result[$keys[7]];
+            $result[$keys[7]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
         }
 
         $virtualColumns = $this->virtualColumns;
@@ -1202,21 +1251,24 @@ abstract class AssignedPrayer implements ActiveRecordInterface
                 $this->setId($value);
                 break;
             case 1:
-                $this->setPrayerDate($value);
-                break;
-            case 2:
                 $this->setAgentId($value);
                 break;
-            case 3:
+            case 2:
                 $this->setPatientId($value);
                 break;
+            case 3:
+                $this->setPrayerDate($value);
+                break;
             case 4:
-                $this->setComplete($value);
+                $this->setAssignmenthash($value);
                 break;
             case 5:
-                $this->setCreatedAt($value);
+                $this->setComplete($value);
                 break;
             case 6:
+                $this->setCreatedAt($value);
+                break;
+            case 7:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1249,22 +1301,25 @@ abstract class AssignedPrayer implements ActiveRecordInterface
             $this->setId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
-            $this->setPrayerDate($arr[$keys[1]]);
+            $this->setAgentId($arr[$keys[1]]);
         }
         if (array_key_exists($keys[2], $arr)) {
-            $this->setAgentId($arr[$keys[2]]);
+            $this->setPatientId($arr[$keys[2]]);
         }
         if (array_key_exists($keys[3], $arr)) {
-            $this->setPatientId($arr[$keys[3]]);
+            $this->setPrayerDate($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setComplete($arr[$keys[4]]);
+            $this->setAssignmenthash($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setCreatedAt($arr[$keys[5]]);
+            $this->setComplete($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setUpdatedAt($arr[$keys[6]]);
+            $this->setCreatedAt($arr[$keys[6]]);
+        }
+        if (array_key_exists($keys[7], $arr)) {
+            $this->setUpdatedAt($arr[$keys[7]]);
         }
     }
 
@@ -1310,14 +1365,17 @@ abstract class AssignedPrayer implements ActiveRecordInterface
         if ($this->isColumnModified(AssignedPrayerTableMap::COL_ID)) {
             $criteria->add(AssignedPrayerTableMap::COL_ID, $this->id);
         }
-        if ($this->isColumnModified(AssignedPrayerTableMap::COL_PRAYER_DATE)) {
-            $criteria->add(AssignedPrayerTableMap::COL_PRAYER_DATE, $this->prayer_date);
-        }
         if ($this->isColumnModified(AssignedPrayerTableMap::COL_AGENT_ID)) {
             $criteria->add(AssignedPrayerTableMap::COL_AGENT_ID, $this->agent_id);
         }
         if ($this->isColumnModified(AssignedPrayerTableMap::COL_PATIENT_ID)) {
             $criteria->add(AssignedPrayerTableMap::COL_PATIENT_ID, $this->patient_id);
+        }
+        if ($this->isColumnModified(AssignedPrayerTableMap::COL_PRAYER_DATE)) {
+            $criteria->add(AssignedPrayerTableMap::COL_PRAYER_DATE, $this->prayer_date);
+        }
+        if ($this->isColumnModified(AssignedPrayerTableMap::COL_ASSIGNMENTHASH)) {
+            $criteria->add(AssignedPrayerTableMap::COL_ASSIGNMENTHASH, $this->assignmenthash);
         }
         if ($this->isColumnModified(AssignedPrayerTableMap::COL_COMPLETE)) {
             $criteria->add(AssignedPrayerTableMap::COL_COMPLETE, $this->complete);
@@ -1414,9 +1472,10 @@ abstract class AssignedPrayer implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setPrayerDate($this->getPrayerDate());
         $copyObj->setAgentId($this->getAgentId());
         $copyObj->setPatientId($this->getPatientId());
+        $copyObj->setPrayerDate($this->getPrayerDate());
+        $copyObj->setAssignmenthash($this->getAssignmenthash());
         $copyObj->setComplete($this->getComplete());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
@@ -1568,9 +1627,10 @@ abstract class AssignedPrayer implements ActiveRecordInterface
             $this->apatient->removeAssignedPrayerRelatedByPatientId($this);
         }
         $this->id = null;
-        $this->prayer_date = null;
         $this->agent_id = null;
         $this->patient_id = null;
+        $this->prayer_date = null;
+        $this->assignmenthash = null;
         $this->complete = null;
         $this->created_at = null;
         $this->updated_at = null;

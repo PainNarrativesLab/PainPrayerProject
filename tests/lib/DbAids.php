@@ -132,6 +132,9 @@ class DbAids
             echo 'prayer population error: ' . $e->getMessage();
         }
     }
+
+    public static function populate_prayer_assignments($conn=null)
+    {}
 }
 
 

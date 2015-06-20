@@ -24,7 +24,14 @@ require_once("$vendor/autoload.php");
 
 # initialize propel
 require_once("$src/lib/generated-conf/config.php");
-require_once("$vendor/propel/propel/tests/bootstrap.php");
+//require_once("$vendor/propel/propel/tests/bootstrap.php");
+
+$serviceContainer = \Propel\Runtime\Propel::getServiceContainer();
+    $serviceContainer->setDefaultDatasource('test');
+//\Propel::setConnection(
+//    "propel",
+//    Propel::getConnection(SqliteSetup::$databaseName)
+//);
 
 echo "\n connections made \n";
 

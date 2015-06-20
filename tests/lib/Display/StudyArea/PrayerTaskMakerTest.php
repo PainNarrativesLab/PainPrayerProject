@@ -36,7 +36,8 @@ class PrayerTaskMakerTest extends \PHPUnit_Framework_TestCase {
 
         foreach ($this->stages as $s) {
             $this->object->chooseTemplate($s[1]);
-            $this->assertAttributeInstanceOf($s[1], 'template', $this->object, "error with " . $s[0]);
+            $this->assertAttributeEquals($s[2], 'template', $this->object, "error with " . $s[0]);
+//            $this->assertAttributeInstanceOf($s[1], 'template', $this->object, "error with " . $s[0]);
         }
 
 

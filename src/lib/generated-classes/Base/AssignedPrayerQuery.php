@@ -21,17 +21,19 @@ use Propel\Runtime\Exception\PropelException;
  *
  *
  * @method     ChildAssignedPrayerQuery orderById($order = Criteria::ASC) Order by the id column
- * @method     ChildAssignedPrayerQuery orderByPrayerDate($order = Criteria::ASC) Order by the prayer_date column
  * @method     ChildAssignedPrayerQuery orderByAgentId($order = Criteria::ASC) Order by the agent_id column
  * @method     ChildAssignedPrayerQuery orderByPatientId($order = Criteria::ASC) Order by the patient_id column
+ * @method     ChildAssignedPrayerQuery orderByPrayerDate($order = Criteria::ASC) Order by the prayer_date column
+ * @method     ChildAssignedPrayerQuery orderByAssignmenthash($order = Criteria::ASC) Order by the assignmentHash column
  * @method     ChildAssignedPrayerQuery orderByComplete($order = Criteria::ASC) Order by the complete column
  * @method     ChildAssignedPrayerQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method     ChildAssignedPrayerQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method     ChildAssignedPrayerQuery groupById() Group by the id column
- * @method     ChildAssignedPrayerQuery groupByPrayerDate() Group by the prayer_date column
  * @method     ChildAssignedPrayerQuery groupByAgentId() Group by the agent_id column
  * @method     ChildAssignedPrayerQuery groupByPatientId() Group by the patient_id column
+ * @method     ChildAssignedPrayerQuery groupByPrayerDate() Group by the prayer_date column
+ * @method     ChildAssignedPrayerQuery groupByAssignmenthash() Group by the assignmentHash column
  * @method     ChildAssignedPrayerQuery groupByComplete() Group by the complete column
  * @method     ChildAssignedPrayerQuery groupByCreatedAt() Group by the created_at column
  * @method     ChildAssignedPrayerQuery groupByUpdatedAt() Group by the updated_at column
@@ -54,9 +56,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildAssignedPrayer findOneOrCreate(ConnectionInterface $con = null) Return the first ChildAssignedPrayer matching the query, or a new ChildAssignedPrayer object populated from the query conditions when no match is found
  *
  * @method     ChildAssignedPrayer findOneById(int $id) Return the first ChildAssignedPrayer filtered by the id column
- * @method     ChildAssignedPrayer findOneByPrayerDate(string $prayer_date) Return the first ChildAssignedPrayer filtered by the prayer_date column
  * @method     ChildAssignedPrayer findOneByAgentId(int $agent_id) Return the first ChildAssignedPrayer filtered by the agent_id column
  * @method     ChildAssignedPrayer findOneByPatientId(int $patient_id) Return the first ChildAssignedPrayer filtered by the patient_id column
+ * @method     ChildAssignedPrayer findOneByPrayerDate(string $prayer_date) Return the first ChildAssignedPrayer filtered by the prayer_date column
+ * @method     ChildAssignedPrayer findOneByAssignmenthash(string $assignmentHash) Return the first ChildAssignedPrayer filtered by the assignmentHash column
  * @method     ChildAssignedPrayer findOneByComplete(boolean $complete) Return the first ChildAssignedPrayer filtered by the complete column
  * @method     ChildAssignedPrayer findOneByCreatedAt(string $created_at) Return the first ChildAssignedPrayer filtered by the created_at column
  * @method     ChildAssignedPrayer findOneByUpdatedAt(string $updated_at) Return the first ChildAssignedPrayer filtered by the updated_at column *
@@ -65,18 +68,20 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildAssignedPrayer requireOne(ConnectionInterface $con = null) Return the first ChildAssignedPrayer matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildAssignedPrayer requireOneById(int $id) Return the first ChildAssignedPrayer filtered by the id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildAssignedPrayer requireOneByPrayerDate(string $prayer_date) Return the first ChildAssignedPrayer filtered by the prayer_date column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildAssignedPrayer requireOneByAgentId(int $agent_id) Return the first ChildAssignedPrayer filtered by the agent_id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildAssignedPrayer requireOneByPatientId(int $patient_id) Return the first ChildAssignedPrayer filtered by the patient_id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildAssignedPrayer requireOneByPrayerDate(string $prayer_date) Return the first ChildAssignedPrayer filtered by the prayer_date column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildAssignedPrayer requireOneByAssignmenthash(string $assignmentHash) Return the first ChildAssignedPrayer filtered by the assignmentHash column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildAssignedPrayer requireOneByComplete(boolean $complete) Return the first ChildAssignedPrayer filtered by the complete column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildAssignedPrayer requireOneByCreatedAt(string $created_at) Return the first ChildAssignedPrayer filtered by the created_at column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildAssignedPrayer requireOneByUpdatedAt(string $updated_at) Return the first ChildAssignedPrayer filtered by the updated_at column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildAssignedPrayer[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildAssignedPrayer objects based on current ModelCriteria
  * @method     ChildAssignedPrayer[]|ObjectCollection findById(int $id) Return ChildAssignedPrayer objects filtered by the id column
- * @method     ChildAssignedPrayer[]|ObjectCollection findByPrayerDate(string $prayer_date) Return ChildAssignedPrayer objects filtered by the prayer_date column
  * @method     ChildAssignedPrayer[]|ObjectCollection findByAgentId(int $agent_id) Return ChildAssignedPrayer objects filtered by the agent_id column
  * @method     ChildAssignedPrayer[]|ObjectCollection findByPatientId(int $patient_id) Return ChildAssignedPrayer objects filtered by the patient_id column
+ * @method     ChildAssignedPrayer[]|ObjectCollection findByPrayerDate(string $prayer_date) Return ChildAssignedPrayer objects filtered by the prayer_date column
+ * @method     ChildAssignedPrayer[]|ObjectCollection findByAssignmenthash(string $assignmentHash) Return ChildAssignedPrayer objects filtered by the assignmentHash column
  * @method     ChildAssignedPrayer[]|ObjectCollection findByComplete(boolean $complete) Return ChildAssignedPrayer objects filtered by the complete column
  * @method     ChildAssignedPrayer[]|ObjectCollection findByCreatedAt(string $created_at) Return ChildAssignedPrayer objects filtered by the created_at column
  * @method     ChildAssignedPrayer[]|ObjectCollection findByUpdatedAt(string $updated_at) Return ChildAssignedPrayer objects filtered by the updated_at column
@@ -172,7 +177,7 @@ abstract class AssignedPrayerQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, prayer_date, agent_id, patient_id, complete, created_at, updated_at FROM assigned_prayer WHERE id = :p0';
+        $sql = 'SELECT id, agent_id, patient_id, prayer_date, assignmentHash, complete, created_at, updated_at FROM assigned_prayer WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -304,49 +309,6 @@ abstract class AssignedPrayerQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the prayer_date column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByPrayerDate('2011-03-14'); // WHERE prayer_date = '2011-03-14'
-     * $query->filterByPrayerDate('now'); // WHERE prayer_date = '2011-03-14'
-     * $query->filterByPrayerDate(array('max' => 'yesterday')); // WHERE prayer_date > '2011-03-13'
-     * </code>
-     *
-     * @param     mixed $prayerDate The value to use as filter.
-     *              Values can be integers (unix timestamps), DateTime objects, or strings.
-     *              Empty strings are treated as NULL.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildAssignedPrayerQuery The current query, for fluid interface
-     */
-    public function filterByPrayerDate($prayerDate = null, $comparison = null)
-    {
-        if (is_array($prayerDate)) {
-            $useMinMax = false;
-            if (isset($prayerDate['min'])) {
-                $this->addUsingAlias(AssignedPrayerTableMap::COL_PRAYER_DATE, $prayerDate['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($prayerDate['max'])) {
-                $this->addUsingAlias(AssignedPrayerTableMap::COL_PRAYER_DATE, $prayerDate['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(AssignedPrayerTableMap::COL_PRAYER_DATE, $prayerDate, $comparison);
-    }
-
-    /**
      * Filter the query on the agent_id column
      *
      * Example usage:
@@ -430,6 +392,78 @@ abstract class AssignedPrayerQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(AssignedPrayerTableMap::COL_PATIENT_ID, $patientId, $comparison);
+    }
+
+    /**
+     * Filter the query on the prayer_date column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPrayerDate('2011-03-14'); // WHERE prayer_date = '2011-03-14'
+     * $query->filterByPrayerDate('now'); // WHERE prayer_date = '2011-03-14'
+     * $query->filterByPrayerDate(array('max' => 'yesterday')); // WHERE prayer_date > '2011-03-13'
+     * </code>
+     *
+     * @param     mixed $prayerDate The value to use as filter.
+     *              Values can be integers (unix timestamps), DateTime objects, or strings.
+     *              Empty strings are treated as NULL.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildAssignedPrayerQuery The current query, for fluid interface
+     */
+    public function filterByPrayerDate($prayerDate = null, $comparison = null)
+    {
+        if (is_array($prayerDate)) {
+            $useMinMax = false;
+            if (isset($prayerDate['min'])) {
+                $this->addUsingAlias(AssignedPrayerTableMap::COL_PRAYER_DATE, $prayerDate['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($prayerDate['max'])) {
+                $this->addUsingAlias(AssignedPrayerTableMap::COL_PRAYER_DATE, $prayerDate['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(AssignedPrayerTableMap::COL_PRAYER_DATE, $prayerDate, $comparison);
+    }
+
+    /**
+     * Filter the query on the assignmentHash column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByAssignmenthash('fooValue');   // WHERE assignmentHash = 'fooValue'
+     * $query->filterByAssignmenthash('%fooValue%'); // WHERE assignmentHash LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $assignmenthash The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildAssignedPrayerQuery The current query, for fluid interface
+     */
+    public function filterByAssignmenthash($assignmenthash = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($assignmenthash)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $assignmenthash)) {
+                $assignmenthash = str_replace('*', '%', $assignmenthash);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(AssignedPrayerTableMap::COL_ASSIGNMENTHASH, $assignmenthash, $comparison);
     }
 
     /**

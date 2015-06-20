@@ -59,7 +59,7 @@ class AssignedPrayerTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 8;
 
     /**
      * The number of lazy-loaded columns
@@ -69,17 +69,12 @@ class AssignedPrayerTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /**
      * the column name for the id field
      */
     const COL_ID = 'assigned_prayer.id';
-
-    /**
-     * the column name for the prayer_date field
-     */
-    const COL_PRAYER_DATE = 'assigned_prayer.prayer_date';
 
     /**
      * the column name for the agent_id field
@@ -90,6 +85,16 @@ class AssignedPrayerTableMap extends TableMap
      * the column name for the patient_id field
      */
     const COL_PATIENT_ID = 'assigned_prayer.patient_id';
+
+    /**
+     * the column name for the prayer_date field
+     */
+    const COL_PRAYER_DATE = 'assigned_prayer.prayer_date';
+
+    /**
+     * the column name for the assignmentHash field
+     */
+    const COL_ASSIGNMENTHASH = 'assigned_prayer.assignmentHash';
 
     /**
      * the column name for the complete field
@@ -118,11 +123,11 @@ class AssignedPrayerTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'PrayerDate', 'AgentId', 'PatientId', 'Complete', 'CreatedAt', 'UpdatedAt', ),
-        self::TYPE_CAMELNAME     => array('id', 'prayerDate', 'agentId', 'patientId', 'complete', 'createdAt', 'updatedAt', ),
-        self::TYPE_COLNAME       => array(AssignedPrayerTableMap::COL_ID, AssignedPrayerTableMap::COL_PRAYER_DATE, AssignedPrayerTableMap::COL_AGENT_ID, AssignedPrayerTableMap::COL_PATIENT_ID, AssignedPrayerTableMap::COL_COMPLETE, AssignedPrayerTableMap::COL_CREATED_AT, AssignedPrayerTableMap::COL_UPDATED_AT, ),
-        self::TYPE_FIELDNAME     => array('id', 'prayer_date', 'agent_id', 'patient_id', 'complete', 'created_at', 'updated_at', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id', 'AgentId', 'PatientId', 'PrayerDate', 'Assignmenthash', 'Complete', 'CreatedAt', 'UpdatedAt', ),
+        self::TYPE_CAMELNAME     => array('id', 'agentId', 'patientId', 'prayerDate', 'assignmenthash', 'complete', 'createdAt', 'updatedAt', ),
+        self::TYPE_COLNAME       => array(AssignedPrayerTableMap::COL_ID, AssignedPrayerTableMap::COL_AGENT_ID, AssignedPrayerTableMap::COL_PATIENT_ID, AssignedPrayerTableMap::COL_PRAYER_DATE, AssignedPrayerTableMap::COL_ASSIGNMENTHASH, AssignedPrayerTableMap::COL_COMPLETE, AssignedPrayerTableMap::COL_CREATED_AT, AssignedPrayerTableMap::COL_UPDATED_AT, ),
+        self::TYPE_FIELDNAME     => array('id', 'agent_id', 'patient_id', 'prayer_date', 'assignmentHash', 'complete', 'created_at', 'updated_at', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -132,11 +137,11 @@ class AssignedPrayerTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'PrayerDate' => 1, 'AgentId' => 2, 'PatientId' => 3, 'Complete' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'prayerDate' => 1, 'agentId' => 2, 'patientId' => 3, 'complete' => 4, 'createdAt' => 5, 'updatedAt' => 6, ),
-        self::TYPE_COLNAME       => array(AssignedPrayerTableMap::COL_ID => 0, AssignedPrayerTableMap::COL_PRAYER_DATE => 1, AssignedPrayerTableMap::COL_AGENT_ID => 2, AssignedPrayerTableMap::COL_PATIENT_ID => 3, AssignedPrayerTableMap::COL_COMPLETE => 4, AssignedPrayerTableMap::COL_CREATED_AT => 5, AssignedPrayerTableMap::COL_UPDATED_AT => 6, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'prayer_date' => 1, 'agent_id' => 2, 'patient_id' => 3, 'complete' => 4, 'created_at' => 5, 'updated_at' => 6, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'AgentId' => 1, 'PatientId' => 2, 'PrayerDate' => 3, 'Assignmenthash' => 4, 'Complete' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'agentId' => 1, 'patientId' => 2, 'prayerDate' => 3, 'assignmenthash' => 4, 'complete' => 5, 'createdAt' => 6, 'updatedAt' => 7, ),
+        self::TYPE_COLNAME       => array(AssignedPrayerTableMap::COL_ID => 0, AssignedPrayerTableMap::COL_AGENT_ID => 1, AssignedPrayerTableMap::COL_PATIENT_ID => 2, AssignedPrayerTableMap::COL_PRAYER_DATE => 3, AssignedPrayerTableMap::COL_ASSIGNMENTHASH => 4, AssignedPrayerTableMap::COL_COMPLETE => 5, AssignedPrayerTableMap::COL_CREATED_AT => 6, AssignedPrayerTableMap::COL_UPDATED_AT => 7, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'agent_id' => 1, 'patient_id' => 2, 'prayer_date' => 3, 'assignmentHash' => 4, 'complete' => 5, 'created_at' => 6, 'updated_at' => 7, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -157,9 +162,10 @@ class AssignedPrayerTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
-        $this->addColumn('prayer_date', 'PrayerDate', 'DATE', true, null, null);
         $this->addForeignKey('agent_id', 'AgentId', 'INTEGER', 'users', 'id', true, null, null);
         $this->addForeignKey('patient_id', 'PatientId', 'INTEGER', 'users', 'id', true, null, null);
+        $this->addColumn('prayer_date', 'PrayerDate', 'DATE', true, null, null);
+        $this->addColumn('assignmentHash', 'Assignmenthash', 'LONGVARCHAR', true, null, null);
         $this->addColumn('complete', 'Complete', 'BOOLEAN', false, 1, false);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
@@ -341,17 +347,19 @@ class AssignedPrayerTableMap extends TableMap
     {
         if (null === $alias) {
             $criteria->addSelectColumn(AssignedPrayerTableMap::COL_ID);
-            $criteria->addSelectColumn(AssignedPrayerTableMap::COL_PRAYER_DATE);
             $criteria->addSelectColumn(AssignedPrayerTableMap::COL_AGENT_ID);
             $criteria->addSelectColumn(AssignedPrayerTableMap::COL_PATIENT_ID);
+            $criteria->addSelectColumn(AssignedPrayerTableMap::COL_PRAYER_DATE);
+            $criteria->addSelectColumn(AssignedPrayerTableMap::COL_ASSIGNMENTHASH);
             $criteria->addSelectColumn(AssignedPrayerTableMap::COL_COMPLETE);
             $criteria->addSelectColumn(AssignedPrayerTableMap::COL_CREATED_AT);
             $criteria->addSelectColumn(AssignedPrayerTableMap::COL_UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.prayer_date');
             $criteria->addSelectColumn($alias . '.agent_id');
             $criteria->addSelectColumn($alias . '.patient_id');
+            $criteria->addSelectColumn($alias . '.prayer_date');
+            $criteria->addSelectColumn($alias . '.assignmentHash');
             $criteria->addSelectColumn($alias . '.complete');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');

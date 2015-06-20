@@ -55,6 +55,10 @@ class MockParent
         return $this->response;
     }
 
+    public function setResponse($response)
+    {
+        $this->response = $response;
+    }
     public function set_response($response)
     {
         $this->response = $response;

@@ -19,14 +19,14 @@ class CreateAssignmentTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
         $this->object = new CreateAssignment();
-        $this->agent = new \User();
-        $this->agent->setId(2);
-        $this->patient = new \User();
-        $this->patient->setId(3);
+        $users = \UserQuery::create()->find();
+        $this->agent = $users[0];
+//        $this->agent->setId(2);
+        $this->patient = $users[1]; //new \User();
+//        $this->patient->setId(3);
         $faker = \Faker\Factory::create();
         $this->date = $faker->dateTime();
     }
-
 
     /**
      * @covers \Prayer\Assign\CreateAssignment::create
@@ -35,10 +35,10 @@ class CreateAssignmentTest extends \PHPUnit_Framework_TestCase
     {
 
         $this->object->create($this->agent, $this->patient, $this->date);
-        $result = \AssignedPrayerQuery::create()->
-        filterByagent($this->agent)->
-        filterBypatient($this->patient)->
-        filterByPrayerDate($this->date)->findOne();
+        $result = \AssignedPrayerQuery::create()
+            ->filterByagent($this->agent)
+            ->filterBypatient($this->patient)
+            ->filterByPrayerDate($this->date)->findOne();
         $this->assertTrue($result);
     }
 }

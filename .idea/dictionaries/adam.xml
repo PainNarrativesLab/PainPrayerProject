@@ -2,6 +2,7 @@
   <dictionary name="adam">
     <words>
       <w>onload</w>
+      <w>testhash</w>
     </words>
   </dictionary>
 </component>

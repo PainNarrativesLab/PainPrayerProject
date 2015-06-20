@@ -39,11 +39,11 @@ class PainAssessmentGetterTest extends \PHPUnit_Framework_TestCase {
 
     public function testGetContent()
     {
-
+        $this->dao->setResponse(\PainAssessmentItemQuery::create()->find());
         $this->object->setTrial($this->trial);
         $this->object->setDao($this->dao);
         $result = $this->object->getContent();
-        $this->assertInstanceOf('array', $result);
+        $this->assertTrue(is_array($result));
         $this->assertArrayHasKey(\Display\StudyArea\PainRatingMaker::DATA_ARRAY_KEY, $result);
     }
 }

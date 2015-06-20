@@ -32,6 +32,9 @@ abstract class Assignment
      * after the assignment has been recorded.
      */
     abstract public function postRecordTask();
+
+    abstract public function createAssignment($agent, $patient, $date);
+
     /**
      * @return mixed
      */
@@ -39,6 +42,8 @@ abstract class Assignment
     {
         return $this->id;
     }
+
+
 
     /**
      * @param mixed $id
