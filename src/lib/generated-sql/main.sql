@@ -88,12 +88,12 @@ CREATE TABLE `pain_ratings`
 ) ENGINE=InnoDB;
 
 -- ---------------------------------------------------------------------
--- pain_items
+-- pain_rating_items
 -- ---------------------------------------------------------------------
 
-DROP TABLE IF EXISTS `pain_items`;
+DROP TABLE IF EXISTS `pain_rating_items`;
 
-CREATE TABLE `pain_items`
+CREATE TABLE `pain_rating_items`
 (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `text` VARCHAR(200) NOT NULL,
@@ -151,6 +151,28 @@ CREATE TABLE `trialsXprayers`
     CONSTRAINT `trialsXprayers_fk_cae78b`
         FOREIGN KEY (`prayer_id`)
         REFERENCES `prayers` (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- trialsXpain_items
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `trialsXpain_items`;
+
+CREATE TABLE `trialsXpain_items`
+(
+    `trial_id` INTEGER NOT NULL,
+    `item_id` INTEGER NOT NULL,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    PRIMARY KEY (`trial_id`,`item_id`),
+    INDEX `trialsXpain_items_fi_6942b7` (`item_id`),
+    CONSTRAINT `trialsXpain_items_fk_1fe6bc`
+        FOREIGN KEY (`trial_id`)
+        REFERENCES `trials` (`id`),
+    CONSTRAINT `trialsXpain_items_fk_6942b7`
+        FOREIGN KEY (`item_id`)
+        REFERENCES `pain_rating_items` (`id`)
 ) ENGINE=InnoDB;
 
 # This restores the fkey checks, after having unset them earlier

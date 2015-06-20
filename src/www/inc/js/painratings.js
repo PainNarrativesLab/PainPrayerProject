@@ -23,6 +23,7 @@ function prayertaskOnLoad(){
 
 function painRatingStyle() {
     $(".buttonify").buttonset();
+    $(".prettyButton").button();
 }
 
 function prayerTaskStyles(){

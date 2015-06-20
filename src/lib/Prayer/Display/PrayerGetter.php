@@ -27,8 +27,11 @@ class PrayerGetter implements \Display\StudyArea\IContentMaker
     }
 
     public function getContent()
-    {        $faker = \Faker\Factory::create();
-        $text = $faker->paragraph(6);
+    {
+        $tpa = \TrialPrayerAssociationQuery::create()->filterByTrial($this->trial)->findOne();
+        $text = $tpa->getPrayer()->getText();
+//        $faker = \Faker\Factory::create();
+ //       $text = $faker->paragraph(6);
         return array(\Display\StudyArea\PrayerTaskMaker::DATA_ARRAY_KEY => $text);
     }
 }

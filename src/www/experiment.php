@@ -12,7 +12,8 @@ use Scheduling\States\StateManager;
 
 $username = 'test name';
 $page_title = "Pain and spirituality study";
-$trial = 1;
+$trial_id = 1;
+$trial = \TrialQuery::create()->filterById($trial_id)->findOne();
 
 //check incoming hash and get records
 $link_valid = true;
@@ -35,7 +36,8 @@ if($link_valid === false)
         'inc/css/footerStyles.css',
         'inc/css/topBarStyles.css',
         'inc/css/studyAreaStyles.css',
-        'inc/css/painrate.questions.css'
+        'inc/css/painrate.questions.css',
+        'inc/css/prayertask.css'
     ));
     $page_maker->makePageTopWithNavBar();
 
@@ -49,11 +51,12 @@ if($link_valid === false)
     $content_maker = new \Display\StudyArea\IContentMakerMock();
 
     # Pain assessment area
-    $pain_content_maker = new \PainAssess\Display\PainQuestionMaker();
-    $pain_content_maker->setDao(new \PainAssess\dao\PainDao());
+    $pain_content_getter = new \PainAssess\Display\PainAssessmentGetter();
+    $pain_content_getter->setDao(new \PainAssess\dao\PainDao());
+    $pain_content_getter->setTrial($trial);
 
     $pain_question_area_maker = new \Display\StudyArea\PainRatingMaker();
-    $pain_question_area_maker->setContentMaker($pain_content_maker);
+    $pain_question_area_maker->setContentMaker($pain_content_getter);
     $pain_question_area_maker->make();
 
     # Prayer task area
@@ -69,9 +72,11 @@ if($link_valid === false)
     shuffle($stages);
     //dummy
     $stage = $stages[0][1];
+    $stage = StateManager::WAITLIST_AGENT;
 
     $prayer_area_maker = new \Display\StudyArea\PrayerTaskMaker();
     $prayer_content_maker = new \Prayer\Display\PrayerGetter();
+    $prayer_content_maker->setTrial($trial);
     $prayer_area_maker->setContentMaker($prayer_content_maker);
     $prayer_area_maker->chooseTemplate($stage);
     $prayer_area_maker->make();

@@ -10,7 +10,9 @@ $username = 'testuser4';
 $password = 'testpass4';
 
 $runtype = getenv("RUNTYPE");
-$dbconn = !empty($runtype) ? ($runtype == 'testing' ? 'test' : 'main') : 'main';
+
+
+//$dbconn = !empty($runtype) ? ($runtype == 'testing' ? 'test' : 'main') : 'main';
 
 //echo "\n dbconn :" . $dbconn . "\n";
 

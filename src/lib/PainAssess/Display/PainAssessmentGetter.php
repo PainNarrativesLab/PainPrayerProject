@@ -12,30 +12,38 @@ namespace PainAssess\Display;
 use Display\StudyArea\PainRatingMaker;
 
 /**
- * Class PainQuestionMaker
+ * Class PainAssessmentGetter
  *
  * Service class to package the assessment items into expected form
  *
  * @package PainAssess\Display
  */
-class PainQuestionMaker extends \TemplateClasses\Controller implements \Display\StudyArea\IContentMaker
+class PainAssessmentGetter extends \TemplateClasses\Controller implements \Display\StudyArea\IContentMaker
 {
-
-
-    /** var $dao \PainAssess\dao\PainDao */
+    /** var $dao \PainAssess\dao\IPainDao */
     protected $dao;
+
+    protected $trial;
+
+    /**
+     * @param mixed $trial
+     */
+    public function setTrial($trial)
+    {
+        $this->trial = $trial;
+    }
 
     /**
      * @param mixed $dao
      */
-    public function setDao($dao)
+    public function setDao(\PainAssess\dao\IPainDao $dao)
     {
         $this->dao = $dao;
     }
 
     public function getContent()
     {
-        $items = $this->dao->getAllAssessmentItems();
+        $items = !empty($this->trial) ? $this->dao->getAssessmentItemsByTrial($this->trial) : $this->dao->getAllAssessmentItems();
 
         $vars = array();
         foreach($items as $it)
@@ -50,6 +58,5 @@ class PainQuestionMaker extends \TemplateClasses\Controller implements \Display\
 
     public function make()
     {
-
     }
 }

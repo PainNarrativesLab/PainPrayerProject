@@ -15,52 +15,17 @@ $src = getenv("PRAY_SRC_PATH");
 $vendor = getenv("PRAY_VENDOR_PATH");
 require_once("$vendor/autoload.php");
 
-
-
-//$dbname = 'painprayer';
-$username = 'testuser4';
-$password = 'testpass4';
-$dbname = 'painprayer_test';
-$dbconn = 'test';
-//$dbconn = 'main';
-
-$serviceContainer_test = \Propel\Runtime\Propel::getServiceContainer();
-$serviceContainer_test->checkVersion('2.0.0-dev');
-$serviceContainer_test->setAdapterClass('test', 'mysql');
-$manager = new \Propel\Runtime\Connection\ConnectionManagerSingle();
-$manager->setConfiguration(array (
-    'classname' => 'Propel\\Runtime\\Connection\\DebugPDO',
-    'dsn' => "mysql:host=localhost;dbname=$dbname",
-    'user' => $username,
-    'password' => $password
-));
-$manager->setName($dbconn);
-$serviceContainer_test->setConnectionManager('test', $manager);
-//$serviceContainer_test->setDefaultDatasource('test');
-
-$dbname = 'painprayer';
-$dbconn = 'main';
-$serviceContainer = \Propel\Runtime\Propel::getServiceContainer();
-$serviceContainer->checkVersion('2.0.0-dev');
-$serviceContainer->setAdapterClass($dbconn, 'mysql');
-$manager = new \Propel\Runtime\Connection\ConnectionManagerSingle();
-$manager->setConfiguration(array (
-    'classname' => 'Propel\\Runtime\\Connection\\DebugPDO',
-    'dsn' => "mysql:host=localhost;dbname=$dbname",
-    'user' => $username,
-    'password' => $password
-));
-$manager->setName($dbconn);
-$serviceContainer->setConnectionManager('main', $manager);
-$serviceContainer->setDefaultDatasource('main');
-
-
+// setup Propel
+require_once "$src/lib/generated-conf/config.php";
 
 $dbs = array('main', 'test');
 foreach($dbs as $db){
     echo "\n -------------- populating db : $db --------------------- \n";
     \lib\DbAids::populate_users(\Propel\Runtime\Propel::getConnection($db));
     \lib\DbAids::populate_assessment_items(\Propel\Runtime\Propel::getConnection($db));
+    \lib\DbAids::populate_prayers(\Propel\Runtime\Propel::getConnection($db));
+    \lib\DbAids::populate_trials(\Propel\Runtime\Propel::getConnection($db));
+    \lib\DbAids::populate_trial_assoc(\Propel\Runtime\Propel::getConnection($db));
 }
 
 

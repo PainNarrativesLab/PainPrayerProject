@@ -48,7 +48,7 @@
         </foreign-key>
     </table>
 
-    <table name="pain_items" phpName="PainAssessmentItem">
+    <table name="pain_rating_items" phpName="PainAssessmentItem">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
         <column name="text" type="varchar" size="200" required="true"/>
     </table>
@@ -65,13 +65,23 @@
     <table name="trialsXprayers" phpName="TrialPrayerAssociation" isCrossRef="true">
         <column name="trial_id" type="integer" required="true" primaryKey="true"/>
         <column name="prayer_id" type="integer" required="true" primaryKey="true"/>
-        <foreign-key foreignTable="trials" phpName="trial">
+        <foreign-key foreignTable="trials" phpName="Trial">
             <reference local="trial_id" foreign="id"/>
         </foreign-key>
-        <foreign-key foreignTable="prayers" phpName="prayer">
+        <foreign-key foreignTable="prayers" phpName="Prayer">
             <reference local="prayer_id" foreign="id"/>
         </foreign-key>
     </table>
 
+    <table name="trialsXpain_items" phpName="TrialPainRatingAssociation" isCrossRef="true">
+        <column name="trial_id" type="integer" required="true" primaryKey="true"/>
+        <column name="item_id" type="integer" required="true" primaryKey="true"/>
+        <foreign-key foreignTable="trials" phpName="Trial">
+            <reference local="trial_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="pain_rating_items" phpName="PainAssessmentItem">
+            <reference local="item_id" foreign="id"/>
+        </foreign-key>
+    </table>
 
 </database>

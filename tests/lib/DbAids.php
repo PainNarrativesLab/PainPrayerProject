@@ -91,12 +91,48 @@ class DbAids
             $faker = \Faker\Factory::create();
             for ($i = 0; $i < $num; $i++) {
                 $p = new \Trial();
-                $p->setText($faker->paragraph(5));
                 $p->save($conn);
             }
         } catch (\Exception $e) {
             echo 'prayer population error: ' . $e->getMessage();
         }
     }
+
+    /**
+     * Creates associations for all objects associated with a trial
+     * @param null $conn
+     *
+     */
+    public static function populate_trial_assoc($conn=null)
+    {
+        echo "\n Populating trial prayer \n";
+        try{
+            $i = 0;
+            $trials = \TrialQuery::create()->find();
+            foreach($trials as $trial){
+                $prayers = \PrayerQuery::create()->find();
+                shuffle($prayers);
+                $t = \TrialPrayerAssociationQuery::create()
+                    ->filterByTrial($trial)
+                    ->filterByPrayer($prayers[0])
+                    ->findOneOrCreate();
+                $t->save($conn);
+
+                $items = \PainAssessmentItemQuery::create()->find();
+                foreach ($items as $item) {
+                    $r = \TrialPainRatingAssociationQuery::create()
+                        ->filterByTrial($trial)
+                        ->filterByPainAssessmentItem($item)
+                        ->findOneOrCreate();
+                    $r->save($conn);
+                }
+            }
+
+        } catch (\Exception $e) {
+            echo 'prayer population error: ' . $e->getMessage();
+        }
+    }
 }
+
+
 
