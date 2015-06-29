@@ -153,14 +153,14 @@ class PartnersTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('agent', '\\User', RelationMap::MANY_TO_ONE, array (
+        $this->addRelation('Agent', '\\User', RelationMap::MANY_TO_ONE, array (
   0 =>
   array (
     0 => ':agent_id',
     1 => ':id',
   ),
 ), null, null, null, false);
-        $this->addRelation('patient', '\\User', RelationMap::MANY_TO_ONE, array (
+        $this->addRelation('Patient', '\\User', RelationMap::MANY_TO_ONE, array (
   0 =>
   array (
     0 => ':patient_id',

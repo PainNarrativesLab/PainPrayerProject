@@ -116,12 +116,12 @@ abstract class AssignedPrayer implements ActiveRecordInterface
     /**
      * @var        ChildUser
      */
-    protected $aagent;
+    protected $aAgent;
 
     /**
      * @var        ChildUser
      */
-    protected $apatient;
+    protected $aPatient;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -518,8 +518,8 @@ abstract class AssignedPrayer implements ActiveRecordInterface
             $this->modifiedColumns[AssignedPrayerTableMap::COL_AGENT_ID] = true;
         }
 
-        if ($this->aagent !== null && $this->aagent->getId() !== $v) {
-            $this->aagent = null;
+        if ($this->aAgent !== null && $this->aAgent->getId() !== $v) {
+            $this->aAgent = null;
         }
 
         return $this;
@@ -542,8 +542,8 @@ abstract class AssignedPrayer implements ActiveRecordInterface
             $this->modifiedColumns[AssignedPrayerTableMap::COL_PATIENT_ID] = true;
         }
 
-        if ($this->apatient !== null && $this->apatient->getId() !== $v) {
-            $this->apatient = null;
+        if ($this->aPatient !== null && $this->aPatient->getId() !== $v) {
+            $this->aPatient = null;
         }
 
         return $this;
@@ -759,11 +759,11 @@ abstract class AssignedPrayer implements ActiveRecordInterface
      */
     public function ensureConsistency()
     {
-        if ($this->aagent !== null && $this->agent_id !== $this->aagent->getId()) {
-            $this->aagent = null;
+        if ($this->aAgent !== null && $this->agent_id !== $this->aAgent->getId()) {
+            $this->aAgent = null;
         }
-        if ($this->apatient !== null && $this->patient_id !== $this->apatient->getId()) {
-            $this->apatient = null;
+        if ($this->aPatient !== null && $this->patient_id !== $this->aPatient->getId()) {
+            $this->aPatient = null;
         }
     } // ensureConsistency
 
@@ -804,8 +804,8 @@ abstract class AssignedPrayer implements ActiveRecordInterface
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->aagent = null;
-            $this->apatient = null;
+            $this->aAgent = null;
+            $this->aPatient = null;
         } // if (deep)
     }
 
@@ -922,18 +922,18 @@ abstract class AssignedPrayer implements ActiveRecordInterface
             // method.  This object relates to these object(s) by a
             // foreign key reference.
 
-            if ($this->aagent !== null) {
-                if ($this->aagent->isModified() || $this->aagent->isNew()) {
-                    $affectedRows += $this->aagent->save($con);
+            if ($this->aAgent !== null) {
+                if ($this->aAgent->isModified() || $this->aAgent->isNew()) {
+                    $affectedRows += $this->aAgent->save($con);
                 }
-                $this->setagent($this->aagent);
+                $this->setAgent($this->aAgent);
             }
 
-            if ($this->apatient !== null) {
-                if ($this->apatient->isModified() || $this->apatient->isNew()) {
-                    $affectedRows += $this->apatient->save($con);
+            if ($this->aPatient !== null) {
+                if ($this->aPatient->isModified() || $this->aPatient->isNew()) {
+                    $affectedRows += $this->aPatient->save($con);
                 }
-                $this->setpatient($this->apatient);
+                $this->setPatient($this->aPatient);
             }
 
             if ($this->isNew() || $this->isModified()) {
@@ -1183,7 +1183,7 @@ abstract class AssignedPrayer implements ActiveRecordInterface
         }
 
         if ($includeForeignObjects) {
-            if (null !== $this->aagent) {
+            if (null !== $this->aAgent) {
 
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
@@ -1196,9 +1196,9 @@ abstract class AssignedPrayer implements ActiveRecordInterface
                         $key = 'User';
                 }
 
-                $result[$key] = $this->aagent->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+                $result[$key] = $this->aAgent->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
-            if (null !== $this->apatient) {
+            if (null !== $this->aPatient) {
 
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
@@ -1211,7 +1211,7 @@ abstract class AssignedPrayer implements ActiveRecordInterface
                         $key = 'User';
                 }
 
-                $result[$key] = $this->apatient->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+                $result[$key] = $this->aPatient->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
             }
         }
 
@@ -1514,7 +1514,7 @@ abstract class AssignedPrayer implements ActiveRecordInterface
      * @return $this|\AssignedPrayer The current object (for fluent API support)
      * @throws PropelException
      */
-    public function setagent(ChildUser $v = null)
+    public function setAgent(ChildUser $v = null)
     {
         if ($v === null) {
             $this->setAgentId(NULL);
@@ -1522,7 +1522,7 @@ abstract class AssignedPrayer implements ActiveRecordInterface
             $this->setAgentId($v->getId());
         }
 
-        $this->aagent = $v;
+        $this->aAgent = $v;
 
         // Add binding for other direction of this n:n relationship.
         // If this object has already been added to the ChildUser object, it will not be re-added.
@@ -1542,10 +1542,10 @@ abstract class AssignedPrayer implements ActiveRecordInterface
      * @return ChildUser The associated ChildUser object.
      * @throws PropelException
      */
-    public function getagent(ConnectionInterface $con = null)
+    public function getAgent(ConnectionInterface $con = null)
     {
-        if ($this->aagent === null && ($this->agent_id !== null)) {
-            $this->aagent = ChildUserQuery::create()
+        if ($this->aAgent === null && ($this->agent_id !== null)) {
+            $this->aAgent = ChildUserQuery::create()
                 ->filterByAssignedPrayerRelatedByAgentId($this) // here
                 ->findOne($con);
             /* The following can be used additionally to
@@ -1553,11 +1553,11 @@ abstract class AssignedPrayer implements ActiveRecordInterface
                 to this object.  This level of coupling may, however, be
                 undesirable since it could result in an only partially populated collection
                 in the referenced object.
-                $this->aagent->addAssignedPrayersRelatedByAgentId($this);
+                $this->aAgent->addAssignedPrayersRelatedByAgentId($this);
              */
         }
 
-        return $this->aagent;
+        return $this->aAgent;
     }
 
     /**
@@ -1567,7 +1567,7 @@ abstract class AssignedPrayer implements ActiveRecordInterface
      * @return $this|\AssignedPrayer The current object (for fluent API support)
      * @throws PropelException
      */
-    public function setpatient(ChildUser $v = null)
+    public function setPatient(ChildUser $v = null)
     {
         if ($v === null) {
             $this->setPatientId(NULL);
@@ -1575,7 +1575,7 @@ abstract class AssignedPrayer implements ActiveRecordInterface
             $this->setPatientId($v->getId());
         }
 
-        $this->apatient = $v;
+        $this->aPatient = $v;
 
         // Add binding for other direction of this n:n relationship.
         // If this object has already been added to the ChildUser object, it will not be re-added.
@@ -1595,10 +1595,10 @@ abstract class AssignedPrayer implements ActiveRecordInterface
      * @return ChildUser The associated ChildUser object.
      * @throws PropelException
      */
-    public function getpatient(ConnectionInterface $con = null)
+    public function getPatient(ConnectionInterface $con = null)
     {
-        if ($this->apatient === null && ($this->patient_id !== null)) {
-            $this->apatient = ChildUserQuery::create()
+        if ($this->aPatient === null && ($this->patient_id !== null)) {
+            $this->aPatient = ChildUserQuery::create()
                 ->filterByAssignedPrayerRelatedByPatientId($this) // here
                 ->findOne($con);
             /* The following can be used additionally to
@@ -1606,11 +1606,11 @@ abstract class AssignedPrayer implements ActiveRecordInterface
                 to this object.  This level of coupling may, however, be
                 undesirable since it could result in an only partially populated collection
                 in the referenced object.
-                $this->apatient->addAssignedPrayersRelatedByPatientId($this);
+                $this->aPatient->addAssignedPrayersRelatedByPatientId($this);
              */
         }
 
-        return $this->apatient;
+        return $this->aPatient;
     }
 
     /**
@@ -1620,11 +1620,11 @@ abstract class AssignedPrayer implements ActiveRecordInterface
      */
     public function clear()
     {
-        if (null !== $this->aagent) {
-            $this->aagent->removeAssignedPrayerRelatedByAgentId($this);
+        if (null !== $this->aAgent) {
+            $this->aAgent->removeAssignedPrayerRelatedByAgentId($this);
         }
-        if (null !== $this->apatient) {
-            $this->apatient->removeAssignedPrayerRelatedByPatientId($this);
+        if (null !== $this->aPatient) {
+            $this->aPatient->removeAssignedPrayerRelatedByPatientId($this);
         }
         $this->id = null;
         $this->agent_id = null;
@@ -1655,8 +1655,8 @@ abstract class AssignedPrayer implements ActiveRecordInterface
         if ($deep) {
         } // if ($deep)
 
-        $this->aagent = null;
-        $this->apatient = null;
+        $this->aAgent = null;
+        $this->aPatient = null;
     }
 
     /**

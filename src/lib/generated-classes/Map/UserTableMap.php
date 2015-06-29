@@ -193,8 +193,8 @@ class UserTableMap extends TableMap
     1 => ':id',
   ),
 ), null, null, 'PainRatings', false);
-        $this->addRelation('patient', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'patients');
-        $this->addRelation('agent', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'agents');
+        $this->addRelation('Patient', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'Patients');
+        $this->addRelation('Agent', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'Agents');
     } // buildRelations()
 
     /**

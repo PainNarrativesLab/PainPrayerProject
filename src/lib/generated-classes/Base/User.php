@@ -132,22 +132,22 @@ abstract class User implements ActiveRecordInterface
     /**
      * @var        ObjectCollection|ChildUser[] Cross Collection to store aggregation of ChildUser objects.
      */
-    protected $collpatients;
+    protected $collPatients;
 
     /**
      * @var bool
      */
-    protected $collpatientsPartial;
+    protected $collPatientsPartial;
 
     /**
      * @var        ObjectCollection|ChildUser[] Cross Collection to store aggregation of ChildUser objects.
      */
-    protected $collagents;
+    protected $collAgents;
 
     /**
      * @var bool
      */
-    protected $collagentsPartial;
+    protected $collAgentsPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -721,8 +721,8 @@ abstract class User implements ActiveRecordInterface
 
             $this->collPainRatings = null;
 
-            $this->collpatients = null;
-            $this->collagents = null;
+            $this->collPatients = null;
+            $this->collAgents = null;
         } // if (deep)
     }
 
@@ -865,8 +865,8 @@ abstract class User implements ActiveRecordInterface
 
             }
 
-            if ($this->collpatients) {
-                foreach ($this->collpatients as $patient) {
+            if ($this->collPatients) {
+                foreach ($this->collPatients as $patient) {
                     if (!$patient->isDeleted() && ($patient->isNew() || $patient->isModified())) {
                         $patient->save($con);
                     }
@@ -894,8 +894,8 @@ abstract class User implements ActiveRecordInterface
 
             }
 
-            if ($this->collagents) {
-                foreach ($this->collagents as $agent) {
+            if ($this->collAgents) {
+                foreach ($this->collAgents as $agent) {
                     if (!$agent->isDeleted() && ($agent->isNew() || $agent->isModified())) {
                         $agent->save($con);
                     }
@@ -1667,7 +1667,7 @@ abstract class User implements ActiveRecordInterface
                 $this->initAssignedPrayersRelatedByAgentId();
             } else {
                 $collAssignedPrayersRelatedByAgentId = ChildAssignedPrayerQuery::create(null, $criteria)
-                    ->filterByagent($this)
+                    ->filterByAgent($this)
                     ->find($con);
 
                 if (null !== $criteria) {
@@ -1721,7 +1721,7 @@ abstract class User implements ActiveRecordInterface
         $this->assignedPrayersRelatedByAgentIdScheduledForDeletion = $assignedPrayersRelatedByAgentIdToDelete;
 
         foreach ($assignedPrayersRelatedByAgentIdToDelete as $assignedPrayerRelatedByAgentIdRemoved) {
-            $assignedPrayerRelatedByAgentIdRemoved->setagent(null);
+            $assignedPrayerRelatedByAgentIdRemoved->setAgent(null);
         }
 
         $this->collAssignedPrayersRelatedByAgentId = null;
@@ -1762,7 +1762,7 @@ abstract class User implements ActiveRecordInterface
             }
 
             return $query
-                ->filterByagent($this)
+                ->filterByAgent($this)
                 ->count($con);
         }
 
@@ -1796,7 +1796,7 @@ abstract class User implements ActiveRecordInterface
     protected function doAddAssignedPrayerRelatedByAgentId(ChildAssignedPrayer $assignedPrayerRelatedByAgentId)
     {
         $this->collAssignedPrayersRelatedByAgentId[]= $assignedPrayerRelatedByAgentId;
-        $assignedPrayerRelatedByAgentId->setagent($this);
+        $assignedPrayerRelatedByAgentId->setAgent($this);
     }
 
     /**
@@ -1813,7 +1813,7 @@ abstract class User implements ActiveRecordInterface
                 $this->assignedPrayersRelatedByAgentIdScheduledForDeletion->clear();
             }
             $this->assignedPrayersRelatedByAgentIdScheduledForDeletion[]= clone $assignedPrayerRelatedByAgentId;
-            $assignedPrayerRelatedByAgentId->setagent(null);
+            $assignedPrayerRelatedByAgentId->setAgent(null);
         }
 
         return $this;
@@ -1885,7 +1885,7 @@ abstract class User implements ActiveRecordInterface
                 $this->initAssignedPrayersRelatedByPatientId();
             } else {
                 $collAssignedPrayersRelatedByPatientId = ChildAssignedPrayerQuery::create(null, $criteria)
-                    ->filterBypatient($this)
+                    ->filterByPatient($this)
                     ->find($con);
 
                 if (null !== $criteria) {
@@ -1939,7 +1939,7 @@ abstract class User implements ActiveRecordInterface
         $this->assignedPrayersRelatedByPatientIdScheduledForDeletion = $assignedPrayersRelatedByPatientIdToDelete;
 
         foreach ($assignedPrayersRelatedByPatientIdToDelete as $assignedPrayerRelatedByPatientIdRemoved) {
-            $assignedPrayerRelatedByPatientIdRemoved->setpatient(null);
+            $assignedPrayerRelatedByPatientIdRemoved->setPatient(null);
         }
 
         $this->collAssignedPrayersRelatedByPatientId = null;
@@ -1980,7 +1980,7 @@ abstract class User implements ActiveRecordInterface
             }
 
             return $query
-                ->filterBypatient($this)
+                ->filterByPatient($this)
                 ->count($con);
         }
 
@@ -2014,7 +2014,7 @@ abstract class User implements ActiveRecordInterface
     protected function doAddAssignedPrayerRelatedByPatientId(ChildAssignedPrayer $assignedPrayerRelatedByPatientId)
     {
         $this->collAssignedPrayersRelatedByPatientId[]= $assignedPrayerRelatedByPatientId;
-        $assignedPrayerRelatedByPatientId->setpatient($this);
+        $assignedPrayerRelatedByPatientId->setPatient($this);
     }
 
     /**
@@ -2031,7 +2031,7 @@ abstract class User implements ActiveRecordInterface
                 $this->assignedPrayersRelatedByPatientIdScheduledForDeletion->clear();
             }
             $this->assignedPrayersRelatedByPatientIdScheduledForDeletion[]= clone $assignedPrayerRelatedByPatientId;
-            $assignedPrayerRelatedByPatientId->setpatient(null);
+            $assignedPrayerRelatedByPatientId->setPatient(null);
         }
 
         return $this;
@@ -2103,7 +2103,7 @@ abstract class User implements ActiveRecordInterface
                 $this->initPartnerssRelatedByAgentId();
             } else {
                 $collPartnerssRelatedByAgentId = ChildPartnersQuery::create(null, $criteria)
-                    ->filterByagent($this)
+                    ->filterByAgent($this)
                     ->find($con);
 
                 if (null !== $criteria) {
@@ -2160,7 +2160,7 @@ abstract class User implements ActiveRecordInterface
         $this->partnerssRelatedByAgentIdScheduledForDeletion = clone $partnerssRelatedByAgentIdToDelete;
 
         foreach ($partnerssRelatedByAgentIdToDelete as $partnersRelatedByAgentIdRemoved) {
-            $partnersRelatedByAgentIdRemoved->setagent(null);
+            $partnersRelatedByAgentIdRemoved->setAgent(null);
         }
 
         $this->collPartnerssRelatedByAgentId = null;
@@ -2201,7 +2201,7 @@ abstract class User implements ActiveRecordInterface
             }
 
             return $query
-                ->filterByagent($this)
+                ->filterByAgent($this)
                 ->count($con);
         }
 
@@ -2235,7 +2235,7 @@ abstract class User implements ActiveRecordInterface
     protected function doAddPartnersRelatedByAgentId(ChildPartners $partnersRelatedByAgentId)
     {
         $this->collPartnerssRelatedByAgentId[]= $partnersRelatedByAgentId;
-        $partnersRelatedByAgentId->setagent($this);
+        $partnersRelatedByAgentId->setAgent($this);
     }
 
     /**
@@ -2252,7 +2252,7 @@ abstract class User implements ActiveRecordInterface
                 $this->partnerssRelatedByAgentIdScheduledForDeletion->clear();
             }
             $this->partnerssRelatedByAgentIdScheduledForDeletion[]= clone $partnersRelatedByAgentId;
-            $partnersRelatedByAgentId->setagent(null);
+            $partnersRelatedByAgentId->setAgent(null);
         }
 
         return $this;
@@ -2324,7 +2324,7 @@ abstract class User implements ActiveRecordInterface
                 $this->initPartnerssRelatedByPatientId();
             } else {
                 $collPartnerssRelatedByPatientId = ChildPartnersQuery::create(null, $criteria)
-                    ->filterBypatient($this)
+                    ->filterByPatient($this)
                     ->find($con);
 
                 if (null !== $criteria) {
@@ -2381,7 +2381,7 @@ abstract class User implements ActiveRecordInterface
         $this->partnerssRelatedByPatientIdScheduledForDeletion = clone $partnerssRelatedByPatientIdToDelete;
 
         foreach ($partnerssRelatedByPatientIdToDelete as $partnersRelatedByPatientIdRemoved) {
-            $partnersRelatedByPatientIdRemoved->setpatient(null);
+            $partnersRelatedByPatientIdRemoved->setPatient(null);
         }
 
         $this->collPartnerssRelatedByPatientId = null;
@@ -2422,7 +2422,7 @@ abstract class User implements ActiveRecordInterface
             }
 
             return $query
-                ->filterBypatient($this)
+                ->filterByPatient($this)
                 ->count($con);
         }
 
@@ -2456,7 +2456,7 @@ abstract class User implements ActiveRecordInterface
     protected function doAddPartnersRelatedByPatientId(ChildPartners $partnersRelatedByPatientId)
     {
         $this->collPartnerssRelatedByPatientId[]= $partnersRelatedByPatientId;
-        $partnersRelatedByPatientId->setpatient($this);
+        $partnersRelatedByPatientId->setPatient($this);
     }
 
     /**
@@ -2473,7 +2473,7 @@ abstract class User implements ActiveRecordInterface
                 $this->partnerssRelatedByPatientIdScheduledForDeletion->clear();
             }
             $this->partnerssRelatedByPatientIdScheduledForDeletion[]= clone $partnersRelatedByPatientId;
-            $partnersRelatedByPatientId->setpatient(null);
+            $partnersRelatedByPatientId->setPatient(null);
         }
 
         return $this;
@@ -2545,7 +2545,7 @@ abstract class User implements ActiveRecordInterface
                 $this->initPainRatings();
             } else {
                 $collPainRatings = ChildPainRatingQuery::create(null, $criteria)
-                    ->filterByuser($this)
+                    ->filterByUser($this)
                     ->find($con);
 
                 if (null !== $criteria) {
@@ -2599,7 +2599,7 @@ abstract class User implements ActiveRecordInterface
         $this->painRatingsScheduledForDeletion = $painRatingsToDelete;
 
         foreach ($painRatingsToDelete as $painRatingRemoved) {
-            $painRatingRemoved->setuser(null);
+            $painRatingRemoved->setUser(null);
         }
 
         $this->collPainRatings = null;
@@ -2640,7 +2640,7 @@ abstract class User implements ActiveRecordInterface
             }
 
             return $query
-                ->filterByuser($this)
+                ->filterByUser($this)
                 ->count($con);
         }
 
@@ -2674,7 +2674,7 @@ abstract class User implements ActiveRecordInterface
     protected function doAddPainRating(ChildPainRating $painRating)
     {
         $this->collPainRatings[]= $painRating;
-        $painRating->setuser($this);
+        $painRating->setUser($this);
     }
 
     /**
@@ -2691,51 +2691,51 @@ abstract class User implements ActiveRecordInterface
                 $this->painRatingsScheduledForDeletion->clear();
             }
             $this->painRatingsScheduledForDeletion[]= clone $painRating;
-            $painRating->setuser(null);
+            $painRating->setUser(null);
         }
 
         return $this;
     }
 
     /**
-     * Clears out the collpatients collection
+     * Clears out the collPatients collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
      * @return void
-     * @see        addpatients()
+     * @see        addPatients()
      */
-    public function clearpatients()
+    public function clearPatients()
     {
-        $this->collpatients = null; // important to set this to NULL since that means it is uninitialized
+        $this->collPatients = null; // important to set this to NULL since that means it is uninitialized
     }
 
     /**
-     * Initializes the collpatients crossRef collection.
+     * Initializes the collPatients crossRef collection.
      *
-     * By default this just sets the collpatients collection to an empty collection (like clearpatients());
+     * By default this just sets the collPatients collection to an empty collection (like clearPatients());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
      * @return void
      */
-    public function initpatients()
+    public function initPatients()
     {
-        $this->collpatients = new ObjectCollection();
-        $this->collpatientsPartial = true;
+        $this->collPatients = new ObjectCollection();
+        $this->collPatientsPartial = true;
 
-        $this->collpatients->setModel('\User');
+        $this->collPatients->setModel('\User');
     }
 
     /**
-     * Checks if the collpatients collection is loaded.
+     * Checks if the collPatients collection is loaded.
      *
      * @return bool
      */
-    public function ispatientsLoaded()
+    public function isPatientsLoaded()
     {
-        return null !== $this->collpatients;
+        return null !== $this->collPatients;
     }
 
     /**
@@ -2753,39 +2753,39 @@ abstract class User implements ActiveRecordInterface
      *
      * @return ObjectCollection|ChildUser[] List of ChildUser objects
      */
-    public function getpatients(Criteria $criteria = null, ConnectionInterface $con = null)
+    public function getPatients(Criteria $criteria = null, ConnectionInterface $con = null)
     {
-        $partial = $this->collpatientsPartial && !$this->isNew();
-        if (null === $this->collpatients || null !== $criteria || $partial) {
+        $partial = $this->collPatientsPartial && !$this->isNew();
+        if (null === $this->collPatients || null !== $criteria || $partial) {
             if ($this->isNew()) {
                 // return empty collection
-                if (null === $this->collpatients) {
-                    $this->initpatients();
+                if (null === $this->collPatients) {
+                    $this->initPatients();
                 }
             } else {
 
                 $query = ChildUserQuery::create(null, $criteria)
-                    ->filterByagent($this);
-                $collpatients = $query->find($con);
+                    ->filterByAgent($this);
+                $collPatients = $query->find($con);
                 if (null !== $criteria) {
-                    return $collpatients;
+                    return $collPatients;
                 }
 
-                if ($partial && $this->collpatients) {
+                if ($partial && $this->collPatients) {
                     //make sure that already added objects gets added to the list of the database.
-                    foreach ($this->collpatients as $obj) {
-                        if (!$collpatients->contains($obj)) {
-                            $collpatients[] = $obj;
+                    foreach ($this->collPatients as $obj) {
+                        if (!$collPatients->contains($obj)) {
+                            $collPatients[] = $obj;
                         }
                     }
                 }
 
-                $this->collpatients = $collpatients;
-                $this->collpatientsPartial = false;
+                $this->collPatients = $collPatients;
+                $this->collPatientsPartial = false;
             }
         }
 
-        return $this->collpatients;
+        return $this->collPatients;
     }
 
     /**
@@ -2798,25 +2798,25 @@ abstract class User implements ActiveRecordInterface
      * @param  ConnectionInterface $con Optional connection object
      * @return $this|ChildUser The current object (for fluent API support)
      */
-    public function setpatients(Collection $patients, ConnectionInterface $con = null)
+    public function setPatients(Collection $patients, ConnectionInterface $con = null)
     {
-        $this->clearpatients();
-        $currentpatients = $this->getpatients();
+        $this->clearPatients();
+        $currentPatients = $this->getPatients();
 
-        $patientsScheduledForDeletion = $currentpatients->diff($patients);
+        $patientsScheduledForDeletion = $currentPatients->diff($patients);
 
         foreach ($patientsScheduledForDeletion as $toDelete) {
-            $this->removepatient($toDelete);
+            $this->removePatient($toDelete);
         }
 
         foreach ($patients as $patient) {
-            if (!$currentpatients->contains($patient)) {
-                $this->doAddpatient($patient);
+            if (!$currentPatients->contains($patient)) {
+                $this->doAddPatient($patient);
             }
         }
 
-        $this->collpatientsPartial = false;
-        $this->collpatients = $patients;
+        $this->collPatientsPartial = false;
+        $this->collPatients = $patients;
 
         return $this;
     }
@@ -2831,16 +2831,16 @@ abstract class User implements ActiveRecordInterface
      *
      * @return int the number of related User objects
      */
-    public function countpatients(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    public function countPatients(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
     {
-        $partial = $this->collpatientsPartial && !$this->isNew();
-        if (null === $this->collpatients || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collpatients) {
+        $partial = $this->collPatientsPartial && !$this->isNew();
+        if (null === $this->collPatients || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collPatients) {
                 return 0;
             } else {
 
                 if ($partial && !$criteria) {
-                    return count($this->getpatients());
+                    return count($this->getPatients());
                 }
 
                 $query = ChildUserQuery::create(null, $criteria);
@@ -2849,11 +2849,11 @@ abstract class User implements ActiveRecordInterface
                 }
 
                 return $query
-                    ->filterByagent($this)
+                    ->filterByAgent($this)
                     ->count($con);
             }
         } else {
-            return count($this->collpatients);
+            return count($this->collPatients);
         }
     }
 
@@ -2864,15 +2864,15 @@ abstract class User implements ActiveRecordInterface
      * @param ChildUser $patient
      * @return ChildUser The current object (for fluent API support)
      */
-    public function addpatient(ChildUser $patient)
+    public function addPatient(ChildUser $patient)
     {
-        if ($this->collpatients === null) {
+        if ($this->collPatients === null) {
             $this->initPatients();
         }
 
         if (!$this->getPatients()->contains($patient)) {
             // only add it if the **same** object is not already associated
-            $this->collpatients->push($patient);
+            $this->collPatients->push($patient);
             $this->doAddPatient($patient);
         }
 
@@ -2883,23 +2883,23 @@ abstract class User implements ActiveRecordInterface
      *
      * @param ChildUser $patient
      */
-    protected function doAddpatient(ChildUser $patient)
+    protected function doAddPatient(ChildUser $patient)
     {
         $partners = new ChildPartners();
 
-        $partners->setpatient($patient);
+        $partners->setPatient($patient);
 
-        $partners->setagent($this);
+        $partners->setAgent($this);
 
         $this->addPartnersRelatedByAgentId($partners);
 
         // set the back reference to this object directly as using provided method either results
         // in endless loop or in multiple relations
-        if (!$patient->isagentsLoaded()) {
-            $patient->initagents();
-            $patient->getagents()->push($this);
-        } elseif (!$patient->getagents()->contains($this)) {
-            $patient->getagents()->push($this);
+        if (!$patient->isAgentsLoaded()) {
+            $patient->initAgents();
+            $patient->getAgents()->push($this);
+        } elseif (!$patient->getAgents()->contains($this)) {
+            $patient->getAgents()->push($this);
         }
 
     }
@@ -2911,24 +2911,24 @@ abstract class User implements ActiveRecordInterface
      * @param ChildUser $patient
      * @return ChildUser The current object (for fluent API support)
      */
-    public function removepatient(ChildUser $patient)
+    public function removePatient(ChildUser $patient)
     {
-        if ($this->getpatients()->contains($patient)) { $partners = new ChildPartners();
+        if ($this->getPatients()->contains($patient)) { $partners = new ChildPartners();
 
-            $partners->setpatient($patient);
-            if ($patient->isagentsLoaded()) {
+            $partners->setPatient($patient);
+            if ($patient->isAgentsLoaded()) {
                 //remove the back reference if available
-                $patient->getagents()->removeObject($this);
+                $patient->getAgents()->removeObject($this);
             }
 
-            $partners->setagent($this);
+            $partners->setAgent($this);
             $this->removePartnersRelatedByAgentId(clone $partners);
             $partners->clear();
 
-            $this->collpatients->remove($this->collpatients->search($patient));
+            $this->collPatients->remove($this->collPatients->search($patient));
 
             if (null === $this->patientsScheduledForDeletion) {
-                $this->patientsScheduledForDeletion = clone $this->collpatients;
+                $this->patientsScheduledForDeletion = clone $this->collPatients;
                 $this->patientsScheduledForDeletion->clear();
             }
 
@@ -2940,44 +2940,44 @@ abstract class User implements ActiveRecordInterface
     }
 
     /**
-     * Clears out the collagents collection
+     * Clears out the collAgents collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
      * them to be refetched by subsequent calls to accessor method.
      *
      * @return void
-     * @see        addagents()
+     * @see        addAgents()
      */
-    public function clearagents()
+    public function clearAgents()
     {
-        $this->collagents = null; // important to set this to NULL since that means it is uninitialized
+        $this->collAgents = null; // important to set this to NULL since that means it is uninitialized
     }
 
     /**
-     * Initializes the collagents crossRef collection.
+     * Initializes the collAgents crossRef collection.
      *
-     * By default this just sets the collagents collection to an empty collection (like clearagents());
+     * By default this just sets the collAgents collection to an empty collection (like clearAgents());
      * however, you may wish to override this method in your stub class to provide setting appropriate
      * to your application -- for example, setting the initial array to the values stored in database.
      *
      * @return void
      */
-    public function initagents()
+    public function initAgents()
     {
-        $this->collagents = new ObjectCollection();
-        $this->collagentsPartial = true;
+        $this->collAgents = new ObjectCollection();
+        $this->collAgentsPartial = true;
 
-        $this->collagents->setModel('\User');
+        $this->collAgents->setModel('\User');
     }
 
     /**
-     * Checks if the collagents collection is loaded.
+     * Checks if the collAgents collection is loaded.
      *
      * @return bool
      */
-    public function isagentsLoaded()
+    public function isAgentsLoaded()
     {
-        return null !== $this->collagents;
+        return null !== $this->collAgents;
     }
 
     /**
@@ -2995,39 +2995,39 @@ abstract class User implements ActiveRecordInterface
      *
      * @return ObjectCollection|ChildUser[] List of ChildUser objects
      */
-    public function getagents(Criteria $criteria = null, ConnectionInterface $con = null)
+    public function getAgents(Criteria $criteria = null, ConnectionInterface $con = null)
     {
-        $partial = $this->collagentsPartial && !$this->isNew();
-        if (null === $this->collagents || null !== $criteria || $partial) {
+        $partial = $this->collAgentsPartial && !$this->isNew();
+        if (null === $this->collAgents || null !== $criteria || $partial) {
             if ($this->isNew()) {
                 // return empty collection
-                if (null === $this->collagents) {
-                    $this->initagents();
+                if (null === $this->collAgents) {
+                    $this->initAgents();
                 }
             } else {
 
                 $query = ChildUserQuery::create(null, $criteria)
-                    ->filterBypatient($this);
-                $collagents = $query->find($con);
+                    ->filterByPatient($this);
+                $collAgents = $query->find($con);
                 if (null !== $criteria) {
-                    return $collagents;
+                    return $collAgents;
                 }
 
-                if ($partial && $this->collagents) {
+                if ($partial && $this->collAgents) {
                     //make sure that already added objects gets added to the list of the database.
-                    foreach ($this->collagents as $obj) {
-                        if (!$collagents->contains($obj)) {
-                            $collagents[] = $obj;
+                    foreach ($this->collAgents as $obj) {
+                        if (!$collAgents->contains($obj)) {
+                            $collAgents[] = $obj;
                         }
                     }
                 }
 
-                $this->collagents = $collagents;
-                $this->collagentsPartial = false;
+                $this->collAgents = $collAgents;
+                $this->collAgentsPartial = false;
             }
         }
 
-        return $this->collagents;
+        return $this->collAgents;
     }
 
     /**
@@ -3040,25 +3040,25 @@ abstract class User implements ActiveRecordInterface
      * @param  ConnectionInterface $con Optional connection object
      * @return $this|ChildUser The current object (for fluent API support)
      */
-    public function setagents(Collection $agents, ConnectionInterface $con = null)
+    public function setAgents(Collection $agents, ConnectionInterface $con = null)
     {
-        $this->clearagents();
-        $currentagents = $this->getagents();
+        $this->clearAgents();
+        $currentAgents = $this->getAgents();
 
-        $agentsScheduledForDeletion = $currentagents->diff($agents);
+        $agentsScheduledForDeletion = $currentAgents->diff($agents);
 
         foreach ($agentsScheduledForDeletion as $toDelete) {
-            $this->removeagent($toDelete);
+            $this->removeAgent($toDelete);
         }
 
         foreach ($agents as $agent) {
-            if (!$currentagents->contains($agent)) {
-                $this->doAddagent($agent);
+            if (!$currentAgents->contains($agent)) {
+                $this->doAddAgent($agent);
             }
         }
 
-        $this->collagentsPartial = false;
-        $this->collagents = $agents;
+        $this->collAgentsPartial = false;
+        $this->collAgents = $agents;
 
         return $this;
     }
@@ -3073,16 +3073,16 @@ abstract class User implements ActiveRecordInterface
      *
      * @return int the number of related User objects
      */
-    public function countagents(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    public function countAgents(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
     {
-        $partial = $this->collagentsPartial && !$this->isNew();
-        if (null === $this->collagents || null !== $criteria || $partial) {
-            if ($this->isNew() && null === $this->collagents) {
+        $partial = $this->collAgentsPartial && !$this->isNew();
+        if (null === $this->collAgents || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collAgents) {
                 return 0;
             } else {
 
                 if ($partial && !$criteria) {
-                    return count($this->getagents());
+                    return count($this->getAgents());
                 }
 
                 $query = ChildUserQuery::create(null, $criteria);
@@ -3091,11 +3091,11 @@ abstract class User implements ActiveRecordInterface
                 }
 
                 return $query
-                    ->filterBypatient($this)
+                    ->filterByPatient($this)
                     ->count($con);
             }
         } else {
-            return count($this->collagents);
+            return count($this->collAgents);
         }
     }
 
@@ -3106,15 +3106,15 @@ abstract class User implements ActiveRecordInterface
      * @param ChildUser $agent
      * @return ChildUser The current object (for fluent API support)
      */
-    public function addagent(ChildUser $agent)
+    public function addAgent(ChildUser $agent)
     {
-        if ($this->collagents === null) {
+        if ($this->collAgents === null) {
             $this->initAgents();
         }
 
         if (!$this->getAgents()->contains($agent)) {
             // only add it if the **same** object is not already associated
-            $this->collagents->push($agent);
+            $this->collAgents->push($agent);
             $this->doAddAgent($agent);
         }
 
@@ -3125,23 +3125,23 @@ abstract class User implements ActiveRecordInterface
      *
      * @param ChildUser $agent
      */
-    protected function doAddagent(ChildUser $agent)
+    protected function doAddAgent(ChildUser $agent)
     {
         $partners = new ChildPartners();
 
-        $partners->setagent($agent);
+        $partners->setAgent($agent);
 
-        $partners->setpatient($this);
+        $partners->setPatient($this);
 
         $this->addPartnersRelatedByPatientId($partners);
 
         // set the back reference to this object directly as using provided method either results
         // in endless loop or in multiple relations
-        if (!$agent->ispatientsLoaded()) {
-            $agent->initpatients();
-            $agent->getpatients()->push($this);
-        } elseif (!$agent->getpatients()->contains($this)) {
-            $agent->getpatients()->push($this);
+        if (!$agent->isPatientsLoaded()) {
+            $agent->initPatients();
+            $agent->getPatients()->push($this);
+        } elseif (!$agent->getPatients()->contains($this)) {
+            $agent->getPatients()->push($this);
         }
 
     }
@@ -3153,24 +3153,24 @@ abstract class User implements ActiveRecordInterface
      * @param ChildUser $agent
      * @return ChildUser The current object (for fluent API support)
      */
-    public function removeagent(ChildUser $agent)
+    public function removeAgent(ChildUser $agent)
     {
-        if ($this->getagents()->contains($agent)) { $partners = new ChildPartners();
+        if ($this->getAgents()->contains($agent)) { $partners = new ChildPartners();
 
-            $partners->setagent($agent);
-            if ($agent->ispatientsLoaded()) {
+            $partners->setAgent($agent);
+            if ($agent->isPatientsLoaded()) {
                 //remove the back reference if available
-                $agent->getpatients()->removeObject($this);
+                $agent->getPatients()->removeObject($this);
             }
 
-            $partners->setpatient($this);
+            $partners->setPatient($this);
             $this->removePartnersRelatedByPatientId(clone $partners);
             $partners->clear();
 
-            $this->collagents->remove($this->collagents->search($agent));
+            $this->collAgents->remove($this->collAgents->search($agent));
 
             if (null === $this->agentsScheduledForDeletion) {
-                $this->agentsScheduledForDeletion = clone $this->collagents;
+                $this->agentsScheduledForDeletion = clone $this->collAgents;
                 $this->agentsScheduledForDeletion->clear();
             }
 
@@ -3236,13 +3236,13 @@ abstract class User implements ActiveRecordInterface
                     $o->clearAllReferences($deep);
                 }
             }
-            if ($this->collpatients) {
-                foreach ($this->collpatients as $o) {
+            if ($this->collPatients) {
+                foreach ($this->collPatients as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
-            if ($this->collagents) {
-                foreach ($this->collagents as $o) {
+            if ($this->collAgents) {
+                foreach ($this->collAgents as $o) {
                     $o->clearAllReferences($deep);
                 }
             }
@@ -3253,8 +3253,8 @@ abstract class User implements ActiveRecordInterface
         $this->collPartnerssRelatedByAgentId = null;
         $this->collPartnerssRelatedByPatientId = null;
         $this->collPainRatings = null;
-        $this->collpatients = null;
-        $this->collagents = null;
+        $this->collPatients = null;
+        $this->collAgents = null;
     }
 
     /**

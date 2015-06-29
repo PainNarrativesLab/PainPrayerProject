@@ -835,11 +835,11 @@ abstract class UserQuery extends ModelCriteria
      *
      * @return ChildUserQuery The current query, for fluid interface
      */
-    public function filterBypatient($user, $comparison = Criteria::EQUAL)
+    public function filterByPatient($user, $comparison = Criteria::EQUAL)
     {
         return $this
             ->usePartnersRelatedByAgentIdQuery()
-            ->filterBypatient($user, $comparison)
+            ->filterByPatient($user, $comparison)
             ->endUse();
     }
 
@@ -852,11 +852,11 @@ abstract class UserQuery extends ModelCriteria
      *
      * @return ChildUserQuery The current query, for fluid interface
      */
-    public function filterByagent($user, $comparison = Criteria::EQUAL)
+    public function filterByAgent($user, $comparison = Criteria::EQUAL)
     {
         return $this
             ->usePartnersRelatedByPatientIdQuery()
-            ->filterByagent($user, $comparison)
+            ->filterByAgent($user, $comparison)
             ->endUse();
     }
 

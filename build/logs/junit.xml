@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/Users/adam/Dropbox/painprayer/tests" tests="28" assertions="48" failures="2" errors="0" time="0.366544">
+    <testsuite name="Display\StudyArea\PrayerTaskMakerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Display/StudyArea/PrayerTaskMakerTest.php" tests="1" assertions="6" failures="0" errors="0" time="0.011856">
+      <testcase name="testChooseTemplate" class="Display\StudyArea\PrayerTaskMakerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Display/StudyArea/PrayerTaskMakerTest.php" line="34" assertions="6" time="0.011856"/>
+    </testsuite>
+    <testsuite name="PainAssess\Display\PainAssessmentGetterTest" file="/Users/adam/Dropbox/painprayer/tests/lib/PainAssess/Display/PainAssessmentGetterTest.php" tests="3" assertions="4" failures="0" errors="0" time="0.037965">
+      <testcase name="testSetTrial" class="PainAssess\Display\PainAssessmentGetterTest" file="/Users/adam/Dropbox/painprayer/tests/lib/PainAssess/Display/PainAssessmentGetterTest.php" line="28" assertions="1" time="0.007710"/>
+      <testcase name="testSetDao" class="PainAssess\Display\PainAssessmentGetterTest" file="/Users/adam/Dropbox/painprayer/tests/lib/PainAssess/Display/PainAssessmentGetterTest.php" line="34" assertions="1" time="0.002174"/>
+      <testcase name="testGetContent" class="PainAssess\Display\PainAssessmentGetterTest" file="/Users/adam/Dropbox/painprayer/tests/lib/PainAssess/Display/PainAssessmentGetterTest.php" line="40" assertions="2" time="0.028081"/>
+    </testsuite>
+    <testsuite name="Prayer\Assign\CreateAssignmentTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Prayer/Assign/CreateAssignmentTest.php" tests="1" assertions="1" failures="1" errors="0" time="0.093691">
+      <testcase name="testCreate" class="Prayer\Assign\CreateAssignmentTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Prayer/Assign/CreateAssignmentTest.php" line="34" assertions="1" time="0.093691">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Prayer\Assign\CreateAssignmentTest::testCreate
+Failed asserting that null is true.
+
+/Users/adam/Dropbox/painprayer/tests/lib/Prayer/Assign/CreateAssignmentTest.php:42
+</failure>
+      </testcase>
+    </testsuite>
+    <testsuite name="Prayer\Assign\UpdateAssignmentTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Prayer/Assign/UpdateAssignmentTest.php" tests="1" assertions="0" failures="1" errors="0" time="0.000941">
+      <testcase name="Warning" assertions="0" time="0.000941">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Warning
+No tests found in class "Prayer\Assign\UpdateAssignmentTest".
+
+</failure>
+      </testcase>
+    </testsuite>
+    <testsuite name="Scheduling\SchedulerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Scheduling/SchedulerTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.001296">
+      <testcase name="test" class="Scheduling\SchedulerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Scheduling/SchedulerTest.php" line="22" assertions="1" time="0.001296"/>
+    </testsuite>
+    <testsuite name="Tasks\Assignments\PrayerAssignmentTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/PrayerAssignmentTest.php" tests="2" assertions="0" failures="0" errors="0" time="0.002281">
+      <testcase name="testMakeHash" class="Tasks\Assignments\PrayerAssignmentTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/PrayerAssignmentTest.php" line="23" assertions="0" time="0.001412"/>
+      <testcase name="testCreateAssignment" class="Tasks\Assignments\PrayerAssignmentTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/PrayerAssignmentTest.php" line="30" assertions="0" time="0.000869"/>
+    </testsuite>
+    <testsuite name="Tasks\Assignments\dao\PartnershipDaoTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php" tests="6" assertions="4" failures="0" errors="0" time="0.183143">
+      <testcase name="testCreateAssignment" class="Tasks\Assignments\dao\PartnershipDaoTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php" line="24" assertions="4" time="0.064770"/>
+      <testcase name="testLoadByAgentAndDate" class="Tasks\Assignments\dao\PartnershipDaoTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php" line="44" assertions="0" time="0.019133"/>
+      <testcase name="testLoadByAgentAndPatient" class="Tasks\Assignments\dao\PartnershipDaoTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php" line="49" assertions="0" time="0.019630"/>
+      <testcase name="testLoadByHash" class="Tasks\Assignments\dao\PartnershipDaoTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php" line="59" assertions="0" time="0.023302"/>
+      <testcase name="testMarkComplete" class="Tasks\Assignments\dao\PartnershipDaoTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php" line="67" assertions="0" time="0.025960"/>
+      <testcase name="testMarkCompleteByHash" class="Tasks\Assignments\dao\PartnershipDaoTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php" line="74" assertions="0" time="0.030348"/>
+    </testsuite>
+    <testsuite name="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" tests="8" assertions="19" failures="0" errors="0" time="0.021884">
+      <testcase name="testCheckIfHash" class="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" line="20" assertions="5" time="0.003504">
+        <system-out>
+Warning: Missing argument 1 for Tasks\Assignments\service\PartnershipLoader::checkIfHash(), called in /Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php on line 27 and defined in /Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipLoader.php on line 111
+
+Call Stack:
+    0.0007     348552   1. {main}() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:0
+    0.0064    1345656   2. IDE_Base_PHPUnit_TextUI_Command::main() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:516
+    0.0065    1352592   3. PHPUnit_TextUI_Command-&gt;run() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:258
+    0.1021    8902248   4. PHPUnit_TextUI_TestRunner-&gt;doRun() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/TextUI/Command.php:151
+    0.1225    9577000   5. PHPUnit_Framework_TestSuite-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php:432
+    0.6363   19023672   6. PHPUnit_Framework_TestSuite-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestSuite.php:733
+    0.6375   19027360   7. PHPUnit_Framework_TestCase-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestSuite.php:733
+    0.6375   19027816   8. PHPUnit_Framework_TestResult-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:697
+    0.6383   19023064   9. PHPUnit_Framework_TestCase-&gt;runBare() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestResult.php:605
+    0.6395   19097944  10. PHPUnit_Framework_TestCase-&gt;runTest() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:741
+    0.6396   19098768  11. ReflectionMethod-&gt;invokeArgs() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:864
+    0.6396   19099072  12. Tasks\Assignments\service\PartnershipLoaderTest-&gt;testCheckIfHash() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:864
+    0.6405   19105904  13. Tasks\Assignments\service\PartnershipLoader-&gt;checkIfHash() /Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php:27
+
+
+Notice: Undefined variable: identifier in /Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipLoader.php on line 113
+
+Call Stack:
+    0.0007     348552   1. {main}() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:0
+    0.0064    1345656   2. IDE_Base_PHPUnit_TextUI_Command::main() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:516
+    0.0065    1352592   3. PHPUnit_TextUI_Command-&gt;run() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:258
+    0.1021    8902248   4. PHPUnit_TextUI_TestRunner-&gt;doRun() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/TextUI/Command.php:151
+    0.1225    9577000   5. PHPUnit_Framework_TestSuite-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php:432
+    0.6363   19023672   6. PHPUnit_Framework_TestSuite-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestSuite.php:733
+    0.6375   19027360   7. PHPUnit_Framework_TestCase-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestSuite.php:733
+    0.6375   19027816   8. PHPUnit_Framework_TestResult-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:697
+    0.6383   19023064   9. PHPUnit_Framework_TestCase-&gt;runBare() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestResult.php:605
+    0.6395   19097944  10. PHPUnit_Framework_TestCase-&gt;runTest() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:741
+    0.6396   19098768  11. ReflectionMethod-&gt;invokeArgs() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:864
+    0.6396   19099072  12. Tasks\Assignments\service\PartnershipLoaderTest-&gt;testCheckIfHash() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:864
+    0.6405   19105904  13. Tasks\Assignments\service\PartnershipLoader-&gt;checkIfHash() /Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php:27
+
+</system-out>
+      </testcase>
+      <testcase name="testCheckIfUser" class="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" line="32" assertions="4" time="0.003341">
+        <system-out>
+Warning: Missing argument 1 for Tasks\Assignments\service\PartnershipLoader::checkIfUser(), called in /Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php on line 37 and defined in /Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipLoader.php on line 102
+
+Call Stack:
+    0.0007     348552   1. {main}() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:0
+    0.0064    1345656   2. IDE_Base_PHPUnit_TextUI_Command::main() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:516
+    0.0065    1352592   3. PHPUnit_TextUI_Command-&gt;run() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:258
+    0.1021    8902248   4. PHPUnit_TextUI_TestRunner-&gt;doRun() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/TextUI/Command.php:151
+    0.1225    9577000   5. PHPUnit_Framework_TestSuite-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php:432
+    0.6363   19023672   6. PHPUnit_Framework_TestSuite-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestSuite.php:733
+    0.6712   19446888   7. PHPUnit_Framework_TestCase-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestSuite.php:733
+    0.6712   19446888   8. PHPUnit_Framework_TestResult-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:697
+    0.6724   19447864   9. PHPUnit_Framework_TestCase-&gt;runBare() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestResult.php:605
+    0.6732   19464952  10. PHPUnit_Framework_TestCase-&gt;runTest() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:741
+    0.6733   19465776  11. ReflectionMethod-&gt;invokeArgs() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:864
+    0.6733   19466032  12. Tasks\Assignments\service\PartnershipLoaderTest-&gt;testCheckIfUser() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:864
+    0.6740   19466184  13. Tasks\Assignments\service\PartnershipLoader-&gt;checkIfUser() /Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php:37
+
+
+Notice: Undefined variable: identifier in /Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipLoader.php on line 104
+
+Call Stack:
+    0.0007     348552   1. {main}() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:0
+    0.0064    1345656   2. IDE_Base_PHPUnit_TextUI_Command::main() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:516
+    0.0065    1352592   3. PHPUnit_TextUI_Command-&gt;run() /private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php:258
+    0.1021    8902248   4. PHPUnit_TextUI_TestRunner-&gt;doRun() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/TextUI/Command.php:151
+    0.1225    9577000   5. PHPUnit_Framework_TestSuite-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php:432
+    0.6363   19023672   6. PHPUnit_Framework_TestSuite-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestSuite.php:733
+    0.6712   19446888   7. PHPUnit_Framework_TestCase-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestSuite.php:733
+    0.6712   19446888   8. PHPUnit_Framework_TestResult-&gt;run() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:697
+    0.6724   19447864   9. PHPUnit_Framework_TestCase-&gt;runBare() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestResult.php:605
+    0.6732   19464952  10. PHPUnit_Framework_TestCase-&gt;runTest() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:741
+    0.6733   19465776  11. ReflectionMethod-&gt;invokeArgs() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:864
+    0.6733   19466032  12. Tasks\Assignments\service\PartnershipLoaderTest-&gt;testCheckIfUser() /Users/adam/Dropbox/painprayer/vendor/phpunit/phpunit/src/Framework/TestCase.php:864
+    0.6740   19466184  13. Tasks\Assignments\service\PartnershipLoader-&gt;checkIfUser() /Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php:37
+
+</system-out>
+      </testcase>
+      <testcase name="testChooseMethodUser" class="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" line="41" assertions="1" time="0.001915"/>
+      <testcase name="testChooseMethodHash" class="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" line="47" assertions="1" time="0.001836"/>
+      <testcase name="testChooseMethodException" class="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" line="56" assertions="1" time="0.002606"/>
+      <testcase name="testLoadUser" class="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" line="64" assertions="3" time="0.004722"/>
+      <testcase name="testLoadHash" class="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" line="74" assertions="3" time="0.002231"/>
+      <testcase name="testSetDao" class="Tasks\Assignments\service\PartnershipLoaderTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" line="91" assertions="1" time="0.001729"/>
+    </testsuite>
+    <testsuite name="Tasks\Assignments\service\PartnershipMakerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php" tests="5" assertions="13" failures="0" errors="0" time="0.013487">
+      <testcase name="testCheckUnassigned" class="Tasks\Assignments\service\PartnershipMakerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php" line="16" assertions="1" time="0.002577"/>
+      <testcase name="testCheckUnassignedException" class="Tasks\Assignments\service\PartnershipMakerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php" line="27" assertions="1" time="0.002674"/>
+      <testcase name="testMake" class="Tasks\Assignments\service\PartnershipMakerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php" line="34" assertions="9" time="0.004435"/>
+      <testcase name="testSetDao" class="Tasks\Assignments\service\PartnershipMakerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php" line="64" assertions="1" time="0.001922"/>
+      <testcase name="testSetHashMaker" class="Tasks\Assignments\service\PartnershipMakerTest" file="/Users/adam/Dropbox/painprayer/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php" line="69" assertions="1" time="0.001879"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

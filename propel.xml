@@ -14,7 +14,7 @@
                 <connection id="main">
                     <adapter>mysql</adapter>
                     <classname>Propel\Runtime\Connection\DebugPDO</classname>
-                    <dsn>mysql:host=localhost;dbname=painprayer</dsn>
+                    <dsn>mysql:host=localhost;dbname=%env.PRAY_DB_NAME%</dsn>
                     <user>testuser4</user>
                     <password>testpass4</password>
                     <settings>

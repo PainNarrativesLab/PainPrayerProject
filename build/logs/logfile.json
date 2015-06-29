@@ -1,0 +1,413 @@
+{
+    "event": "suiteStart",
+    "suite": "\/Users\/adam\/Dropbox\/painprayer\/tests",
+    "tests": 28
+}{
+    "event": "suiteStart",
+    "suite": "Display\\StudyArea\\PrayerTaskMakerTest",
+    "tests": 1
+}{
+    "event": "testStart",
+    "suite": "Display\\StudyArea\\PrayerTaskMakerTest",
+    "test": "Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate"
+}{
+    "event": "test",
+    "suite": "Display\\StudyArea\\PrayerTaskMakerTest",
+    "test": "Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate",
+    "status": "pass",
+    "time": 0.011855840682983,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
+    "tests": 3
+}{
+    "event": "testStart",
+    "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
+    "test": "PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial"
+}{
+    "event": "test",
+    "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
+    "test": "PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial",
+    "status": "pass",
+    "time": 0.0077099800109863,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
+    "test": "PainAssess\\Display\\PainAssessmentGetterTest::testSetDao"
+}{
+    "event": "test",
+    "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
+    "test": "PainAssess\\Display\\PainAssessmentGetterTest::testSetDao",
+    "status": "pass",
+    "time": 0.0021741390228271,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
+    "test": "PainAssess\\Display\\PainAssessmentGetterTest::testGetContent"
+}{
+    "event": "test",
+    "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
+    "test": "PainAssess\\Display\\PainAssessmentGetterTest::testGetContent",
+    "status": "pass",
+    "time": 0.028081178665161,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Prayer\\Assign\\CreateAssignmentTest",
+    "tests": 1
+}{
+    "event": "testStart",
+    "suite": "Prayer\\Assign\\CreateAssignmentTest",
+    "test": "Prayer\\Assign\\CreateAssignmentTest::testCreate"
+}{
+    "event": "test",
+    "suite": "Prayer\\Assign\\CreateAssignmentTest",
+    "test": "Prayer\\Assign\\CreateAssignmentTest::testCreate",
+    "status": "fail",
+    "time": 0.093690872192383,
+    "trace": [
+        {
+            "file": "\/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Prayer\/Assign\/CreateAssignmentTest.php",
+            "line": 42,
+            "function": "assertTrue",
+            "class": "PHPUnit_Framework_Assert",
+            "type": "::"
+        }
+    ],
+    "message": "Failed asserting that null is true.",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Prayer\\Assign\\UpdateAssignmentTest",
+    "tests": 1
+}{
+    "event": "testStart",
+    "suite": "Prayer\\Assign\\UpdateAssignmentTest",
+    "test": "Warning"
+}{
+    "event": "test",
+    "suite": "Prayer\\Assign\\UpdateAssignmentTest",
+    "test": "Warning",
+    "status": "fail",
+    "time": 0.00094079971313477,
+    "trace": [],
+    "message": "No tests found in class \"Prayer\\Assign\\UpdateAssignmentTest\".",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Scheduling\\SchedulerTest",
+    "tests": 1
+}{
+    "event": "testStart",
+    "suite": "Scheduling\\SchedulerTest",
+    "test": "Scheduling\\SchedulerTest::test"
+}{
+    "event": "test",
+    "suite": "Scheduling\\SchedulerTest",
+    "test": "Scheduling\\SchedulerTest::test",
+    "status": "pass",
+    "time": 0.0012960433959961,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Tasks\\Assignments\\PrayerAssignmentTest",
+    "tests": 2
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\PrayerAssignmentTest",
+    "test": "Tasks\\Assignments\\PrayerAssignmentTest::testMakeHash"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\PrayerAssignmentTest",
+    "test": "Tasks\\Assignments\\PrayerAssignmentTest::testMakeHash",
+    "status": "pass",
+    "time": 0.0014121532440186,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\PrayerAssignmentTest",
+    "test": "Tasks\\Assignments\\PrayerAssignmentTest::testCreateAssignment"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\PrayerAssignmentTest",
+    "test": "Tasks\\Assignments\\PrayerAssignmentTest::testCreateAssignment",
+    "status": "pass",
+    "time": 0.00086879730224609,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "tests": 6
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment",
+    "status": "pass",
+    "time": 0.064769983291626,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByAgentAndDate"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByAgentAndDate",
+    "status": "pass",
+    "time": 0.019132852554321,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByAgentAndPatient"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByAgentAndPatient",
+    "status": "pass",
+    "time": 0.019629955291748,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByHash"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByHash",
+    "status": "pass",
+    "time": 0.02330207824707,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testMarkComplete"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testMarkComplete",
+    "status": "pass",
+    "time": 0.025959968566895,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testMarkCompleteByHash"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
+    "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testMarkCompleteByHash",
+    "status": "pass",
+    "time": 0.030348062515259,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "tests": 8
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfHash"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfHash",
+    "status": "pass",
+    "time": 0.0035040378570557,
+    "trace": [],
+    "message": "",
+    "output": "\nWarning: Missing argument 1 for Tasks\\Assignments\\service\\PartnershipLoader::checkIfHash(), called in \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php on line 27 and defined in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 111\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0064    1345656   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1352592   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.1021    8902248   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1225    9577000   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    0.6363   19023672   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.6375   19027360   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.6375   19027816   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    0.6383   19023064   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    0.6395   19097944  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    0.6396   19098768  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.6396   19099072  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfHash() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.6405   19105904  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfHash() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:27\n\n\nNotice: Undefined variable: identifier in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 113\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0064    1345656   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1352592   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.1021    8902248   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1225    9577000   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    0.6363   19023672   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.6375   19027360   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.6375   19027816   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    0.6383   19023064   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    0.6395   19097944  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    0.6396   19098768  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.6396   19099072  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfHash() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.6405   19105904  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfHash() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:27\n\n"
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfUser"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfUser",
+    "status": "pass",
+    "time": 0.0033409595489502,
+    "trace": [],
+    "message": "",
+    "output": "\nWarning: Missing argument 1 for Tasks\\Assignments\\service\\PartnershipLoader::checkIfUser(), called in \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php on line 37 and defined in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 102\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0064    1345656   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1352592   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.1021    8902248   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1225    9577000   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    0.6363   19023672   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.6712   19446888   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.6712   19446888   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    0.6724   19447864   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    0.6732   19464952  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    0.6733   19465776  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.6733   19466032  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfUser() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.6740   19466184  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfUser() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:37\n\n\nNotice: Undefined variable: identifier in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 104\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0064    1345656   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1352592   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.1021    8902248   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1225    9577000   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    0.6363   19023672   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.6712   19446888   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.6712   19446888   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    0.6724   19447864   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    0.6732   19464952  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    0.6733   19465776  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.6733   19466032  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfUser() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.6740   19466184  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfUser() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:37\n\n"
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser",
+    "status": "pass",
+    "time": 0.0019149780273438,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash",
+    "status": "pass",
+    "time": 0.0018360614776611,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException",
+    "status": "pass",
+    "time": 0.0026059150695801,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser",
+    "status": "pass",
+    "time": 0.0047221183776855,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash",
+    "status": "pass",
+    "time": 0.0022308826446533,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testSetDao"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testSetDao",
+    "status": "pass",
+    "time": 0.0017290115356445,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "tests": 5
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned",
+    "status": "pass",
+    "time": 0.0025770664215088,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException",
+    "status": "pass",
+    "time": 0.0026741027832031,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testMake"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testMake",
+    "status": "pass",
+    "time": 0.0044350624084473,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testSetDao"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testSetDao",
+    "status": "pass",
+    "time": 0.0019218921661377,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testSetHashMaker"
+}{
+    "event": "test",
+    "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
+    "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testSetHashMaker",
+    "status": "pass",
+    "time": 0.0018789768218994,
+    "trace": [],
+    "message": "",
+    "output": ""
+}

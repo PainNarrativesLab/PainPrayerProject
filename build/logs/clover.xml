@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1434826001">
+  <project timestamp="1434826001">
+    <file name="/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/IContentMaker.php">
+      <metrics loc="16" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <package name="Display\StudyArea">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/PainRatingMaker.php">
+        <class name="PainRatingMaker" namespace="Display\StudyArea">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+        </class>
+        <line num="22" type="method" name="make" crap="2" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <metrics loc="30" ncloc="22" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+      </file>
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/PrayerTaskMaker.php">
+        <class name="PrayerTaskMaker" namespace="Display\StudyArea">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="19" elements="29" coveredelements="19"/>
+        </class>
+        <line num="23" type="method" name="chooseTemplate" crap="7.12" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="55" type="method" name="make" crap="2" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <metrics loc="61" ncloc="55" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="19" elements="29" coveredelements="19"/>
+      </file>
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/StudyAreaMaker.php">
+        <class name="StudyAreaMaker" namespace="Display\StudyArea">
+          <metrics methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="3" elements="10" coveredelements="4"/>
+        </class>
+        <line num="40" type="method" name="setContentMaker" crap="1.30" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="49" type="method" name="setAreaDivId" crap="2" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="57" type="method" name="__construct" crap="1" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <metrics loc="60" ncloc="44" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="3" elements="10" coveredelements="4"/>
+      </file>
+    </package>
+    <package name="PainAssess\Display">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/PainAssess/Display/PainAssessmentGetter.php">
+        <class name="PainAssessmentGetter" namespace="PainAssess\Display" fullPackage="PainAssess" package="PainAssess">
+          <metrics methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="9" elements="18" coveredelements="11"/>
+        </class>
+        <line num="31" type="method" name="setTrial" crap="1" count="2"/>
+        <line num="33" type="stmt" count="2"/>
+        <line num="34" type="stmt" count="2"/>
+        <line num="39" type="method" name="setDao" crap="1" count="2"/>
+        <line num="41" type="stmt" count="2"/>
+        <line num="42" type="stmt" count="2"/>
+        <line num="44" type="method" name="getContent" crap="3.79" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="59" type="method" name="make" crap="2" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <metrics loc="61" ncloc="41" classes="1" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="9" elements="18" coveredelements="11"/>
+      </file>
+    </package>
+    <file name="/Users/adam/Dropbox/painprayer/src/lib/PainAssess/dao/IPainDao.php">
+      <metrics loc="20" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <package name="Prayer\Assign">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/Assignment.php">
+        <class name="Assignment" namespace="Prayer\Assign" fullPackage="Prayer" package="Prayer">
+          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+        </class>
+        <line num="41" type="method" name="setAgent" crap="2" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="50" type="method" name="setPatient" crap="2" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="62" type="method" name="load" crap="2" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <metrics loc="73" ncloc="39" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+      </file>
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/CreateAssignment.php">
+        <class name="CreateAssignment" namespace="Prayer\Assign" fullPackage="Prayer" package="Prayer">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        </class>
+        <line num="22" type="method" name="create" crap="1" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <metrics loc="27" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </file>
+    </package>
+    <package name="Scheduling">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Scheduler.php">
+        <class name="Scheduler" namespace="Scheduling" fullPackage="Scheduling" package="Scheduling">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="19" ncloc="6" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Scheduling\States">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Scheduling/States/StateManager.php">
+        <class name="StateManager" namespace="Scheduling\States">
+          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="27" ncloc="21" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Tasks">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignment.php">
+        <class name="Assignment" namespace="Tasks">
+          <metrics methods="12" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="30" coveredelements="0"/>
+        </class>
+        <line num="41" type="method" name="getId" crap="2" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="51" type="method" name="setId" crap="2" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="59" type="method" name="getStartDate" crap="2" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="67" type="method" name="setStartDate" crap="2" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="75" type="method" name="getEndDate" crap="2" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="83" type="method" name="setEndDate" crap="2" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="91" type="method" name="getAgent" crap="2" count="0"/>
+        <line num="93" type="stmt" count="0"/>
+        <line num="99" type="method" name="setAgent" crap="2" count="0"/>
+        <line num="101" type="stmt" count="0"/>
+        <line num="102" type="stmt" count="0"/>
+        <line num="107" type="method" name="getPatient" crap="2" count="0"/>
+        <line num="109" type="stmt" count="0"/>
+        <line num="115" type="method" name="setPatient" crap="2" count="0"/>
+        <line num="117" type="stmt" count="0"/>
+        <line num="118" type="stmt" count="0"/>
+        <line num="123" type="method" name="getAction" crap="2" count="0"/>
+        <line num="125" type="stmt" count="0"/>
+        <line num="131" type="method" name="setAction" crap="2" count="0"/>
+        <line num="133" type="stmt" count="0"/>
+        <line num="134" type="stmt" count="0"/>
+        <metrics loc="136" ncloc="87" classes="1" methods="12" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="30" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Tasks\Assignments">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/PrayerAssignment.php">
+        <class name="PrayerAssignment" namespace="Tasks\Assignments">
+          <metrics methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="21" coveredelements="0"/>
+        </class>
+        <line num="23" type="method" name="postRecordTask" crap="2" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="28" type="method" name="createAssignment" crap="2" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="42" type="method" name="checkPatientUnassigned" crap="2" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="45" type="method" name="makeHash" crap="20" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <metrics loc="58" ncloc="40" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="21" coveredelements="0"/>
+      </file>
+    </package>
+    <file name="/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/dao/IPartnershipDao.php">
+      <metrics loc="65" ncloc="32" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <package name="Tasks\Assignments\dao">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/dao/PartnershipDao.php">
+        <class name="PartnershipDao" namespace="Tasks\Assignments\dao">
+          <metrics methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="7" elements="43" coveredelements="8"/>
+        </class>
+        <line num="15" type="method" name="loadAllForAgent" crap="2" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="20" type="method" name="loadByAgentAndDate" crap="2" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="32" type="method" name="loadByAgentAndPatient" crap="2" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="41" type="method" name="loadByHash" crap="2" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="48" type="method" name="createAssignment" crap="1" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="66" type="method" name="checkIfPatient" crap="6" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="82" type="method" name="checkIfAgent" crap="6" count="0"/>
+        <line num="84" type="stmt" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="87" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="97" type="method" name="markComplete" crap="2" count="0"/>
+        <line num="99" type="stmt" count="0"/>
+        <line num="100" type="stmt" count="0"/>
+        <line num="101" type="stmt" count="0"/>
+        <line num="103" type="method" name="markCompleteByHash" crap="2" count="0"/>
+        <line num="105" type="stmt" count="0"/>
+        <line num="106" type="stmt" count="0"/>
+        <line num="107" type="stmt" count="0"/>
+        <metrics loc="107" ncloc="74" classes="1" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="7" elements="43" coveredelements="8"/>
+      </file>
+    </package>
+    <package name="Tasks\Assignments\errors">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/errors/AlreadyAssignedException.php">
+        <class name="AlreadyAssignedException" namespace="Tasks\Assignments\errors">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        </class>
+        <line num="15" type="method" name="__construct" crap="1" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <line num="17" type="stmt" count="1"/>
+        <metrics loc="18" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </file>
+    </package>
+    <file name="/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/IHashMaker.php">
+      <metrics loc="15" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <package name="Tasks\Assignments\service">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipLoader.php">
+        <class name="PartnershipLoader" namespace="Tasks\Assignments\service" fullPackage="Tasks" package="Tasks">
+          <metrics methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="31" elements="40" coveredelements="36"/>
+        </class>
+        <line num="36" type="method" name="setDao" crap="1" count="3"/>
+        <line num="38" type="stmt" count="3"/>
+        <line num="39" type="stmt" count="3"/>
+        <line num="45" type="method" name="load" crap="1" count="2"/>
+        <line num="47" type="stmt" count="2"/>
+        <line num="48" type="stmt" count="2"/>
+        <line num="49" type="stmt" count="2"/>
+        <line num="58" type="method" name="doLoad" crap="4.20" count="2"/>
+        <line num="60" type="stmt" count="2"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="2"/>
+        <line num="64" type="stmt" count="2"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="68" type="stmt" count="1"/>
+        <line num="69" type="stmt" count="1"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="72" type="stmt" count="2"/>
+        <line num="73" type="stmt" count="2"/>
+        <line num="83" type="method" name="chooseMethod" crap="3" count="5"/>
+        <line num="86" type="stmt" count="5"/>
+        <line num="87" type="stmt" count="2"/>
+        <line num="88" type="stmt" count="2"/>
+        <line num="89" type="stmt" count="3"/>
+        <line num="90" type="stmt" count="2"/>
+        <line num="91" type="stmt" count="2"/>
+        <line num="92" type="stmt" count="1"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="1"/>
+        <line num="95" type="stmt" count="4"/>
+        <line num="102" type="method" name="checkIfUser" crap="2" count="6"/>
+        <line num="104" type="stmt" count="6"/>
+        <line num="105" type="stmt" count="3"/>
+        <line num="107" type="stmt" count="4"/>
+        <line num="111" type="method" name="checkIfHash" crap="3" count="4"/>
+        <line num="113" type="stmt" count="4"/>
+        <line num="114" type="stmt" count="3"/>
+        <line num="116" type="stmt" count="2"/>
+        <metrics loc="118" ncloc="80" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="31" elements="40" coveredelements="36"/>
+      </file>
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipMaker.php">
+        <class name="PartnershipMaker" namespace="Tasks\Assignments\service">
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="17" elements="22" coveredelements="20"/>
+        </class>
+        <line num="20" type="method" name="setDao" crap="1" count="4"/>
+        <line num="22" type="stmt" count="4"/>
+        <line num="23" type="stmt" count="4"/>
+        <line num="28" type="method" name="setHashMaker" crap="1" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="31" type="stmt" count="2"/>
+        <line num="44" type="method" name="make" crap="3" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="75" type="method" name="checkUnassigned" crap="3.04" count="3"/>
+        <line num="77" type="stmt" count="3"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="81" type="stmt" count="2"/>
+        <line num="82" type="stmt" count="2"/>
+        <line num="83" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="2"/>
+        <metrics loc="87" ncloc="34" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="17" elements="22" coveredelements="20"/>
+      </file>
+    </package>
+    <package name="TemplateClasses">
+      <file name="/Users/adam/Dropbox/painprayer/src/lib/TemplateClasses/Controller.php">
+        <class name="Controller" namespace="TemplateClasses">
+          <metrics methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="16" elements="31" coveredelements="17"/>
+        </class>
+        <line num="28" type="method" name="setLocations" crap="3" count="4"/>
+        <line num="30" type="stmt" count="4"/>
+        <line num="31" type="stmt" count="4"/>
+        <line num="32" type="stmt" count="4"/>
+        <line num="33" type="stmt" count="4"/>
+        <line num="34" type="stmt" count="4"/>
+        <line num="35" type="stmt" count="4"/>
+        <line num="36" type="stmt" count="4"/>
+        <line num="38" type="method" name="__construct" crap="2.00" count="4"/>
+        <line num="41" type="stmt" count="4"/>
+        <line num="43" type="stmt" count="4"/>
+        <line num="44" type="stmt" count="4"/>
+        <line num="47" type="stmt" count="4"/>
+        <line num="48" type="stmt" count="4"/>
+        <line num="50" type="stmt" count="4"/>
+        <line num="51" type="stmt" count="4"/>
+        <line num="52" type="stmt" count="4"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="4"/>
+        <line num="61" type="method" name="add_variables" crap="2" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="71" type="method" name="load" crap="2" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="75" type="stmt" count="0"/>
+        <line num="81" type="method" name="render" crap="6" count="0"/>
+        <line num="84" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="87" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <metrics loc="90" ncloc="62" classes="1" methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="16" elements="31" coveredelements="17"/>
+      </file>
+    </package>
+    <metrics files="19" loc="1088" ncloc="695" classes="15" methods="55" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="216" coveredstatements="106" elements="271" coveredelements="121"/>
+  </project>
+</coverage>

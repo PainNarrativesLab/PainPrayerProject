@@ -43,12 +43,10 @@ class PartnershipMaker
      */
     public function make($agent, $patient, $date)
     {
-        if($this->checkUnassigned($agent, $patient, $date))
-        {
+        if ($this->checkUnassigned($agent, $patient, $date)) {
             $hash = $this->hashMaker->makeHash();
-            if($hash)
-            {
-                $this->dao->createAssignment($agent, $patient, $date, $hash);
+            if ($hash) {
+                return $this->dao->createAssignment($agent, $patient, $date, $hash);
             }
         }
     }
@@ -65,13 +63,11 @@ class PartnershipMaker
     {
         if ($this->dao->checkIfAgent($agent, $date)) {
             throw new \Tasks\Assignments\errors\AlreadyAssignedException();
-            //\Exceptions\AlreadyAssignedException();
         }
-        if ($this->dao->checkIfPatient($patient, $date))
-        {
+        if ($this->dao->checkIfPatient($patient, $date)) {
             throw new \Tasks\Assignments\errors\AlreadyAssignedException();
-//            throw new \Exceptions\AlreadyAssignedException();
         }
+
         return true;
     }
 }

@@ -26,6 +26,7 @@ foreach($dbs as $db){
     \lib\DbAids::populate_prayers(\Propel\Runtime\Propel::getConnection($db));
     \lib\DbAids::populate_trials(\Propel\Runtime\Propel::getConnection($db));
     \lib\DbAids::populate_trial_assoc(\Propel\Runtime\Propel::getConnection($db));
+    \lib\DbAids::populate_prayer_assignments(\Propel\Runtime\Propel::getConnection($db));
 }
 
 

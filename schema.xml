@@ -22,10 +22,10 @@
         <column name="prayer_date" type="date" required="true"/>
         <column name="assignmentHash" type="longvarchar" required="true"/>
         <column name="complete" type="boolean" defaultValue="false"/>
-        <foreign-key foreignTable="users" phpName="agent">
+        <foreign-key foreignTable="users" phpName="Agent">
             <reference local="agent_id" foreign="id"/>
         </foreign-key>
-        <foreign-key foreignTable="users" phpName="patient">
+        <foreign-key foreignTable="users" phpName="Patient">
             <reference local="patient_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -33,10 +33,10 @@
     <table name="partners" phpName="Partners" isCrossRef="true">
         <column name="agent_id" type="integer" required="true" primaryKey="true"/>
         <column name="patient_id" type="integer" required="true" primaryKey="true"/>
-        <foreign-key foreignTable="users" phpName="agent">
+        <foreign-key foreignTable="users" phpName="Agent">
             <reference local="agent_id" foreign="id"/>
         </foreign-key>
-        <foreign-key foreignTable="users" phpName="patient">
+        <foreign-key foreignTable="users" phpName="Patient">
             <reference local="patient_id" foreign="id"/>
         </foreign-key>
     </table>
@@ -44,7 +44,7 @@
     <table name="pain_ratings" phpName="PainRating">
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
         <column name="user_id" type="integer" required="true"/>
-        <foreign-key foreignTable="users" phpName="user">
+        <foreign-key foreignTable="users" phpName="User">
             <reference local="user_id" foreign="id"/>
         </foreign-key>
     </table>

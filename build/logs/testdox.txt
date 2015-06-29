@@ -1,0 +1,43 @@
+Display\StudyArea\PrayerTaskMaker
+ [x] Choose template
+
+PainAssess\Display\PainAssessmentGetter
+ [x] Set trial
+ [x] Set dao
+ [x] Get content
+
+Prayer\Assign\CreateAssignment
+ [ ] Create
+
+Scheduling\Scheduler
+ [x] 
+
+Tasks\Assignments\PrayerAssignment
+ [x] Make hash
+ [x] Create assignment
+
+Tasks\Assignments\dao\PartnershipDao
+ [x] Create assignment
+ [x] Load by agent and date
+ [x] Load by agent and patient
+ [x] Load by hash
+ [x] Mark complete
+ [x] Mark complete by hash
+
+Tasks\Assignments\service\PartnershipLoader
+ [x] Check if hash
+ [x] Check if user
+ [x] Choose method user
+ [x] Choose method hash
+ [x] Choose method exception
+ [x] Load user
+ [x] Load hash
+ [x] Set dao
+
+Tasks\Assignments\service\PartnershipMaker
+ [x] Check unassigned
+ [x] Check unassigned exception
+ [x] Make
+ [x] Set dao
+ [x] Set hash maker
+

@@ -1,0 +1,1126 @@
+<?php
+$coverage = new PHP_CodeCoverage;
+$coverage->setData(array (
+  '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/States/StateManager.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/StudyAreaMaker.php' => 
+  array (
+    41 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    42 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    59 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    60 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/PrayerTaskMaker.php' => 
+  array (
+    26 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    27 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    28 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    30 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    31 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    32 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    34 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    35 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    36 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    38 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    39 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    40 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    42 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    43 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    44 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    46 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    47 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    48 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    50 => 
+    array (
+    ),
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    53 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+    ),
+    57 => 
+    array (
+    ),
+    58 => 
+    array (
+    ),
+    59 => 
+    array (
+    ),
+    60 => 
+    array (
+    ),
+    61 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/TemplateClasses/Controller.php' => 
+  array (
+    30 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    31 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    32 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    33 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    34 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    35 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    36 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    41 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    43 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    44 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    47 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    48 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    50 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    51 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    52 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    53 => 
+    array (
+    ),
+    55 => 
+    array (
+      0 => 'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      2 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      3 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    64 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    74 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    84 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
+    87 => 
+    array (
+    ),
+    88 => 
+    array (
+    ),
+    90 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/PainAssess/dao/IPainDao.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/IContentMaker.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/PainAssess/Display/PainAssessmentGetter.php' => 
+  array (
+    33 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    34 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    41 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    42 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao',
+      1 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    46 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    48 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    49 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    53 => 
+    array (
+    ),
+    54 => 
+    array (
+    ),
+    55 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    56 => 
+    array (
+      0 => 'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent',
+    ),
+    57 => NULL,
+    61 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/PainRatingMaker.php' => 
+  array (
+    24 => 
+    array (
+    ),
+    26 => 
+    array (
+    ),
+    27 => 
+    array (
+    ),
+    28 => 
+    array (
+    ),
+    30 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/Assignment.php' => 
+  array (
+    43 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    53 => 
+    array (
+    ),
+    64 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    66 => 
+    array (
+    ),
+    67 => 
+    array (
+    ),
+    68 => 
+    array (
+    ),
+    69 => 
+    array (
+    ),
+    70 => 
+    array (
+    ),
+    71 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/CreateAssignment.php' => 
+  array (
+    24 => 
+    array (
+      0 => 'Prayer\\Assign\\CreateAssignmentTest::testCreate',
+    ),
+    25 => 
+    array (
+      0 => 'Prayer\\Assign\\CreateAssignmentTest::testCreate',
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Scheduler.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/PrayerAssignment.php' => 
+  array (
+    26 => 
+    array (
+    ),
+    30 => 
+    array (
+    ),
+    31 => 
+    array (
+    ),
+    32 => 
+    array (
+    ),
+    33 => 
+    array (
+    ),
+    34 => 
+    array (
+    ),
+    35 => 
+    array (
+    ),
+    36 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    47 => 
+    array (
+    ),
+    48 => 
+    array (
+    ),
+    49 => 
+    array (
+    ),
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    53 => NULL,
+    55 => 
+    array (
+    ),
+    57 => 
+    array (
+    ),
+    58 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignment.php' => 
+  array (
+    43 => 
+    array (
+    ),
+    44 => NULL,
+    53 => 
+    array (
+    ),
+    54 => 
+    array (
+    ),
+    61 => 
+    array (
+    ),
+    62 => NULL,
+    69 => 
+    array (
+    ),
+    70 => 
+    array (
+    ),
+    77 => 
+    array (
+    ),
+    78 => NULL,
+    85 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
+    93 => 
+    array (
+    ),
+    94 => NULL,
+    101 => 
+    array (
+    ),
+    102 => 
+    array (
+    ),
+    109 => 
+    array (
+    ),
+    110 => NULL,
+    117 => 
+    array (
+    ),
+    118 => 
+    array (
+    ),
+    125 => 
+    array (
+    ),
+    126 => NULL,
+    133 => 
+    array (
+    ),
+    134 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/dao/PartnershipDao.php' => 
+  array (
+    18 => 
+    array (
+    ),
+    23 => 
+    array (
+    ),
+    34 => 
+    array (
+    ),
+    35 => 
+    array (
+    ),
+    36 => 
+    array (
+    ),
+    37 => 
+    array (
+    ),
+    38 => 
+    array (
+    ),
+    39 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    45 => 
+    array (
+    ),
+    46 => NULL,
+    50 => 
+    array (
+      0 => 'Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment',
+    ),
+    51 => 
+    array (
+      0 => 'Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment',
+    ),
+    52 => 
+    array (
+      0 => 'Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment',
+    ),
+    53 => 
+    array (
+      0 => 'Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment',
+    ),
+    54 => 
+    array (
+      0 => 'Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment',
+    ),
+    55 => 
+    array (
+      0 => 'Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment',
+    ),
+    56 => 
+    array (
+      0 => 'Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment',
+    ),
+    57 => NULL,
+    68 => 
+    array (
+    ),
+    69 => 
+    array (
+    ),
+    70 => 
+    array (
+    ),
+    71 => 
+    array (
+    ),
+    72 => 
+    array (
+    ),
+    73 => NULL,
+    84 => 
+    array (
+    ),
+    85 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
+    87 => 
+    array (
+    ),
+    88 => 
+    array (
+    ),
+    89 => NULL,
+    99 => 
+    array (
+    ),
+    100 => 
+    array (
+    ),
+    101 => 
+    array (
+    ),
+    105 => 
+    array (
+    ),
+    106 => 
+    array (
+    ),
+    107 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/dao/IPartnershipDao.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipLoader.php' => 
+  array (
+    38 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testSetDao',
+    ),
+    39 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testSetDao',
+    ),
+    47 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    48 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    49 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    50 => NULL,
+    60 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    61 => 
+    array (
+    ),
+    62 => NULL,
+    63 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    64 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    65 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+    ),
+    66 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+    ),
+    67 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    68 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    69 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    70 => 
+    array (
+    ),
+    71 => 
+    array (
+    ),
+    72 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    73 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    86 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+      3 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      4 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    87 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+    ),
+    88 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+    ),
+    89 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    90 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    91 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    92 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+    ),
+    93 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+    ),
+    94 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+    ),
+    95 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      3 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    104 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      3 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+      4 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+      5 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    105 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser',
+    ),
+    106 => NULL,
+    107 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfUser',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+      3 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    109 => NULL,
+    113 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfHash',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+      3 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    114 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfHash',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash',
+      2 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash',
+    ),
+    115 => NULL,
+    116 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfHash',
+      1 => 'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException',
+    ),
+    118 => NULL,
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/IHashMaker.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipMaker.php' => 
+  array (
+    22 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned',
+      1 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException',
+      2 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+      3 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testSetDao',
+    ),
+    23 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned',
+      1 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException',
+      2 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+      3 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testSetDao',
+    ),
+    30 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+      1 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testSetHashMaker',
+    ),
+    31 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+      1 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testSetHashMaker',
+    ),
+    46 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    47 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    48 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    50 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    51 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    52 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    53 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    54 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    77 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned',
+      1 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException',
+      2 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    78 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException',
+    ),
+    80 => NULL,
+    81 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned',
+      1 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    82 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned',
+      1 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    83 => 
+    array (
+    ),
+    85 => NULL,
+    86 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned',
+      1 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake',
+    ),
+    87 => NULL,
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/errors/AlreadyAssignedException.php' => 
+  array (
+    16 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException',
+    ),
+    17 => 
+    array (
+      0 => 'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException',
+    ),
+  ),
+));
+$coverage->setTests(array (
+  'Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PainAssess\\Display\\PainAssessmentGetterTest::testSetDao' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'PainAssess\\Display\\PainAssessmentGetterTest::testGetContent' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Prayer\\Assign\\CreateAssignmentTest::testCreate' => 
+  array (
+    'size' => 'unknown',
+    'status' => 3,
+  ),
+  'Scheduling\\SchedulerTest::test' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\PrayerAssignmentTest::testMakeHash' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfHash' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfUser' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipLoaderTest::testSetDao' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipMakerTest::testMake' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipMakerTest::testSetDao' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Tasks\\Assignments\\service\\PartnershipMakerTest::testSetHashMaker' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+));
+
+$filter = $coverage->filter();
+$filter->setBlacklistedFiles(array (
+  '/private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php' => true,
+));
+$filter->setWhitelistedFiles(array (
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/IContentMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/PainRatingMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/PrayerTaskMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/StudyAreaMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Matcher/MatchMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/PainAssess/Display/PainAssessmentGetter.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/PainAssess/dao/IPainDao.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/PainAssess/dao/PainDao.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/Assignment.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/CreateAssignment.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/UpdateAssignment.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Display/PrayerGetter.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Scheduler.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/States/IState.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/States/StateManager.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Tasks/ITask.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Tasks/SendReminders.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Actions/Action.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Actions/BreatheTask.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Actions/Instruction.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Actions/PrayTask.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignment.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/PrayerAssignment.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/dao/IPartnershipDao.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/dao/PartnershipDao.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/errors/AlreadyAssignedException.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/HashMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/IHashMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipLoader.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/service/PartnershipMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Record.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/TemplateClasses/Controller.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/TemplateClasses/ErrorMessages.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/TemplateClasses/LeftNav.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/TemplateClasses/NavBar.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/TemplateClasses/PageMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/0/2/02325416b927f6871d94b194920bc44541c87ece78d07d975554fad4727d3067.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/0/5/0547e814b7a6b1fa56c629a8753de1860f7d3e46a279ed8b00f92579fb323bcf.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/0/c/0c698fb96e7e01be117195705d99ca5f7e10e43aa8e3fcdcb7edb11a1429a64e.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/0/f/0f4eddc6733bf2cce5e7c857e43d5433e13a6151cc9181a2d1f947112cb5007a.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/1/0/1001fea4a9346fc3baa365f1b1ece5f5657517d64b441a847396034f36f2d620.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/1/6/16f622e3cf447f58e29d6093204e2b6c463bcbc1aa2f427d14f881cbee89aec7.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/1/8/18a41cc37bc0f0718d9745b30ef8253ab512f60d02b6970fdf8457ddd3894ad3.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/2/f/2ff487dea23bb8a9a717aa2ac3a9858180f81c3ed33ceef4e205b21b12d872f0.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/4/d/4df6faac3bc9dff00f43ee9d6efdd7dc4a9fd59e137e7c11aed4923aafba4f13.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/5/1/5106c5474a3d0833850e91b58f10a8837feb6c8199e1e43ae4152860076cfd0a.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/5/7/57b9304064e6bba793ef0a966e7741646fd24c3b9516dd7abd88e70507bd3773.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/8/3/8312b48b913301d3e58a9c04d7c0be619b445962352f105237008fbd6b81a5a6.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/8/3/839063eab126085a25a0abdb8901393920dc6be9a3282c3a69e0859252420b08.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/8/e/8eb5903376790ba097c5dedee150de2ed87b918b5748bcafb3280a51db9f601c.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/9/3/93f59003f3fd923775c7999b20e0de81ef8647656456c1b2b0f72c1604f48225.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/a/0/a0bc8117642e2589619cc28f9e2f74bdb6d032cf34783974d24aa7e09f483d25.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/a/8/a88033d38720439463ab02582521a7b98409d144e949e31fd76bfb44410ce74c.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/b/1/b1ba40cb8ef8a9aaac73def6282cc0f2d8003ed8e770b177f40488796e711ff8.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/c/a/ca9e3a16a5580dee790be62b3ba3ce10d5c6431d0ab5cced11756c7d49e3f13b.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/d/2/d23252af47809c1be4de853ad4af49e0286aaf00eea165c2ef0f426c44df4270.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/d/2/d2e0f0bd22c449bcf540bc9deba1ce31a91b31d13a99d23937e82f38d2ee2a2a.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/d/4/d42d4d1fa404cfdef2904917bb397d74b7167fe49d5c909b185490c916840d8a.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/d/9/d937455555191975f5d6d9c3cc6b3a2cfce60feeeecb35f72f20330bb0c00522.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/d/a/da33eac4bf5d7d0a447ce49f2e4b5e01590be7dff36f95ff3fb7a2b6c5a5cfe3.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/e/1/e1ba6116fb06c52defb96c8cf642b593c76305072f17e76638b90b98422ada79.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/e/1/e1dce326729c99bc32f79f6ed9f1700498500eb6af195a71c810b3cf5d99adbd.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/f/d/fd3911c866d2a821d366bb6932fe2d597cc405f4e3a1419e616f4bbb0b4732d6.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/www/api.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/www/experiment.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/www/filemaster.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/www/index.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/www/registration.php' => true,
+));
+
+return $coverage;

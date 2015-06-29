@@ -9,7 +9,7 @@
 namespace Tasks\Assignments\dao;
 
 
-class PartnershipDao
+class PartnershipDao implements \Tasks\Assignments\dao\IPartnershipDao
 {
 
     public function loadAllForAgent(\User $agent)
@@ -32,8 +32,8 @@ class PartnershipDao
     public function loadByAgentAndPatient(\User $agent, \User $patient, $date)
     {
         $assign = \AssignedPrayerQuery::create()
-            ->filterByagent($agent)
-            ->filterBypatient($patient)
+            ->filterByAgent($agent)
+            ->filterByPatient($patient)
             ->filterByPrayerDate($date)
             ->findOneOrCreate();
     }
@@ -48,8 +48,8 @@ class PartnershipDao
     public function createAssignment(\User $agent, \User $patient, $date, $hash)
     {
         $assign = new \AssignedPrayer();
-        $assign->setagent($agent);
-        $assign->setpatient($patient);
+        $assign->setAgent($agent);
+        $assign->setPatient($patient);
         $assign->setPrayerDate($date);
         $assign->setAssignmenthash($hash);
         $assign->save();

@@ -34,13 +34,13 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPartnersQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method     ChildPartnersQuery innerJoin($relation) Adds a INNER JOIN clause to the query
  *
- * @method     ChildPartnersQuery leftJoinagent($relationAlias = null) Adds a LEFT JOIN clause to the query using the agent relation
- * @method     ChildPartnersQuery rightJoinagent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the agent relation
- * @method     ChildPartnersQuery innerJoinagent($relationAlias = null) Adds a INNER JOIN clause to the query using the agent relation
+ * @method     ChildPartnersQuery leftJoinAgent($relationAlias = null) Adds a LEFT JOIN clause to the query using the Agent relation
+ * @method     ChildPartnersQuery rightJoinAgent($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Agent relation
+ * @method     ChildPartnersQuery innerJoinAgent($relationAlias = null) Adds a INNER JOIN clause to the query using the Agent relation
  *
- * @method     ChildPartnersQuery leftJoinpatient($relationAlias = null) Adds a LEFT JOIN clause to the query using the patient relation
- * @method     ChildPartnersQuery rightJoinpatient($relationAlias = null) Adds a RIGHT JOIN clause to the query using the patient relation
- * @method     ChildPartnersQuery innerJoinpatient($relationAlias = null) Adds a INNER JOIN clause to the query using the patient relation
+ * @method     ChildPartnersQuery leftJoinPatient($relationAlias = null) Adds a LEFT JOIN clause to the query using the Patient relation
+ * @method     ChildPartnersQuery rightJoinPatient($relationAlias = null) Adds a RIGHT JOIN clause to the query using the Patient relation
+ * @method     ChildPartnersQuery innerJoinPatient($relationAlias = null) Adds a INNER JOIN clause to the query using the Patient relation
  *
  * @method     \UserQuery endUse() Finalizes a secondary criteria and merges it with its primary Criteria
  *
@@ -269,7 +269,7 @@ abstract class PartnersQuery extends ModelCriteria
      * $query->filterByAgentId(array('min' => 12)); // WHERE agent_id > 12
      * </code>
      *
-     * @see       filterByagent()
+     * @see       filterByAgent()
      *
      * @param     mixed $agentId The value to use as filter.
      *              Use scalar values for equality.
@@ -312,7 +312,7 @@ abstract class PartnersQuery extends ModelCriteria
      * $query->filterByPatientId(array('min' => 12)); // WHERE patient_id > 12
      * </code>
      *
-     * @see       filterBypatient()
+     * @see       filterByPatient()
      *
      * @param     mixed $patientId The value to use as filter.
      *              Use scalar values for equality.
@@ -441,7 +441,7 @@ abstract class PartnersQuery extends ModelCriteria
      *
      * @return ChildPartnersQuery The current query, for fluid interface
      */
-    public function filterByagent($user, $comparison = null)
+    public function filterByAgent($user, $comparison = null)
     {
         if ($user instanceof \User) {
             return $this
@@ -454,22 +454,22 @@ abstract class PartnersQuery extends ModelCriteria
             return $this
                 ->addUsingAlias(PartnersTableMap::COL_AGENT_ID, $user->toKeyValue('Id', 'Id'), $comparison);
         } else {
-            throw new PropelException('filterByagent() only accepts arguments of type \User or Collection');
+            throw new PropelException('filterByAgent() only accepts arguments of type \User or Collection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the agent relation
+     * Adds a JOIN clause to the query using the Agent relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return $this|ChildPartnersQuery The current query, for fluid interface
      */
-    public function joinagent($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinAgent($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('agent');
+        $relationMap = $tableMap->getRelation('Agent');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -484,14 +484,14 @@ abstract class PartnersQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'agent');
+            $this->addJoinObject($join, 'Agent');
         }
 
         return $this;
     }
 
     /**
-     * Use the agent relation User object
+     * Use the Agent relation User object
      *
      * @see useQuery()
      *
@@ -501,11 +501,11 @@ abstract class PartnersQuery extends ModelCriteria
      *
      * @return \UserQuery A secondary query class using the current class as primary query
      */
-    public function useagentQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function useAgentQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinagent($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'agent', '\UserQuery');
+            ->joinAgent($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Agent', '\UserQuery');
     }
 
     /**
@@ -518,7 +518,7 @@ abstract class PartnersQuery extends ModelCriteria
      *
      * @return ChildPartnersQuery The current query, for fluid interface
      */
-    public function filterBypatient($user, $comparison = null)
+    public function filterByPatient($user, $comparison = null)
     {
         if ($user instanceof \User) {
             return $this
@@ -531,22 +531,22 @@ abstract class PartnersQuery extends ModelCriteria
             return $this
                 ->addUsingAlias(PartnersTableMap::COL_PATIENT_ID, $user->toKeyValue('Id', 'Id'), $comparison);
         } else {
-            throw new PropelException('filterBypatient() only accepts arguments of type \User or Collection');
+            throw new PropelException('filterByPatient() only accepts arguments of type \User or Collection');
         }
     }
 
     /**
-     * Adds a JOIN clause to the query using the patient relation
+     * Adds a JOIN clause to the query using the Patient relation
      *
      * @param     string $relationAlias optional alias for the relation
      * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
      * @return $this|ChildPartnersQuery The current query, for fluid interface
      */
-    public function joinpatient($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function joinPatient($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         $tableMap = $this->getTableMap();
-        $relationMap = $tableMap->getRelation('patient');
+        $relationMap = $tableMap->getRelation('Patient');
 
         // create a ModelJoin object for this join
         $join = new ModelJoin();
@@ -561,14 +561,14 @@ abstract class PartnersQuery extends ModelCriteria
             $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
             $this->addJoinObject($join, $relationAlias);
         } else {
-            $this->addJoinObject($join, 'patient');
+            $this->addJoinObject($join, 'Patient');
         }
 
         return $this;
     }
 
     /**
-     * Use the patient relation User object
+     * Use the Patient relation User object
      *
      * @see useQuery()
      *
@@ -578,11 +578,11 @@ abstract class PartnersQuery extends ModelCriteria
      *
      * @return \UserQuery A secondary query class using the current class as primary query
      */
-    public function usepatientQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    public function usePatientQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
     {
         return $this
-            ->joinpatient($relationAlias, $joinType)
-            ->useQuery($relationAlias ? $relationAlias : 'patient', '\UserQuery');
+            ->joinPatient($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'Patient', '\UserQuery');
     }
 
     /**

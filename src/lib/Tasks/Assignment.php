@@ -27,13 +27,23 @@ abstract class Assignment
     /** @var  $action \Tasks\Actions\Action */
     protected $action;
 
+
+    protected $assignmentHash;
+
+    /**
+     * @param mixed $assignmentHash
+     */
+    public function setAssignmentHash($assignmentHash)
+    {
+        $this->assignmentHash = $assignmentHash;
+    }
+
     /**
      * The task or que of tasks to be executed
      * after the assignment has been recorded.
      */
     abstract public function postRecordTask();
 
-    abstract public function createAssignment($agent, $patient, $date);
 
     /**
      * @return mixed

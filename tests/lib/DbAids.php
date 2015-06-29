@@ -134,7 +134,25 @@ class DbAids
     }
 
     public static function populate_prayer_assignments($conn=null)
-    {}
+    {
+        $faker = \Faker\Factory::create();
+        $users = self::getUsers();
+        for($i=0; $i< count($users); $i++)
+        {
+            $p = new \AssignedPrayer();
+            $p->setAgent($users[$i]);
+            $i += 1;
+            $p->setPatient($users[$i]);
+            $p->setPrayerDate($faker->date());
+            $p->setAssignmenthash($faker->sha1);
+            $p->save($conn);
+        }
+    }
+
+    protected static function getUsers()
+    {
+        return \UserQuery::create()->find();
+    }
 }
 
 

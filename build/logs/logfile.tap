@@ -1,0 +1,38 @@
+TAP version 13
+ok 1 - Display\StudyArea\PrayerTaskMakerTest::testChooseTemplate
+ok 2 - PainAssess\Display\PainAssessmentGetterTest::testSetTrial
+ok 3 - PainAssess\Display\PainAssessmentGetterTest::testSetDao
+ok 4 - PainAssess\Display\PainAssessmentGetterTest::testGetContent
+not ok 5 - Failure: Prayer\Assign\CreateAssignmentTest::testCreate
+  ---
+  message: 'Failed asserting that null is true.'
+  severity: fail
+  ...
+not ok 6 - Failure: Warning
+  ---
+  message: 'No tests found in class "Prayer\Assign\UpdateAssignmentTest".'
+  severity: fail
+  ...
+ok 7 - Scheduling\SchedulerTest::test
+ok 8 - Tasks\Assignments\PrayerAssignmentTest::testMakeHash
+ok 9 - Tasks\Assignments\PrayerAssignmentTest::testCreateAssignment
+ok 10 - Tasks\Assignments\dao\PartnershipDaoTest::testCreateAssignment
+ok 11 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByAgentAndDate
+ok 12 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByAgentAndPatient
+ok 13 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByHash
+ok 14 - Tasks\Assignments\dao\PartnershipDaoTest::testMarkComplete
+ok 15 - Tasks\Assignments\dao\PartnershipDaoTest::testMarkCompleteByHash
+ok 16 - Tasks\Assignments\service\PartnershipLoaderTest::testCheckIfHash
+ok 17 - Tasks\Assignments\service\PartnershipLoaderTest::testCheckIfUser
+ok 18 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodUser
+ok 19 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodHash
+ok 20 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodException
+ok 21 - Tasks\Assignments\service\PartnershipLoaderTest::testLoadUser
+ok 22 - Tasks\Assignments\service\PartnershipLoaderTest::testLoadHash
+ok 23 - Tasks\Assignments\service\PartnershipLoaderTest::testSetDao
+ok 24 - Tasks\Assignments\service\PartnershipMakerTest::testCheckUnassigned
+ok 25 - Tasks\Assignments\service\PartnershipMakerTest::testCheckUnassignedException
+ok 26 - Tasks\Assignments\service\PartnershipMakerTest::testMake
+ok 27 - Tasks\Assignments\service\PartnershipMakerTest::testSetDao
+ok 28 - Tasks\Assignments\service\PartnershipMakerTest::testSetHashMaker
+1..28

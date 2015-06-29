@@ -1577,6 +1577,7 @@ return array(
     'Tasks\\Actions\\PrayTask' => $baseDir . '/src/lib/Tasks/Actions/PrayTask.php',
     'Tasks\\Assignment' => $baseDir . '/src/lib/Tasks/Assignment.php',
     'Tasks\\Assignments\\PrayerAssignment' => $baseDir . '/src/lib/Tasks/Assignments/PrayerAssignment.php',
+    'Tasks\\Assignments\\PrayerAssignmentFactory' => $baseDir . '/src/lib/Tasks/Assignments/PrayerAssignmentFactory.php',
     'Tasks\\Assignments\\PrayerAssignmentTest' => $baseDir . '/tests/lib/Tasks/Assignments/PrayerAssignmentTest.php',
     'Tasks\\Assignments\\dao\\IPartnershipDao' => $baseDir . '/src/lib/Tasks/Assignments/dao/IPartnershipDao.php',
     'Tasks\\Assignments\\dao\\IPartnershipDaoMock' => $baseDir . '/tests/lib/Tasks/Assignments/dao/IPartnershipDaoMock.php',
