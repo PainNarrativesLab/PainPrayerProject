@@ -2,25 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff0d3f98-08ae-4194-b987-0c6f0ed89778" name="Default" comment="Added file that wasn't included in last commit.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/Tasks/Assignments/PrayerAssignmentFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Base/AssignedPrayer.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Base/AssignedPrayer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Base/AssignedPrayerQuery.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Base/AssignedPrayerQuery.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Map/AssignedPrayerTableMap.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Map/AssignedPrayerTableMap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/Tasks/Assignment.php" afterPath="$PROJECT_DIR$/src/lib/Tasks/Assignment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/lib/DbAids.php" afterPath="$PROJECT_DIR$/tests/lib/DbAids.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/lib/DbPopulate.php" afterPath="$PROJECT_DIR$/tests/lib/DbPopulate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Base/Partners.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Base/Partners.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Base/PartnersQuery.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Base/PartnersQuery.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Map/PartnersTableMap.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Map/PartnersTableMap.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/www/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/AlreadyAssignedException.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/AlreadyAssignedException.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/Assignment.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/Assignment.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignment.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignment.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/Controller.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/Controller.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/CreateAssignment.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/CreateAssignment.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/IContentMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/IContentMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/IHashMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/IHashMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/IPainDao.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/IPainDao.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/IPartnershipDao.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/IPartnershipDao.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/PainAssessmentGetter.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/PainAssessmentGetter.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/PainRatingMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/PainRatingMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/PartnershipDao.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/PartnershipDao.php.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php" afterPath="$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipMaker.php" afterPath="$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipMaker.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Base/User.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Base/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Base/UserQuery.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Base/UserQuery.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Map/UserTableMap.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Map/UserTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/PartnershipLoader.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/PartnershipLoader.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/PartnershipMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/PartnershipMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/PrayerAssignment.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/PrayerAssignment.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/PrayerTaskMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/PrayerTaskMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/Scheduler.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/Scheduler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/StateManager.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/StateManager.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/StudyAreaMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/StudyAreaMaker.php.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phing_tasks.xml" afterPath="$PROJECT_DIR$/phing_tasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propel.xml" afterPath="$PROJECT_DIR$/propel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema.xml" afterPath="$PROJECT_DIR$/schema.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/clover.xml" afterPath="$PROJECT_DIR$/build/logs/clover.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage.serialized" afterPath="$PROJECT_DIR$/build/logs/coverage.serialized" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/crap4j.xml" afterPath="$PROJECT_DIR$/build/logs/crap4j.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/junit.xml" afterPath="$PROJECT_DIR$/build/logs/junit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/logfile.json" afterPath="$PROJECT_DIR$/build/logs/logfile.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/logfile.tap" afterPath="$PROJECT_DIR$/build/logs/logfile.tap" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/testdox.html" afterPath="$PROJECT_DIR$/build/logs/testdox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/testdox.txt" afterPath="$PROJECT_DIR$/build/logs/testdox.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="painprayer.iws" />
@@ -53,41 +96,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Assignment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignment.php">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/www/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="2205">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="285">
+              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbPopulate.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/lib/DbPopulate.php">
+      <file leaf-file-name="experiment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/www/experiment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61835104" vertical-offset="0" max-vertical-offset="945">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.5833333" vertical-offset="778" max-vertical-offset="1530">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbAids.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/lib/DbAids.php">
+      <file leaf-file-name="IRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/RequestHandling/IRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1573" max-vertical-offset="2370">
-              <caret line="135" column="54" selection-start-line="135" selection-start-column="27" selection-end-line="135" selection-end-column="54" />
+            <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="540">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneratorConfig.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/propel/propel/src/Propel/Generator/Config/GeneratorConfig.php">
+      <file leaf-file-name="IRequestMock.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/lib/RequestHandling/IRequestMock.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2938" max-vertical-offset="4110">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="825">
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="painratings.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/www/inc/js/painratings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1744" max-vertical-offset="2520">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,7 +149,7 @@
       <file leaf-file-name="PartnershipDao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1620">
+            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1665">
               <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
               <folding />
             </state>
@@ -106,48 +159,28 @@
       <file leaf-file-name="PartnershipLoader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipLoader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1785">
+            <state vertical-scroll-proportion="-35.708332" vertical-offset="28" max-vertical-offset="1785">
               <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PartnershipMaker.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipMaker.php">
+      <file leaf-file-name="Request.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/RequestHandling/Request.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="343" max-vertical-offset="1095">
-              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+            <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="2100">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrayerAssignmentFactory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/PrayerAssignmentFactory.php">
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/www/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="855">
-              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="propel.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/propel.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="855">
-              <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schema.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="634" max-vertical-offset="1410">
-              <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.17952128" vertical-offset="0" max-vertical-offset="752">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -190,11 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/templates/studyarea.prayertask.preexperiment.twig" />
-        <option value="$PROJECT_DIR$/src/lib/Prayer/Display/PrayerTaskMaker.php" />
-        <option value="$PROJECT_DIR$/src/templates/studyarea.prayertask.base.prayersubmit.twig" />
-        <option value="$PROJECT_DIR$/src/templates/studyarea.prayertask.waitlist.agent.twig" />
-        <option value="$PROJECT_DIR$/src/templates/studyarea.prayertask.active.twig" />
         <option value="$PROJECT_DIR$/src/templates/studyarea.prayertask.waitlist.patient.twig" />
         <option value="$PROJECT_DIR$/src/www/inc/js/prayertask.js" />
         <option value="$PROJECT_DIR$/src/www/api.php" />
@@ -234,13 +262,18 @@
         <option value="$PROJECT_DIR$/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php" />
         <option value="$PROJECT_DIR$/schema.xml" />
         <option value="$PROJECT_DIR$/src/lib/Tasks/Assignment.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php" />
         <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipMaker.php" />
         <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/PrayerAssignmentFactory.php" />
         <option value="$PROJECT_DIR$/propel.xml" />
         <option value="$PROJECT_DIR$/phing_tasks.xml" />
         <option value="$PROJECT_DIR$/tests/lib/DbAids.php" />
         <option value="$PROJECT_DIR$/tests/lib/DbPopulate.php" />
+        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php" />
+        <option value="$PROJECT_DIR$/tests/lib/RequestHandling/IRequestMock.php" />
+        <option value="$PROJECT_DIR$/src/lib/RequestHandling/IRequest.php" />
+        <option value="$PROJECT_DIR$/src/www/test.php" />
+        <option value="$PROJECT_DIR$/tests/lib/RequestHandling/RequestTest.php" />
+        <option value="$PROJECT_DIR$/src/lib/RequestHandling/Request.php" />
       </list>
     </option>
   </component>
@@ -420,159 +453,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PainAssess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Display" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PainAssess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="RequestHandling" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -590,7 +471,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -633,8 +528,26 @@
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scheduling" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -656,145 +569,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="errors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Actions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="RequestHandling" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -964,107 +739,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Matcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="generated-conf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generated-classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generated-classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Map" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generated-classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="painprayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Display" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudyArea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1266,28 +963,28 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3469242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3469242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32754344" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39054728" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39341918" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39136904" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1361,62 +1058,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/www/inc/js/prayertask.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/studyarea.base.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="510">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/studyarea.painquestions.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27925533" vertical-offset="0" max-vertical-offset="752">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/filemaster.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51861703" vertical-offset="0" max-vertical-offset="1020">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/studyarea.prayertask.base.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.625" vertical-offset="192" max-vertical-offset="705">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/css/prayertask.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Prayer/Display/PrayerGetter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.875" vertical-offset="0" max-vertical-offset="555">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/PainAssess/dao/IPainDao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27925533" vertical-offset="0" max-vertical-offset="752">
@@ -1431,24 +1072,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/js/painratings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48324743" vertical-offset="0" max-vertical-offset="1950">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/page.head_with_topbar.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33909574" vertical-offset="0" max-vertical-offset="752">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/experiment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5833333" vertical-offset="778" max-vertical-offset="1530">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1659,22 +1286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1785">
-          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1620">
-          <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/PrayerAssignmentFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="855">
@@ -1715,18 +1326,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/DbPopulate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="945">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/lib/DbAids.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1573" max-vertical-offset="2370">
+        <state vertical-scroll-proportion="-80.0" vertical-offset="0" max-vertical-offset="2370">
           <caret line="135" column="54" selection-start-line="135" selection-start-column="27" selection-end-line="135" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/DbPopulate.php">
+    <entry file="file://$PROJECT_DIR$/src/www/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61835104" vertical-offset="0" max-vertical-offset="945">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/inc/js/painratings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1744" max-vertical-offset="2520">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1665">
+          <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-35.708332" vertical-offset="28" max-vertical-offset="1785">
+          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="285">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/experiment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5833333" vertical-offset="778" max-vertical-offset="1530">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/RequestHandling/IRequestMock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="825">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/RequestHandling/IRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="540">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/RequestHandling/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="2100">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/RequestHandling/RequestTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.430851" vertical-offset="0" max-vertical-offset="3015">
+          <caret line="172" column="28" selection-start-line="172" selection-start-column="28" selection-end-line="172" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17952128" vertical-offset="0" max-vertical-offset="752">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>

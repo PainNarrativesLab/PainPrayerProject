@@ -22,7 +22,7 @@ class PartnershipDao implements \Tasks\Assignments\dao\IPartnershipDao
 
     }
 
-        /**
+    /**
      * Loads and/or creates new prayer assignment in db and stores object in $this->assign
      * @param \User $agent
      * @param \User $patient
@@ -53,6 +53,7 @@ class PartnershipDao implements \Tasks\Assignments\dao\IPartnershipDao
         $assign->setPrayerDate($date);
         $assign->setAssignmenthash($hash);
         $assign->save();
+
         return $assign;
     }
 
@@ -69,6 +70,7 @@ class PartnershipDao implements \Tasks\Assignments\dao\IPartnershipDao
             ->filterByPrayerDate($date)
             ->filterBypatient($user)
             ->findOne();
+
         return empty($result) ? false : true;
     }
 
@@ -85,6 +87,7 @@ class PartnershipDao implements \Tasks\Assignments\dao\IPartnershipDao
             ->filterByPrayerDate($date)
             ->filterByagent($user)
             ->findOne();
+
         return empty($result) ? false : true;
     }
 

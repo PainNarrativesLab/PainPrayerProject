@@ -13,26 +13,34 @@ not ok 6 - Failure: Warning
   message: 'No tests found in class "Prayer\Assign\UpdateAssignmentTest".'
   severity: fail
   ...
-ok 7 - Scheduling\SchedulerTest::test
-ok 8 - Tasks\Assignments\PrayerAssignmentTest::testMakeHash
-ok 9 - Tasks\Assignments\PrayerAssignmentTest::testCreateAssignment
-ok 10 - Tasks\Assignments\dao\PartnershipDaoTest::testCreateAssignment
-ok 11 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByAgentAndDate
-ok 12 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByAgentAndPatient
-ok 13 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByHash
-ok 14 - Tasks\Assignments\dao\PartnershipDaoTest::testMarkComplete
-ok 15 - Tasks\Assignments\dao\PartnershipDaoTest::testMarkCompleteByHash
-ok 16 - Tasks\Assignments\service\PartnershipLoaderTest::testCheckIfHash
-ok 17 - Tasks\Assignments\service\PartnershipLoaderTest::testCheckIfUser
-ok 18 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodUser
-ok 19 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodHash
-ok 20 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodException
-ok 21 - Tasks\Assignments\service\PartnershipLoaderTest::testLoadUser
-ok 22 - Tasks\Assignments\service\PartnershipLoaderTest::testLoadHash
-ok 23 - Tasks\Assignments\service\PartnershipLoaderTest::testSetDao
-ok 24 - Tasks\Assignments\service\PartnershipMakerTest::testCheckUnassigned
-ok 25 - Tasks\Assignments\service\PartnershipMakerTest::testCheckUnassignedException
-ok 26 - Tasks\Assignments\service\PartnershipMakerTest::testMake
-ok 27 - Tasks\Assignments\service\PartnershipMakerTest::testSetDao
-ok 28 - Tasks\Assignments\service\PartnershipMakerTest::testSetHashMaker
-1..28
+ok 7 - RequestHandling\RequestTest::testLoad
+ok 8 - RequestHandling\RequestTest::testUnset_incoming
+ok 9 - RequestHandling\RequestTest::testLoad_get
+ok 10 - RequestHandling\RequestTest::testLoad_post
+ok 11 - RequestHandling\RequestTest::testCombine
+ok 12 - RequestHandling\RequestTest::testTask
+ok 13 - RequestHandling\RequestTest::testPage_name
+ok 14 - RequestHandling\RequestTest::testCreate
+ok 15 - Scheduling\SchedulerTest::test
+ok 16 - Tasks\Assignments\PrayerAssignmentTest::testMakeHash
+ok 17 - Tasks\Assignments\PrayerAssignmentTest::testCreateAssignment
+ok 18 - Tasks\Assignments\dao\PartnershipDaoTest::testCreateAssignment
+ok 19 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByAgentAndDate
+ok 20 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByAgentAndPatient
+ok 21 - Tasks\Assignments\dao\PartnershipDaoTest::testLoadByHash
+ok 22 - Tasks\Assignments\dao\PartnershipDaoTest::testMarkComplete
+ok 23 - Tasks\Assignments\dao\PartnershipDaoTest::testMarkCompleteByHash
+ok 24 - Tasks\Assignments\service\PartnershipLoaderTest::testCheckIfHash
+ok 25 - Tasks\Assignments\service\PartnershipLoaderTest::testCheckIfUser
+ok 26 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodUser
+ok 27 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodHash
+ok 28 - Tasks\Assignments\service\PartnershipLoaderTest::testChooseMethodException
+ok 29 - Tasks\Assignments\service\PartnershipLoaderTest::testLoadUser
+ok 30 - Tasks\Assignments\service\PartnershipLoaderTest::testLoadHash
+ok 31 - Tasks\Assignments\service\PartnershipLoaderTest::testSetDao
+ok 32 - Tasks\Assignments\service\PartnershipMakerTest::testCheckUnassigned
+ok 33 - Tasks\Assignments\service\PartnershipMakerTest::testCheckUnassignedException
+ok 34 - Tasks\Assignments\service\PartnershipMakerTest::testMake
+ok 35 - Tasks\Assignments\service\PartnershipMakerTest::testSetDao
+ok 36 - Tasks\Assignments\service\PartnershipMakerTest::testSetHashMaker
+1..36

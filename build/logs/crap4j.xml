@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2015-06-20 11:46:41</timestamp>
+  <timestamp>2015-06-29 12:50:15</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>59</methodCount>
+    <methodCount>68</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>147.45</totalCrap>
+    <totalCrap>170.37</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -116,9 +116,9 @@
       <methodName>getContent</methodName>
       <methodSignature>getContent()</methodSignature>
       <fullMethod>getContent()</fullMethod>
-      <crap>3.79</crap>
+      <crap>3</crap>
       <complexity>3</complexity>
-      <coverage>55.56</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -177,6 +177,105 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>create</methodName>
+      <methodSignature>create()</methodSignature>
+      <fullMethod>create()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>load</methodName>
+      <methodSignature>load()</methodSignature>
+      <fullMethod>load()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>unset_incoming</methodName>
+      <methodSignature>unset_incoming()</methodSignature>
+      <fullMethod>unset_incoming()</fullMethod>
+      <crap>4.13</crap>
+      <complexity>4</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>load_get</methodName>
+      <methodSignature>load_get()</methodSignature>
+      <fullMethod>load_get()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>load_post</methodName>
+      <methodSignature>load_post()</methodSignature>
+      <fullMethod>load_post()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>combine</methodName>
+      <methodSignature>combine()</methodSignature>
+      <fullMethod>combine()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>get_cleaned_value</methodName>
+      <methodSignature>get_cleaned_value($fieldname)</methodSignature>
+      <fullMethod>get_cleaned_value($fieldname)</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>task</methodName>
+      <methodSignature>task()</methodSignature>
+      <fullMethod>task()</fullMethod>
+      <crap>3.07</crap>
+      <complexity>3</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>RequestHandling</package>
+      <className>Request</className>
+      <methodName>page_name</methodName>
+      <methodSignature>page_name()</methodSignature>
+      <fullMethod>page_name()</fullMethod>
+      <crap>2.15</crap>
+      <complexity>2</complexity>
+      <coverage>66.67</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
       <package>Scheduling\States</package>
       <className>StateManager</className>
       <methodName>loadState</methodName>
@@ -190,20 +289,20 @@
     <method>
       <package>Tasks</package>
       <className>Assignment</className>
-      <methodName>postRecordTask</methodName>
-      <methodSignature>postRecordTask()</methodSignature>
-      <fullMethod>postRecordTask()</fullMethod>
-      <crap>1</crap>
+      <methodName>setAssignmentHash</methodName>
+      <methodSignature>setAssignmentHash($assignmentHash)</methodSignature>
+      <fullMethod>setAssignmentHash($assignmentHash)</fullMethod>
+      <crap>2</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
       <package>Tasks</package>
       <className>Assignment</className>
-      <methodName>createAssignment</methodName>
-      <methodSignature>createAssignment($agent, $patient, $date)</methodSignature>
-      <fullMethod>createAssignment($agent, $patient, $date)</fullMethod>
+      <methodName>postRecordTask</methodName>
+      <methodSignature>postRecordTask()</methodSignature>
+      <fullMethod>postRecordTask()</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -589,9 +688,9 @@
       <methodName>make</methodName>
       <methodSignature>make($agent, $patient, $date)</methodSignature>
       <fullMethod>make($agent, $patient, $date)</fullMethod>
-      <crap>3</crap>
+      <crap>3.33</crap>
       <complexity>3</complexity>
-      <coverage>100</coverage>
+      <coverage>66.67</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -600,9 +699,9 @@
       <methodName>checkUnassigned</methodName>
       <methodSignature>checkUnassigned($agent, $patient, $date)</methodSignature>
       <fullMethod>checkUnassigned($agent, $patient, $date)</fullMethod>
-      <crap>3.04</crap>
+      <crap>3.07</crap>
       <complexity>3</complexity>
-      <coverage>83.33</coverage>
+      <coverage>80</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
