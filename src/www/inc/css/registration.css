@@ -1,0 +1,12 @@
+.pageComponent{
+    display: block;
+    clear: both;
+    float: left;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+label{
+    display: block;
+    font-weight: bold;
+}

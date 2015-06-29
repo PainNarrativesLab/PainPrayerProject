@@ -1,0 +1,22 @@
+<h1>Registration</h1>
+<div id="pageInfo" class="pageComponent">
+    {% block pageInfoTop %}
+        {{ registrationInstructions }}
+    {% endblock %}
+</div>
+
+<div id="participantInfo" class="pageComponent">
+{% include "registration.participantinfo.twig" %}
+</div>
+
+<div id="informedConsentArea" class="pageComponent">
+    {% block informedConsentArea %}
+        <h2>Informed consent</h2>
+        {% include "registration.informedconsent.twig" %}
+    {% endblock %}
+</div>
+
+<div id="buttonArea" class="pageComponent">
+    <input type="button" id="agreeButton" class="prettyButton" name="agreeButton" value="I Agree To Participate" />
+    <input type="button" id="cancelButton" class="prettyButton" name="cancelButton" value="I Do Not Agree" />
+</div>

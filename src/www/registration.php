@@ -13,19 +13,27 @@ $page_title = "Registration | Pain and spirituality study";
 
 $page_maker = new \TemplateClasses\PageMaker();
 $page_maker->setPageName($page_title);
-
+$page_maker->addStyleSheets(array(
+    'inc/css/registration.css',
+    'inc/css/footerStyles.css',
+    'inc/css/topBarStyles.css'));
 $page_maker->makePageTop();
+
+$page_body_maker = new \Display\Registration\PageMaker();
+$page_body_maker->make();
 ?>
 
-<div>Main body text</div>
 
 <?php
 $scripts = <<< J
-var scripts=["inc/js/index.js"];
+var scripts=["inc/js/registration.js"];
 J;
 
 $onload = <<< H
-var onLoad=function(){console.log("onload fired");};
+var onLoad=function(){console.log("onload fired");
+prettify();
+bindListeners();
+};
 H;
 
 $page_maker->makePageBottom($scripts, $onload);

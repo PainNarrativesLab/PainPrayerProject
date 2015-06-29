@@ -1,0 +1,36 @@
+<div id="sexInputArea">
+    <label for="userSexRadio">Sex</label>
+    <radioset id="userSexRadio">
+        <label for="userSexF">Female</label>
+        <input type="radio" id="userSexF" name="userSex" value="female"/>
+        <label for="userSexM">Male</label>
+        <input type="radio" id="userSexM" name="userSex" value="male"/>
+    </radioset>
+</div>
+
+<div id="ageInputArea">
+    <label for="userAgeSelect">Age</label>
+    <select id="userAge">
+        {% for age in userAges %}
+            <option value="{{ age }}">{{ age }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<div id="ethnicityInputArea">
+    <h4>Race</h4>
+    {% for race in userRaces %}
+        <label for="{{ race }}">{{ race }}</label>
+        <input type="checkbox" id="{{ race }}" class="prettyButton userRaceButton" value="{{ race }}" />
+    {% endfor %}
+    <h4>Ethnicity</h4>
+    {% for ethnicity in userEthnicities %}
+        <label for="{{ ethnicity }}">{{ ethnicity }}</label>
+        <input type="checkbox" id="{{ ethnicity }}" class="prettyButton userEthnicityButton" value="{{ ethnicity }}" />
+    {% endfor %}
+</div>
+
+<div id="religionInputArea">
+    <h4>Religious affiliation</h4>
+    <p>[select for religion if we want that]</p>
+</div>

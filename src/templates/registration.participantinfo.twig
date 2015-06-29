@@ -1,0 +1,35 @@
+<div id="nicknameArea" class="identityInfoArea">
+    <h3>Choose a nickname </h3>
+    <div id="nicknameInstructions">
+        {% include "registration.instructions.nickname.twig" %}
+    </div>
+    <div id="nicknameEntry">
+        <label for="nickname">Nickname</label>
+        <input type="text" id="nickname" class="clearable"/>
+    </div>
+</div>
+
+<div id="emailArea" class="identityInfoArea">
+    <h3>Email address</h3>
+    <div id="emailInstructions">
+        {% include "registration.instructions.email.twig" %}
+    </div>
+    <div id="emailEntry">
+        <label for="email">Email address</label>
+        <input type="text" id="email" class="clearable" />
+    </div>
+</div>
+
+<div id="demographicsArea">
+    <h3>About you</h3>
+    {% block demographicsArea %}
+        {% include "registration.demographics.base.twig" %}
+    {% endblock %}
+</div>
+
+<div id="conditionArea">
+    <h3>About your pain</h3>
+    [Add selectors for pain conditions?]
+    {% block condtionArea %}
+    {% endblock %}
+</div>

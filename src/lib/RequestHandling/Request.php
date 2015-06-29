@@ -15,6 +15,12 @@ namespace RequestHandling;
  */
 class Request implements IRequest
 {
+    const REGISTER = "register";
+
+    const RECORD_PAIN = "recordPainRating";
+
+    const RECORD_PRAYER = "recordPrayer";
+
     /** @var $get $_GET The get array */
     public $get = array();
 
