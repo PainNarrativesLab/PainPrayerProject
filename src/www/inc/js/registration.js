@@ -35,6 +35,7 @@ function processCancel(){
  */
 function UserInfo(){
     this.task = "register";
+    this.nonce = $("#nonce").val();
     this.nickname = $("#nickname").val();
     this.email = $("#email").val();
     this.age = $("#userAge :checked").val();

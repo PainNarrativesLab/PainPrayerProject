@@ -55,6 +55,11 @@ function redirect(){
     exit();
 }
 
+if(!defined("AGES")){
+    $ages = array("18-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90", "90+");
+    define("AGES", $ages);
+}
+
 # ---------------------------------------------------- LOGGING AND ERROR HANDLING
 #development error handler
 $whoops = new \Whoops\Run;

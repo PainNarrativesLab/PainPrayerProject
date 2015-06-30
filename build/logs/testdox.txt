@@ -22,6 +22,47 @@ RequestHandling\Request
 Scheduling\Scheduler
  [x] 
 
+Security\cleaners\CleanerFactory
+ [x] Validate
+ [x] Sanitize
+ [x] Make
+
+Security\cleaners\EmailCleaner
+ [x] Sanitize
+ [x] testSanitize invalid address
+ [x] Validate
+ [x] testSet max length
+
+Security\cleaners\FloatCleaner
+ [x] Sanitize
+ [x] Validate
+ [x] testSet max length
+
+Security\cleaners\IntegerCleaner
+ [x] Sanitize
+ [x] Validate
+ [x] testSet max length
+ [x] Trim
+
+Security\nonces\NonceMaker
+ [x] testSet session handler
+ [x] Create nonce token
+ [x] testMake form field
+ [x] Create nonce
+
+Security\nonces\Nonce
+ [x] test  get
+ [x] test  set
+ [x] test  SetExceptsOnTooLongToken
+ [x] test  SetExceptsOnNonIntegerTime
+
+Security\nonces\NonceValidator
+ [x] testSet logger
+ [x] testSet session handler
+ [x] Validate
+ [x] Validate excepts on too old timestamp
+ [x] Validate excepts on invalid page name
+
 Tasks\Assignments\PrayerAssignment
  [x] Make hash
  [x] Create assignment

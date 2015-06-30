@@ -16,7 +16,7 @@ class __TwigTemplate_a88033d38720439463ab02582521a7b98409d144e949e31fd76bfb44410
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<div class=\"footer\">
+        echo "<div id=\"footer\" class=\"footer\">
     <hr/>
     <div id=\"footInfo\">
         <div class=\"footInfoArea\">Who we are</div>
@@ -24,7 +24,7 @@ class __TwigTemplate_a88033d38720439463ab02582521a7b98409d144e949e31fd76bfb44410
         <div class=\"footInfoArea\">Disclosures</div>
         <div class=\"footInfoArea\">Contact</div>
     </div>
-    <div id=\"copyrightArea\"> <p>&#169; Merp Co., Intl 2008-";
+    <div id=\"copyrightArea\"><p>&#169; Merp Co., Intl 2008-";
         // line 9
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, (isset($context["now"]) ? $context["now"] : null), "y"), "html", null, true);
         echo "</p></div>
@@ -35,7 +35,8 @@ class __TwigTemplate_a88033d38720439463ab02582521a7b98409d144e949e31fd76bfb44410
     <div id=\"editingArea\">";
         // line 11
         echo twig_escape_filter($this->env, (isset($context["editing"]) ? $context["editing"] : null), "html", null, true);
-        echo "</div>";
+        echo "</div>
+</div>";
     }
 
     public function getTemplateName()

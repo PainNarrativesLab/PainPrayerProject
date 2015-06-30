@@ -22,6 +22,8 @@ $dbs = array('main', 'test');
 foreach($dbs as $db){
     echo "\n -------------- populating db : $db --------------------- \n";
     \lib\DbAids::populate_users(\Propel\Runtime\Propel::getConnection($db));
+
+    \lib\DbAids::populate_user_ethnicities(\Propel\Runtime\Propel::getConnection($db));
     \lib\DbAids::populate_assessment_items(\Propel\Runtime\Propel::getConnection($db));
     \lib\DbAids::populate_prayers(\Propel\Runtime\Propel::getConnection($db));
     \lib\DbAids::populate_trials(\Propel\Runtime\Propel::getConnection($db));

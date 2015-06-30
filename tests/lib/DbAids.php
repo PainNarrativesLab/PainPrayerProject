@@ -39,18 +39,67 @@ class DbAids
      */
     public static function populate_users($conn=null, $num = 10)
     {
+        echo "\n Populating user demographics tables \n";
+        $ages = array("18-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90", "90+");
+        foreach($ages as $a)
+        {
+            $q = \AgeQuery::create()->filterByAge($a)->findOneOrCreate();
+            $q->save($conn);
+        }
+
         echo "\n Populating users \n";
         try {
             $faker = \Faker\Factory::create();
             for ($i = 0; $i < $num; $i++) {
                 $u = new \User();
                 $u->setNickname($faker->name());
+
 //                $u = \UserQuery::create()->filterByNickname($faker->name())->findOneOrCreate();
                 $u->setEmail($faker->email());
+                if( $i & 1 ) {
+                    //odd
+                    $u->setSex('female');
+                } else {
+                    //even
+                    $u->setSex('male');
+                }
+                $u->setAge($ages[array_rand($ages)]);
                 $u->save($conn);
             }
         } catch (\Exception $e) {
             echo 'users population error: ' . $e->getMessage();
+        }
+    }
+
+    public static function populate_user_ethnicities($conn=null, $num=10)
+    {
+        $faker = \Faker\Factory::create();
+        for ($i = 0; $i < $num; $i++) {
+//            $z = \RaceQuery::create()->filterByRace($faker->word())->findOneOrCreate();
+//            $z->save($conn);
+            $e = \EthnicityQuery::create()
+                ->filterByIdentity($faker->word())
+                ->findOneOrCreate();
+            if( $i & 1 ) {
+                //odd
+                $e->setType('race');
+            } else {
+                //even
+                $e->setType('ethnicity');
+            }
+            $e->save($conn);
+        }
+
+        $users = \UserQuery::create()->find();
+        $ethnicities = \EthnicityQuery::create()->find();
+        foreach($users as $user){
+            foreach($ethnicities as $e){
+                $ue = \UserDemosQuery::create()
+                    ->filterByUser($user)
+                    ->filterByEthnicity($e)
+                    ->findOneOrCreate();
+                $ue->save($conn);
+            }
         }
     }
 

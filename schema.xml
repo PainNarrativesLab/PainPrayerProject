@@ -9,10 +9,15 @@
         <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
         <column name="nickname" type="varchar" size="100" primaryKey="true" required="true"/>
         <column name="email" type="varchar" size="200" required="true"/>
+        <column name="age" type="varchar" size="200" required="true"/>
+        <column name="sex" type="varchar" size="10" required="true"/>
         <unique>
             <unique-column name="nickname"/>
             <unique-column name="email"/>
         </unique>
+        <foreign-key foreignTable="u_ages" phpName="UserAge">
+            <reference local="age" foreign="age"/>
+        </foreign-key>
     </table>
 
     <table name="assigned_prayer" phpName="AssignedPrayer">
@@ -82,6 +87,28 @@
         </foreign-key>
         <foreign-key foreignTable="pain_rating_items" phpName="PainAssessmentItem">
             <reference local="item_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="u_ages" phpName="Age">
+        <column name="age" type="varchar" size="200" required="true" primaryKey="true" />
+    </table>
+
+
+    <table name="u_ethnicities" phpName="Ethnicity">
+        <column name="id" type="integer" required="true" autoIncrement="true" primaryKey="true" />
+        <column name="identity" type="varchar" size="200" required="true" />
+        <column name="type" type="varchar" size="200" required="true"/>
+    </table>
+
+    <table name="user_demos" phpName="UserDemos">
+        <column name="user_id" type="integer" required="true" />
+        <column name="identity_id" type="integer" required="true"/>
+        <foreign-key foreignTable="users">
+            <reference local="user_id" foreign="id" phpName="User" />
+        </foreign-key>
+        <foreign-key foreignTable="u_ethnicities" phpName="Ethnicity">
+            <reference local="identity_id" foreign="id"/>
         </foreign-key>
     </table>
 

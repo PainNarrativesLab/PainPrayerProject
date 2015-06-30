@@ -2,21 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff0d3f98-08ae-4194-b987-0c6f0ed89778" name="Default" comment="Added file that wasn't included in last commit.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/Display/Registration/PageMaker.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/Display/Registration/ParticipantInfoMaker.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/registration.base.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/www/inc/css/registration.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/registration.demographics.base.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/registration.informedconsent.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/registration.instructions.email.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/registration.instructions.nickname.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/www/inc/js/registration.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/registration.participantinfo.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/RequestHandling/Request.php" afterPath="$PROJECT_DIR$/src/lib/RequestHandling/Request.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/www/api.php" afterPath="$PROJECT_DIR$/src/www/api.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/Registration/errors/BadUserValueException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/Registration/NotificationManager.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/Registration/RegistrationManager.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/Registration/UserAdder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/AlreadyAssignedException.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/AlreadyAssignedException.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/Assignment.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/Assignment.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignment.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignment.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/Controller.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/Controller.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/CreateAssignment.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/CreateAssignment.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/lib/DbAids.php" afterPath="$PROJECT_DIR$/tests/lib/DbAids.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/lib/DbPopulate.php" afterPath="$PROJECT_DIR$/tests/lib/DbPopulate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/IContentMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/IContentMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/IHashMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/IHashMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/IPainDao.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/IPainDao.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/IPartnershipDao.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/IPartnershipDao.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/RequestHandling/IRequest.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/RequestHandling/IRequest.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/Display/Registration/PageMaker.php" afterPath="$PROJECT_DIR$/src/lib/Display/Registration/PageMaker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/PainAssessmentGetter.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/PainAssessmentGetter.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/PainRatingMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/PainRatingMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/PartnershipDao.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/PartnershipDao.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/PartnershipLoader.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/PartnershipLoader.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/PartnershipMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/PartnershipMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/PrayerAssignment.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/PrayerAssignment.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/PrayerTaskMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/PrayerTaskMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/RequestHandling/Request.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/RequestHandling/Request.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/Scheduler.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/Scheduler.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/StateManager.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/StateManager.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/StudyAreaMaker.php.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/StudyAreaMaker.php.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Base/User.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Base/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Base/UserQuery.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Base/UserQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-classes/Map/UserTableMap.php" afterPath="$PROJECT_DIR$/src/lib/generated-classes/Map/UserTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/template_cache/a/8/a88033d38720439463ab02582521a7b98409d144e949e31fd76bfb44410ce74c.php" afterPath="$PROJECT_DIR$/src/template_cache/a/8/a88033d38720439463ab02582521a7b98409d144e949e31fd76bfb44410ce74c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/adam.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/adam.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/clover.xml" afterPath="$PROJECT_DIR$/build/logs/clover.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage.serialized" afterPath="$PROJECT_DIR$/build/logs/coverage.serialized" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/crap4j.xml" afterPath="$PROJECT_DIR$/build/logs/crap4j.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/RequestHandling/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/RequestHandling/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/dashboard.html" afterPath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/www/experiment.php" afterPath="$PROJECT_DIR$/src/www/experiment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/www/filemaster.php" afterPath="$PROJECT_DIR$/src/www/filemaster.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/www/inc/css/footerStyles.css" afterPath="$PROJECT_DIR$/src/www/inc/css/footerStyles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Display/StudyArea/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/Display/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/PainAssess/dao/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Prayer/Assign/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/RequestHandling/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/RequestHandling/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Scheduling/States/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/dao/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/errors/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/Tasks/Assignments/service/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/index.html" afterPath="$PROJECT_DIR$/build/logs/coverage/TemplateClasses/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/junit.xml" afterPath="$PROJECT_DIR$/build/logs/junit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/logfile.json" afterPath="$PROJECT_DIR$/build/logs/logfile.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/logfile.tap" afterPath="$PROJECT_DIR$/build/logs/logfile.tap" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/generated-sql/main.sql" afterPath="$PROJECT_DIR$/src/lib/generated-sql/main.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/page.base.footer.twig" afterPath="$PROJECT_DIR$/src/templates/page.base.footer.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/www/inc/js/painratings.js" afterPath="$PROJECT_DIR$/src/www/inc/js/painratings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/registration.base.twig" afterPath="$PROJECT_DIR$/src/templates/registration.base.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/www/inc/css/registration.css" afterPath="$PROJECT_DIR$/src/www/inc/css/registration.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/registration.demographics.base.twig" afterPath="$PROJECT_DIR$/src/templates/registration.demographics.base.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/www/inc/js/registration.js" afterPath="$PROJECT_DIR$/src/www/inc/js/registration.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/registration.participantinfo.twig" afterPath="$PROJECT_DIR$/src/templates/registration.participantinfo.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/www/registration.php" afterPath="$PROJECT_DIR$/src/www/registration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema.xml" afterPath="$PROJECT_DIR$/schema.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/testdox.html" afterPath="$PROJECT_DIR$/build/logs/testdox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/logs/testdox.txt" afterPath="$PROJECT_DIR$/build/logs/testdox.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="painprayer.iws" />
@@ -49,83 +123,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/www/api.php">
+      <file leaf-file-name="CleanerFactory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/CleanerFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49867022" vertical-offset="0" max-vertical-offset="752">
-              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state vertical-scroll-proportion="-32.583332" vertical-offset="103" max-vertical-offset="1080">
+              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageMaker.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/Display/Registration/PageMaker.php">
+      <file leaf-file-name="DbAids.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/lib/DbAids.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="690">
-              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+            <state vertical-scroll-proportion="-3.75" vertical-offset="1245" max-vertical-offset="3105">
+              <caret line="96" column="32" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.base.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/registration.base.twig">
+      <file leaf-file-name="filemaster.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/www/filemaster.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="405">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="-18.208334" vertical-offset="343" max-vertical-offset="1095">
+              <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/www/inc/css/registration.css">
+      <file leaf-file-name="Nonce.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/Security/nonces/Nonce.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state vertical-scroll-proportion="-7.5833335" vertical-offset="178" max-vertical-offset="930">
+              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.demographics.base.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/registration.demographics.base.twig">
+      <file leaf-file-name="RegistrationManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/Registration/RegistrationManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="615">
-              <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+            <state vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="600">
+              <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/www/inc/js/registration.js">
+      <file leaf-file-name="schema.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schema.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
-              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-              <folding>
-                <element signature="n#!!doc;n#prettify#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registration.participantinfo.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/registration.participantinfo.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="615">
-              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="409" max-vertical-offset="1815">
+              <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Request.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/RequestHandling/Request.php">
+      <file leaf-file-name="UserAdder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lib/Registration/UserAdder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.75" vertical-offset="420" max-vertical-offset="2190">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.829918" vertical-offset="120" max-vertical-offset="2220">
+              <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -168,57 +230,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lib/PainAssess/dao/PainDao.php" />
-        <option value="$PROJECT_DIR$/src/templates/page.head_with_topbar.twig" />
-        <option value="$PROJECT_DIR$/src/lib/Display/StudyArea/PrayerTaskMaker.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Display/StudyArea/PrayerTaskMakerTest.php" />
-        <option value="$PROJECT_DIR$/tests/bootstrap.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Prayer/Assign/CreateAssignmentTest.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Tasks/Assignments/dao/AssignmentDaoTest.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/PrayerAssignment.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/service/IHashMaker.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/service/HashMaker.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Tasks/Assignments/service/IHashMakerMock.php" />
-        <option value="$PROJECT_DIR$/src/lib/Exceptions/AlreadyAssignedException.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/AssignmentDao.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/IPartnershipDao.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipLoader.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Tasks/Assignments/dao/IPartnershipDaoMock.php" />
-        <option value="$PROJECT_DIR$/tests/lib/MockParent.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Tasks/Assignments/PrayerAssignmentTest.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php" />
-        <option value="$PROJECT_DIR$/tests/lib/PainAssess/Display/PainAssessmentGetterTest.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/errors/AlreadyAssignedException.php" />
-        <option value="$PROJECT_DIR$/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php" />
-        <option value="$PROJECT_DIR$/schema.xml" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignment.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipMaker.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/PrayerAssignmentFactory.php" />
-        <option value="$PROJECT_DIR$/propel.xml" />
-        <option value="$PROJECT_DIR$/phing_tasks.xml" />
-        <option value="$PROJECT_DIR$/tests/lib/DbAids.php" />
-        <option value="$PROJECT_DIR$/tests/lib/DbPopulate.php" />
-        <option value="$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php" />
-        <option value="$PROJECT_DIR$/tests/lib/RequestHandling/IRequestMock.php" />
-        <option value="$PROJECT_DIR$/src/lib/RequestHandling/IRequest.php" />
-        <option value="$PROJECT_DIR$/src/www/test.php" />
-        <option value="$PROJECT_DIR$/tests/lib/RequestHandling/RequestTest.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/lib/Display/Registration/ParticipantInfoMaker.php" />
         <option value="$PROJECT_DIR$/src/templates/registration.instructions.nickname.twig" />
         <option value="$PROJECT_DIR$/src/templates/registration.instructions.email.twig" />
-        <option value="$PROJECT_DIR$/src/www/registration.php" />
-        <option value="$PROJECT_DIR$/src/www/inc/css/footerStyles.css" />
-        <option value="$PROJECT_DIR$/src/www/inc/css/registration.css" />
-        <option value="$PROJECT_DIR$/src/lib/Display/Registration/PageMaker.php" />
-        <option value="$PROJECT_DIR$/src/templates/registration.participantinfo.twig" />
-        <option value="$PROJECT_DIR$/src/templates/registration.demographics.base.twig" />
         <option value="$PROJECT_DIR$/src/templates/registration.informedconsent.twig" />
-        <option value="$PROJECT_DIR$/src/templates/registration.base.twig" />
-        <option value="$PROJECT_DIR$/src/www/inc/js/registration.js" />
         <option value="$PROJECT_DIR$/src/lib/RequestHandling/Request.php" />
         <option value="$PROJECT_DIR$/src/www/api.php" />
+        <option value="$PROJECT_DIR$/src/www/inc/js/registration.js" />
+        <option value="$PROJECT_DIR$/src/www/experiment.php" />
+        <option value="$PROJECT_DIR$/src/www/inc/js/painratings.js" />
+        <option value="$PROJECT_DIR$/src/www/registration.php" />
+        <option value="$PROJECT_DIR$/src/templates/page.base.footer.twig" />
+        <option value="$PROJECT_DIR$/src/www/inc/css/footerStyles.css" />
+        <option value="$PROJECT_DIR$/src/templates/registration.base.twig" />
+        <option value="$PROJECT_DIR$/src/templates/registration.demographics.base.twig" />
+        <option value="$PROJECT_DIR$/src/www/inc/css/registration.css" />
+        <option value="$PROJECT_DIR$/src/templates/registration.participantinfo.twig" />
+        <option value="$PROJECT_DIR$/src/lib/Registration/NotificationManager.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/cleaners/IntegerCleanerTest.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/cleaners/ICleanerFactoryMock.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/cleaners/FloatCleanerTest.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/cleaners/EmailCleanerTest.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/cleaners/CleanerFactoryTest.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/nonces/NonceMakerTest.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/nonces/NonceTest.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/nonces/NonceValidatorTest.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/cleaners/EmailCleaner.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/cleaners/FloatCleaner.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/cleaners/ICleaner.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/cleaners/ICleanerFactory.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/cleaners/InputCleaner.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/cleaners/IntegerCleaner.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/cleaners/TextCleaner.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/nonces/INonceSessionHandler.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/nonces/INonceSessionHandlerMock.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/nonces/Nonce.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/nonces/NonceMaker.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/nonces/NonceSessionHandler.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/logging/AccountSetupLogger.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/logging/ISecurityLoggers.php" />
+        <option value="$PROJECT_DIR$/tests/lib/Security/logging/ISecurityLoggersMock.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/nonces/NonceValidator.php" />
+        <option value="$PROJECT_DIR$/src/lib/Security/cleaners/CleanerFactory.php" />
+        <option value="$PROJECT_DIR$/src/www/filemaster.php" />
+        <option value="$PROJECT_DIR$/src/lib/Display/Registration/PageMaker.php" />
+        <option value="$PROJECT_DIR$/src/lib/Registration/errors/BadUserValueException.php" />
+        <option value="$PROJECT_DIR$/src/lib/Registration/RegistrationManager.php" />
+        <option value="$PROJECT_DIR$/tests/lib/DbPopulate.php" />
+        <option value="$PROJECT_DIR$/tests/lib/DbAids.php" />
+        <option value="$PROJECT_DIR$/schema.xml" />
+        <option value="$PROJECT_DIR$/src/lib/Registration/UserAdder.php" />
       </list>
     </option>
   </component>
@@ -377,6 +439,84 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nonces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logging" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cleaners" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -565,6 +705,162 @@
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assignments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assignments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="errors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nonces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logging" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cleaners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -585,6 +881,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="RequestHandling" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Registration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="painprayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Registration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="errors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -840,6 +1184,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3469242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -853,13 +1198,12 @@
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39341918" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -933,273 +1277,100 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lib/PainAssess/dao/PainDao.php">
+    <entry file="file://$PROJECT_DIR$/src/lib/RequestHandling/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.833333" vertical-offset="178" max-vertical-offset="690">
-          <caret line="39" column="43" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/PainAssess/Display/PainAssessmentGetterTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79787236" vertical-offset="0" max-vertical-offset="752">
-          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/PainAssess/Display/PainAssessmentGetter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64893615" vertical-offset="157" max-vertical-offset="930">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/Tasks/Assignments/service/PartnershipLoaderTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-53.125" vertical-offset="0" max-vertical-offset="1485">
-          <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="95" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/errors/AlreadyAssignedException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19946809" vertical-offset="0" max-vertical-offset="752">
-          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/Tasks/Assignments/service/PartnershipMakerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9175532" vertical-offset="0" max-vertical-offset="1155">
-          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/MockParent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72074467" vertical-offset="253" max-vertical-offset="1005">
-          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/PrayerAssignment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.0" vertical-offset="60" max-vertical-offset="885">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/Tasks/Assignments/dao/PartnershipDaoTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="60" max-vertical-offset="1155">
-          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schema.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="634" max-vertical-offset="1410">
-          <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+        <state vertical-scroll-proportion="8.75" vertical-offset="420" max-vertical-offset="2190">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignment.php">
+    <entry file="file://$PROJECT_DIR$/src/www/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="2205">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="480">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/PrayerAssignmentFactory.php">
+    <entry file="file://$PROJECT_DIR$/src/www/inc/js/registration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="855">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/propel/propel/src/Propel/Generator/Config/GeneratorConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2938" max-vertical-offset="4110">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/propel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="855">
-          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phing_tasks.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7017544" vertical-offset="0" max-vertical-offset="540">
-          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="343" max-vertical-offset="1095">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/DbPopulate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="945">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/DbAids.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-80.0" vertical-offset="0" max-vertical-offset="2370">
-          <caret line="135" column="54" selection-start-line="135" selection-start-column="27" selection-end-line="135" selection-end-column="54" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="900">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc;n#prettify#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/www/inc/js/painratings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1744" max-vertical-offset="2520">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/dao/PartnershipDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1665">
-          <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/RequestHandling/IRequestMock.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="825">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lib/RequestHandling/RequestTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.430851" vertical-offset="0" max-vertical-offset="3015">
-          <caret line="172" column="28" selection-start-line="172" selection-start-column="28" selection-end-line="172" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17952128" vertical-offset="0" max-vertical-offset="752">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/service/PartnershipLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-35.708332" vertical-offset="28" max-vertical-offset="1785">
-          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/RequestHandling/IRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.099734046" vertical-offset="0" max-vertical-offset="752">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="644">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Display/StudyArea/StudyAreaMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.458334" vertical-offset="163" max-vertical-offset="915">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="59" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/studyarea.prayertask.postexperiment.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/studyarea.base.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/experiment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.583334" vertical-offset="103" max-vertical-offset="1530">
-          <caret line="36" column="35" selection-start-line="33" selection-start-column="4" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Display/StudyArea/PrayerTaskMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.5" vertical-offset="0" max-vertical-offset="930">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/registration.instructions.nickname.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/Display/Registration/ParticipantInfoMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="360">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2610">
+          <caret line="127" column="18" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/www/registration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.125" vertical-offset="0" max-vertical-offset="585">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="630">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/page.head_with_topbar.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/page.base.pagebottom.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="510">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/inc/css/footerStyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27061856" vertical-offset="0" max-vertical-offset="776">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/page.base.footer.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15957446" vertical-offset="0" max-vertical-offset="752">
+          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/registration.base.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="435">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/registration.demographics.base.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="615">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/inc/css/registration.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1212,124 +1383,306 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/css/topBarStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/css/studyAreaStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/css/prayertask.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/css/footerStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19329897" vertical-offset="0" max-vertical-offset="776">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/css/experimentStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/css/painrate.questions.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="776">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/css/registration.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/registration.participantinfo.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="615">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="615">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/registration.informedconsent.twig">
+    <entry file="file://$PROJECT_DIR$/src/lib/Registration/NotificationManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="315">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/registration.base.twig">
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/cleaners/IntegerCleanerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="405">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.63829786" vertical-offset="0" max-vertical-offset="825">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/cleaners/ICleanerFactoryMock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.059840426" vertical-offset="0" max-vertical-offset="752">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/cleaners/FloatCleanerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31914893" vertical-offset="0" max-vertical-offset="795">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/cleaners/CleanerFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1369681" vertical-offset="0" max-vertical-offset="1005">
+          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/cleaners/EmailCleanerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72074467" vertical-offset="178" max-vertical-offset="930">
+          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/nonces/NonceTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67672414" vertical-offset="534" max-vertical-offset="1230">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/experiment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="14.291667" vertical-offset="808" max-vertical-offset="1560">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/FloatCleaner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/EmailCleaner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="825">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/FloatCleaner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="705">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/ICleaner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="600">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/ICleanerFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="360">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/InputCleaner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="3720">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/IntegerCleaner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="810">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/TextCleaner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.083333" vertical-offset="148" max-vertical-offset="900">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/nonces/NonceMakerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="1410">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/nonces/NonceMaker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="2085">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/nonces/NonceSessionHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="1215">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/logging/ISecurityLoggersMock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41888297" vertical-offset="0" max-vertical-offset="752">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/logging/ISecurityLoggers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07978723" vertical-offset="0" max-vertical-offset="752">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/nonces/INonceSessionHandlerMock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07978723" vertical-offset="0" max-vertical-offset="752">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/nonces/INonceSessionHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07978723" vertical-offset="0" max-vertical-offset="752">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/logging/AccountSetupLogger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="1440">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/nonces/NonceValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.27663934" vertical-offset="375" max-vertical-offset="1305">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lib/Security/nonces/NonceValidatorTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15983607" vertical-offset="27" max-vertical-offset="1530">
+          <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/nonces/Nonce.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5833335" vertical-offset="178" max-vertical-offset="930">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/filemaster.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.208334" vertical-offset="343" max-vertical-offset="1095">
+          <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Tasks/Assignments/errors/AlreadyAssignedException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2393617" vertical-offset="0" max-vertical-offset="752">
+          <caret line="17" column="0" selection-start-line="14" selection-start-column="3" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Registration/errors/BadUserValueException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19946809" vertical-offset="0" max-vertical-offset="752">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Security/cleaners/CleanerFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.583332" vertical-offset="103" max-vertical-offset="1080">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/Display/Registration/PageMaker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="690">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        <state vertical-scroll-proportion="-8.208333" vertical-offset="73" max-vertical-offset="930">
+          <caret line="23" column="60" selection-start-line="21" selection-start-column="11" selection-end-line="23" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/inc/js/registration.js">
+    <entry file="file://$PROJECT_DIR$/tests/lib/DbPopulate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!doc;n#prettify#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/RequestHandling/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.75" vertical-offset="420" max-vertical-offset="2190">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="-13.75" vertical-offset="165" max-vertical-offset="975">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/registration.demographics.base.twig">
+    <entry file="file://$PROJECT_DIR$/tests/lib/DbAids.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="615">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+        <state vertical-scroll-proportion="-3.75" vertical-offset="1245" max-vertical-offset="3105">
+          <caret line="96" column="32" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/www/api.php">
+    <entry file="file://$PROJECT_DIR$/schema.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49867022" vertical-offset="0" max-vertical-offset="752">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="409" max-vertical-offset="1815">
+          <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Registration/RegistrationManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="600">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/Registration/UserAdder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.829918" vertical-offset="120" max-vertical-offset="2220">
+          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
           <folding />
         </state>
       </provider>

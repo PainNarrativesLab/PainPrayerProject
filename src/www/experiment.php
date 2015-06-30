@@ -43,9 +43,11 @@ if($link_valid === false)
 
     $faker = \Faker\Factory::create();
     $userHash = $faker->sha256;
+    $nonce = $faker->sha256;
 
     # page body
     echo "<input type='hidden' id='userHash' value='$userHash' />";
+    echo "<input type='hidden' id='nonce' value='$nonce' />";
 
 //dummy for development
     $content_maker = new \Display\StudyArea\IContentMakerMock();

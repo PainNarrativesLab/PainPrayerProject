@@ -1,7 +1,7 @@
 {
     "event": "suiteStart",
     "suite": "\/Users\/adam\/Dropbox\/painprayer\/tests",
-    "tests": 36
+    "tests": 63
 }{
     "event": "suiteStart",
     "suite": "Display\\StudyArea\\PrayerTaskMakerTest",
@@ -15,7 +15,7 @@
     "suite": "Display\\StudyArea\\PrayerTaskMakerTest",
     "test": "Display\\StudyArea\\PrayerTaskMakerTest::testChooseTemplate",
     "status": "pass",
-    "time": 0.011080980300903,
+    "time": 0.011428117752075,
     "trace": [],
     "message": "",
     "output": ""
@@ -32,7 +32,7 @@
     "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
     "test": "PainAssess\\Display\\PainAssessmentGetterTest::testSetTrial",
     "status": "pass",
-    "time": 0.0085799694061279,
+    "time": 0.008903980255127,
     "trace": [],
     "message": "",
     "output": ""
@@ -45,7 +45,7 @@
     "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
     "test": "PainAssess\\Display\\PainAssessmentGetterTest::testSetDao",
     "status": "pass",
-    "time": 0.0018310546875,
+    "time": 0.0021440982818604,
     "trace": [],
     "message": "",
     "output": ""
@@ -58,7 +58,7 @@
     "suite": "PainAssess\\Display\\PainAssessmentGetterTest",
     "test": "PainAssess\\Display\\PainAssessmentGetterTest::testGetContent",
     "status": "pass",
-    "time": 0.037431955337524,
+    "time": 0.027032852172852,
     "trace": [],
     "message": "",
     "output": ""
@@ -75,7 +75,7 @@
     "suite": "Prayer\\Assign\\CreateAssignmentTest",
     "test": "Prayer\\Assign\\CreateAssignmentTest::testCreate",
     "status": "fail",
-    "time": 0.15995407104492,
+    "time": 0.089550018310547,
     "trace": [
         {
             "file": "\/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Prayer\/Assign\/CreateAssignmentTest.php",
@@ -100,7 +100,7 @@
     "suite": "Prayer\\Assign\\UpdateAssignmentTest",
     "test": "Warning",
     "status": "fail",
-    "time": 0.0019338130950928,
+    "time": 0.0010161399841309,
     "trace": [],
     "message": "No tests found in class \"Prayer\\Assign\\UpdateAssignmentTest\".",
     "output": ""
@@ -117,7 +117,7 @@
     "suite": "RequestHandling\\RequestTest",
     "test": "RequestHandling\\RequestTest::testLoad",
     "status": "pass",
-    "time": 0.0072851181030273,
+    "time": 0.0043179988861084,
     "trace": [],
     "message": "",
     "output": ""
@@ -130,7 +130,7 @@
     "suite": "RequestHandling\\RequestTest",
     "test": "RequestHandling\\RequestTest::testUnset_incoming",
     "status": "pass",
-    "time": 0.0027251243591309,
+    "time": 0.0020761489868164,
     "trace": [],
     "message": "",
     "output": ""
@@ -143,7 +143,7 @@
     "suite": "RequestHandling\\RequestTest",
     "test": "RequestHandling\\RequestTest::testLoad_get",
     "status": "pass",
-    "time": 0.0027709007263184,
+    "time": 0.0020170211791992,
     "trace": [],
     "message": "",
     "output": ""
@@ -156,7 +156,7 @@
     "suite": "RequestHandling\\RequestTest",
     "test": "RequestHandling\\RequestTest::testLoad_post",
     "status": "pass",
-    "time": 0.0064420700073242,
+    "time": 0.0022099018096924,
     "trace": [],
     "message": "",
     "output": ""
@@ -169,7 +169,7 @@
     "suite": "RequestHandling\\RequestTest",
     "test": "RequestHandling\\RequestTest::testCombine",
     "status": "pass",
-    "time": 0.0041770935058594,
+    "time": 0.0032279491424561,
     "trace": [],
     "message": "",
     "output": ""
@@ -182,7 +182,7 @@
     "suite": "RequestHandling\\RequestTest",
     "test": "RequestHandling\\RequestTest::testTask",
     "status": "pass",
-    "time": 0.0019791126251221,
+    "time": 0.0015571117401123,
     "trace": [],
     "message": "",
     "output": ""
@@ -195,7 +195,7 @@
     "suite": "RequestHandling\\RequestTest",
     "test": "RequestHandling\\RequestTest::testPage_name",
     "status": "pass",
-    "time": 0.00130295753479,
+    "time": 0.0012030601501465,
     "trace": [],
     "message": "",
     "output": ""
@@ -208,7 +208,7 @@
     "suite": "RequestHandling\\RequestTest",
     "test": "RequestHandling\\RequestTest::testCreate",
     "status": "pass",
-    "time": 0.0026140213012695,
+    "time": 0.0024659633636475,
     "trace": [],
     "message": "",
     "output": ""
@@ -225,7 +225,386 @@
     "suite": "Scheduling\\SchedulerTest",
     "test": "Scheduling\\SchedulerTest::test",
     "status": "pass",
-    "time": 0.0016598701477051,
+    "time": 0.0012860298156738,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Security\\cleaners\\CleanerFactoryTest",
+    "tests": 3
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\CleanerFactoryTest",
+    "test": "Security\\cleaners\\CleanerFactoryTest::testValidate"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\CleanerFactoryTest",
+    "test": "Security\\cleaners\\CleanerFactoryTest::testValidate",
+    "status": "pass",
+    "time": 0.0030391216278076,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\CleanerFactoryTest",
+    "test": "Security\\cleaners\\CleanerFactoryTest::testSanitize"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\CleanerFactoryTest",
+    "test": "Security\\cleaners\\CleanerFactoryTest::testSanitize",
+    "status": "pass",
+    "time": 0.0013809204101562,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\CleanerFactoryTest",
+    "test": "Security\\cleaners\\CleanerFactoryTest::testMake"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\CleanerFactoryTest",
+    "test": "Security\\cleaners\\CleanerFactoryTest::testMake",
+    "status": "pass",
+    "time": 0.0027351379394531,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "tests": 4
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "test": "Security\\cleaners\\EmailCleanerTest::testSanitize"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "test": "Security\\cleaners\\EmailCleanerTest::testSanitize",
+    "status": "pass",
+    "time": 0.0013368129730225,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "test": "Security\\cleaners\\EmailCleanerTest::testSanitize_invalid_address"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "test": "Security\\cleaners\\EmailCleanerTest::testSanitize_invalid_address",
+    "status": "pass",
+    "time": 0.0018889904022217,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "test": "Security\\cleaners\\EmailCleanerTest::testValidate"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "test": "Security\\cleaners\\EmailCleanerTest::testValidate",
+    "status": "pass",
+    "time": 0.0019650459289551,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "test": "Security\\cleaners\\EmailCleanerTest::testSet_max_length"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\EmailCleanerTest",
+    "test": "Security\\cleaners\\EmailCleanerTest::testSet_max_length",
+    "status": "pass",
+    "time": 0.0012860298156738,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Security\\cleaners\\FloatCleanerTest",
+    "tests": 3
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\FloatCleanerTest",
+    "test": "Security\\cleaners\\FloatCleanerTest::testSanitize"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\FloatCleanerTest",
+    "test": "Security\\cleaners\\FloatCleanerTest::testSanitize",
+    "status": "pass",
+    "time": 0.0070691108703613,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\FloatCleanerTest",
+    "test": "Security\\cleaners\\FloatCleanerTest::testValidate"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\FloatCleanerTest",
+    "test": "Security\\cleaners\\FloatCleanerTest::testValidate",
+    "status": "pass",
+    "time": 0.0016300678253174,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\FloatCleanerTest",
+    "test": "Security\\cleaners\\FloatCleanerTest::testSet_max_length"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\FloatCleanerTest",
+    "test": "Security\\cleaners\\FloatCleanerTest::testSet_max_length",
+    "status": "pass",
+    "time": 0.0012719631195068,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "tests": 4
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "test": "Security\\cleaners\\IntegerCleanerTest::testSanitize"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "test": "Security\\cleaners\\IntegerCleanerTest::testSanitize",
+    "status": "pass",
+    "time": 0.0015380382537842,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "test": "Security\\cleaners\\IntegerCleanerTest::testValidate"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "test": "Security\\cleaners\\IntegerCleanerTest::testValidate",
+    "status": "pass",
+    "time": 0.0015108585357666,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "test": "Security\\cleaners\\IntegerCleanerTest::testSet_max_length"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "test": "Security\\cleaners\\IntegerCleanerTest::testSet_max_length",
+    "status": "pass",
+    "time": 0.0012328624725342,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "test": "Security\\cleaners\\IntegerCleanerTest::testTrim"
+}{
+    "event": "test",
+    "suite": "Security\\cleaners\\IntegerCleanerTest",
+    "test": "Security\\cleaners\\IntegerCleanerTest::testTrim",
+    "status": "pass",
+    "time": 0.00095701217651367,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "tests": 4
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "test": "Security\\nonces\\NonceMakerTest::testSet_session_handler"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "test": "Security\\nonces\\NonceMakerTest::testSet_session_handler",
+    "status": "pass",
+    "time": 0.0022408962249756,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "test": "Security\\nonces\\NonceMakerTest::testCreateNonceToken"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "test": "Security\\nonces\\NonceMakerTest::testCreateNonceToken",
+    "status": "pass",
+    "time": 0.0011389255523682,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "test": "Security\\nonces\\NonceMakerTest::testMake_form_field"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "test": "Security\\nonces\\NonceMakerTest::testMake_form_field",
+    "status": "pass",
+    "time": 0.001194953918457,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "test": "Security\\nonces\\NonceMakerTest::testCreateNonce"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceMakerTest",
+    "test": "Security\\nonces\\NonceMakerTest::testCreateNonce",
+    "status": "pass",
+    "time": 0.0013370513916016,
+    "trace": [],
+    "message": "",
+    "output": "<input type='hidden' id='formToken' name='formToken' data='jip' value='65765bc1dd7514d33a61ce14f2682f3b37e802593a5da18d0e9f7cb17d012c0a' \/>"
+}{
+    "event": "suiteStart",
+    "suite": "Security\\nonces\\NonceTest",
+    "tests": 4
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceTest",
+    "test": "Security\\nonces\\NonceTest::test__get"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceTest",
+    "test": "Security\\nonces\\NonceTest::test__get",
+    "status": "pass",
+    "time": 0.0012381076812744,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceTest",
+    "test": "Security\\nonces\\NonceTest::test__set"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceTest",
+    "test": "Security\\nonces\\NonceTest::test__set",
+    "status": "pass",
+    "time": 0.0015921592712402,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceTest",
+    "test": "Security\\nonces\\NonceTest::test__SetExceptsOnTooLongToken"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceTest",
+    "test": "Security\\nonces\\NonceTest::test__SetExceptsOnTooLongToken",
+    "status": "pass",
+    "time": 0.0015959739685059,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceTest",
+    "test": "Security\\nonces\\NonceTest::test__SetExceptsOnNonIntegerTime"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceTest",
+    "test": "Security\\nonces\\NonceTest::test__SetExceptsOnNonIntegerTime",
+    "status": "pass",
+    "time": 0.0013020038604736,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "tests": 5
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testSet_logger"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testSet_logger",
+    "status": "pass",
+    "time": 0.0023469924926758,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testSet_session_handler"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testSet_session_handler",
+    "status": "pass",
+    "time": 0.0014059543609619,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testValidate"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testValidate",
+    "status": "pass",
+    "time": 0.0014669895172119,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp",
+    "status": "pass",
+    "time": 0.0014960765838623,
+    "trace": [],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testValidateExceptsOnInvalidPageName"
+}{
+    "event": "test",
+    "suite": "Security\\nonces\\NonceValidatorTest",
+    "test": "Security\\nonces\\NonceValidatorTest::testValidateExceptsOnInvalidPageName",
+    "status": "pass",
+    "time": 0.0015549659729004,
     "trace": [],
     "message": "",
     "output": ""
@@ -242,7 +621,7 @@
     "suite": "Tasks\\Assignments\\PrayerAssignmentTest",
     "test": "Tasks\\Assignments\\PrayerAssignmentTest::testMakeHash",
     "status": "pass",
-    "time": 0.0016829967498779,
+    "time": 0.0014481544494629,
     "trace": [],
     "message": "",
     "output": ""
@@ -255,7 +634,7 @@
     "suite": "Tasks\\Assignments\\PrayerAssignmentTest",
     "test": "Tasks\\Assignments\\PrayerAssignmentTest::testCreateAssignment",
     "status": "pass",
-    "time": 0.0017259120941162,
+    "time": 0.00095796585083008,
     "trace": [],
     "message": "",
     "output": ""
@@ -272,7 +651,7 @@
     "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
     "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testCreateAssignment",
     "status": "pass",
-    "time": 0.26069402694702,
+    "time": 0.11651015281677,
     "trace": [],
     "message": "",
     "output": ""
@@ -285,7 +664,7 @@
     "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
     "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByAgentAndDate",
     "status": "pass",
-    "time": 0.067646026611328,
+    "time": 0.031174898147583,
     "trace": [],
     "message": "",
     "output": ""
@@ -298,7 +677,7 @@
     "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
     "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByAgentAndPatient",
     "status": "pass",
-    "time": 0.099507808685303,
+    "time": 0.033233880996704,
     "trace": [],
     "message": "",
     "output": ""
@@ -311,7 +690,7 @@
     "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
     "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testLoadByHash",
     "status": "pass",
-    "time": 0.070686101913452,
+    "time": 0.030550956726074,
     "trace": [],
     "message": "",
     "output": ""
@@ -324,7 +703,7 @@
     "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
     "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testMarkComplete",
     "status": "pass",
-    "time": 0.078974008560181,
+    "time": 0.02944803237915,
     "trace": [],
     "message": "",
     "output": ""
@@ -337,7 +716,7 @@
     "suite": "Tasks\\Assignments\\dao\\PartnershipDaoTest",
     "test": "Tasks\\Assignments\\dao\\PartnershipDaoTest::testMarkCompleteByHash",
     "status": "pass",
-    "time": 0.066373825073242,
+    "time": 0.02872109413147,
     "trace": [],
     "message": "",
     "output": ""
@@ -354,10 +733,10 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
     "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfHash",
     "status": "pass",
-    "time": 0.0037930011749268,
+    "time": 0.0034630298614502,
     "trace": [],
     "message": "",
-    "output": "\nWarning: Missing argument 1 for Tasks\\Assignments\\service\\PartnershipLoader::checkIfHash(), called in \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php on line 27 and defined in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 111\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0065    1346864   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1353800   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.0976    9084816   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1200    9760528   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    1.3059   19958656   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    1.3082   20224424   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    1.3082   20224880   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    1.3095   20220128   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    1.3106   20283800  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    1.3106   20284624  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    1.3106   20284928  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfHash() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    1.3115   20285208  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfHash() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:27\n\n\nNotice: Undefined variable: identifier in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 113\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0065    1346864   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1353800   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.0976    9084816   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1200    9760528   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    1.3059   19958656   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    1.3082   20224424   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    1.3082   20224880   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    1.3095   20220128   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    1.3106   20283800  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    1.3106   20284624  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    1.3106   20284928  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfHash() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    1.3115   20285208  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfHash() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:27\n\n"
+    "output": "\nWarning: Missing argument 1 for Tasks\\Assignments\\service\\PartnershipLoader::checkIfHash(), called in \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php on line 27 and defined in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 111\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0065    1359848   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1366784   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.1448   12245184   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1698   12928288   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    0.9649   23520848   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.9662   23524600   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.9662   23525056   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    0.9672   23520208   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    0.9684   23584968  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    0.9684   23585792  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.9684   23586096  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfHash() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.9692   23586376  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfHash() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:27\n\n\nNotice: Undefined variable: identifier in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 113\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0065    1359848   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1366784   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.1448   12245184   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1698   12928288   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    0.9649   23520848   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.9662   23524600   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.9662   23525056   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    0.9672   23520208   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    0.9684   23584968  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    0.9684   23585792  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.9684   23586096  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfHash() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.9692   23586376  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfHash() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:27\n\n"
 }{
     "event": "testStart",
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
@@ -367,10 +746,10 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
     "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testCheckIfUser",
     "status": "pass",
-    "time": 0.0053641796112061,
+    "time": 0.0028848648071289,
     "trace": [],
     "message": "",
-    "output": "\nWarning: Missing argument 1 for Tasks\\Assignments\\service\\PartnershipLoader::checkIfUser(), called in \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php on line 37 and defined in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 102\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0065    1346864   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1353800   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.0976    9084816   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1200    9760528   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    1.3059   19958656   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    1.3260   20520472   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    1.3260   20520472   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    1.3272   20521448   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    1.3282   20538552  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    1.3283   20539376  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    1.3283   20539632  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfUser() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    1.3303   20539784  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfUser() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:37\n\n\nNotice: Undefined variable: identifier in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 104\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0065    1346864   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1353800   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.0976    9084816   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1200    9760528   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    1.3059   19958656   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    1.3260   20520472   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    1.3260   20520472   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    1.3272   20521448   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    1.3282   20538552  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    1.3283   20539376  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    1.3283   20539632  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfUser() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    1.3303   20539784  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfUser() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:37\n\n"
+    "output": "\nWarning: Missing argument 1 for Tasks\\Assignments\\service\\PartnershipLoader::checkIfUser(), called in \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php on line 37 and defined in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 102\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0065    1359848   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1366784   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.1448   12245184   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1698   12928288   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    0.9649   23520848   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.9825   23822688   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.9825   23822688   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    0.9833   23823664   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    0.9841   23840768  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    0.9842   23841592  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.9842   23841848  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfUser() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.9849   23842000  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfUser() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:37\n\n\nNotice: Undefined variable: identifier in \/Users\/adam\/Dropbox\/painprayer\/src\/lib\/Tasks\/Assignments\/service\/PartnershipLoader.php on line 104\n\nCall Stack:\n    0.0007     348552   1. {main}() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:0\n    0.0065    1359848   2. IDE_Base_PHPUnit_TextUI_Command::main() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:516\n    0.0065    1366784   3. PHPUnit_TextUI_Command->run() \/private\/var\/folders\/xj\/znjknz511d1g_58rdz4zcfsw0000gn\/T\/ide-phpunit.php:258\n    0.1448   12245184   4. PHPUnit_TextUI_TestRunner->doRun() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php:151\n    0.1698   12928288   5. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php:432\n    0.9649   23520848   6. PHPUnit_Framework_TestSuite->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.9825   23822688   7. PHPUnit_Framework_TestCase->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php:733\n    0.9825   23822688   8. PHPUnit_Framework_TestResult->run() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:697\n    0.9833   23823664   9. PHPUnit_Framework_TestCase->runBare() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php:605\n    0.9841   23840768  10. PHPUnit_Framework_TestCase->runTest() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:741\n    0.9842   23841592  11. ReflectionMethod->invokeArgs() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.9842   23841848  12. Tasks\\Assignments\\service\\PartnershipLoaderTest->testCheckIfUser() \/Users\/adam\/Dropbox\/painprayer\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php:864\n    0.9849   23842000  13. Tasks\\Assignments\\service\\PartnershipLoader->checkIfUser() \/Users\/adam\/Dropbox\/painprayer\/tests\/lib\/Tasks\/Assignments\/service\/PartnershipLoaderTest.php:37\n\n"
 }{
     "event": "testStart",
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
@@ -380,7 +759,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
     "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodUser",
     "status": "pass",
-    "time": 0.026870965957642,
+    "time": 0.0017149448394775,
     "trace": [],
     "message": "",
     "output": ""
@@ -393,7 +772,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
     "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodHash",
     "status": "pass",
-    "time": 0.0013349056243896,
+    "time": 0.0015580654144287,
     "trace": [],
     "message": "",
     "output": ""
@@ -406,7 +785,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
     "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testChooseMethodException",
     "status": "pass",
-    "time": 0.001676082611084,
+    "time": 0.0014770030975342,
     "trace": [],
     "message": "",
     "output": ""
@@ -419,7 +798,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
     "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadUser",
     "status": "pass",
-    "time": 0.0025849342346191,
+    "time": 0.0022521018981934,
     "trace": [],
     "message": "",
     "output": ""
@@ -432,7 +811,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
     "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testLoadHash",
     "status": "pass",
-    "time": 0.0023491382598877,
+    "time": 0.0023131370544434,
     "trace": [],
     "message": "",
     "output": ""
@@ -445,7 +824,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipLoaderTest",
     "test": "Tasks\\Assignments\\service\\PartnershipLoaderTest::testSetDao",
     "status": "pass",
-    "time": 0.0013909339904785,
+    "time": 0.0013368129730225,
     "trace": [],
     "message": "",
     "output": ""
@@ -462,7 +841,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
     "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassigned",
     "status": "pass",
-    "time": 0.0029690265655518,
+    "time": 0.0021519660949707,
     "trace": [],
     "message": "",
     "output": ""
@@ -475,7 +854,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
     "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testCheckUnassignedException",
     "status": "pass",
-    "time": 0.002331018447876,
+    "time": 0.0022919178009033,
     "trace": [],
     "message": "",
     "output": ""
@@ -488,7 +867,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
     "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testMake",
     "status": "pass",
-    "time": 0.0040090084075928,
+    "time": 0.003446102142334,
     "trace": [],
     "message": "",
     "output": ""
@@ -501,7 +880,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
     "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testSetDao",
     "status": "pass",
-    "time": 0.0014009475708008,
+    "time": 0.001352071762085,
     "trace": [],
     "message": "",
     "output": ""
@@ -514,7 +893,7 @@
     "suite": "Tasks\\Assignments\\service\\PartnershipMakerTest",
     "test": "Tasks\\Assignments\\service\\PartnershipMakerTest::testSetHashMaker",
     "status": "pass",
-    "time": 0.0014169216156006,
+    "time": 0.0014119148254395,
     "trace": [],
     "message": "",
     "output": ""

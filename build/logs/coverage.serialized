@@ -418,158 +418,158 @@ $coverage->setData(array (
   ),
   '/Users/adam/Dropbox/painprayer/src/lib/RequestHandling/Request.php' => 
   array (
-    33 => 
+    39 => 
     array (
       0 => 'RequestHandling\\RequestTest::testCreate',
     ),
-    34 => 
+    40 => 
     array (
       0 => 'RequestHandling\\RequestTest::testCreate',
     ),
-    35 => 
+    41 => 
     array (
       0 => 'RequestHandling\\RequestTest::testCreate',
     ),
-    36 => NULL,
-    42 => 
+    42 => NULL,
+    49 => 
     array (
       0 => 'RequestHandling\\RequestTest::testLoad',
     ),
-    43 => 
+    50 => 
     array (
       0 => 'RequestHandling\\RequestTest::testLoad',
     ),
-    44 => 
+    51 => 
     array (
       0 => 'RequestHandling\\RequestTest::testLoad',
     ),
-    45 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testLoad',
-    ),
-    46 => 
+    52 => 
     array (
       0 => 'RequestHandling\\RequestTest::testLoad',
     ),
     53 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
-    ),
-    54 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
-    ),
-    55 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
-    ),
-    56 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
-    ),
-    57 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
-    ),
-    58 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
-    ),
-    59 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
+      0 => 'RequestHandling\\RequestTest::testLoad',
     ),
     60 => 
     array (
+      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
     ),
     61 => 
     array (
+      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
     ),
     62 => 
     array (
       0 => 'RequestHandling\\RequestTest::testUnset_incoming',
     ),
+    63 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
+    ),
+    64 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
+    ),
+    65 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
+    ),
     66 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testLoad_get',
+      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
     ),
     67 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testLoad_get',
     ),
     68 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testLoad_get',
     ),
     69 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testLoad_get',
+      0 => 'RequestHandling\\RequestTest::testUnset_incoming',
     ),
     73 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testLoad_post',
+      0 => 'RequestHandling\\RequestTest::testLoad_get',
     ),
     74 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testLoad_post',
+      0 => 'RequestHandling\\RequestTest::testLoad_get',
     ),
     75 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testLoad_post',
+      0 => 'RequestHandling\\RequestTest::testLoad_get',
     ),
     76 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testLoad_get',
+    ),
+    80 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testLoad_post',
+    ),
+    81 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testLoad_post',
+    ),
+    82 => 
     array (
       0 => 'RequestHandling\\RequestTest::testLoad_post',
     ),
     83 => 
     array (
-      0 => 'RequestHandling\\RequestTest::testCombine',
+      0 => 'RequestHandling\\RequestTest::testLoad_post',
     ),
-    84 => 
+    90 => 
     array (
       0 => 'RequestHandling\\RequestTest::testCombine',
     ),
-    93 => 
+    91 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testCombine',
+    ),
+    100 => 
     array (
     ),
-    94 => 
+    101 => 
     array (
     ),
-    95 => NULL,
-    96 => 
+    102 => NULL,
+    103 => 
     array (
     ),
-    98 => NULL,
-    106 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testTask',
-    ),
-    107 => 
-    array (
-      0 => 'RequestHandling\\RequestTest::testTask',
-    ),
-    108 => 
+    105 => NULL,
+    113 => 
     array (
       0 => 'RequestHandling\\RequestTest::testTask',
     ),
-    109 => NULL,
-    110 => 
+    114 => 
     array (
       0 => 'RequestHandling\\RequestTest::testTask',
     ),
-    111 => 
+    115 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testTask',
+    ),
+    116 => NULL,
+    117 => 
+    array (
+      0 => 'RequestHandling\\RequestTest::testTask',
+    ),
+    118 => 
     array (
     ),
-    132 => 
+    139 => 
     array (
       0 => 'RequestHandling\\RequestTest::testPage_name',
     ),
-    133 => 
+    140 => 
     array (
       0 => 'RequestHandling\\RequestTest::testPage_name',
     ),
-    134 => NULL,
-    135 => 
+    141 => NULL,
+    142 => 
     array (
     ),
   ),
@@ -578,6 +578,533 @@ $coverage->setData(array (
   ),
   '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Scheduler.php' => 
   array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/IntegerCleaner.php' => 
+  array (
+    23 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testSanitize',
+    ),
+    24 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testSanitize',
+    ),
+    25 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testSanitize',
+    ),
+    26 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testSanitize',
+    ),
+    27 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testSanitize',
+    ),
+    28 => NULL,
+    29 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testSanitize',
+    ),
+    31 => NULL,
+    39 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testValidate',
+    ),
+    40 => NULL,
+    43 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testSet_max_length',
+    ),
+    44 => 
+    array (
+      0 => 'Security\\cleaners\\IntegerCleanerTest::testSet_max_length',
+    ),
+    47 => 
+    array (
+    ),
+    48 => 
+    array (
+    ),
+    49 => 
+    array (
+    ),
+    50 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/ICleaner.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/FloatCleaner.php' => 
+  array (
+    23 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testSanitize',
+    ),
+    24 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testSanitize',
+    ),
+    25 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testSanitize',
+    ),
+    26 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testSanitize',
+    ),
+    27 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testSanitize',
+    ),
+    28 => NULL,
+    30 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testSanitize',
+    ),
+    32 => NULL,
+    38 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testValidate',
+    ),
+    39 => NULL,
+    43 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testSet_max_length',
+    ),
+    44 => 
+    array (
+      0 => 'Security\\cleaners\\FloatCleanerTest::testSet_max_length',
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/CleanerFactory.php' => 
+  array (
+    25 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testValidate',
+    ),
+    26 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testValidate',
+    ),
+    27 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testValidate',
+    ),
+    28 => NULL,
+    29 => 
+    array (
+    ),
+    31 => NULL,
+    34 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testSanitize',
+    ),
+    35 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testSanitize',
+    ),
+    36 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testSanitize',
+    ),
+    37 => NULL,
+    38 => 
+    array (
+    ),
+    40 => NULL,
+    49 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    50 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    51 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    52 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    53 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    54 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    55 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    56 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    57 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    58 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    59 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    60 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    61 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    62 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    63 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    64 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    66 => 
+    array (
+    ),
+    67 => 
+    array (
+      0 => 'Security\\cleaners\\CleanerFactoryTest::testMake',
+    ),
+    68 => NULL,
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/ICleanerFactory.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/EmailCleaner.php' => 
+  array (
+    28 => 
+    array (
+      0 => 'Security\\cleaners\\EmailCleanerTest::testSanitize',
+      1 => 'Security\\cleaners\\EmailCleanerTest::testSanitize_invalid_address',
+    ),
+    29 => 
+    array (
+      0 => 'Security\\cleaners\\EmailCleanerTest::testSanitize',
+    ),
+    30 => 
+    array (
+      0 => 'Security\\cleaners\\EmailCleanerTest::testSanitize',
+    ),
+    31 => NULL,
+    32 => 
+    array (
+      0 => 'Security\\cleaners\\EmailCleanerTest::testSanitize_invalid_address',
+    ),
+    34 => NULL,
+    42 => 
+    array (
+      0 => 'Security\\cleaners\\EmailCleanerTest::testValidate',
+    ),
+    43 => 
+    array (
+      0 => 'Security\\cleaners\\EmailCleanerTest::testValidate',
+    ),
+    44 => NULL,
+    45 => 
+    array (
+    ),
+    47 => NULL,
+    50 => 
+    array (
+      0 => 'Security\\cleaners\\EmailCleanerTest::testSet_max_length',
+    ),
+    51 => 
+    array (
+      0 => 'Security\\cleaners\\EmailCleanerTest::testSet_max_length',
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/TextCleaner.php' => 
+  array (
+    30 => 
+    array (
+    ),
+    38 => NULL,
+    46 => 
+    array (
+    ),
+    52 => NULL,
+    55 => 
+    array (
+    ),
+    56 => 
+    array (
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/Nonce.php' => 
+  array (
+    26 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__get',
+    ),
+    27 => NULL,
+    39 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+      1 => 'Security\\nonces\\NonceTest::test__SetExceptsOnTooLongToken',
+      2 => 'Security\\nonces\\NonceTest::test__SetExceptsOnNonIntegerTime',
+    ),
+    40 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+      1 => 'Security\\nonces\\NonceTest::test__SetExceptsOnTooLongToken',
+    ),
+    41 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+    ),
+    42 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+    ),
+    43 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__SetExceptsOnTooLongToken',
+    ),
+    45 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+    ),
+    46 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+      1 => 'Security\\nonces\\NonceTest::test__SetExceptsOnNonIntegerTime',
+    ),
+    47 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+      1 => 'Security\\nonces\\NonceTest::test__SetExceptsOnNonIntegerTime',
+    ),
+    48 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+    ),
+    49 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+    ),
+    50 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__SetExceptsOnNonIntegerTime',
+    ),
+    52 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+    ),
+    53 => 
+    array (
+    ),
+    54 => 
+    array (
+    ),
+    55 => NULL,
+    56 => 
+    array (
+    ),
+    57 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+      1 => 'Security\\nonces\\NonceTest::test__SetExceptsOnTooLongToken',
+      2 => 'Security\\nonces\\NonceTest::test__SetExceptsOnNonIntegerTime',
+    ),
+    58 => 
+    array (
+      0 => 'Security\\nonces\\NonceTest::test__set',
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/INonceSessionHandlerMock.php' => 
+  array (
+    20 => 
+    array (
+    ),
+    21 => 
+    array (
+    ),
+    24 => 
+    array (
+    ),
+    25 => NULL,
+    29 => 
+    array (
+    ),
+    30 => NULL,
+    34 => 
+    array (
+    ),
+    35 => NULL,
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/INonceSessionHandler.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/NonceMaker.php' => 
+  array (
+    29 => 
+    array (
+    ),
+    30 => 
+    array (
+    ),
+    34 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testSet_session_handler',
+    ),
+    35 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testSet_session_handler',
+    ),
+    47 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonceToken',
+    ),
+    48 => NULL,
+    57 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    58 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    59 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    60 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    62 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    64 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    65 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    66 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    67 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testCreateNonce',
+    ),
+    75 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testMake_form_field',
+    ),
+    76 => 
+    array (
+      0 => 'Security\\nonces\\NonceMakerTest::testMake_form_field',
+    ),
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/logging/ISecurityLoggers.php' => 
+  array (
+  ),
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/NonceValidator.php' => 
+  array (
+    29 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testSet_logger',
+    ),
+    30 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testSet_logger',
+    ),
+    34 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testSet_session_handler',
+    ),
+    35 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testSet_session_handler',
+    ),
+    45 => 
+    array (
+    ),
+    47 => 
+    array (
+    ),
+    48 => 
+    array (
+    ),
+    49 => 
+    array (
+    ),
+    50 => NULL,
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    65 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidate',
+      1 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp',
+      2 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnInvalidPageName',
+    ),
+    66 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidate',
+      1 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp',
+    ),
+    67 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidate',
+      1 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp',
+    ),
+    68 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidate',
+      1 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp',
+    ),
+    69 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidate',
+    ),
+    70 => NULL,
+    72 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp',
+    ),
+    80 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp',
+    ),
+    81 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnInvalidPageName',
+    ),
+    83 => 
+    array (
+      0 => 'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp',
+    ),
   ),
   '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Assignments/PrayerAssignment.php' => 
   array (
@@ -1167,6 +1694,136 @@ $coverage->setTests(array (
     'size' => 'unknown',
     'status' => 0,
   ),
+  'Security\\cleaners\\CleanerFactoryTest::testValidate' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\CleanerFactoryTest::testSanitize' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\CleanerFactoryTest::testMake' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\EmailCleanerTest::testSanitize' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\EmailCleanerTest::testSanitize_invalid_address' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\EmailCleanerTest::testValidate' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\EmailCleanerTest::testSet_max_length' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\FloatCleanerTest::testSanitize' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\FloatCleanerTest::testValidate' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\FloatCleanerTest::testSet_max_length' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\IntegerCleanerTest::testSanitize' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\IntegerCleanerTest::testValidate' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\cleaners\\IntegerCleanerTest::testSet_max_length' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceMakerTest::testSet_session_handler' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceMakerTest::testCreateNonceToken' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceMakerTest::testMake_form_field' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceMakerTest::testCreateNonce' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceTest::test__get' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceTest::test__set' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceTest::test__SetExceptsOnTooLongToken' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceTest::test__SetExceptsOnNonIntegerTime' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceValidatorTest::testSet_logger' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceValidatorTest::testSet_session_handler' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceValidatorTest::testValidate' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnTooOldTimestamp' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Security\\nonces\\NonceValidatorTest::testValidateExceptsOnInvalidPageName' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
   'Tasks\\Assignments\\PrayerAssignmentTest::testMakeHash' => 
   array (
     'size' => 'unknown',
@@ -1249,6 +1906,8 @@ $filter->setBlacklistedFiles(array (
   '/private/var/folders/xj/znjknz511d1g_58rdz4zcfsw0000gn/T/ide-phpunit.php' => true,
 ));
 $filter->setWhitelistedFiles(array (
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/Registration/PageMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Display/Registration/ParticipantInfoMaker.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/IContentMaker.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/PainRatingMaker.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Display/StudyArea/PrayerTaskMaker.php' => true,
@@ -1261,6 +1920,10 @@ $filter->setWhitelistedFiles(array (
   '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/CreateAssignment.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Assign/UpdateAssignment.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Prayer/Display/PrayerGetter.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Registration/NotificationManager.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Registration/RegistrationManager.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Registration/UserAdder.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Registration/errors/BadUserValueException.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/RequestHandling/IRequest.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/RequestHandling/Request.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Scheduler.php' => true,
@@ -1268,6 +1931,22 @@ $filter->setWhitelistedFiles(array (
   '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/States/StateManager.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Tasks/ITask.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Scheduling/Tasks/SendReminders.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/CleanerFactory.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/EmailCleaner.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/FloatCleaner.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/ICleaner.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/ICleanerFactory.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/InputCleaner.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/IntegerCleaner.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/cleaners/TextCleaner.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/logging/AccountSetupLogger.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/logging/ISecurityLoggers.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/INonceSessionHandler.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/INonceSessionHandlerMock.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/Nonce.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/NonceMaker.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/NonceSessionHandler.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/lib/Security/nonces/NonceValidator.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Actions/Action.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Actions/BreatheTask.php' => true,
   '/Users/adam/Dropbox/painprayer/src/lib/Tasks/Actions/Instruction.php' => true,
@@ -1299,13 +1978,16 @@ $filter->setWhitelistedFiles(array (
   '/Users/adam/Dropbox/painprayer/src/template_cache/4/d/4df6faac3bc9dff00f43ee9d6efdd7dc4a9fd59e137e7c11aed4923aafba4f13.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/5/1/5106c5474a3d0833850e91b58f10a8837feb6c8199e1e43ae4152860076cfd0a.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/5/7/57b9304064e6bba793ef0a966e7741646fd24c3b9516dd7abd88e70507bd3773.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/6/1/619f55c265849b2edb5c42814a6e8ba2a6cc47c5e0a2b940e356b9f3bf8f91d4.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/8/3/8312b48b913301d3e58a9c04d7c0be619b445962352f105237008fbd6b81a5a6.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/8/3/839063eab126085a25a0abdb8901393920dc6be9a3282c3a69e0859252420b08.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/8/e/8eb5903376790ba097c5dedee150de2ed87b918b5748bcafb3280a51db9f601c.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/9/3/93f59003f3fd923775c7999b20e0de81ef8647656456c1b2b0f72c1604f48225.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/9/9/9905e481389481232579ba003c036adc24aadae3a9ddff68b2269da5b1e4ea41.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/a/0/a0bc8117642e2589619cc28f9e2f74bdb6d032cf34783974d24aa7e09f483d25.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/a/8/a88033d38720439463ab02582521a7b98409d144e949e31fd76bfb44410ce74c.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/b/1/b1ba40cb8ef8a9aaac73def6282cc0f2d8003ed8e770b177f40488796e711ff8.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/b/e/beeff8b268d11b1a44404defc7803199b19aa7fd2c306ab9c3c3e7c0c6754ace.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/c/a/ca9e3a16a5580dee790be62b3ba3ce10d5c6431d0ab5cced11756c7d49e3f13b.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/d/2/d23252af47809c1be4de853ad4af49e0286aaf00eea165c2ef0f426c44df4270.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/d/2/d2e0f0bd22c449bcf540bc9deba1ce31a91b31d13a99d23937e82f38d2ee2a2a.php' => true,
@@ -1314,7 +1996,10 @@ $filter->setWhitelistedFiles(array (
   '/Users/adam/Dropbox/painprayer/src/template_cache/d/a/da33eac4bf5d7d0a447ce49f2e4b5e01590be7dff36f95ff3fb7a2b6c5a5cfe3.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/e/1/e1ba6116fb06c52defb96c8cf642b593c76305072f17e76638b90b98422ada79.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/e/1/e1dce326729c99bc32f79f6ed9f1700498500eb6af195a71c810b3cf5d99adbd.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/e/7/e78ba78df4230041cce859e621008a3da1b969abfa7adbbea3e9ab70909549fa.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/e/c/ec28d2ae4ef0eb634e87e5419404cf31c8b67826cf3b8188e17ccf49ddc98fe8.php' => true,
   '/Users/adam/Dropbox/painprayer/src/template_cache/f/d/fd3911c866d2a821d366bb6932fe2d597cc405f4e3a1419e616f4bbb0b4732d6.php' => true,
+  '/Users/adam/Dropbox/painprayer/src/template_cache/f/e/fe8636ab6d8584b1a398bc368c50fe65dc6ae4aca8a72a90f5a5c153f76df34f.php' => true,
   '/Users/adam/Dropbox/painprayer/src/www/api.php' => true,
   '/Users/adam/Dropbox/painprayer/src/www/experiment.php' => true,
   '/Users/adam/Dropbox/painprayer/src/www/filemaster.php' => true,

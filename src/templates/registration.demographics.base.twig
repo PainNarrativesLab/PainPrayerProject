@@ -1,4 +1,4 @@
-<div id="sexInputArea">
+<div id="sexInputArea" class="subArea">
     <label for="userSexRadio">Sex</label>
     <radioset id="userSexRadio">
         <label for="userSexF">Female</label>
@@ -8,7 +8,7 @@
     </radioset>
 </div>
 
-<div id="ageInputArea">
+<div id="ageInputArea" class="subArea">
     <label for="userAgeSelect">Age</label>
     <select id="userAge">
         {% for age in userAges %}
@@ -17,7 +17,7 @@
     </select>
 </div>
 
-<div id="ethnicityInputArea">
+<div id="ethnicityInputArea" class="subArea">
     <h4>Race</h4>
     {% for race in userRaces %}
         <label for="{{ race }}">{{ race }}</label>
@@ -30,7 +30,7 @@
     {% endfor %}
 </div>
 
-<div id="religionInputArea">
+<div id="religionInputArea" class="subArea">
     <h4>Religious affiliation</h4>
     <p>[select for religion if we want that]</p>
 </div>

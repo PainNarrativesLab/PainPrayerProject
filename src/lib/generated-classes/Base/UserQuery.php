@@ -23,18 +23,26 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUserQuery orderById($order = Criteria::ASC) Order by the id column
  * @method     ChildUserQuery orderByNickname($order = Criteria::ASC) Order by the nickname column
  * @method     ChildUserQuery orderByEmail($order = Criteria::ASC) Order by the email column
+ * @method     ChildUserQuery orderByAge($order = Criteria::ASC) Order by the age column
+ * @method     ChildUserQuery orderBySex($order = Criteria::ASC) Order by the sex column
  * @method     ChildUserQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
  * @method     ChildUserQuery orderByUpdatedAt($order = Criteria::ASC) Order by the updated_at column
  *
  * @method     ChildUserQuery groupById() Group by the id column
  * @method     ChildUserQuery groupByNickname() Group by the nickname column
  * @method     ChildUserQuery groupByEmail() Group by the email column
+ * @method     ChildUserQuery groupByAge() Group by the age column
+ * @method     ChildUserQuery groupBySex() Group by the sex column
  * @method     ChildUserQuery groupByCreatedAt() Group by the created_at column
  * @method     ChildUserQuery groupByUpdatedAt() Group by the updated_at column
  *
  * @method     ChildUserQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method     ChildUserQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method     ChildUserQuery innerJoin($relation) Adds a INNER JOIN clause to the query
+ *
+ * @method     ChildUserQuery leftJoinUserAge($relationAlias = null) Adds a LEFT JOIN clause to the query using the UserAge relation
+ * @method     ChildUserQuery rightJoinUserAge($relationAlias = null) Adds a RIGHT JOIN clause to the query using the UserAge relation
+ * @method     ChildUserQuery innerJoinUserAge($relationAlias = null) Adds a INNER JOIN clause to the query using the UserAge relation
  *
  * @method     ChildUserQuery leftJoinAssignedPrayerRelatedByAgentId($relationAlias = null) Adds a LEFT JOIN clause to the query using the AssignedPrayerRelatedByAgentId relation
  * @method     ChildUserQuery rightJoinAssignedPrayerRelatedByAgentId($relationAlias = null) Adds a RIGHT JOIN clause to the query using the AssignedPrayerRelatedByAgentId relation
@@ -56,7 +64,11 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUserQuery rightJoinPainRating($relationAlias = null) Adds a RIGHT JOIN clause to the query using the PainRating relation
  * @method     ChildUserQuery innerJoinPainRating($relationAlias = null) Adds a INNER JOIN clause to the query using the PainRating relation
  *
- * @method     \AssignedPrayerQuery|\PartnersQuery|\PainRatingQuery endUse() Finalizes a secondary criteria and merges it with its primary Criteria
+ * @method     ChildUserQuery leftJoinUserDemos($relationAlias = null) Adds a LEFT JOIN clause to the query using the UserDemos relation
+ * @method     ChildUserQuery rightJoinUserDemos($relationAlias = null) Adds a RIGHT JOIN clause to the query using the UserDemos relation
+ * @method     ChildUserQuery innerJoinUserDemos($relationAlias = null) Adds a INNER JOIN clause to the query using the UserDemos relation
+ *
+ * @method     \AgeQuery|\AssignedPrayerQuery|\PartnersQuery|\PainRatingQuery|\UserDemosQuery endUse() Finalizes a secondary criteria and merges it with its primary Criteria
  *
  * @method     ChildUser findOne(ConnectionInterface $con = null) Return the first ChildUser matching the query
  * @method     ChildUser findOneOrCreate(ConnectionInterface $con = null) Return the first ChildUser matching the query, or a new ChildUser object populated from the query conditions when no match is found
@@ -64,6 +76,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUser findOneById(int $id) Return the first ChildUser filtered by the id column
  * @method     ChildUser findOneByNickname(string $nickname) Return the first ChildUser filtered by the nickname column
  * @method     ChildUser findOneByEmail(string $email) Return the first ChildUser filtered by the email column
+ * @method     ChildUser findOneByAge(string $age) Return the first ChildUser filtered by the age column
+ * @method     ChildUser findOneBySex(string $sex) Return the first ChildUser filtered by the sex column
  * @method     ChildUser findOneByCreatedAt(string $created_at) Return the first ChildUser filtered by the created_at column
  * @method     ChildUser findOneByUpdatedAt(string $updated_at) Return the first ChildUser filtered by the updated_at column *
 
@@ -73,6 +87,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUser requireOneById(int $id) Return the first ChildUser filtered by the id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUser requireOneByNickname(string $nickname) Return the first ChildUser filtered by the nickname column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUser requireOneByEmail(string $email) Return the first ChildUser filtered by the email column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildUser requireOneByAge(string $age) Return the first ChildUser filtered by the age column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildUser requireOneBySex(string $sex) Return the first ChildUser filtered by the sex column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUser requireOneByCreatedAt(string $created_at) Return the first ChildUser filtered by the created_at column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUser requireOneByUpdatedAt(string $updated_at) Return the first ChildUser filtered by the updated_at column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
@@ -80,6 +96,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUser[]|ObjectCollection findById(int $id) Return ChildUser objects filtered by the id column
  * @method     ChildUser[]|ObjectCollection findByNickname(string $nickname) Return ChildUser objects filtered by the nickname column
  * @method     ChildUser[]|ObjectCollection findByEmail(string $email) Return ChildUser objects filtered by the email column
+ * @method     ChildUser[]|ObjectCollection findByAge(string $age) Return ChildUser objects filtered by the age column
+ * @method     ChildUser[]|ObjectCollection findBySex(string $sex) Return ChildUser objects filtered by the sex column
  * @method     ChildUser[]|ObjectCollection findByCreatedAt(string $created_at) Return ChildUser objects filtered by the created_at column
  * @method     ChildUser[]|ObjectCollection findByUpdatedAt(string $updated_at) Return ChildUser objects filtered by the updated_at column
  * @method     ChildUser[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -174,7 +192,7 @@ abstract class UserQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, nickname, email, created_at, updated_at FROM users WHERE id = :p0 AND nickname = :p1';
+        $sql = 'SELECT id, nickname, email, age, sex, created_at, updated_at FROM users WHERE id = :p0 AND nickname = :p1';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key[0], PDO::PARAM_INT);
@@ -376,6 +394,64 @@ abstract class UserQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the age column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByAge('fooValue');   // WHERE age = 'fooValue'
+     * $query->filterByAge('%fooValue%'); // WHERE age LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $age The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildUserQuery The current query, for fluid interface
+     */
+    public function filterByAge($age = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($age)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $age)) {
+                $age = str_replace('*', '%', $age);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(UserTableMap::COL_AGE, $age, $comparison);
+    }
+
+    /**
+     * Filter the query on the sex column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySex('fooValue');   // WHERE sex = 'fooValue'
+     * $query->filterBySex('%fooValue%'); // WHERE sex LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $sex The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildUserQuery The current query, for fluid interface
+     */
+    public function filterBySex($sex = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($sex)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $sex)) {
+                $sex = str_replace('*', '%', $sex);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(UserTableMap::COL_SEX, $sex, $comparison);
+    }
+
+    /**
      * Filter the query on the created_at column
      *
      * Example usage:
@@ -459,6 +535,83 @@ abstract class UserQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(UserTableMap::COL_UPDATED_AT, $updatedAt, $comparison);
+    }
+
+    /**
+     * Filter the query by a related \Age object
+     *
+     * @param \Age|ObjectCollection $age The related object(s) to use as filter
+     * @param string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @throws \Propel\Runtime\Exception\PropelException
+     *
+     * @return ChildUserQuery The current query, for fluid interface
+     */
+    public function filterByUserAge($age, $comparison = null)
+    {
+        if ($age instanceof \Age) {
+            return $this
+                ->addUsingAlias(UserTableMap::COL_AGE, $age->getAge(), $comparison);
+        } elseif ($age instanceof ObjectCollection) {
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+
+            return $this
+                ->addUsingAlias(UserTableMap::COL_AGE, $age->toKeyValue('PrimaryKey', 'Age'), $comparison);
+        } else {
+            throw new PropelException('filterByUserAge() only accepts arguments of type \Age or Collection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the UserAge relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return $this|ChildUserQuery The current query, for fluid interface
+     */
+    public function joinUserAge($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('UserAge');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'UserAge');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the UserAge relation Age object
+     *
+     * @see useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return \AgeQuery A secondary query class using the current class as primary query
+     */
+    public function useUserAgeQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinUserAge($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'UserAge', '\AgeQuery');
     }
 
     /**
@@ -824,6 +977,79 @@ abstract class UserQuery extends ModelCriteria
         return $this
             ->joinPainRating($relationAlias, $joinType)
             ->useQuery($relationAlias ? $relationAlias : 'PainRating', '\PainRatingQuery');
+    }
+
+    /**
+     * Filter the query by a related \UserDemos object
+     *
+     * @param \UserDemos|ObjectCollection $userDemos the related object to use as filter
+     * @param string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return ChildUserQuery The current query, for fluid interface
+     */
+    public function filterByUserDemos($userDemos, $comparison = null)
+    {
+        if ($userDemos instanceof \UserDemos) {
+            return $this
+                ->addUsingAlias(UserTableMap::COL_ID, $userDemos->getUserId(), $comparison);
+        } elseif ($userDemos instanceof ObjectCollection) {
+            return $this
+                ->useUserDemosQuery()
+                ->filterByPrimaryKeys($userDemos->getPrimaryKeys())
+                ->endUse();
+        } else {
+            throw new PropelException('filterByUserDemos() only accepts arguments of type \UserDemos or Collection');
+        }
+    }
+
+    /**
+     * Adds a JOIN clause to the query using the UserDemos relation
+     *
+     * @param     string $relationAlias optional alias for the relation
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return $this|ChildUserQuery The current query, for fluid interface
+     */
+    public function joinUserDemos($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        $tableMap = $this->getTableMap();
+        $relationMap = $tableMap->getRelation('UserDemos');
+
+        // create a ModelJoin object for this join
+        $join = new ModelJoin();
+        $join->setJoinType($joinType);
+        $join->setRelationMap($relationMap, $this->useAliasInSQL ? $this->getModelAlias() : null, $relationAlias);
+        if ($previousJoin = $this->getPreviousJoin()) {
+            $join->setPreviousJoin($previousJoin);
+        }
+
+        // add the ModelJoin to the current object
+        if ($relationAlias) {
+            $this->addAlias($relationAlias, $relationMap->getRightTable()->getName());
+            $this->addJoinObject($join, $relationAlias);
+        } else {
+            $this->addJoinObject($join, 'UserDemos');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Use the UserDemos relation UserDemos object
+     *
+     * @see useQuery()
+     *
+     * @param     string $relationAlias optional alias for the relation,
+     *                                   to be used as main alias in the secondary query
+     * @param     string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
+     *
+     * @return \UserDemosQuery A secondary query class using the current class as primary query
+     */
+    public function useUserDemosQuery($relationAlias = null, $joinType = Criteria::INNER_JOIN)
+    {
+        return $this
+            ->joinUserDemos($relationAlias, $joinType)
+            ->useQuery($relationAlias ? $relationAlias : 'UserDemos', '\UserDemosQuery');
     }
 
     /**

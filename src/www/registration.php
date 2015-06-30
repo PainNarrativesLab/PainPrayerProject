@@ -7,7 +7,6 @@
  */
 
 require_once('filemaster.php');
-//require_once __DIR__.'/vendor/autoload.php';
 
 $page_title = "Registration | Pain and spirituality study";
 
@@ -19,7 +18,11 @@ $page_maker->addStyleSheets(array(
     'inc/css/topBarStyles.css'));
 $page_maker->makePageTop();
 
+$faker = \Faker\Factory::create();
+
+$nonce = $faker->sha256;
 $page_body_maker = new \Display\Registration\PageMaker();
+$page_body_maker->setNonce($nonce);
 $page_body_maker->make();
 ?>
 

@@ -2,6 +2,8 @@
 
 namespace Base;
 
+use \Age as ChildAge;
+use \AgeQuery as ChildAgeQuery;
 use \AssignedPrayer as ChildAssignedPrayer;
 use \AssignedPrayerQuery as ChildAssignedPrayerQuery;
 use \PainRating as ChildPainRating;
@@ -9,6 +11,8 @@ use \PainRatingQuery as ChildPainRatingQuery;
 use \Partners as ChildPartners;
 use \PartnersQuery as ChildPartnersQuery;
 use \User as ChildUser;
+use \UserDemos as ChildUserDemos;
+use \UserDemosQuery as ChildUserDemosQuery;
 use \UserQuery as ChildUserQuery;
 use \DateTime;
 use \Exception;
@@ -88,6 +92,18 @@ abstract class User implements ActiveRecordInterface
     protected $email;
 
     /**
+     * The value for the age field.
+     * @var        string
+     */
+    protected $age;
+
+    /**
+     * The value for the sex field.
+     * @var        string
+     */
+    protected $sex;
+
+    /**
      * The value for the created_at field.
      * @var        \DateTime
      */
@@ -98,6 +114,11 @@ abstract class User implements ActiveRecordInterface
      * @var        \DateTime
      */
     protected $updated_at;
+
+    /**
+     * @var        ChildAge
+     */
+    protected $aUserAge;
 
     /**
      * @var        ObjectCollection|ChildAssignedPrayer[] Collection to store aggregation of ChildAssignedPrayer objects.
@@ -128,6 +149,12 @@ abstract class User implements ActiveRecordInterface
      */
     protected $collPainRatings;
     protected $collPainRatingsPartial;
+
+    /**
+     * @var        ObjectCollection|ChildUserDemos[] Collection to store aggregation of ChildUserDemos objects.
+     */
+    protected $collUserDemoss;
+    protected $collUserDemossPartial;
 
     /**
      * @var        ObjectCollection|ChildUser[] Cross Collection to store aggregation of ChildUser objects.
@@ -198,6 +225,12 @@ abstract class User implements ActiveRecordInterface
      * @var ObjectCollection|ChildPainRating[]
      */
     protected $painRatingsScheduledForDeletion = null;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var ObjectCollection|ChildUserDemos[]
+     */
+    protected $userDemossScheduledForDeletion = null;
 
     /**
      * Initializes internal state of Base\User object.
@@ -447,6 +480,26 @@ abstract class User implements ActiveRecordInterface
     }
 
     /**
+     * Get the [age] column value.
+     *
+     * @return string
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Get the [sex] column value.
+     *
+     * @return string
+     */
+    public function getSex()
+    {
+        return $this->sex;
+    }
+
+    /**
      * Get the [optionally formatted] temporal [created_at] column value.
      *
      *
@@ -547,6 +600,50 @@ abstract class User implements ActiveRecordInterface
     } // setEmail()
 
     /**
+     * Set the value of [age] column.
+     *
+     * @param string $v new value
+     * @return $this|\User The current object (for fluent API support)
+     */
+    public function setAge($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->age !== $v) {
+            $this->age = $v;
+            $this->modifiedColumns[UserTableMap::COL_AGE] = true;
+        }
+
+        if ($this->aUserAge !== null && $this->aUserAge->getAge() !== $v) {
+            $this->aUserAge = null;
+        }
+
+        return $this;
+    } // setAge()
+
+    /**
+     * Set the value of [sex] column.
+     *
+     * @param string $v new value
+     * @return $this|\User The current object (for fluent API support)
+     */
+    public function setSex($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->sex !== $v) {
+            $this->sex = $v;
+            $this->modifiedColumns[UserTableMap::COL_SEX] = true;
+        }
+
+        return $this;
+    } // setSex()
+
+    /**
      * Sets the value of [created_at] column to a normalized version of the date/time value specified.
      *
      * @param  mixed $v string, integer (timestamp), or \DateTime value.
@@ -631,13 +728,19 @@ abstract class User implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : UserTableMap::translateFieldName('Email', TableMap::TYPE_PHPNAME, $indexType)];
             $this->email = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : UserTableMap::translateFieldName('CreatedAt', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : UserTableMap::translateFieldName('Age', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->age = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : UserTableMap::translateFieldName('Sex', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->sex = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : UserTableMap::translateFieldName('CreatedAt', TableMap::TYPE_PHPNAME, $indexType)];
             if ($col === '0000-00-00 00:00:00') {
                 $col = null;
             }
             $this->created_at = (null !== $col) ? PropelDateTime::newInstance($col, null, 'DateTime') : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : UserTableMap::translateFieldName('UpdatedAt', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : UserTableMap::translateFieldName('UpdatedAt', TableMap::TYPE_PHPNAME, $indexType)];
             if ($col === '0000-00-00 00:00:00') {
                 $col = null;
             }
@@ -650,7 +753,7 @@ abstract class User implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 5; // 5 = UserTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 7; // 7 = UserTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\User'), 0, $e);
@@ -672,6 +775,9 @@ abstract class User implements ActiveRecordInterface
      */
     public function ensureConsistency()
     {
+        if ($this->aUserAge !== null && $this->age !== $this->aUserAge->getAge()) {
+            $this->aUserAge = null;
+        }
     } // ensureConsistency
 
     /**
@@ -711,6 +817,7 @@ abstract class User implements ActiveRecordInterface
 
         if ($deep) {  // also de-associate any related objects?
 
+            $this->aUserAge = null;
             $this->collAssignedPrayersRelatedByAgentId = null;
 
             $this->collAssignedPrayersRelatedByPatientId = null;
@@ -720,6 +827,8 @@ abstract class User implements ActiveRecordInterface
             $this->collPartnerssRelatedByPatientId = null;
 
             $this->collPainRatings = null;
+
+            $this->collUserDemoss = null;
 
             $this->collPatients = null;
             $this->collAgents = null;
@@ -833,6 +942,18 @@ abstract class User implements ActiveRecordInterface
         $affectedRows = 0; // initialize var to track total num of affected rows
         if (!$this->alreadyInSave) {
             $this->alreadyInSave = true;
+
+            // We call the save method on the following object(s) if they
+            // were passed to this object by their corresponding set
+            // method.  This object relates to these object(s) by a
+            // foreign key reference.
+
+            if ($this->aUserAge !== null) {
+                if ($this->aUserAge->isModified() || $this->aUserAge->isNew()) {
+                    $affectedRows += $this->aUserAge->save($con);
+                }
+                $this->setUserAge($this->aUserAge);
+            }
 
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
@@ -988,6 +1109,23 @@ abstract class User implements ActiveRecordInterface
                 }
             }
 
+            if ($this->userDemossScheduledForDeletion !== null) {
+                if (!$this->userDemossScheduledForDeletion->isEmpty()) {
+                    \UserDemosQuery::create()
+                        ->filterByPrimaryKeys($this->userDemossScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->userDemossScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collUserDemoss !== null) {
+                foreach ($this->collUserDemoss as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
+                }
+            }
+
             $this->alreadyInSave = false;
 
         }
@@ -1023,6 +1161,12 @@ abstract class User implements ActiveRecordInterface
         if ($this->isColumnModified(UserTableMap::COL_EMAIL)) {
             $modifiedColumns[':p' . $index++]  = 'email';
         }
+        if ($this->isColumnModified(UserTableMap::COL_AGE)) {
+            $modifiedColumns[':p' . $index++]  = 'age';
+        }
+        if ($this->isColumnModified(UserTableMap::COL_SEX)) {
+            $modifiedColumns[':p' . $index++]  = 'sex';
+        }
         if ($this->isColumnModified(UserTableMap::COL_CREATED_AT)) {
             $modifiedColumns[':p' . $index++]  = 'created_at';
         }
@@ -1048,6 +1192,12 @@ abstract class User implements ActiveRecordInterface
                         break;
                     case 'email':
                         $stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
+                        break;
+                    case 'age':
+                        $stmt->bindValue($identifier, $this->age, PDO::PARAM_STR);
+                        break;
+                    case 'sex':
+                        $stmt->bindValue($identifier, $this->sex, PDO::PARAM_STR);
                         break;
                     case 'created_at':
                         $stmt->bindValue($identifier, $this->created_at ? $this->created_at->format("Y-m-d H:i:s") : null, PDO::PARAM_STR);
@@ -1127,9 +1277,15 @@ abstract class User implements ActiveRecordInterface
                 return $this->getEmail();
                 break;
             case 3:
-                return $this->getCreatedAt();
+                return $this->getAge();
                 break;
             case 4:
+                return $this->getSex();
+                break;
+            case 5:
+                return $this->getCreatedAt();
+                break;
+            case 6:
                 return $this->getUpdatedAt();
                 break;
             default:
@@ -1165,21 +1321,23 @@ abstract class User implements ActiveRecordInterface
             $keys[0] => $this->getId(),
             $keys[1] => $this->getNickname(),
             $keys[2] => $this->getEmail(),
-            $keys[3] => $this->getCreatedAt(),
-            $keys[4] => $this->getUpdatedAt(),
+            $keys[3] => $this->getAge(),
+            $keys[4] => $this->getSex(),
+            $keys[5] => $this->getCreatedAt(),
+            $keys[6] => $this->getUpdatedAt(),
         );
 
         $utc = new \DateTimeZone('utc');
-        if ($result[$keys[3]] instanceof \DateTime) {
+        if ($result[$keys[5]] instanceof \DateTime) {
             // When changing timezone we don't want to change existing instances
-            $dateTime = clone $result[$keys[3]];
-            $result[$keys[3]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
+            $dateTime = clone $result[$keys[5]];
+            $result[$keys[5]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
         }
 
-        if ($result[$keys[4]] instanceof \DateTime) {
+        if ($result[$keys[6]] instanceof \DateTime) {
             // When changing timezone we don't want to change existing instances
-            $dateTime = clone $result[$keys[4]];
-            $result[$keys[4]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
+            $dateTime = clone $result[$keys[6]];
+            $result[$keys[6]] = $dateTime->setTimezone($utc)->format('Y-m-d\TH:i:s\Z');
         }
 
         $virtualColumns = $this->virtualColumns;
@@ -1188,6 +1346,21 @@ abstract class User implements ActiveRecordInterface
         }
 
         if ($includeForeignObjects) {
+            if (null !== $this->aUserAge) {
+
+                switch ($keyType) {
+                    case TableMap::TYPE_CAMELNAME:
+                        $key = 'age';
+                        break;
+                    case TableMap::TYPE_FIELDNAME:
+                        $key = 'u_ages';
+                        break;
+                    default:
+                        $key = 'Age';
+                }
+
+                $result[$key] = $this->aUserAge->toArray($keyType, $includeLazyLoadColumns,  $alreadyDumpedObjects, true);
+            }
             if (null !== $this->collAssignedPrayersRelatedByAgentId) {
 
                 switch ($keyType) {
@@ -1263,6 +1436,21 @@ abstract class User implements ActiveRecordInterface
 
                 $result[$key] = $this->collPainRatings->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
+            if (null !== $this->collUserDemoss) {
+
+                switch ($keyType) {
+                    case TableMap::TYPE_CAMELNAME:
+                        $key = 'userDemoss';
+                        break;
+                    case TableMap::TYPE_FIELDNAME:
+                        $key = 'user_demoss';
+                        break;
+                    default:
+                        $key = 'UserDemoss';
+                }
+
+                $result[$key] = $this->collUserDemoss->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
+            }
         }
 
         return $result;
@@ -1307,9 +1495,15 @@ abstract class User implements ActiveRecordInterface
                 $this->setEmail($value);
                 break;
             case 3:
-                $this->setCreatedAt($value);
+                $this->setAge($value);
                 break;
             case 4:
+                $this->setSex($value);
+                break;
+            case 5:
+                $this->setCreatedAt($value);
+                break;
+            case 6:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -1348,10 +1542,16 @@ abstract class User implements ActiveRecordInterface
             $this->setEmail($arr[$keys[2]]);
         }
         if (array_key_exists($keys[3], $arr)) {
-            $this->setCreatedAt($arr[$keys[3]]);
+            $this->setAge($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setUpdatedAt($arr[$keys[4]]);
+            $this->setSex($arr[$keys[4]]);
+        }
+        if (array_key_exists($keys[5], $arr)) {
+            $this->setCreatedAt($arr[$keys[5]]);
+        }
+        if (array_key_exists($keys[6], $arr)) {
+            $this->setUpdatedAt($arr[$keys[6]]);
         }
     }
 
@@ -1402,6 +1602,12 @@ abstract class User implements ActiveRecordInterface
         }
         if ($this->isColumnModified(UserTableMap::COL_EMAIL)) {
             $criteria->add(UserTableMap::COL_EMAIL, $this->email);
+        }
+        if ($this->isColumnModified(UserTableMap::COL_AGE)) {
+            $criteria->add(UserTableMap::COL_AGE, $this->age);
+        }
+        if ($this->isColumnModified(UserTableMap::COL_SEX)) {
+            $criteria->add(UserTableMap::COL_SEX, $this->sex);
         }
         if ($this->isColumnModified(UserTableMap::COL_CREATED_AT)) {
             $criteria->add(UserTableMap::COL_CREATED_AT, $this->created_at);
@@ -1505,6 +1711,8 @@ abstract class User implements ActiveRecordInterface
     {
         $copyObj->setNickname($this->getNickname());
         $copyObj->setEmail($this->getEmail());
+        $copyObj->setAge($this->getAge());
+        $copyObj->setSex($this->getSex());
         $copyObj->setCreatedAt($this->getCreatedAt());
         $copyObj->setUpdatedAt($this->getUpdatedAt());
 
@@ -1543,6 +1751,12 @@ abstract class User implements ActiveRecordInterface
                 }
             }
 
+            foreach ($this->getUserDemoss() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addUserDemos($relObj->copy($deepCopy));
+                }
+            }
+
         } // if ($deepCopy)
 
         if ($makeNew) {
@@ -1573,6 +1787,57 @@ abstract class User implements ActiveRecordInterface
         return $copyObj;
     }
 
+    /**
+     * Declares an association between this object and a ChildAge object.
+     *
+     * @param  ChildAge $v
+     * @return $this|\User The current object (for fluent API support)
+     * @throws PropelException
+     */
+    public function setUserAge(ChildAge $v = null)
+    {
+        if ($v === null) {
+            $this->setAge(NULL);
+        } else {
+            $this->setAge($v->getAge());
+        }
+
+        $this->aUserAge = $v;
+
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the ChildAge object, it will not be re-added.
+        if ($v !== null) {
+            $v->addUser($this);
+        }
+
+
+        return $this;
+    }
+
+
+    /**
+     * Get the associated ChildAge object
+     *
+     * @param  ConnectionInterface $con Optional Connection object.
+     * @return ChildAge The associated ChildAge object.
+     * @throws PropelException
+     */
+    public function getUserAge(ConnectionInterface $con = null)
+    {
+        if ($this->aUserAge === null && (($this->age !== "" && $this->age !== null))) {
+            $this->aUserAge = ChildAgeQuery::create()->findPk($this->age, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aUserAge->addUsers($this);
+             */
+        }
+
+        return $this->aUserAge;
+    }
+
 
     /**
      * Initializes a collection based on the name of a relation.
@@ -1598,6 +1863,9 @@ abstract class User implements ActiveRecordInterface
         }
         if ('PainRating' == $relationName) {
             return $this->initPainRatings();
+        }
+        if ('UserDemos' == $relationName) {
+            return $this->initUserDemoss();
         }
     }
 
@@ -2698,6 +2966,249 @@ abstract class User implements ActiveRecordInterface
     }
 
     /**
+     * Clears out the collUserDemoss collection
+     *
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addUserDemoss()
+     */
+    public function clearUserDemoss()
+    {
+        $this->collUserDemoss = null; // important to set this to NULL since that means it is uninitialized
+    }
+
+    /**
+     * Reset is the collUserDemoss collection loaded partially.
+     */
+    public function resetPartialUserDemoss($v = true)
+    {
+        $this->collUserDemossPartial = $v;
+    }
+
+    /**
+     * Initializes the collUserDemoss collection.
+     *
+     * By default this just sets the collUserDemoss collection to an empty array (like clearcollUserDemoss());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param      boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initUserDemoss($overrideExisting = true)
+    {
+        if (null !== $this->collUserDemoss && !$overrideExisting) {
+            return;
+        }
+        $this->collUserDemoss = new ObjectCollection();
+        $this->collUserDemoss->setModel('\UserDemos');
+    }
+
+    /**
+     * Gets an array of ChildUserDemos objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ChildUser is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @return ObjectCollection|ChildUserDemos[] List of ChildUserDemos objects
+     * @throws PropelException
+     */
+    public function getUserDemoss(Criteria $criteria = null, ConnectionInterface $con = null)
+    {
+        $partial = $this->collUserDemossPartial && !$this->isNew();
+        if (null === $this->collUserDemoss || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collUserDemoss) {
+                // return empty collection
+                $this->initUserDemoss();
+            } else {
+                $collUserDemoss = ChildUserDemosQuery::create(null, $criteria)
+                    ->filterByUser($this)
+                    ->find($con);
+
+                if (null !== $criteria) {
+                    if (false !== $this->collUserDemossPartial && count($collUserDemoss)) {
+                        $this->initUserDemoss(false);
+
+                        foreach ($collUserDemoss as $obj) {
+                            if (false == $this->collUserDemoss->contains($obj)) {
+                                $this->collUserDemoss->append($obj);
+                            }
+                        }
+
+                        $this->collUserDemossPartial = true;
+                    }
+
+                    return $collUserDemoss;
+                }
+
+                if ($partial && $this->collUserDemoss) {
+                    foreach ($this->collUserDemoss as $obj) {
+                        if ($obj->isNew()) {
+                            $collUserDemoss[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collUserDemoss = $collUserDemoss;
+                $this->collUserDemossPartial = false;
+            }
+        }
+
+        return $this->collUserDemoss;
+    }
+
+    /**
+     * Sets a collection of ChildUserDemos objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
+     *
+     * @param      Collection $userDemoss A Propel collection.
+     * @param      ConnectionInterface $con Optional connection object
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function setUserDemoss(Collection $userDemoss, ConnectionInterface $con = null)
+    {
+        /** @var ChildUserDemos[] $userDemossToDelete */
+        $userDemossToDelete = $this->getUserDemoss(new Criteria(), $con)->diff($userDemoss);
+
+
+        $this->userDemossScheduledForDeletion = $userDemossToDelete;
+
+        foreach ($userDemossToDelete as $userDemosRemoved) {
+            $userDemosRemoved->setUser(null);
+        }
+
+        $this->collUserDemoss = null;
+        foreach ($userDemoss as $userDemos) {
+            $this->addUserDemos($userDemos);
+        }
+
+        $this->collUserDemoss = $userDemoss;
+        $this->collUserDemossPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related UserDemos objects.
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct
+     * @param      ConnectionInterface $con
+     * @return int             Count of related UserDemos objects.
+     * @throws PropelException
+     */
+    public function countUserDemoss(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
+    {
+        $partial = $this->collUserDemossPartial && !$this->isNew();
+        if (null === $this->collUserDemoss || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collUserDemoss) {
+                return 0;
+            }
+
+            if ($partial && !$criteria) {
+                return count($this->getUserDemoss());
+            }
+
+            $query = ChildUserDemosQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByUser($this)
+                ->count($con);
+        }
+
+        return count($this->collUserDemoss);
+    }
+
+    /**
+     * Method called to associate a ChildUserDemos object to this object
+     * through the ChildUserDemos foreign key attribute.
+     *
+     * @param  ChildUserDemos $l ChildUserDemos
+     * @return $this|\User The current object (for fluent API support)
+     */
+    public function addUserDemos(ChildUserDemos $l)
+    {
+        if ($this->collUserDemoss === null) {
+            $this->initUserDemoss();
+            $this->collUserDemossPartial = true;
+        }
+
+        if (!$this->collUserDemoss->contains($l)) {
+            $this->doAddUserDemos($l);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param ChildUserDemos $userDemos The ChildUserDemos object to add.
+     */
+    protected function doAddUserDemos(ChildUserDemos $userDemos)
+    {
+        $this->collUserDemoss[]= $userDemos;
+        $userDemos->setUser($this);
+    }
+
+    /**
+     * @param  ChildUserDemos $userDemos The ChildUserDemos object to remove.
+     * @return $this|ChildUser The current object (for fluent API support)
+     */
+    public function removeUserDemos(ChildUserDemos $userDemos)
+    {
+        if ($this->getUserDemoss()->contains($userDemos)) {
+            $pos = $this->collUserDemoss->search($userDemos);
+            $this->collUserDemoss->remove($pos);
+            if (null === $this->userDemossScheduledForDeletion) {
+                $this->userDemossScheduledForDeletion = clone $this->collUserDemoss;
+                $this->userDemossScheduledForDeletion->clear();
+            }
+            $this->userDemossScheduledForDeletion[]= clone $userDemos;
+            $userDemos->setUser(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this User is new, it will return
+     * an empty collection; or if this User has previously
+     * been saved, it will retrieve related UserDemoss from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in User.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @param      string $joinBehavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return ObjectCollection|ChildUserDemos[] List of ChildUserDemos objects
+     */
+    public function getUserDemossJoinEthnicity(Criteria $criteria = null, ConnectionInterface $con = null, $joinBehavior = Criteria::LEFT_JOIN)
+    {
+        $query = ChildUserDemosQuery::create(null, $criteria);
+        $query->joinWith('Ethnicity', $joinBehavior);
+
+        return $this->getUserDemoss($query, $con);
+    }
+
+    /**
      * Clears out the collPatients collection
      *
      * This does not modify the database; however, it will remove any associated objects, causing
@@ -3188,9 +3699,14 @@ abstract class User implements ActiveRecordInterface
      */
     public function clear()
     {
+        if (null !== $this->aUserAge) {
+            $this->aUserAge->removeUser($this);
+        }
         $this->id = null;
         $this->nickname = null;
         $this->email = null;
+        $this->age = null;
+        $this->sex = null;
         $this->created_at = null;
         $this->updated_at = null;
         $this->alreadyInSave = false;
@@ -3236,6 +3752,11 @@ abstract class User implements ActiveRecordInterface
                     $o->clearAllReferences($deep);
                 }
             }
+            if ($this->collUserDemoss) {
+                foreach ($this->collUserDemoss as $o) {
+                    $o->clearAllReferences($deep);
+                }
+            }
             if ($this->collPatients) {
                 foreach ($this->collPatients as $o) {
                     $o->clearAllReferences($deep);
@@ -3253,8 +3774,10 @@ abstract class User implements ActiveRecordInterface
         $this->collPartnerssRelatedByAgentId = null;
         $this->collPartnerssRelatedByPatientId = null;
         $this->collPainRatings = null;
+        $this->collUserDemoss = null;
         $this->collPatients = null;
         $this->collAgents = null;
+        $this->aUserAge = null;
     }
 
     /**

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2015-06-29 12:50:15</timestamp>
+  <timestamp>2015-06-29 20:49:04</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>68</methodCount>
+    <methodCount>99</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>170.37</totalCrap>
+    <totalCrap>250.05</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -283,6 +283,347 @@
       <fullMethod>loadState()</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>CleanerFactory</className>
+      <methodName>validate</methodName>
+      <methodSignature>validate($to_validate, $type)</methodSignature>
+      <fullMethod>validate($to_validate, $type)</fullMethod>
+      <crap>2.06</crap>
+      <complexity>2</complexity>
+      <coverage>75</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>CleanerFactory</className>
+      <methodName>sanitize</methodName>
+      <methodSignature>sanitize($to_clean, $type)</methodSignature>
+      <fullMethod>sanitize($to_clean, $type)</fullMethod>
+      <crap>2.06</crap>
+      <complexity>2</complexity>
+      <coverage>75</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>CleanerFactory</className>
+      <methodName>make</methodName>
+      <methodSignature>make($type)</methodSignature>
+      <fullMethod>make($type)</fullMethod>
+      <crap>6.14</crap>
+      <complexity>6</complexity>
+      <coverage>84.21</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>EmailCleaner</className>
+      <methodName>sanitize</methodName>
+      <methodSignature>sanitize($to_clean)</methodSignature>
+      <fullMethod>sanitize($to_clean)</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>EmailCleaner</className>
+      <methodName>validate</methodName>
+      <methodSignature>validate($to_validate)</methodSignature>
+      <fullMethod>validate($to_validate)</fullMethod>
+      <crap>2.15</crap>
+      <complexity>2</complexity>
+      <coverage>66.67</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>EmailCleaner</className>
+      <methodName>set_max_length</methodName>
+      <methodSignature>set_max_length($custom_max)</methodSignature>
+      <fullMethod>set_max_length($custom_max)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>FloatCleaner</className>
+      <methodName>sanitize</methodName>
+      <methodSignature>sanitize($to_clean)</methodSignature>
+      <fullMethod>sanitize($to_clean)</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>FloatCleaner</className>
+      <methodName>validate</methodName>
+      <methodSignature>validate($to_validate)</methodSignature>
+      <fullMethod>validate($to_validate)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>FloatCleaner</className>
+      <methodName>set_max_length</methodName>
+      <methodSignature>set_max_length($custom_max)</methodSignature>
+      <fullMethod>set_max_length($custom_max)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>IntegerCleaner</className>
+      <methodName>sanitize</methodName>
+      <methodSignature>sanitize($to_clean)</methodSignature>
+      <fullMethod>sanitize($to_clean)</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>IntegerCleaner</className>
+      <methodName>validate</methodName>
+      <methodSignature>validate($to_validate)</methodSignature>
+      <fullMethod>validate($to_validate)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>IntegerCleaner</className>
+      <methodName>set_max_length</methodName>
+      <methodSignature>set_max_length($custom_max)</methodSignature>
+      <fullMethod>set_max_length($custom_max)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>IntegerCleaner</className>
+      <methodName>trim</methodName>
+      <methodSignature>trim()</methodSignature>
+      <fullMethod>trim()</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>TextCleaner</className>
+      <methodName>sanitize</methodName>
+      <methodSignature>sanitize($to_clean)</methodSignature>
+      <fullMethod>sanitize($to_clean)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>TextCleaner</className>
+      <methodName>validate</methodName>
+      <methodSignature>validate($to_validate)</methodSignature>
+      <fullMethod>validate($to_validate)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\cleaners</package>
+      <className>TextCleaner</className>
+      <methodName>set_max_length</methodName>
+      <methodSignature>set_max_length($custom_max)</methodSignature>
+      <fullMethod>set_max_length($custom_max)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>INonceSessionHandlerMock</className>
+      <methodName>set_response</methodName>
+      <methodSignature>set_response($response)</methodSignature>
+      <fullMethod>set_response($response)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>INonceSessionHandlerMock</className>
+      <methodName>get_nonce</methodName>
+      <methodSignature>get_nonce($page_name)</methodSignature>
+      <fullMethod>get_nonce($page_name)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>INonceSessionHandlerMock</className>
+      <methodName>remove_page_nonce</methodName>
+      <methodSignature>remove_page_nonce($page_name)</methodSignature>
+      <fullMethod>remove_page_nonce($page_name)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>INonceSessionHandlerMock</className>
+      <methodName>store_nonce</methodName>
+      <methodSignature>store_nonce($page_name, Nonce $nonce)</methodSignature>
+      <fullMethod>store_nonce($page_name, Nonce $nonce)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>Nonce</className>
+      <methodName>__get</methodName>
+      <methodSignature>__get($name)</methodSignature>
+      <fullMethod>__get($name)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>Nonce</className>
+      <methodName>__set</methodName>
+      <methodSignature>__set($name, $value)</methodSignature>
+      <fullMethod>__set($name, $value)</fullMethod>
+      <crap>7.27</crap>
+      <complexity>7</complexity>
+      <coverage>82.35</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceMaker</className>
+      <methodName>set_logger</methodName>
+      <methodSignature>set_logger(\SecurityClasses\logging\ISecurityLoggers $logger)</methodSignature>
+      <fullMethod>set_logger(\SecurityClasses\logging\ISecurityLoggers $logger)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceMaker</className>
+      <methodName>set_session_handler</methodName>
+      <methodSignature>set_session_handler(\Security\nonces\INonceSessionHandler $handler)</methodSignature>
+      <fullMethod>set_session_handler(\Security\nonces\INonceSessionHandler $handler)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceMaker</className>
+      <methodName>createNonceToken</methodName>
+      <methodSignature>createNonceToken()</methodSignature>
+      <fullMethod>createNonceToken()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceMaker</className>
+      <methodName>createNonce</methodName>
+      <methodSignature>createNonce($page_name)</methodSignature>
+      <fullMethod>createNonce($page_name)</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceMaker</className>
+      <methodName>make_form_field</methodName>
+      <methodSignature>make_form_field(\Security\nonces\Nonce $nonce, $page_name)</methodSignature>
+      <fullMethod>make_form_field(\Security\nonces\Nonce $nonce, $page_name)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceValidator</className>
+      <methodName>set_logger</methodName>
+      <methodSignature>set_logger(\Security\logging\ISecurityLoggers $logger)</methodSignature>
+      <fullMethod>set_logger(\Security\logging\ISecurityLoggers $logger)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceValidator</className>
+      <methodName>set_session_handler</methodName>
+      <methodSignature>set_session_handler(\Security\nonces\INonceSessionHandler $handler)</methodSignature>
+      <fullMethod>set_session_handler(\Security\nonces\INonceSessionHandler $handler)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceValidator</className>
+      <methodName>check_nonce</methodName>
+      <methodSignature>check_nonce($page_name, \Security\nonces\Nonce $nonce)</methodSignature>
+      <fullMethod>check_nonce($page_name, \Security\nonces\Nonce $nonce)</fullMethod>
+      <crap>12</crap>
+      <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Security\nonces</package>
+      <className>NonceValidator</className>
+      <methodName>validate</methodName>
+      <methodSignature>validate($page_name, $token)</methodSignature>
+      <fullMethod>validate($page_name, $token)</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>

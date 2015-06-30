@@ -49,6 +49,10 @@ function getUserHash(){
     return $("#userHash").val();
 }
 
+function getNonce(){
+    return $("#nonce").val();
+}
+
 /**
  * Need to be sure that the browser hasn't cached
  * anything from before. So sets fields to default state.
@@ -100,6 +104,7 @@ function processPainCheck(dthis) {
     Send.itemId = $(dthis).data('itemid');
     Send.score = $(dthis).val();
     Send.userHash = getUserHash();
+    Send.nonce = getNonce();
     window.console.log('paincheck', Send);
     return Send;
 }
@@ -123,6 +128,7 @@ function processPrayer(dthis){
     var Send = {};
     Send.task = "recordPrayer";
     Send.userHash = getUserHash();
+    Send.nonce = getNonce();
     window.console.log("prayer submit", Send);
     return Send;
 }

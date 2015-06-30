@@ -59,7 +59,7 @@ class UserTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 5;
+    const NUM_COLUMNS = 7;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class UserTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 5;
+    const NUM_HYDRATE_COLUMNS = 7;
 
     /**
      * the column name for the id field
@@ -85,6 +85,16 @@ class UserTableMap extends TableMap
      * the column name for the email field
      */
     const COL_EMAIL = 'users.email';
+
+    /**
+     * the column name for the age field
+     */
+    const COL_AGE = 'users.age';
+
+    /**
+     * the column name for the sex field
+     */
+    const COL_SEX = 'users.sex';
 
     /**
      * the column name for the created_at field
@@ -108,11 +118,11 @@ class UserTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Nickname', 'Email', 'CreatedAt', 'UpdatedAt', ),
-        self::TYPE_CAMELNAME     => array('id', 'nickname', 'email', 'createdAt', 'updatedAt', ),
-        self::TYPE_COLNAME       => array(UserTableMap::COL_ID, UserTableMap::COL_NICKNAME, UserTableMap::COL_EMAIL, UserTableMap::COL_CREATED_AT, UserTableMap::COL_UPDATED_AT, ),
-        self::TYPE_FIELDNAME     => array('id', 'nickname', 'email', 'created_at', 'updated_at', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, )
+        self::TYPE_PHPNAME       => array('Id', 'Nickname', 'Email', 'Age', 'Sex', 'CreatedAt', 'UpdatedAt', ),
+        self::TYPE_CAMELNAME     => array('id', 'nickname', 'email', 'age', 'sex', 'createdAt', 'updatedAt', ),
+        self::TYPE_COLNAME       => array(UserTableMap::COL_ID, UserTableMap::COL_NICKNAME, UserTableMap::COL_EMAIL, UserTableMap::COL_AGE, UserTableMap::COL_SEX, UserTableMap::COL_CREATED_AT, UserTableMap::COL_UPDATED_AT, ),
+        self::TYPE_FIELDNAME     => array('id', 'nickname', 'email', 'age', 'sex', 'created_at', 'updated_at', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -122,11 +132,11 @@ class UserTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Nickname' => 1, 'Email' => 2, 'CreatedAt' => 3, 'UpdatedAt' => 4, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'nickname' => 1, 'email' => 2, 'createdAt' => 3, 'updatedAt' => 4, ),
-        self::TYPE_COLNAME       => array(UserTableMap::COL_ID => 0, UserTableMap::COL_NICKNAME => 1, UserTableMap::COL_EMAIL => 2, UserTableMap::COL_CREATED_AT => 3, UserTableMap::COL_UPDATED_AT => 4, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'nickname' => 1, 'email' => 2, 'created_at' => 3, 'updated_at' => 4, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Nickname' => 1, 'Email' => 2, 'Age' => 3, 'Sex' => 4, 'CreatedAt' => 5, 'UpdatedAt' => 6, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'nickname' => 1, 'email' => 2, 'age' => 3, 'sex' => 4, 'createdAt' => 5, 'updatedAt' => 6, ),
+        self::TYPE_COLNAME       => array(UserTableMap::COL_ID => 0, UserTableMap::COL_NICKNAME => 1, UserTableMap::COL_EMAIL => 2, UserTableMap::COL_AGE => 3, UserTableMap::COL_SEX => 4, UserTableMap::COL_CREATED_AT => 5, UserTableMap::COL_UPDATED_AT => 6, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'nickname' => 1, 'email' => 2, 'age' => 3, 'sex' => 4, 'created_at' => 5, 'updated_at' => 6, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
     );
 
     /**
@@ -149,6 +159,8 @@ class UserTableMap extends TableMap
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
         $this->addPrimaryKey('nickname', 'Nickname', 'VARCHAR', true, 100, null);
         $this->addColumn('email', 'Email', 'VARCHAR', true, 200, null);
+        $this->addForeignKey('age', 'Age', 'VARCHAR', 'u_ages', 'age', true, 200, null);
+        $this->addColumn('sex', 'Sex', 'VARCHAR', true, 10, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', false, null, null);
         $this->addColumn('updated_at', 'UpdatedAt', 'TIMESTAMP', false, null, null);
     } // initialize()
@@ -158,6 +170,13 @@ class UserTableMap extends TableMap
      */
     public function buildRelations()
     {
+        $this->addRelation('UserAge', '\\Age', RelationMap::MANY_TO_ONE, array (
+  0 =>
+  array (
+    0 => ':age',
+    1 => ':age',
+  ),
+), null, null, null, false);
         $this->addRelation('AssignedPrayerRelatedByAgentId', '\\AssignedPrayer', RelationMap::ONE_TO_MANY, array (
   0 =>
   array (
@@ -193,6 +212,13 @@ class UserTableMap extends TableMap
     1 => ':id',
   ),
 ), null, null, 'PainRatings', false);
+        $this->addRelation('UserDemos', '\\UserDemos', RelationMap::ONE_TO_MANY, array (
+  0 =>
+  array (
+    0 => ':user_id',
+    1 => ':id',
+  ),
+), null, null, 'UserDemoss', false);
         $this->addRelation('Patient', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'Patients');
         $this->addRelation('Agent', '\\User', RelationMap::MANY_TO_MANY, array(), null, null, 'Agents');
     } // buildRelations()
@@ -416,12 +442,16 @@ class UserTableMap extends TableMap
             $criteria->addSelectColumn(UserTableMap::COL_ID);
             $criteria->addSelectColumn(UserTableMap::COL_NICKNAME);
             $criteria->addSelectColumn(UserTableMap::COL_EMAIL);
+            $criteria->addSelectColumn(UserTableMap::COL_AGE);
+            $criteria->addSelectColumn(UserTableMap::COL_SEX);
             $criteria->addSelectColumn(UserTableMap::COL_CREATED_AT);
             $criteria->addSelectColumn(UserTableMap::COL_UPDATED_AT);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.nickname');
             $criteria->addSelectColumn($alias . '.email');
+            $criteria->addSelectColumn($alias . '.age');
+            $criteria->addSelectColumn($alias . '.sex');
             $criteria->addSelectColumn($alias . '.created_at');
             $criteria->addSelectColumn($alias . '.updated_at');
         }

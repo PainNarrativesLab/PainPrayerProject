@@ -14,10 +14,16 @@ CREATE TABLE `users`
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `nickname` VARCHAR(100) NOT NULL,
     `email` VARCHAR(200) NOT NULL,
+    `age` VARCHAR(200) NOT NULL,
+    `sex` VARCHAR(10) NOT NULL,
     `created_at` DATETIME,
     `updated_at` DATETIME,
     PRIMARY KEY (`id`,`nickname`),
-    UNIQUE INDEX `users_u_a3cb57` (`nickname`, `email`)
+    UNIQUE INDEX `users_u_a3cb57` (`nickname`, `email`),
+    INDEX `users_fi_946ce2` (`age`),
+    CONSTRAINT `users_fk_946ce2`
+        FOREIGN KEY (`age`)
+        REFERENCES `u_ages` (`age`)
 ) ENGINE=InnoDB;
 
 -- ---------------------------------------------------------------------
@@ -174,6 +180,58 @@ CREATE TABLE `trialsXpain_items`
     CONSTRAINT `trialsXpain_items_fk_6942b7`
         FOREIGN KEY (`item_id`)
         REFERENCES `pain_rating_items` (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- u_ages
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `u_ages`;
+
+CREATE TABLE `u_ages`
+(
+    `age` VARCHAR(200) NOT NULL,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    PRIMARY KEY (`age`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- u_ethnicities
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `u_ethnicities`;
+
+CREATE TABLE `u_ethnicities`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `identity` VARCHAR(200) NOT NULL,
+    `type` VARCHAR(200) NOT NULL,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- user_demos
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `user_demos`;
+
+CREATE TABLE `user_demos`
+(
+    `user_id` INTEGER NOT NULL,
+    `identity_id` INTEGER NOT NULL,
+    `created_at` DATETIME,
+    `updated_at` DATETIME,
+    INDEX `user_demos_fi_69bd79` (`user_id`),
+    INDEX `user_demos_fi_80cb5c` (`identity_id`),
+    CONSTRAINT `user_demos_fk_69bd79`
+        FOREIGN KEY (`user_id`)
+        REFERENCES `users` (`id`),
+    CONSTRAINT `user_demos_fk_80cb5c`
+        FOREIGN KEY (`identity_id`)
+        REFERENCES `u_ethnicities` (`id`)
 ) ENGINE=InnoDB;
 
 # This restores the fkey checks, after having unset them earlier

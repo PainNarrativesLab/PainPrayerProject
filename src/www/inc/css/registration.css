@@ -10,3 +10,13 @@ label{
     display: block;
     font-weight: bold;
 }
+
+#pageTitle{
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.subArea{
+    padding-left: 2%;
+}
